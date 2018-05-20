@@ -44,8 +44,6 @@ Partial Class Fperiksa
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Bhapus_obat = New System.Windows.Forms.Button()
         Me.DGdaftar_obat = New System.Windows.Forms.DataGridView()
-        Me.Label23 = New System.Windows.Forms.Label()
-        Me.Btambah_obat = New System.Windows.Forms.Button()
         Me.DGobat_beli = New System.Windows.Forms.DataGridView()
         Me.Tjml_obat = New System.Windows.Forms.TextBox()
         Me.Tnm_obat = New System.Windows.Forms.TextBox()
@@ -62,9 +60,8 @@ Partial Class Fperiksa
         Me.Label21 = New System.Windows.Forms.Label()
         Me.Tpekerjaan = New System.Windows.Forms.TextBox()
         Me.Cjk = New System.Windows.Forms.ComboBox()
-        Me.Ttgl_lahir = New System.Windows.Forms.TextBox()
-        Me.Tnm_ibu = New System.Windows.Forms.TextBox()
-        Me.Tno_registrasi = New System.Windows.Forms.TextBox()
+        Me.Tnm_pasien = New System.Windows.Forms.TextBox()
+        Me.Tno_pasien = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
@@ -78,6 +75,12 @@ Partial Class Fperiksa
         Me.Tcari = New System.Windows.Forms.TextBox()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Bcetak = New System.Windows.Forms.Button()
+        Me.Ttgl_lahir = New System.Windows.Forms.DateTimePicker()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.id_obaat = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nm_obat = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.jumlah = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Bsimpan = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         CType(Me.DGdaftar_obat, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -108,7 +111,7 @@ Partial Class Fperiksa
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(578, 38)
+        Me.GroupBox1.Location = New System.Drawing.Point(560, 33)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(381, 338)
         Me.GroupBox1.TabIndex = 0
@@ -276,7 +279,6 @@ Partial Class Fperiksa
         Me.GroupBox4.Controls.Add(Me.Bhapus_obat)
         Me.GroupBox4.Controls.Add(Me.DGdaftar_obat)
         Me.GroupBox4.Controls.Add(Me.Label23)
-        Me.GroupBox4.Controls.Add(Me.Btambah_obat)
         Me.GroupBox4.Controls.Add(Me.DGobat_beli)
         Me.GroupBox4.Controls.Add(Me.Tjml_obat)
         Me.GroupBox4.Controls.Add(Me.Tnm_obat)
@@ -284,9 +286,9 @@ Partial Class Fperiksa
         Me.GroupBox4.Controls.Add(Me.Label14)
         Me.GroupBox4.Controls.Add(Me.Label15)
         Me.GroupBox4.Font = New System.Drawing.Font("Bookman Old Style", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox4.Location = New System.Drawing.Point(330, 12)
+        Me.GroupBox4.Location = New System.Drawing.Point(306, 377)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(239, 341)
+        Me.GroupBox4.Size = New System.Drawing.Size(635, 229)
         Me.GroupBox4.TabIndex = 4
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "TERAPI"
@@ -294,7 +296,7 @@ Partial Class Fperiksa
         'Bhapus_obat
         '
         Me.Bhapus_obat.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Bhapus_obat.Location = New System.Drawing.Point(122, 310)
+        Me.Bhapus_obat.Location = New System.Drawing.Point(511, 37)
         Me.Bhapus_obat.Name = "Bhapus_obat"
         Me.Bhapus_obat.Size = New System.Drawing.Size(111, 22)
         Me.Bhapus_obat.TabIndex = 13
@@ -304,58 +306,39 @@ Partial Class Fperiksa
         'DGdaftar_obat
         '
         Me.DGdaftar_obat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGdaftar_obat.Location = New System.Drawing.Point(1, 117)
+        Me.DGdaftar_obat.Location = New System.Drawing.Point(12, 90)
         Me.DGdaftar_obat.Name = "DGdaftar_obat"
-        Me.DGdaftar_obat.Size = New System.Drawing.Size(225, 73)
+        Me.DGdaftar_obat.Size = New System.Drawing.Size(281, 129)
         Me.DGdaftar_obat.TabIndex = 13
-        '
-        'Label23
-        '
-        Me.Label23.AutoSize = True
-        Me.Label23.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label23.Location = New System.Drawing.Point(9, 95)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(82, 14)
-        Me.Label23.TabIndex = 12
-        Me.Label23.Text = "Daftar Obat"
-        '
-        'Btambah_obat
-        '
-        Me.Btambah_obat.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btambah_obat.Location = New System.Drawing.Point(4, 310)
-        Me.Btambah_obat.Name = "Btambah_obat"
-        Me.Btambah_obat.Size = New System.Drawing.Size(115, 22)
-        Me.Btambah_obat.TabIndex = 12
-        Me.Btambah_obat.Text = "TAMBAH OBAT"
-        Me.Btambah_obat.UseVisualStyleBackColor = True
         '
         'DGobat_beli
         '
         Me.DGobat_beli.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGobat_beli.Location = New System.Drawing.Point(1, 219)
+        Me.DGobat_beli.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_obaat, Me.nm_obat, Me.jumlah})
+        Me.DGobat_beli.Location = New System.Drawing.Point(296, 90)
         Me.DGobat_beli.Name = "DGobat_beli"
-        Me.DGobat_beli.Size = New System.Drawing.Size(225, 73)
+        Me.DGobat_beli.Size = New System.Drawing.Size(326, 129)
         Me.DGobat_beli.TabIndex = 11
         '
         'Tjml_obat
         '
-        Me.Tjml_obat.Location = New System.Drawing.Point(107, 54)
+        Me.Tjml_obat.Location = New System.Drawing.Point(299, 36)
         Me.Tjml_obat.Name = "Tjml_obat"
-        Me.Tjml_obat.Size = New System.Drawing.Size(111, 23)
+        Me.Tjml_obat.Size = New System.Drawing.Size(206, 23)
         Me.Tjml_obat.TabIndex = 10
         '
         'Tnm_obat
         '
-        Me.Tnm_obat.Location = New System.Drawing.Point(107, 20)
+        Me.Tnm_obat.Location = New System.Drawing.Point(12, 36)
         Me.Tnm_obat.Name = "Tnm_obat"
-        Me.Tnm_obat.Size = New System.Drawing.Size(111, 23)
+        Me.Tnm_obat.Size = New System.Drawing.Size(278, 23)
         Me.Tnm_obat.TabIndex = 9
         '
         'Label13
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(9, 197)
+        Me.Label13.Location = New System.Drawing.Point(296, 73)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(110, 14)
         Me.Label13.TabIndex = 2
@@ -365,7 +348,7 @@ Partial Class Fperiksa
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(6, 63)
+        Me.Label14.Location = New System.Drawing.Point(296, 19)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(90, 14)
         Me.Label14.TabIndex = 1
@@ -375,7 +358,7 @@ Partial Class Fperiksa
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(6, 26)
+        Me.Label15.Location = New System.Drawing.Point(9, 19)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(76, 14)
         Me.Label15.TabIndex = 0
@@ -383,6 +366,7 @@ Partial Class Fperiksa
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Ttgl_lahir)
         Me.GroupBox2.Controls.Add(Me.Label19)
         Me.GroupBox2.Controls.Add(Me.Ttkn_darah)
         Me.GroupBox2.Controls.Add(Me.Label2)
@@ -392,18 +376,17 @@ Partial Class Fperiksa
         Me.GroupBox2.Controls.Add(Me.Label21)
         Me.GroupBox2.Controls.Add(Me.Tpekerjaan)
         Me.GroupBox2.Controls.Add(Me.Cjk)
-        Me.GroupBox2.Controls.Add(Me.Ttgl_lahir)
-        Me.GroupBox2.Controls.Add(Me.Tnm_ibu)
-        Me.GroupBox2.Controls.Add(Me.Tno_registrasi)
+        Me.GroupBox2.Controls.Add(Me.Tnm_pasien)
+        Me.GroupBox2.Controls.Add(Me.Tno_pasien)
         Me.GroupBox2.Controls.Add(Me.Label1)
         Me.GroupBox2.Controls.Add(Me.Label10)
         Me.GroupBox2.Controls.Add(Me.Label16)
         Me.GroupBox2.Controls.Add(Me.Label17)
         Me.GroupBox2.Controls.Add(Me.Label18)
         Me.GroupBox2.Font = New System.Drawing.Font("Bookman Old Style", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(20, 12)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 4)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(304, 411)
+        Me.GroupBox2.Size = New System.Drawing.Size(288, 411)
         Me.GroupBox2.TabIndex = 5
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "PASIEN"
@@ -412,7 +395,7 @@ Partial Class Fperiksa
         '
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(237, 245)
+        Me.Label19.Location = New System.Drawing.Point(212, 244)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(51, 14)
         Me.Label19.TabIndex = 28
@@ -420,7 +403,7 @@ Partial Class Fperiksa
         '
         'Ttkn_darah
         '
-        Me.Ttkn_darah.Location = New System.Drawing.Point(140, 240)
+        Me.Ttkn_darah.Location = New System.Drawing.Point(115, 241)
         Me.Ttkn_darah.Name = "Ttkn_darah"
         Me.Ttkn_darah.Size = New System.Drawing.Size(91, 23)
         Me.Ttkn_darah.TabIndex = 27
@@ -428,7 +411,7 @@ Partial Class Fperiksa
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(21, 243)
+        Me.Label2.Location = New System.Drawing.Point(5, 247)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(108, 16)
         Me.Label2.TabIndex = 26
@@ -436,17 +419,17 @@ Partial Class Fperiksa
         '
         'Tkeluhan
         '
-        Me.Tkeluhan.Location = New System.Drawing.Point(16, 304)
+        Me.Tkeluhan.Location = New System.Drawing.Point(8, 308)
         Me.Tkeluhan.Multiline = True
         Me.Tkeluhan.Name = "Tkeluhan"
-        Me.Tkeluhan.Size = New System.Drawing.Size(255, 97)
+        Me.Tkeluhan.Size = New System.Drawing.Size(272, 97)
         Me.Tkeluhan.TabIndex = 25
         '
         'Label9
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(21, 278)
+        Me.Label9.Location = New System.Drawing.Point(5, 282)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(90, 14)
         Me.Label9.TabIndex = 24
@@ -454,16 +437,16 @@ Partial Class Fperiksa
         '
         'Talamat
         '
-        Me.Talamat.Location = New System.Drawing.Point(140, 209)
+        Me.Talamat.Location = New System.Drawing.Point(115, 210)
         Me.Talamat.Name = "Talamat"
-        Me.Talamat.Size = New System.Drawing.Size(131, 23)
+        Me.Talamat.Size = New System.Drawing.Size(156, 23)
         Me.Talamat.TabIndex = 10
         '
         'Label21
         '
         Me.Label21.AutoSize = True
         Me.Label21.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(21, 209)
+        Me.Label21.Location = New System.Drawing.Point(5, 213)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(53, 14)
         Me.Label21.TabIndex = 9
@@ -471,45 +454,39 @@ Partial Class Fperiksa
         '
         'Tpekerjaan
         '
-        Me.Tpekerjaan.Location = New System.Drawing.Point(140, 175)
+        Me.Tpekerjaan.Location = New System.Drawing.Point(115, 176)
         Me.Tpekerjaan.Name = "Tpekerjaan"
-        Me.Tpekerjaan.Size = New System.Drawing.Size(131, 23)
+        Me.Tpekerjaan.Size = New System.Drawing.Size(156, 23)
         Me.Tpekerjaan.TabIndex = 8
         '
         'Cjk
         '
         Me.Cjk.FormattingEnabled = True
-        Me.Cjk.Location = New System.Drawing.Point(140, 139)
+        Me.Cjk.Items.AddRange(New Object() {"Laki-laki", "Perempuan"})
+        Me.Cjk.Location = New System.Drawing.Point(115, 140)
         Me.Cjk.Name = "Cjk"
-        Me.Cjk.Size = New System.Drawing.Size(121, 24)
+        Me.Cjk.Size = New System.Drawing.Size(156, 24)
         Me.Cjk.TabIndex = 1
         '
-        'Ttgl_lahir
+        'Tnm_pasien
         '
-        Me.Ttgl_lahir.Location = New System.Drawing.Point(140, 102)
-        Me.Ttgl_lahir.Name = "Ttgl_lahir"
-        Me.Ttgl_lahir.Size = New System.Drawing.Size(131, 23)
-        Me.Ttgl_lahir.TabIndex = 7
+        Me.Tnm_pasien.Location = New System.Drawing.Point(115, 68)
+        Me.Tnm_pasien.Name = "Tnm_pasien"
+        Me.Tnm_pasien.Size = New System.Drawing.Size(156, 23)
+        Me.Tnm_pasien.TabIndex = 6
         '
-        'Tnm_ibu
+        'Tno_pasien
         '
-        Me.Tnm_ibu.Location = New System.Drawing.Point(140, 67)
-        Me.Tnm_ibu.Name = "Tnm_ibu"
-        Me.Tnm_ibu.Size = New System.Drawing.Size(148, 23)
-        Me.Tnm_ibu.TabIndex = 6
-        '
-        'Tno_registrasi
-        '
-        Me.Tno_registrasi.Location = New System.Drawing.Point(140, 29)
-        Me.Tno_registrasi.Name = "Tno_registrasi"
-        Me.Tno_registrasi.Size = New System.Drawing.Size(102, 23)
-        Me.Tno_registrasi.TabIndex = 1
+        Me.Tno_pasien.Location = New System.Drawing.Point(115, 30)
+        Me.Tno_pasien.Name = "Tno_pasien"
+        Me.Tno_pasien.Size = New System.Drawing.Size(156, 23)
+        Me.Tno_pasien.TabIndex = 1
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(21, 175)
+        Me.Label1.Location = New System.Drawing.Point(5, 179)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(70, 14)
         Me.Label1.TabIndex = 5
@@ -519,7 +496,7 @@ Partial Class Fperiksa
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(21, 139)
+        Me.Label10.Location = New System.Drawing.Point(5, 143)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(102, 14)
         Me.Label10.TabIndex = 4
@@ -529,7 +506,7 @@ Partial Class Fperiksa
         '
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(21, 103)
+        Me.Label16.Location = New System.Drawing.Point(5, 107)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(95, 14)
         Me.Label16.TabIndex = 3
@@ -539,26 +516,26 @@ Partial Class Fperiksa
         '
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(21, 67)
+        Me.Label17.Location = New System.Drawing.Point(5, 71)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(67, 14)
+        Me.Label17.Size = New System.Drawing.Size(89, 14)
         Me.Label17.TabIndex = 2
-        Me.Label17.Text = "Nama Ibu"
+        Me.Label17.Text = "Nama Pasien"
         '
         'Label18
         '
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(21, 29)
+        Me.Label18.Location = New System.Drawing.Point(5, 33)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(94, 14)
+        Me.Label18.Size = New System.Drawing.Size(71, 14)
         Me.Label18.TabIndex = 1
-        Me.Label18.Text = "No Registrasi"
+        Me.Label18.Text = "No Pasien"
         '
         'Bsave
         '
         Me.Bsave.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Bsave.Location = New System.Drawing.Point(726, 390)
+        Me.Bsave.Location = New System.Drawing.Point(115, 543)
         Me.Bsave.Name = "Bsave"
         Me.Bsave.Size = New System.Drawing.Size(75, 23)
         Me.Bsave.TabIndex = 6
@@ -568,7 +545,7 @@ Partial Class Fperiksa
         'Bexit
         '
         Me.Bexit.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Bexit.Location = New System.Drawing.Point(726, 419)
+        Me.Bexit.Location = New System.Drawing.Point(160, 499)
         Me.Bexit.Name = "Bexit"
         Me.Bexit.Size = New System.Drawing.Size(75, 23)
         Me.Bexit.TabIndex = 7
@@ -578,7 +555,7 @@ Partial Class Fperiksa
         'CheckBox1
         '
         Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(587, 12)
+        Me.CheckBox1.Location = New System.Drawing.Point(569, 12)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(111, 17)
         Me.CheckBox1.TabIndex = 8
@@ -590,9 +567,9 @@ Partial Class Fperiksa
         Me.GroupBox3.Controls.Add(Me.DGrekap)
         Me.GroupBox3.Controls.Add(Me.Tcari)
         Me.GroupBox3.Controls.Add(Me.Label24)
-        Me.GroupBox3.Location = New System.Drawing.Point(339, 382)
+        Me.GroupBox3.Location = New System.Drawing.Point(306, 4)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(381, 267)
+        Me.GroupBox3.Size = New System.Drawing.Size(248, 367)
         Me.GroupBox3.TabIndex = 9
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "GroupBox3"
@@ -600,22 +577,22 @@ Partial Class Fperiksa
         'DGrekap
         '
         Me.DGrekap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGrekap.Location = New System.Drawing.Point(12, 121)
+        Me.DGrekap.Location = New System.Drawing.Point(12, 59)
         Me.DGrekap.Name = "DGrekap"
-        Me.DGrekap.Size = New System.Drawing.Size(363, 140)
+        Me.DGrekap.Size = New System.Drawing.Size(223, 277)
         Me.DGrekap.TabIndex = 14
         '
         'Tcari
         '
-        Me.Tcari.Location = New System.Drawing.Point(127, 33)
+        Me.Tcari.Location = New System.Drawing.Point(127, 21)
         Me.Tcari.Name = "Tcari"
-        Me.Tcari.Size = New System.Drawing.Size(128, 20)
+        Me.Tcari.Size = New System.Drawing.Size(108, 20)
         Me.Tcari.TabIndex = 28
         '
         'Label24
         '
         Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(9, 33)
+        Me.Label24.Location = New System.Drawing.Point(9, 21)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(84, 13)
         Me.Label24.TabIndex = 0
@@ -624,18 +601,65 @@ Partial Class Fperiksa
         'Bcetak
         '
         Me.Bcetak.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Bcetak.Location = New System.Drawing.Point(20, 440)
+        Me.Bcetak.Location = New System.Drawing.Point(33, 499)
         Me.Bcetak.Name = "Bcetak"
         Me.Bcetak.Size = New System.Drawing.Size(121, 44)
         Me.Bcetak.TabIndex = 12
         Me.Bcetak.Text = "CETAK KARTU BEROBAT"
         Me.Bcetak.UseVisualStyleBackColor = True
         '
+        'Ttgl_lahir
+        '
+        Me.Ttgl_lahir.Location = New System.Drawing.Point(115, 103)
+        Me.Ttgl_lahir.Name = "Ttgl_lahir"
+        Me.Ttgl_lahir.Size = New System.Drawing.Size(156, 23)
+        Me.Ttgl_lahir.TabIndex = 29
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label23.Location = New System.Drawing.Point(9, 73)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(82, 14)
+        Me.Label23.TabIndex = 12
+        Me.Label23.Text = "Daftar Obat"
+        '
+        'id_obaat
+        '
+        Me.id_obaat.HeaderText = "id_obat"
+        Me.id_obaat.Name = "id_obaat"
+        Me.id_obaat.ReadOnly = True
+        Me.id_obaat.Visible = False
+        '
+        'nm_obat
+        '
+        Me.nm_obat.HeaderText = "Nama Obat"
+        Me.nm_obat.Name = "nm_obat"
+        Me.nm_obat.ReadOnly = True
+        '
+        'jumlah
+        '
+        Me.jumlah.HeaderText = "Jumlah"
+        Me.jumlah.Name = "jumlah"
+        Me.jumlah.ReadOnly = True
+        '
+        'Bsimpan
+        '
+        Me.Bsimpan.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Bsimpan.Location = New System.Drawing.Point(12, 421)
+        Me.Bsimpan.Name = "Bsimpan"
+        Me.Bsimpan.Size = New System.Drawing.Size(75, 23)
+        Me.Bsimpan.TabIndex = 13
+        Me.Bsimpan.Text = "Simpan"
+        Me.Bsimpan.UseVisualStyleBackColor = True
+        '
         'Fperiksa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(977, 650)
+        Me.ClientSize = New System.Drawing.Size(952, 612)
+        Me.Controls.Add(Me.Bsimpan)
         Me.Controls.Add(Me.Bcetak)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.CheckBox1)
@@ -683,13 +707,11 @@ Partial Class Fperiksa
     Friend WithEvents Label14 As System.Windows.Forms.Label
     Friend WithEvents Label15 As System.Windows.Forms.Label
     Friend WithEvents Bhapus_obat As System.Windows.Forms.Button
-    Friend WithEvents Btambah_obat As System.Windows.Forms.Button
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents Tpekerjaan As System.Windows.Forms.TextBox
     Friend WithEvents Cjk As System.Windows.Forms.ComboBox
-    Friend WithEvents Ttgl_lahir As System.Windows.Forms.TextBox
-    Friend WithEvents Tnm_ibu As System.Windows.Forms.TextBox
-    Friend WithEvents Tno_registrasi As System.Windows.Forms.TextBox
+    Friend WithEvents Tnm_pasien As System.Windows.Forms.TextBox
+    Friend WithEvents Tno_pasien As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents Label16 As System.Windows.Forms.Label
@@ -705,7 +727,6 @@ Partial Class Fperiksa
     Friend WithEvents Label22 As System.Windows.Forms.Label
     Friend WithEvents DGobat_beli As System.Windows.Forms.DataGridView
     Friend WithEvents DGdaftar_obat As System.Windows.Forms.DataGridView
-    Friend WithEvents Label23 As System.Windows.Forms.Label
     Friend WithEvents Label19 As System.Windows.Forms.Label
     Friend WithEvents Ttkn_darah As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
@@ -717,4 +738,10 @@ Partial Class Fperiksa
     Friend WithEvents Tcari As System.Windows.Forms.TextBox
     Friend WithEvents Label24 As System.Windows.Forms.Label
     Friend WithEvents Bcetak As System.Windows.Forms.Button
+    Friend WithEvents Ttgl_lahir As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label23 As System.Windows.Forms.Label
+    Friend WithEvents id_obaat As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents nm_obat As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents jumlah As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Bsimpan As System.Windows.Forms.Button
 End Class

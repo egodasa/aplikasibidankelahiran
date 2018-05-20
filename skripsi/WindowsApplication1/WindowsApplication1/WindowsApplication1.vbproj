@@ -90,6 +90,12 @@
     <Compile Include="Fkb.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Fpasien.Designer.vb">
+      <DependentUpon>Fpasien.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fpasien.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Fperiksa.Designer.vb">
       <DependentUpon>Fperiksa.vb</DependentUpon>
     </Compile>
@@ -130,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Fkb.resx">
       <DependentUpon>Fkb.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fpasien.resx">
+      <DependentUpon>Fpasien.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fperiksa.resx">
       <DependentUpon>Fperiksa.vb</DependentUpon>

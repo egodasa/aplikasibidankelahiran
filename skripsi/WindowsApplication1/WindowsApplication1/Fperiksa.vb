@@ -1,6 +1,96 @@
 ﻿Public Class Fperiksa
-
+    Dim DGpasien As New DataGridView
+    Dim data_pasien As DataTable
+    Dim obat_beli As DataTable
+    Dim id_periksa As String = DateTime.Now.Ticks.ToString()
+    Sub resetDataPasien()
+        Ttgl_lahir.ResetText()
+        Tpekerjaan.Clear()
+        Talamat.Clear()
+        Cjk.SelectedIndex = 0
+        Tnm_pasien.Clear()
+    End Sub
+    Sub resetId()
+        id_periksa = DateTime.Now.Ticks.ToString()
+    End Sub
     Private Sub Label3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label3.Click
 
+    End Sub
+
+    Private Sub Tno_pasien_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tno_pasien.TextChanged
+        If Tno_pasien.TextLength <> 0 Then
+            fetchData(DGpasien, "select * from tbl_pasien where no_pasien = " & Tno_pasien.Text)
+            data_pasien = DGpasien.DataSource
+            If data_pasien.Rows.Count = 1 Then
+                fetchData(DGrekap, "select tgl_periksa,keluhan, tensi from tbl_periksa where no_pasien = " & data_pasien.Rows(0).Item("no_pasien") & " ")
+                Ttgl_lahir.Value = data_pasien.Rows(0).Item("tgl_lahir")
+                Tpekerjaan.Text = data_pasien.Rows(0).Item("pekerjaan")
+                Talamat.Text = data_pasien.Rows(0).Item("alamat")
+                Cjk.Text = data_pasien.Rows(0).Item("jk")
+                Tnm_pasien.Text = data_pasien.Rows(0).Item("nm_pasien")
+            Else
+                DGrekap.DataSource = Nothing
+                DGrekap.Refresh()
+                Call resetDataPasien()
+            End If
+        Else
+            DGrekap.DataSource = Nothing
+            DGrekap.Refresh()
+            Call resetDataPasien()
+        End If
+    End Sub
+
+    Private Sub GroupBox2_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GroupBox2.Enter
+
+    End Sub
+
+    Private Sub Fperiksa_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Call setKoneksi()
+        fetchData(DGdaftar_obat, "select a.id_obat, a.nm_obat as `Nama Obat`, a.stok as Stok, b.nm_jobat as `Jenis`, a.status as Status from tbl_obat a inner join tbl_jenis_obat b on a.id_jobat = b.id_jobat")
+        DGdaftar_obat.Columns("id_obat").Visible = False
+    End Sub
+
+    Private Sub Tnm_obat_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tnm_obat.TextChanged
+        If Tnm_obat.TextLength <> 0 Then
+
+            fetchData(DGdaftar_obat, "select a.id_obat, a.nm_obat as `Nama Obat`, a.stok as Stok, b.nm_jobat as `Jenis`, a.status as Status from tbl_obat a inner join tbl_jenis_obat b on a.id_jobat = b.id_jobat where a.nm_obat like '%" & Tnm_obat.Text & "%'")
+        End If
+    End Sub
+
+    Private Sub DGdaftar_obat_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DGdaftar_obat.CellContentClick
+        End Sub
+
+    Private Sub DGdaftar_obat_CellContentDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DGdaftar_obat.CellContentDoubleClick
+        DGobat_beli.Rows.Add(New String() {DGdaftar_obat.CurrentRow.Cells(0).Value, DGdaftar_obat.CurrentRow.Cells(1).Value, Tjml_obat.Text})
+        DGobat_beli.Refresh()
+        Tnm_obat.Clear()
+        Tjml_obat.Clear()
+        fetchData(DGdaftar_obat, "select a.id_obat, a.nm_obat as `Nama Obat`, a.stok as Stok, b.nm_jobat as `Jenis`, a.status as Status from tbl_obat a inner join tbl_jenis_obat b on a.id_jobat = b.id_jobat")
+    End Sub
+
+    Private Sub Bexit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bexit.Click
+
+    End Sub
+
+    Private Sub Bsimpan_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bsimpan.Click
+        runQuery("insert into tbl_periksa (id_periksa, no_pasien,keluhan, tensi) values ('" & id_periksa & "'," & Tno_pasien.Text & ",'" & Tkeluhan.Text & "','" & Ttkn_darah.Text & "')")
+        obat_beli = DGobat_beli.DataSource
+        If obat_beli.Rows.Count <> 0 Then
+            For Each x In obat_beli.Rows
+                runQuery("insert into tbl_terapi()")
+            Next
+        End If
+        MessageBox.Show("Data berhasil disimpan", "Pesan", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Call resetDataPasien()
+        Tkeluhan.Clear()
+        Ttkn_darah.Clear()
+        Tno_pasien.Clear()
+        Tno_pasien.Focus()
+        Call resetId()
+    End Sub
+
+    Private Sub DGrekap_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DGrekap.CellContentClick
+        Ttkn_darah.Text = DGrekap.CurrentRow.Cells("tensi").Value
+        Tkeluhan.Text = DGrekap.CurrentRow.Cells("keluhan").Value
     End Sub
 End Class
