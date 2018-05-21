@@ -23,32 +23,32 @@ Partial Class Fkb
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.TextBox15 = New System.Windows.Forms.TextBox()
+        Me.Talamat = New System.Windows.Forms.TextBox()
+        Me.Tpekerjaan = New System.Windows.Forms.TextBox()
+        Me.Cjk = New System.Windows.Forms.ComboBox()
+        Me.Ttgl_lahir = New System.Windows.Forms.DateTimePicker()
+        Me.Tnm_suami = New System.Windows.Forms.TextBox()
         Me.Label23 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.TextBox10 = New System.Windows.Forms.TextBox()
-        Me.TextBox13 = New System.Windows.Forms.TextBox()
-        Me.TextBox14 = New System.Windows.Forms.TextBox()
+        Me.Tnm_ibu = New System.Windows.Forms.TextBox()
+        Me.Tno_pasien = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.Thaid = New System.Windows.Forms.DateTimePicker()
+        Me.Ckb = New System.Windows.Forms.ComboBox()
+        Me.Tanak = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.Ttkn_darah = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.Tbrt_badan = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
@@ -58,15 +58,15 @@ Partial Class Fkb
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.TextBox15)
+        Me.GroupBox2.Controls.Add(Me.Talamat)
+        Me.GroupBox2.Controls.Add(Me.Tpekerjaan)
+        Me.GroupBox2.Controls.Add(Me.Cjk)
+        Me.GroupBox2.Controls.Add(Me.Ttgl_lahir)
+        Me.GroupBox2.Controls.Add(Me.Tnm_suami)
         Me.GroupBox2.Controls.Add(Me.Label23)
-        Me.GroupBox2.Controls.Add(Me.TextBox2)
         Me.GroupBox2.Controls.Add(Me.Label13)
-        Me.GroupBox2.Controls.Add(Me.TextBox1)
-        Me.GroupBox2.Controls.Add(Me.ComboBox1)
-        Me.GroupBox2.Controls.Add(Me.TextBox10)
-        Me.GroupBox2.Controls.Add(Me.TextBox13)
-        Me.GroupBox2.Controls.Add(Me.TextBox14)
+        Me.GroupBox2.Controls.Add(Me.Tnm_ibu)
+        Me.GroupBox2.Controls.Add(Me.Tno_pasien)
         Me.GroupBox2.Controls.Add(Me.Label11)
         Me.GroupBox2.Controls.Add(Me.Label12)
         Me.GroupBox2.Controls.Add(Me.Label16)
@@ -80,13 +80,43 @@ Partial Class Fkb
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "PASIEN"
         '
-        'TextBox15
+        'Talamat
         '
-        Me.TextBox15.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox15.Location = New System.Drawing.Point(121, 250)
-        Me.TextBox15.Name = "TextBox15"
-        Me.TextBox15.Size = New System.Drawing.Size(167, 22)
-        Me.TextBox15.TabIndex = 12
+        Me.Talamat.Location = New System.Drawing.Point(121, 203)
+        Me.Talamat.Name = "Talamat"
+        Me.Talamat.Size = New System.Drawing.Size(170, 22)
+        Me.Talamat.TabIndex = 16
+        '
+        'Tpekerjaan
+        '
+        Me.Tpekerjaan.Location = New System.Drawing.Point(121, 169)
+        Me.Tpekerjaan.Name = "Tpekerjaan"
+        Me.Tpekerjaan.Size = New System.Drawing.Size(170, 22)
+        Me.Tpekerjaan.TabIndex = 15
+        '
+        'Cjk
+        '
+        Me.Cjk.FormattingEnabled = True
+        Me.Cjk.Items.AddRange(New Object() {"Laki-laki", "Perempuan"})
+        Me.Cjk.Location = New System.Drawing.Point(121, 133)
+        Me.Cjk.Name = "Cjk"
+        Me.Cjk.Size = New System.Drawing.Size(170, 22)
+        Me.Cjk.TabIndex = 14
+        '
+        'Ttgl_lahir
+        '
+        Me.Ttgl_lahir.Location = New System.Drawing.Point(121, 97)
+        Me.Ttgl_lahir.Name = "Ttgl_lahir"
+        Me.Ttgl_lahir.Size = New System.Drawing.Size(172, 22)
+        Me.Ttgl_lahir.TabIndex = 13
+        '
+        'Tnm_suami
+        '
+        Me.Tnm_suami.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tnm_suami.Location = New System.Drawing.Point(121, 250)
+        Me.Tnm_suami.Name = "Tnm_suami"
+        Me.Tnm_suami.Size = New System.Drawing.Size(167, 22)
+        Me.Tnm_suami.TabIndex = 12
         '
         'Label23
         '
@@ -98,14 +128,6 @@ Partial Class Fkb
         Me.Label23.TabIndex = 11
         Me.Label23.Text = "Nama Suami"
         '
-        'TextBox2
-        '
-        Me.TextBox2.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(121, 211)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(131, 22)
-        Me.TextBox2.TabIndex = 10
-        '
         'Label13
         '
         Me.Label13.AutoSize = True
@@ -116,46 +138,21 @@ Partial Class Fkb
         Me.Label13.TabIndex = 9
         Me.Label13.Text = "Alamat"
         '
-        'TextBox1
+        'Tnm_ibu
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(121, 169)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(131, 22)
-        Me.TextBox1.TabIndex = 8
+        Me.Tnm_ibu.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tnm_ibu.Location = New System.Drawing.Point(121, 61)
+        Me.Tnm_ibu.Name = "Tnm_ibu"
+        Me.Tnm_ibu.Size = New System.Drawing.Size(167, 22)
+        Me.Tnm_ibu.TabIndex = 6
         '
-        'ComboBox1
+        'Tno_pasien
         '
-        Me.ComboBox1.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(121, 133)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 22)
-        Me.ComboBox1.TabIndex = 1
-        '
-        'TextBox10
-        '
-        Me.TextBox10.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox10.Location = New System.Drawing.Point(121, 96)
-        Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.Size = New System.Drawing.Size(131, 22)
-        Me.TextBox10.TabIndex = 7
-        '
-        'TextBox13
-        '
-        Me.TextBox13.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox13.Location = New System.Drawing.Point(121, 61)
-        Me.TextBox13.Name = "TextBox13"
-        Me.TextBox13.Size = New System.Drawing.Size(167, 22)
-        Me.TextBox13.TabIndex = 6
-        '
-        'TextBox14
-        '
-        Me.TextBox14.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox14.Location = New System.Drawing.Point(121, 23)
-        Me.TextBox14.Name = "TextBox14"
-        Me.TextBox14.Size = New System.Drawing.Size(102, 22)
-        Me.TextBox14.TabIndex = 1
+        Me.Tno_pasien.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tno_pasien.Location = New System.Drawing.Point(121, 23)
+        Me.Tno_pasien.Name = "Tno_pasien"
+        Me.Tno_pasien.Size = New System.Drawing.Size(102, 22)
+        Me.Tno_pasien.TabIndex = 1
         '
         'Label11
         '
@@ -203,23 +200,23 @@ Partial Class Fkb
         Me.Label18.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label18.Location = New System.Drawing.Point(2, 23)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(94, 14)
+        Me.Label18.Size = New System.Drawing.Size(71, 14)
         Me.Label18.TabIndex = 1
-        Me.Label18.Text = "No Registrasi"
+        Me.Label18.Text = "No Pasien"
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.TextBox6)
-        Me.GroupBox1.Controls.Add(Me.ComboBox2)
-        Me.GroupBox1.Controls.Add(Me.TextBox4)
+        Me.GroupBox1.Controls.Add(Me.Thaid)
+        Me.GroupBox1.Controls.Add(Me.Ckb)
+        Me.GroupBox1.Controls.Add(Me.Tanak)
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Label19)
-        Me.GroupBox1.Controls.Add(Me.TextBox3)
+        Me.GroupBox1.Controls.Add(Me.Ttkn_darah)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.TextBox5)
+        Me.GroupBox1.Controls.Add(Me.Tbrt_badan)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(335, 48)
@@ -229,30 +226,29 @@ Partial Class Fkb
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "pemeriksaan KB"
         '
-        'TextBox6
+        'Thaid
         '
-        Me.TextBox6.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox6.Location = New System.Drawing.Point(108, 144)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(121, 22)
-        Me.TextBox6.TabIndex = 35
+        Me.Thaid.Location = New System.Drawing.Point(108, 144)
+        Me.Thaid.Name = "Thaid"
+        Me.Thaid.Size = New System.Drawing.Size(172, 22)
+        Me.Thaid.TabIndex = 35
         '
-        'ComboBox2
+        'Ckb
         '
-        Me.ComboBox2.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(108, 112)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(121, 22)
-        Me.ComboBox2.TabIndex = 34
+        Me.Ckb.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Ckb.FormattingEnabled = True
+        Me.Ckb.Location = New System.Drawing.Point(108, 112)
+        Me.Ckb.Name = "Ckb"
+        Me.Ckb.Size = New System.Drawing.Size(121, 22)
+        Me.Ckb.TabIndex = 34
         '
-        'TextBox4
+        'Tanak
         '
-        Me.TextBox4.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.Location = New System.Drawing.Point(108, 81)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(80, 22)
-        Me.TextBox4.TabIndex = 33
+        Me.Tanak.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tanak.Location = New System.Drawing.Point(108, 81)
+        Me.Tanak.Name = "Tanak"
+        Me.Tanak.Size = New System.Drawing.Size(80, 22)
+        Me.Tanak.TabIndex = 33
         '
         'Label7
         '
@@ -294,13 +290,13 @@ Partial Class Fkb
         Me.Label19.TabIndex = 29
         Me.Label19.Text = "MMHG"
         '
-        'TextBox3
+        'Ttkn_darah
         '
-        Me.TextBox3.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.Location = New System.Drawing.Point(108, 48)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(80, 22)
-        Me.TextBox3.TabIndex = 28
+        Me.Ttkn_darah.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Ttkn_darah.Location = New System.Drawing.Point(108, 48)
+        Me.Ttkn_darah.Name = "Ttkn_darah"
+        Me.Ttkn_darah.Size = New System.Drawing.Size(80, 22)
+        Me.Ttkn_darah.TabIndex = 28
         '
         'Label2
         '
@@ -322,13 +318,13 @@ Partial Class Fkb
         Me.Label1.TabIndex = 26
         Me.Label1.Text = "KG"
         '
-        'TextBox5
+        'Tbrt_badan
         '
-        Me.TextBox5.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox5.Location = New System.Drawing.Point(108, 22)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(80, 22)
-        Me.TextBox5.TabIndex = 25
+        Me.Tbrt_badan.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tbrt_badan.Location = New System.Drawing.Point(108, 22)
+        Me.Tbrt_badan.Name = "Tbrt_badan"
+        Me.Tbrt_badan.Size = New System.Drawing.Size(80, 22)
+        Me.Tbrt_badan.TabIndex = 25
         '
         'Label5
         '
@@ -379,15 +375,11 @@ Partial Class Fkb
 
     End Sub
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
-    Friend WithEvents TextBox15 As System.Windows.Forms.TextBox
+    Friend WithEvents Tnm_suami As System.Windows.Forms.TextBox
     Friend WithEvents Label23 As System.Windows.Forms.Label
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
     Friend WithEvents Label13 As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
-    Friend WithEvents TextBox10 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox13 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox14 As System.Windows.Forms.TextBox
+    Friend WithEvents Tnm_ibu As System.Windows.Forms.TextBox
+    Friend WithEvents Tno_pasien As System.Windows.Forms.TextBox
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents Label16 As System.Windows.Forms.Label
@@ -395,17 +387,21 @@ Partial Class Fkb
     Friend WithEvents Label18 As System.Windows.Forms.Label
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents Label19 As System.Windows.Forms.Label
-    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
+    Friend WithEvents Ttkn_darah As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
+    Friend WithEvents Tbrt_badan As System.Windows.Forms.TextBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents TextBox6 As System.Windows.Forms.TextBox
-    Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
-    Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
+    Friend WithEvents Ckb As System.Windows.Forms.ComboBox
+    Friend WithEvents Tanak As System.Windows.Forms.TextBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Button4 As System.Windows.Forms.Button
     Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents Ttgl_lahir As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Talamat As System.Windows.Forms.TextBox
+    Friend WithEvents Tpekerjaan As System.Windows.Forms.TextBox
+    Friend WithEvents Cjk As System.Windows.Forms.ComboBox
+    Friend WithEvents Thaid As System.Windows.Forms.DateTimePicker
 End Class

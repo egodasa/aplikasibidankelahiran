@@ -9,6 +9,16 @@
         Cjk.SelectedIndex = 0
         Tnm_pasien.Clear()
     End Sub
+    Sub resetAnc()
+        Tnm_suami.Clear()
+        Ttgi_badan.Clear()
+        Tbrt_badan.Clear()
+        Thpht.ResetText()
+        Thtp.ResetText()
+        Tkb.ResetText()
+        Tdiagnosa.Clear()
+        Tumr_kehamilan.Clear()
+    End Sub
     Sub resetId()
         id_periksa = DateTime.Now.Ticks.ToString()
     End Sub
@@ -68,11 +78,17 @@
     End Sub
 
     Private Sub Bexit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bexit.Click
-
+        Me.Close()
     End Sub
 
     Private Sub Bsimpan_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bsimpan.Click
         runQuery("insert into tbl_periksa (id_periksa, no_pasien,keluhan, tensi) values ('" & id_periksa & "'," & Tno_pasien.Text & ",'" & Tkeluhan.Text & "','" & Ttkn_darah.Text & "')")
+        If is_anc.Checked = True Then
+            runQuery("insert into tbl_anc (id_periksa,nm_suami,tinggi_bdn,berat_bdn,tekanan_drh,hpht,htp,diagnosa,umur_khmln,kb_terakhir) values ('" & id_periksa & "','" & Tnm_suami.Text & "'," & Ttgi_badan.Text & "," & Tbrt_badan.Text & ",'" & Ttkn_darah.Text &
+                     "', '" & Thpht.Value.ToString("yyyy-MM-dd") & "', '" & Thtp.Value.ToString("yyyy-MM-dd") & "','" & Tdiagnosa.Text & "'," & Tumr_kehamilan.Text & ", '" & Tkb.Value.ToString("yyyy-MM-dd") & "')")
+            Call resetAnc()
+            is_anc.Checked = False
+        End If
         If DGobat_beli.RowCount <> 0 Then
             For Each x As DataGridViewRow In DGobat_beli.Rows
                 If Not x.IsNewRow Then
@@ -82,7 +98,7 @@
                 End If
             Next
         End If
-        MessageBox.Show("Data berhasil disimpan", "Pesan", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
         Call resetDataPasien()
         Tkeluhan.Clear()
         Ttkn_darah.Clear()
@@ -97,5 +113,17 @@
     Private Sub DGrekap_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DGrekap.CellContentClick
         Ttkn_darah.Text = DGrekap.CurrentRow.Cells("tensi").Value
         Tkeluhan.Text = DGrekap.CurrentRow.Cells("keluhan").Value
+    End Sub
+
+    Private Sub CheckBox1_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles is_anc.CheckedChanged
+        If Group_anc.Enabled = True Then
+            Group_anc.Enabled = False
+        Else
+            Group_anc.Enabled = True
+        End If
+    End Sub
+
+    Private Sub Tkb_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tkb.ValueChanged
+
     End Sub
 End Class

@@ -32,7 +32,7 @@
 
     Private Sub Bsave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bsave.Click
         runQuery("insert into tbl_pasien (nm_pasien, tgl_lahir, jk, pekerjaan, alamat) values ('" & Tnm_pasien.Text & "', STR_TO_DATE('" & Ttgl_lahir.Value.ToString("dd-MM-yyyy") & "', '%d-%m-%Y'), '" & Cjk.Text & "', '" & Tpekerjaan.Text & "', '" & Talamat.Text & "') ")
-        MessageBox.Show("Data berhasil disimpan", "Pesan", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Call successMessage()
         Call resetForm()
         Tnm_pasien.Focus()
         fetchData(DGpasien, "select no_pasien as `No Pasien`, nm_pasien as `Nama Pasien`, DATE_FORMAT(tgl_lahir, '%d/%m/%Y') as `Tgl lahir`, jk as `Jenis Kelamin`, pekerjaan as `Pekerjaaan`, alamat as `Alamat` from tbl_pasien")

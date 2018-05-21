@@ -31,4 +31,7 @@ Module db
         cmd.ExecuteNonQuery()
 
     End Sub
+    Sub successMessage()
+        MessageBox.Show("Data berhasil disimpan", "Pesan", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    End Sub
 End Module

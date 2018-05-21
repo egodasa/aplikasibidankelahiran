@@ -26,7 +26,7 @@
 
     Private Sub Bsave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bsave.Click
         runQuery("insert into tbl_obat (nm_obat, stok, id_jobat) values ('" & Tnm_obat.Text & "', " & Tstok.Text & ", " & Cjns_obat.SelectedValue & ")")
-        MessageBox.Show("Data berhasil disimpan", "Pesan", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Call successMessage()
         fetchData(DGobat, "select nm_obat as `Nama Obat`, stok as Stok, status as Status from tbl_obat")
         Call resetForm()
     End Sub
