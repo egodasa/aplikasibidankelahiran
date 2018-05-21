@@ -1,7 +1,6 @@
 ﻿Public Class Fperiksa
     Dim DGpasien As New DataGridView
-    Dim data_pasien As DataTable
-    Dim obat_beli As DataTable
+    Dim data_pasien, obat_beli As New DataTable
     Dim id_periksa As String = DateTime.Now.Ticks.ToString()
     Sub resetDataPasien()
         Ttgl_lahir.ResetText()
@@ -52,8 +51,9 @@
 
     Private Sub Tnm_obat_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tnm_obat.TextChanged
         If Tnm_obat.TextLength <> 0 Then
-
             fetchData(DGdaftar_obat, "select a.id_obat, a.nm_obat as `Nama Obat`, a.stok as Stok, b.nm_jobat as `Jenis`, a.status as Status from tbl_obat a inner join tbl_jenis_obat b on a.id_jobat = b.id_jobat where a.nm_obat like '%" & Tnm_obat.Text & "%'")
+        Else
+            fetchData(DGdaftar_obat, "select a.id_obat, a.nm_obat as `Nama Obat`, a.stok as Stok, b.nm_jobat as `Jenis`, a.status as Status from tbl_obat a inner join tbl_jenis_obat b on a.id_jobat = b.id_jobat")
         End If
     End Sub
 
@@ -61,10 +61,9 @@
         End Sub
 
     Private Sub DGdaftar_obat_CellContentDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DGdaftar_obat.CellContentDoubleClick
-        DGobat_beli.Rows.Add(New String() {DGdaftar_obat.CurrentRow.Cells(0).Value, DGdaftar_obat.CurrentRow.Cells(1).Value, Tjml_obat.Text})
+        DGobat_beli.Rows.Add(New String() {DGdaftar_obat.CurrentRow.Cells(0).Value, DGdaftar_obat.CurrentRow.Cells(1).Value, 0})
         DGobat_beli.Refresh()
         Tnm_obat.Clear()
-        Tjml_obat.Clear()
         fetchData(DGdaftar_obat, "select a.id_obat, a.nm_obat as `Nama Obat`, a.stok as Stok, b.nm_jobat as `Jenis`, a.status as Status from tbl_obat a inner join tbl_jenis_obat b on a.id_jobat = b.id_jobat")
     End Sub
 
@@ -74,10 +73,13 @@
 
     Private Sub Bsimpan_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bsimpan.Click
         runQuery("insert into tbl_periksa (id_periksa, no_pasien,keluhan, tensi) values ('" & id_periksa & "'," & Tno_pasien.Text & ",'" & Tkeluhan.Text & "','" & Ttkn_darah.Text & "')")
-        obat_beli = DGobat_beli.DataSource
-        If obat_beli.Rows.Count <> 0 Then
-            For Each x In obat_beli.Rows
-                runQuery("insert into tbl_terapi()")
+        If DGobat_beli.RowCount <> 0 Then
+            For Each x As DataGridViewRow In DGobat_beli.Rows
+                If Not x.IsNewRow Then
+                    If x.Cells(2).Value <> 0 Then
+                        runQuery("insert into tbl_terapi(id_obat, jumlah, id_periksa) values (" & x.Cells(0).Value & "," & x.Cells(2).Value & ", " & id_periksa & ")")
+                    End If
+                End If
             Next
         End If
         MessageBox.Show("Data berhasil disimpan", "Pesan", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -86,6 +88,9 @@
         Ttkn_darah.Clear()
         Tno_pasien.Clear()
         Tno_pasien.Focus()
+        DGobat_beli.DataSource = Nothing
+        DGobat_beli.Refresh()
+        Tnm_obat.Clear()
         Call resetId()
     End Sub
 
