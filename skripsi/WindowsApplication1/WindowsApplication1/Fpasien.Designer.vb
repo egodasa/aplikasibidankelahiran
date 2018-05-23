@@ -34,15 +34,15 @@ Partial Class Fpasien
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Bcancel = New System.Windows.Forms.Button()
+        Me.Bdelete = New System.Windows.Forms.Button()
+        Me.Bedit = New System.Windows.Forms.Button()
         Me.Bexit = New System.Windows.Forms.Button()
         Me.Bsave = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Tcari = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.DGpasien = New System.Windows.Forms.DataGridView()
-        Me.Bedit = New System.Windows.Forms.Button()
-        Me.Bdelete = New System.Windows.Forms.Button()
-        Me.Bcancel = New System.Windows.Forms.Button()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -171,6 +171,39 @@ Partial Class Fpasien
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "PROSES"
         '
+        'Bcancel
+        '
+        Me.Bcancel.Enabled = False
+        Me.Bcancel.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Bcancel.Location = New System.Drawing.Point(12, 100)
+        Me.Bcancel.Name = "Bcancel"
+        Me.Bcancel.Size = New System.Drawing.Size(75, 23)
+        Me.Bcancel.TabIndex = 5
+        Me.Bcancel.Text = "CANCEL"
+        Me.Bcancel.UseVisualStyleBackColor = True
+        '
+        'Bdelete
+        '
+        Me.Bdelete.Enabled = False
+        Me.Bdelete.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Bdelete.Location = New System.Drawing.Point(12, 71)
+        Me.Bdelete.Name = "Bdelete"
+        Me.Bdelete.Size = New System.Drawing.Size(75, 23)
+        Me.Bdelete.TabIndex = 4
+        Me.Bdelete.Text = "DELETE"
+        Me.Bdelete.UseVisualStyleBackColor = True
+        '
+        'Bedit
+        '
+        Me.Bedit.Enabled = False
+        Me.Bedit.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Bedit.Location = New System.Drawing.Point(12, 42)
+        Me.Bedit.Name = "Bedit"
+        Me.Bedit.Size = New System.Drawing.Size(75, 23)
+        Me.Bedit.TabIndex = 3
+        Me.Bedit.Text = "EDIT"
+        Me.Bedit.UseVisualStyleBackColor = True
+        '
         'Bexit
         '
         Me.Bexit.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -228,39 +261,6 @@ Partial Class Fpasien
         Me.DGpasien.ReadOnly = True
         Me.DGpasien.Size = New System.Drawing.Size(547, 150)
         Me.DGpasien.TabIndex = 15
-        '
-        'Bedit
-        '
-        Me.Bedit.Enabled = False
-        Me.Bedit.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Bedit.Location = New System.Drawing.Point(12, 42)
-        Me.Bedit.Name = "Bedit"
-        Me.Bedit.Size = New System.Drawing.Size(75, 23)
-        Me.Bedit.TabIndex = 3
-        Me.Bedit.Text = "EDIT"
-        Me.Bedit.UseVisualStyleBackColor = True
-        '
-        'Bdelete
-        '
-        Me.Bdelete.Enabled = False
-        Me.Bdelete.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Bdelete.Location = New System.Drawing.Point(12, 71)
-        Me.Bdelete.Name = "Bdelete"
-        Me.Bdelete.Size = New System.Drawing.Size(75, 23)
-        Me.Bdelete.TabIndex = 4
-        Me.Bdelete.Text = "DELETE"
-        Me.Bdelete.UseVisualStyleBackColor = True
-        '
-        'Bcancel
-        '
-        Me.Bcancel.Enabled = False
-        Me.Bcancel.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Bcancel.Location = New System.Drawing.Point(12, 100)
-        Me.Bcancel.Name = "Bcancel"
-        Me.Bcancel.Size = New System.Drawing.Size(75, 23)
-        Me.Bcancel.TabIndex = 5
-        Me.Bcancel.Text = "CANCEL"
-        Me.Bcancel.UseVisualStyleBackColor = True
         '
         'Fpasien
         '

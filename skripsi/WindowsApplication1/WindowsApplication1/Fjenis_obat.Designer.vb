@@ -22,49 +22,20 @@ Partial Class Fjenis_obat
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Bexit = New System.Windows.Forms.Button()
-        Me.Bsave = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.DGjobat = New System.Windows.Forms.DataGridView()
         Me.Tnm_jenis = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.GroupBox2.SuspendLayout()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Bcancel = New System.Windows.Forms.Button()
+        Me.Bdelete = New System.Windows.Forms.Button()
+        Me.Bedit = New System.Windows.Forms.Button()
+        Me.Bexit = New System.Windows.Forms.Button()
+        Me.Bsave = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DGjobat, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.Controls.Add(Me.Bexit)
-        Me.GroupBox2.Controls.Add(Me.Bsave)
-        Me.GroupBox2.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(458, 12)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(97, 70)
-        Me.GroupBox2.TabIndex = 5
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "PROSES"
-        '
-        'Bexit
-        '
-        Me.Bexit.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Bexit.Location = New System.Drawing.Point(12, 41)
-        Me.Bexit.Name = "Bexit"
-        Me.Bexit.Size = New System.Drawing.Size(75, 23)
-        Me.Bexit.TabIndex = 2
-        Me.Bexit.Text = "EXIT"
-        Me.Bexit.UseVisualStyleBackColor = True
-        '
-        'Bsave
-        '
-        Me.Bsave.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Bsave.Location = New System.Drawing.Point(12, 13)
-        Me.Bsave.Name = "Bsave"
-        Me.Bsave.Size = New System.Drawing.Size(75, 23)
-        Me.Bsave.TabIndex = 1
-        Me.Bsave.Text = "SAVE"
-        Me.Bsave.UseVisualStyleBackColor = True
         '
         'GroupBox1
         '
@@ -104,6 +75,74 @@ Partial Class Fjenis_obat
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "nama jenis obat"
         '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.Bcancel)
+        Me.GroupBox2.Controls.Add(Me.Bdelete)
+        Me.GroupBox2.Controls.Add(Me.Bedit)
+        Me.GroupBox2.Controls.Add(Me.Bexit)
+        Me.GroupBox2.Controls.Add(Me.Bsave)
+        Me.GroupBox2.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox2.Location = New System.Drawing.Point(458, 12)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(97, 165)
+        Me.GroupBox2.TabIndex = 13
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "PROSES"
+        '
+        'Bcancel
+        '
+        Me.Bcancel.Enabled = False
+        Me.Bcancel.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Bcancel.Location = New System.Drawing.Point(12, 100)
+        Me.Bcancel.Name = "Bcancel"
+        Me.Bcancel.Size = New System.Drawing.Size(75, 23)
+        Me.Bcancel.TabIndex = 5
+        Me.Bcancel.Text = "CANCEL"
+        Me.Bcancel.UseVisualStyleBackColor = True
+        '
+        'Bdelete
+        '
+        Me.Bdelete.Enabled = False
+        Me.Bdelete.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Bdelete.Location = New System.Drawing.Point(12, 71)
+        Me.Bdelete.Name = "Bdelete"
+        Me.Bdelete.Size = New System.Drawing.Size(75, 23)
+        Me.Bdelete.TabIndex = 4
+        Me.Bdelete.Text = "DELETE"
+        Me.Bdelete.UseVisualStyleBackColor = True
+        '
+        'Bedit
+        '
+        Me.Bedit.Enabled = False
+        Me.Bedit.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Bedit.Location = New System.Drawing.Point(12, 42)
+        Me.Bedit.Name = "Bedit"
+        Me.Bedit.Size = New System.Drawing.Size(75, 23)
+        Me.Bedit.TabIndex = 3
+        Me.Bedit.Text = "EDIT"
+        Me.Bedit.UseVisualStyleBackColor = True
+        '
+        'Bexit
+        '
+        Me.Bexit.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Bexit.Location = New System.Drawing.Point(12, 129)
+        Me.Bexit.Name = "Bexit"
+        Me.Bexit.Size = New System.Drawing.Size(75, 23)
+        Me.Bexit.TabIndex = 2
+        Me.Bexit.Text = "EXIT"
+        Me.Bexit.UseVisualStyleBackColor = True
+        '
+        'Bsave
+        '
+        Me.Bsave.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Bsave.Location = New System.Drawing.Point(12, 13)
+        Me.Bsave.Name = "Bsave"
+        Me.Bsave.Size = New System.Drawing.Size(75, 23)
+        Me.Bsave.TabIndex = 1
+        Me.Bsave.Text = "SAVE"
+        Me.Bsave.UseVisualStyleBackColor = True
+        '
         'Fjenis_obat
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -113,18 +152,21 @@ Partial Class Fjenis_obat
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "Fjenis_obat"
         Me.Text = "jenis_obat"
-        Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.DGjobat, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox2.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
-    Friend WithEvents Bexit As System.Windows.Forms.Button
-    Friend WithEvents Bsave As System.Windows.Forms.Button
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents DGjobat As System.Windows.Forms.DataGridView
     Friend WithEvents Tnm_jenis As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents Bcancel As System.Windows.Forms.Button
+    Friend WithEvents Bdelete As System.Windows.Forms.Button
+    Friend WithEvents Bedit As System.Windows.Forms.Button
+    Friend WithEvents Bexit As System.Windows.Forms.Button
+    Friend WithEvents Bsave As System.Windows.Forms.Button
 End Class
