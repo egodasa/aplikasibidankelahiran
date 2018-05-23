@@ -34,4 +34,10 @@ Module db
     Sub successMessage()
         MessageBox.Show("Data berhasil disimpan", "Pesan", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
+    Sub editMessage()
+        MessageBox.Show("Data berhasil diubah", "Pesan", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    End Sub
+    Function deleteSql(ByVal t As String, ByVal id As String, ByVal id_val As String)
+        Return "delete from " & t & " where " & id & " = " & id_val
+    End Function
 End Module

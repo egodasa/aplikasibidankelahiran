@@ -49,6 +49,15 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MetroFramework">
+      <HintPath>.\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design">
+      <HintPath>.\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts">
+      <HintPath>.\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Data, Version=6.3.2.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files\MySQL\MySQL Connector Net 6.3.2\Assemblies\v2.0\MySql.Data.dll</HintPath>
@@ -88,6 +97,12 @@
       <DependentUpon>Fkb.vb</DependentUpon>
     </Compile>
     <Compile Include="Fkb.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fmenu.Designer.vb">
+      <DependentUpon>Fmenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fmenu.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Fpasien.Designer.vb">
@@ -136,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Fkb.resx">
       <DependentUpon>Fkb.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fmenu.resx">
+      <DependentUpon>Fmenu.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fpasien.resx">
       <DependentUpon>Fpasien.vb</DependentUpon>

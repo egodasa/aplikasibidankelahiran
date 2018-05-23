@@ -55,10 +55,6 @@ Partial Class Fkelahiran
         Me.Btambah = New System.Windows.Forms.Button()
         Me.Tketerangan = New System.Windows.Forms.TextBox()
         Me.Label21 = New System.Windows.Forms.Label()
-        Me.Label34 = New System.Windows.Forms.Label()
-        Me.Label33 = New System.Windows.Forms.Label()
-        Me.asuhan_bayi = New System.Windows.Forms.CheckedListBox()
-        Me.kondisi_bayi = New System.Windows.Forms.CheckedListBox()
         Me.Tnm_bayi = New System.Windows.Forms.TextBox()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.Cjk_bayi = New System.Windows.Forms.ComboBox()
@@ -71,7 +67,6 @@ Partial Class Fkelahiran
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.DGbayi = New System.Windows.Forms.DataGridView()
         Me.nm_bayi = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.anak_ke = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -102,12 +97,27 @@ Partial Class Fkelahiran
         Me.Label25 = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Bsimpan = New System.Windows.Forms.Button()
+        Me.Label34 = New System.Windows.Forms.Label()
+        Me.Label33 = New System.Windows.Forms.Label()
+        Me.asuhan_bayi = New System.Windows.Forms.CheckedListBox()
+        Me.kondisi_bayi = New System.Windows.Forms.CheckedListBox()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.KeluarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PasienToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AsuhanBayiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.KondisiBayiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LaporanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.KelahiranToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
-        Me.GroupBox5.SuspendLayout()
         CType(Me.DGbayi, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox6.SuspendLayout()
+        Me.GroupBox5.SuspendLayout()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -123,7 +133,7 @@ Partial Class Fkelahiran
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 250)
+        Me.GroupBox1.Location = New System.Drawing.Point(11, 265)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(281, 202)
         Me.GroupBox1.TabIndex = 0
@@ -268,7 +278,7 @@ Partial Class Fkelahiran
         Me.GroupBox2.Controls.Add(Me.Label17)
         Me.GroupBox2.Controls.Add(Me.Label18)
         Me.GroupBox2.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 19)
+        Me.GroupBox2.Location = New System.Drawing.Point(11, 34)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(281, 227)
         Me.GroupBox2.TabIndex = 6
@@ -427,7 +437,7 @@ Partial Class Fkelahiran
         Me.GroupBox3.Controls.Add(Me.Label8)
         Me.GroupBox3.Controls.Add(Me.Label10)
         Me.GroupBox3.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox3.Location = New System.Drawing.Point(299, 19)
+        Me.GroupBox3.Location = New System.Drawing.Point(298, 34)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(345, 547)
         Me.GroupBox3.TabIndex = 10
@@ -461,44 +471,6 @@ Partial Class Fkelahiran
         Me.Label21.Size = New System.Drawing.Size(147, 14)
         Me.Label21.TabIndex = 24
         Me.Label21.Text = "keterangan tambahan"
-        '
-        'Label34
-        '
-        Me.Label34.AutoSize = True
-        Me.Label34.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label34.Location = New System.Drawing.Point(6, 308)
-        Me.Label34.Name = "Label34"
-        Me.Label34.Size = New System.Drawing.Size(120, 14)
-        Me.Label34.TabIndex = 23
-        Me.Label34.Text = "Asuhan pada bayi"
-        '
-        'Label33
-        '
-        Me.Label33.AutoSize = True
-        Me.Label33.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label33.Location = New System.Drawing.Point(6, 186)
-        Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(125, 14)
-        Me.Label33.TabIndex = 22
-        Me.Label33.Text = "Kondisi saat lahir"
-        '
-        'asuhan_bayi
-        '
-        Me.asuhan_bayi.FormattingEnabled = True
-        Me.asuhan_bayi.Items.AddRange(New Object() {"Inisiasi menyusu dini (IMD) dalam 1 jam pertama kelahiran bayi", "Suntikan vitamin K1", "Salep mata antibiotika profilaksis", "Imunisasi HBO"})
-        Me.asuhan_bayi.Location = New System.Drawing.Point(6, 325)
-        Me.asuhan_bayi.Name = "asuhan_bayi"
-        Me.asuhan_bayi.Size = New System.Drawing.Size(333, 89)
-        Me.asuhan_bayi.TabIndex = 18
-        '
-        'kondisi_bayi
-        '
-        Me.kondisi_bayi.FormattingEnabled = True
-        Me.kondisi_bayi.Items.AddRange(New Object() {"Segera menangis", "Menangis beberapa saat", "Tidak menangis", "Seluruh tubuh kemerahan", "Anggota gerak kebiruan", "Seluruh tubuh biru", "Kelainan bawaan", "Meninggal"})
-        Me.kondisi_bayi.Location = New System.Drawing.Point(6, 203)
-        Me.kondisi_bayi.Name = "kondisi_bayi"
-        Me.kondisi_bayi.Size = New System.Drawing.Size(333, 89)
-        Me.kondisi_bayi.TabIndex = 9
         '
         'Tnm_bayi
         '
@@ -610,17 +582,6 @@ Partial Class Fkelahiran
         Me.Label5.TabIndex = 10
         Me.Label5.Text = "gram"
         '
-        'GroupBox5
-        '
-        Me.GroupBox5.Controls.Add(Me.DGbayi)
-        Me.GroupBox5.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox5.Location = New System.Drawing.Point(650, 19)
-        Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(390, 152)
-        Me.GroupBox5.TabIndex = 12
-        Me.GroupBox5.TabStop = False
-        Me.GroupBox5.Text = "Daftar bayi yang lahir"
-        '
         'DGbayi
         '
         Me.DGbayi.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
@@ -706,7 +667,7 @@ Partial Class Fkelahiran
         Me.GroupBox6.Controls.Add(Me.Label25)
         Me.GroupBox6.Controls.Add(Me.Label24)
         Me.GroupBox6.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox6.Location = New System.Drawing.Point(650, 239)
+        Me.GroupBox6.Location = New System.Drawing.Point(649, 215)
         Me.GroupBox6.Name = "GroupBox6"
         Me.GroupBox6.Size = New System.Drawing.Size(390, 275)
         Me.GroupBox6.TabIndex = 17
@@ -877,12 +838,121 @@ Partial Class Fkelahiran
         '
         'Bsimpan
         '
-        Me.Bsimpan.Location = New System.Drawing.Point(918, 181)
+        Me.Bsimpan.Location = New System.Drawing.Point(917, 188)
         Me.Bsimpan.Name = "Bsimpan"
         Me.Bsimpan.Size = New System.Drawing.Size(122, 21)
         Me.Bsimpan.TabIndex = 27
         Me.Bsimpan.Text = "Simpan kelahiran"
         Me.Bsimpan.UseVisualStyleBackColor = True
+        '
+        'Label34
+        '
+        Me.Label34.AutoSize = True
+        Me.Label34.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label34.Location = New System.Drawing.Point(6, 308)
+        Me.Label34.Name = "Label34"
+        Me.Label34.Size = New System.Drawing.Size(120, 14)
+        Me.Label34.TabIndex = 23
+        Me.Label34.Text = "Asuhan pada bayi"
+        '
+        'Label33
+        '
+        Me.Label33.AutoSize = True
+        Me.Label33.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label33.Location = New System.Drawing.Point(6, 186)
+        Me.Label33.Name = "Label33"
+        Me.Label33.Size = New System.Drawing.Size(125, 14)
+        Me.Label33.TabIndex = 22
+        Me.Label33.Text = "Kondisi saat lahir"
+        '
+        'asuhan_bayi
+        '
+        Me.asuhan_bayi.FormattingEnabled = True
+        Me.asuhan_bayi.Items.AddRange(New Object() {"Inisiasi menyusu dini (IMD) dalam 1 jam pertama kelahiran bayi", "Suntikan vitamin K1", "Salep mata antibiotika profilaksis", "Imunisasi HBO"})
+        Me.asuhan_bayi.Location = New System.Drawing.Point(6, 325)
+        Me.asuhan_bayi.Name = "asuhan_bayi"
+        Me.asuhan_bayi.Size = New System.Drawing.Size(333, 89)
+        Me.asuhan_bayi.TabIndex = 18
+        '
+        'kondisi_bayi
+        '
+        Me.kondisi_bayi.FormattingEnabled = True
+        Me.kondisi_bayi.Items.AddRange(New Object() {"Segera menangis", "Menangis beberapa saat", "Tidak menangis", "Seluruh tubuh kemerahan", "Anggota gerak kebiruan", "Seluruh tubuh biru", "Kelainan bawaan", "Meninggal"})
+        Me.kondisi_bayi.Location = New System.Drawing.Point(6, 203)
+        Me.kondisi_bayi.Name = "kondisi_bayi"
+        Me.kondisi_bayi.Size = New System.Drawing.Size(333, 89)
+        Me.kondisi_bayi.TabIndex = 9
+        '
+        'GroupBox5
+        '
+        Me.GroupBox5.Controls.Add(Me.DGbayi)
+        Me.GroupBox5.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox5.Location = New System.Drawing.Point(649, 34)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(390, 152)
+        Me.GroupBox5.TabIndex = 12
+        Me.GroupBox5.TabStop = False
+        Me.GroupBox5.Text = "Daftar bayi yang lahir"
+        '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.DataToolStripMenuItem, Me.LaporanToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(1040, 24)
+        Me.MenuStrip1.TabIndex = 28
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'FileToolStripMenuItem
+        '
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.KeluarToolStripMenuItem})
+        Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(35, 20)
+        Me.FileToolStripMenuItem.Text = "File"
+        '
+        'KeluarToolStripMenuItem
+        '
+        Me.KeluarToolStripMenuItem.Name = "KeluarToolStripMenuItem"
+        Me.KeluarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.KeluarToolStripMenuItem.Text = "Keluar"
+        '
+        'DataToolStripMenuItem
+        '
+        Me.DataToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PasienToolStripMenuItem, Me.AsuhanBayiToolStripMenuItem, Me.KondisiBayiToolStripMenuItem})
+        Me.DataToolStripMenuItem.Name = "DataToolStripMenuItem"
+        Me.DataToolStripMenuItem.Size = New System.Drawing.Size(42, 20)
+        Me.DataToolStripMenuItem.Text = "Data"
+        '
+        'PasienToolStripMenuItem
+        '
+        Me.PasienToolStripMenuItem.Name = "PasienToolStripMenuItem"
+        Me.PasienToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.PasienToolStripMenuItem.Text = "Pasien"
+        '
+        'AsuhanBayiToolStripMenuItem
+        '
+        Me.AsuhanBayiToolStripMenuItem.Name = "AsuhanBayiToolStripMenuItem"
+        Me.AsuhanBayiToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.AsuhanBayiToolStripMenuItem.Text = "Asuhan bayi"
+        '
+        'KondisiBayiToolStripMenuItem
+        '
+        Me.KondisiBayiToolStripMenuItem.Name = "KondisiBayiToolStripMenuItem"
+        Me.KondisiBayiToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.KondisiBayiToolStripMenuItem.Text = "Kondisi bayi"
+        '
+        'LaporanToolStripMenuItem
+        '
+        Me.LaporanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.KelahiranToolStripMenuItem})
+        Me.LaporanToolStripMenuItem.Name = "LaporanToolStripMenuItem"
+        Me.LaporanToolStripMenuItem.Size = New System.Drawing.Size(58, 20)
+        Me.LaporanToolStripMenuItem.Text = "Laporan"
+        '
+        'KelahiranToolStripMenuItem
+        '
+        Me.KelahiranToolStripMenuItem.Name = "KelahiranToolStripMenuItem"
+        Me.KelahiranToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.KelahiranToolStripMenuItem.Text = "Kelahiran"
         '
         'Fkelahiran
         '
@@ -895,6 +965,8 @@ Partial Class Fkelahiran
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.MenuStrip1)
+        Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "Fkelahiran"
         Me.Text = "Form Kelahiran"
         Me.GroupBox1.ResumeLayout(False)
@@ -903,11 +975,14 @@ Partial Class Fkelahiran
         Me.GroupBox2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
-        Me.GroupBox5.ResumeLayout(False)
         CType(Me.DGbayi, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox6.PerformLayout()
+        Me.GroupBox5.ResumeLayout(False)
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
@@ -943,7 +1018,6 @@ Partial Class Fkelahiran
     Friend WithEvents Label15 As System.Windows.Forms.Label
     Friend WithEvents Label14 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents GroupBox5 As System.Windows.Forms.GroupBox
     Friend WithEvents Tnm_suami As System.Windows.Forms.TextBox
     Friend WithEvents Label23 As System.Windows.Forms.Label
     Friend WithEvents Tnm_bayi As System.Windows.Forms.TextBox
@@ -968,10 +1042,6 @@ Partial Class Fkelahiran
     Friend WithEvents Label25 As System.Windows.Forms.Label
     Friend WithEvents Label24 As System.Windows.Forms.Label
     Friend WithEvents Ttgl_lahir As System.Windows.Forms.DateTimePicker
-    Friend WithEvents kondisi_bayi As System.Windows.Forms.CheckedListBox
-    Friend WithEvents asuhan_bayi As System.Windows.Forms.CheckedListBox
-    Friend WithEvents Label34 As System.Windows.Forms.Label
-    Friend WithEvents Label33 As System.Windows.Forms.Label
     Friend WithEvents Tketerangan As System.Windows.Forms.TextBox
     Friend WithEvents Label21 As System.Windows.Forms.Label
     Friend WithEvents DGbayi As System.Windows.Forms.DataGridView
@@ -990,4 +1060,18 @@ Partial Class Fkelahiran
     Friend WithEvents Tkeadaan As System.Windows.Forms.TextBox
     Friend WithEvents Tcara As System.Windows.Forms.TextBox
     Friend WithEvents Tpenolong As System.Windows.Forms.TextBox
+    Friend WithEvents Label34 As System.Windows.Forms.Label
+    Friend WithEvents Label33 As System.Windows.Forms.Label
+    Friend WithEvents asuhan_bayi As System.Windows.Forms.CheckedListBox
+    Friend WithEvents kondisi_bayi As System.Windows.Forms.CheckedListBox
+    Friend WithEvents GroupBox5 As System.Windows.Forms.GroupBox
+    Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
+    Friend WithEvents FileToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents KeluarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents DataToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents PasienToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AsuhanBayiToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents KondisiBayiToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents LaporanToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents KelahiranToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

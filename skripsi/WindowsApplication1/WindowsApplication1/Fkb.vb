@@ -22,6 +22,7 @@
         Ckb.ValueMember = "id_obat"
         Ckb.DisplayMember = "nm_obat"
         Ckb.SelectedIndex = 0
+        fetchData(DGrekap, "select * from laporan_kb")
     End Sub
 
     Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
@@ -52,5 +53,6 @@
         Call resetDataPasien()
         Call resetPeriksa()
         Tno_pasien.Focus()
+        DGrekap.Refresh()
     End Sub
 End Class

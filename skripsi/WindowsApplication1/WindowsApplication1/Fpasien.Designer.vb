@@ -36,11 +36,16 @@ Partial Class Fpasien
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Bexit = New System.Windows.Forms.Button()
         Me.Bsave = New System.Windows.Forms.Button()
-        Me.DGpasien = New System.Windows.Forms.DataGridView()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Tcari = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.DGpasien = New System.Windows.Forms.DataGridView()
+        Me.Bedit = New System.Windows.Forms.Button()
+        Me.Bdelete = New System.Windows.Forms.Button()
+        Me.Bcancel = New System.Windows.Forms.Button()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         CType(Me.DGpasien, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -59,21 +64,21 @@ Partial Class Fpasien
         Me.GroupBox2.Font = New System.Drawing.Font("Bookman Old Style", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(481, 203)
+        Me.GroupBox2.Size = New System.Drawing.Size(461, 172)
         Me.GroupBox2.TabIndex = 6
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "DATA PASIEN"
         '
         'Ttgl_lahir
         '
-        Me.Ttgl_lahir.Location = New System.Drawing.Point(143, 60)
+        Me.Ttgl_lahir.Location = New System.Drawing.Point(118, 51)
         Me.Ttgl_lahir.Name = "Ttgl_lahir"
-        Me.Ttgl_lahir.Size = New System.Drawing.Size(331, 23)
+        Me.Ttgl_lahir.Size = New System.Drawing.Size(335, 23)
         Me.Ttgl_lahir.TabIndex = 11
         '
         'Talamat
         '
-        Me.Talamat.Location = New System.Drawing.Point(140, 164)
+        Me.Talamat.Location = New System.Drawing.Point(118, 139)
         Me.Talamat.Name = "Talamat"
         Me.Talamat.Size = New System.Drawing.Size(335, 23)
         Me.Talamat.TabIndex = 10
@@ -82,7 +87,7 @@ Partial Class Fpasien
         '
         Me.Label21.AutoSize = True
         Me.Label21.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(21, 164)
+        Me.Label21.Location = New System.Drawing.Point(6, 139)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(53, 14)
         Me.Label21.TabIndex = 9
@@ -90,7 +95,7 @@ Partial Class Fpasien
         '
         'Tpekerjaan
         '
-        Me.Tpekerjaan.Location = New System.Drawing.Point(140, 130)
+        Me.Tpekerjaan.Location = New System.Drawing.Point(118, 110)
         Me.Tpekerjaan.Name = "Tpekerjaan"
         Me.Tpekerjaan.Size = New System.Drawing.Size(335, 23)
         Me.Tpekerjaan.TabIndex = 8
@@ -99,14 +104,14 @@ Partial Class Fpasien
         '
         Me.Cjk.FormattingEnabled = True
         Me.Cjk.Items.AddRange(New Object() {"Laki-laki", "Perempuan"})
-        Me.Cjk.Location = New System.Drawing.Point(140, 94)
+        Me.Cjk.Location = New System.Drawing.Point(118, 80)
         Me.Cjk.Name = "Cjk"
         Me.Cjk.Size = New System.Drawing.Size(335, 24)
         Me.Cjk.TabIndex = 1
         '
         'Tnm_pasien
         '
-        Me.Tnm_pasien.Location = New System.Drawing.Point(140, 22)
+        Me.Tnm_pasien.Location = New System.Drawing.Point(118, 22)
         Me.Tnm_pasien.Name = "Tnm_pasien"
         Me.Tnm_pasien.Size = New System.Drawing.Size(335, 23)
         Me.Tnm_pasien.TabIndex = 6
@@ -115,7 +120,7 @@ Partial Class Fpasien
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(21, 130)
+        Me.Label1.Location = New System.Drawing.Point(6, 110)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(70, 14)
         Me.Label1.TabIndex = 5
@@ -125,7 +130,7 @@ Partial Class Fpasien
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(21, 94)
+        Me.Label10.Location = New System.Drawing.Point(6, 80)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(102, 14)
         Me.Label10.TabIndex = 4
@@ -135,7 +140,7 @@ Partial Class Fpasien
         '
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(21, 58)
+        Me.Label16.Location = New System.Drawing.Point(6, 51)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(95, 14)
         Me.Label16.TabIndex = 3
@@ -145,7 +150,7 @@ Partial Class Fpasien
         '
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(21, 22)
+        Me.Label17.Location = New System.Drawing.Point(6, 22)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(89, 14)
         Me.Label17.TabIndex = 2
@@ -153,12 +158,15 @@ Partial Class Fpasien
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Bcancel)
+        Me.GroupBox1.Controls.Add(Me.Bdelete)
+        Me.GroupBox1.Controls.Add(Me.Bedit)
         Me.GroupBox1.Controls.Add(Me.Bexit)
         Me.GroupBox1.Controls.Add(Me.Bsave)
         Me.GroupBox1.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(499, 12)
+        Me.GroupBox1.Location = New System.Drawing.Point(481, 16)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(97, 70)
+        Me.GroupBox1.Size = New System.Drawing.Size(97, 168)
         Me.GroupBox1.TabIndex = 7
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "PROSES"
@@ -166,7 +174,7 @@ Partial Class Fpasien
         'Bexit
         '
         Me.Bexit.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Bexit.Location = New System.Drawing.Point(12, 41)
+        Me.Bexit.Location = New System.Drawing.Point(12, 129)
         Me.Bexit.Name = "Bexit"
         Me.Bexit.Size = New System.Drawing.Size(75, 23)
         Me.Bexit.TabIndex = 2
@@ -183,49 +191,94 @@ Partial Class Fpasien
         Me.Bsave.Text = "SAVE"
         Me.Bsave.UseVisualStyleBackColor = True
         '
-        'DGpasien
+        'GroupBox3
         '
-        Me.DGpasien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGpasien.Location = New System.Drawing.Point(12, 247)
-        Me.DGpasien.Name = "DGpasien"
-        Me.DGpasien.Size = New System.Drawing.Size(584, 150)
-        Me.DGpasien.TabIndex = 13
+        Me.GroupBox3.Controls.Add(Me.Tcari)
+        Me.GroupBox3.Controls.Add(Me.Label2)
+        Me.GroupBox3.Controls.Add(Me.DGpasien)
+        Me.GroupBox3.Location = New System.Drawing.Point(12, 190)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(566, 202)
+        Me.GroupBox3.TabIndex = 14
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Daftar Pasien"
         '
         'Tcari
         '
-        Me.Tcari.Location = New System.Drawing.Point(130, 221)
+        Me.Tcari.Location = New System.Drawing.Point(118, 16)
         Me.Tcari.Name = "Tcari"
-        Me.Tcari.Size = New System.Drawing.Size(363, 20)
-        Me.Tcari.TabIndex = 13
+        Me.Tcari.Size = New System.Drawing.Size(438, 20)
+        Me.Tcari.TabIndex = 16
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(12, 227)
+        Me.Label2.Location = New System.Drawing.Point(6, 16)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(81, 14)
-        Me.Label2.TabIndex = 12
+        Me.Label2.TabIndex = 14
         Me.Label2.Text = "Cari pasien"
+        '
+        'DGpasien
+        '
+        Me.DGpasien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGpasien.Location = New System.Drawing.Point(9, 42)
+        Me.DGpasien.Name = "DGpasien"
+        Me.DGpasien.ReadOnly = True
+        Me.DGpasien.Size = New System.Drawing.Size(547, 150)
+        Me.DGpasien.TabIndex = 15
+        '
+        'Bedit
+        '
+        Me.Bedit.Enabled = False
+        Me.Bedit.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Bedit.Location = New System.Drawing.Point(12, 42)
+        Me.Bedit.Name = "Bedit"
+        Me.Bedit.Size = New System.Drawing.Size(75, 23)
+        Me.Bedit.TabIndex = 3
+        Me.Bedit.Text = "EDIT"
+        Me.Bedit.UseVisualStyleBackColor = True
+        '
+        'Bdelete
+        '
+        Me.Bdelete.Enabled = False
+        Me.Bdelete.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Bdelete.Location = New System.Drawing.Point(12, 71)
+        Me.Bdelete.Name = "Bdelete"
+        Me.Bdelete.Size = New System.Drawing.Size(75, 23)
+        Me.Bdelete.TabIndex = 4
+        Me.Bdelete.Text = "DELETE"
+        Me.Bdelete.UseVisualStyleBackColor = True
+        '
+        'Bcancel
+        '
+        Me.Bcancel.Enabled = False
+        Me.Bcancel.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Bcancel.Location = New System.Drawing.Point(12, 100)
+        Me.Bcancel.Name = "Bcancel"
+        Me.Bcancel.Size = New System.Drawing.Size(75, 23)
+        Me.Bcancel.TabIndex = 5
+        Me.Bcancel.Text = "CANCEL"
+        Me.Bcancel.UseVisualStyleBackColor = True
         '
         'Fpasien
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(608, 404)
-        Me.Controls.Add(Me.Tcari)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.DGpasien)
+        Me.ClientSize = New System.Drawing.Size(585, 395)
+        Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Name = "Fpasien"
-        Me.Text = "Fpasien"
+        Me.Text = "Form Pasien"
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         CType(Me.DGpasien, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
@@ -242,7 +295,11 @@ Partial Class Fpasien
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents Bexit As System.Windows.Forms.Button
     Friend WithEvents Bsave As System.Windows.Forms.Button
-    Friend WithEvents DGpasien As System.Windows.Forms.DataGridView
+    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents Tcari As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents DGpasien As System.Windows.Forms.DataGridView
+    Friend WithEvents Bcancel As System.Windows.Forms.Button
+    Friend WithEvents Bdelete As System.Windows.Forms.Button
+    Friend WithEvents Bedit As System.Windows.Forms.Button
 End Class

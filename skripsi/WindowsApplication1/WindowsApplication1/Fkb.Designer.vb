@@ -52,8 +52,12 @@ Partial Class Fkb
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.DGrekap = New System.Windows.Forms.DataGridView()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
+        CType(Me.DGrekap, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox2
@@ -73,23 +77,23 @@ Partial Class Fkb
         Me.GroupBox2.Controls.Add(Me.Label17)
         Me.GroupBox2.Controls.Add(Me.Label18)
         Me.GroupBox2.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 48)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(304, 292)
+        Me.GroupBox2.Size = New System.Drawing.Size(304, 237)
         Me.GroupBox2.TabIndex = 7
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "PASIEN"
         '
         'Talamat
         '
-        Me.Talamat.Location = New System.Drawing.Point(121, 203)
+        Me.Talamat.Location = New System.Drawing.Point(112, 158)
         Me.Talamat.Name = "Talamat"
         Me.Talamat.Size = New System.Drawing.Size(170, 22)
         Me.Talamat.TabIndex = 16
         '
         'Tpekerjaan
         '
-        Me.Tpekerjaan.Location = New System.Drawing.Point(121, 169)
+        Me.Tpekerjaan.Location = New System.Drawing.Point(112, 130)
         Me.Tpekerjaan.Name = "Tpekerjaan"
         Me.Tpekerjaan.Size = New System.Drawing.Size(170, 22)
         Me.Tpekerjaan.TabIndex = 15
@@ -98,31 +102,31 @@ Partial Class Fkb
         '
         Me.Cjk.FormattingEnabled = True
         Me.Cjk.Items.AddRange(New Object() {"Laki-laki", "Perempuan"})
-        Me.Cjk.Location = New System.Drawing.Point(121, 133)
+        Me.Cjk.Location = New System.Drawing.Point(112, 102)
         Me.Cjk.Name = "Cjk"
         Me.Cjk.Size = New System.Drawing.Size(170, 22)
         Me.Cjk.TabIndex = 14
         '
         'Ttgl_lahir
         '
-        Me.Ttgl_lahir.Location = New System.Drawing.Point(121, 97)
+        Me.Ttgl_lahir.Location = New System.Drawing.Point(112, 74)
         Me.Ttgl_lahir.Name = "Ttgl_lahir"
-        Me.Ttgl_lahir.Size = New System.Drawing.Size(172, 22)
+        Me.Ttgl_lahir.Size = New System.Drawing.Size(167, 22)
         Me.Ttgl_lahir.TabIndex = 13
         '
         'Tnm_suami
         '
         Me.Tnm_suami.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tnm_suami.Location = New System.Drawing.Point(121, 250)
+        Me.Tnm_suami.Location = New System.Drawing.Point(112, 186)
         Me.Tnm_suami.Name = "Tnm_suami"
-        Me.Tnm_suami.Size = New System.Drawing.Size(167, 22)
+        Me.Tnm_suami.Size = New System.Drawing.Size(170, 22)
         Me.Tnm_suami.TabIndex = 12
         '
         'Label23
         '
         Me.Label23.AutoSize = True
         Me.Label23.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label23.Location = New System.Drawing.Point(2, 250)
+        Me.Label23.Location = New System.Drawing.Point(10, 186)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(87, 14)
         Me.Label23.TabIndex = 11
@@ -132,7 +136,7 @@ Partial Class Fkb
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(2, 211)
+        Me.Label13.Location = New System.Drawing.Point(10, 158)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(53, 14)
         Me.Label13.TabIndex = 9
@@ -141,7 +145,7 @@ Partial Class Fkb
         'Tnm_ibu
         '
         Me.Tnm_ibu.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tnm_ibu.Location = New System.Drawing.Point(121, 61)
+        Me.Tnm_ibu.Location = New System.Drawing.Point(112, 46)
         Me.Tnm_ibu.Name = "Tnm_ibu"
         Me.Tnm_ibu.Size = New System.Drawing.Size(167, 22)
         Me.Tnm_ibu.TabIndex = 6
@@ -149,7 +153,7 @@ Partial Class Fkb
         'Tno_pasien
         '
         Me.Tno_pasien.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tno_pasien.Location = New System.Drawing.Point(121, 23)
+        Me.Tno_pasien.Location = New System.Drawing.Point(112, 18)
         Me.Tno_pasien.Name = "Tno_pasien"
         Me.Tno_pasien.Size = New System.Drawing.Size(102, 22)
         Me.Tno_pasien.TabIndex = 1
@@ -158,7 +162,7 @@ Partial Class Fkb
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(2, 169)
+        Me.Label11.Location = New System.Drawing.Point(10, 130)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(70, 14)
         Me.Label11.TabIndex = 5
@@ -168,7 +172,7 @@ Partial Class Fkb
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(2, 133)
+        Me.Label12.Location = New System.Drawing.Point(10, 102)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(102, 14)
         Me.Label12.TabIndex = 4
@@ -178,7 +182,7 @@ Partial Class Fkb
         '
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(2, 97)
+        Me.Label16.Location = New System.Drawing.Point(10, 74)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(95, 14)
         Me.Label16.TabIndex = 3
@@ -188,7 +192,7 @@ Partial Class Fkb
         '
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(2, 61)
+        Me.Label17.Location = New System.Drawing.Point(10, 46)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(67, 14)
         Me.Label17.TabIndex = 2
@@ -198,7 +202,7 @@ Partial Class Fkb
         '
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(2, 23)
+        Me.Label18.Location = New System.Drawing.Point(10, 18)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(71, 14)
         Me.Label18.TabIndex = 1
@@ -219,16 +223,16 @@ Partial Class Fkb
         Me.GroupBox1.Controls.Add(Me.Tbrt_badan)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(335, 48)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 255)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(301, 201)
+        Me.GroupBox1.Size = New System.Drawing.Size(304, 181)
         Me.GroupBox1.TabIndex = 8
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "pemeriksaan KB"
+        Me.GroupBox1.Text = "Pemeriksaan KB"
         '
         'Thaid
         '
-        Me.Thaid.Location = New System.Drawing.Point(108, 144)
+        Me.Thaid.Location = New System.Drawing.Point(108, 127)
         Me.Thaid.Name = "Thaid"
         Me.Thaid.Size = New System.Drawing.Size(172, 22)
         Me.Thaid.TabIndex = 35
@@ -237,7 +241,7 @@ Partial Class Fkb
         '
         Me.Ckb.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Ckb.FormattingEnabled = True
-        Me.Ckb.Location = New System.Drawing.Point(108, 112)
+        Me.Ckb.Location = New System.Drawing.Point(108, 99)
         Me.Ckb.Name = "Ckb"
         Me.Ckb.Size = New System.Drawing.Size(121, 22)
         Me.Ckb.TabIndex = 34
@@ -245,7 +249,7 @@ Partial Class Fkb
         'Tanak
         '
         Me.Tanak.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tanak.Location = New System.Drawing.Point(108, 81)
+        Me.Tanak.Location = New System.Drawing.Point(108, 71)
         Me.Tanak.Name = "Tanak"
         Me.Tanak.Size = New System.Drawing.Size(80, 22)
         Me.Tanak.TabIndex = 33
@@ -254,7 +258,7 @@ Partial Class Fkb
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(6, 144)
+        Me.Label7.Location = New System.Drawing.Point(6, 127)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(92, 14)
         Me.Label7.TabIndex = 32
@@ -264,7 +268,7 @@ Partial Class Fkb
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(6, 112)
+        Me.Label3.Location = New System.Drawing.Point(6, 99)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(62, 14)
         Me.Label3.TabIndex = 31
@@ -274,7 +278,7 @@ Partial Class Fkb
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(6, 84)
+        Me.Label4.Location = New System.Drawing.Point(6, 71)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(57, 14)
         Me.Label4.TabIndex = 30
@@ -293,7 +297,7 @@ Partial Class Fkb
         'Ttkn_darah
         '
         Me.Ttkn_darah.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Ttkn_darah.Location = New System.Drawing.Point(108, 48)
+        Me.Ttkn_darah.Location = New System.Drawing.Point(108, 43)
         Me.Ttkn_darah.Name = "Ttkn_darah"
         Me.Ttkn_darah.Size = New System.Drawing.Size(80, 22)
         Me.Ttkn_darah.TabIndex = 28
@@ -302,7 +306,7 @@ Partial Class Fkb
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(6, 51)
+        Me.Label2.Location = New System.Drawing.Point(6, 43)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(100, 14)
         Me.Label2.TabIndex = 27
@@ -321,7 +325,7 @@ Partial Class Fkb
         'Tbrt_badan
         '
         Me.Tbrt_badan.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tbrt_badan.Location = New System.Drawing.Point(108, 22)
+        Me.Tbrt_badan.Location = New System.Drawing.Point(108, 17)
         Me.Tbrt_badan.Name = "Tbrt_badan"
         Me.Tbrt_badan.Size = New System.Drawing.Size(80, 22)
         Me.Tbrt_badan.TabIndex = 25
@@ -330,7 +334,7 @@ Partial Class Fkb
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(6, 23)
+        Me.Label5.Location = New System.Drawing.Point(6, 17)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(82, 14)
         Me.Label5.TabIndex = 24
@@ -339,7 +343,7 @@ Partial Class Fkb
         'Button4
         '
         Me.Button4.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.Location = New System.Drawing.Point(416, 255)
+        Me.Button4.Location = New System.Drawing.Point(712, 389)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(75, 23)
         Me.Button4.TabIndex = 10
@@ -349,28 +353,49 @@ Partial Class Fkb
         'Button3
         '
         Me.Button3.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(335, 255)
+        Me.Button3.Location = New System.Drawing.Point(342, 389)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 23)
         Me.Button3.TabIndex = 9
         Me.Button3.Text = "save"
         Me.Button3.UseVisualStyleBackColor = True
         '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.DGrekap)
+        Me.GroupBox3.Location = New System.Drawing.Point(342, 16)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(445, 366)
+        Me.GroupBox3.TabIndex = 11
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Rekap pemeriksaan KB"
+        '
+        'DGrekap
+        '
+        Me.DGrekap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGrekap.Location = New System.Drawing.Point(15, 19)
+        Me.DGrekap.Name = "DGrekap"
+        Me.DGrekap.Size = New System.Drawing.Size(419, 333)
+        Me.DGrekap.TabIndex = 0
+        '
         'Fkb
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(665, 362)
+        Me.ClientSize = New System.Drawing.Size(794, 448)
+        Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.Button3)
         Me.Name = "Fkb"
         Me.Text = "Form Keluarga Berencana"
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        CType(Me.DGrekap, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -404,4 +429,6 @@ Partial Class Fkb
     Friend WithEvents Tpekerjaan As System.Windows.Forms.TextBox
     Friend WithEvents Cjk As System.Windows.Forms.ComboBox
     Friend WithEvents Thaid As System.Windows.Forms.DateTimePicker
+    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
+    Friend WithEvents DGrekap As System.Windows.Forms.DataGridView
 End Class

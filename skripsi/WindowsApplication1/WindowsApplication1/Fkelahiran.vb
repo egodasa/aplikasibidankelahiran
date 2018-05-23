@@ -1,5 +1,5 @@
 ﻿Public Class Fkelahiran
-    Dim DGpasien As New DataGridView
+    Dim DGpasien, DGkondisi, DGasuhan As New DataGridView
     Dim data_pasien As DataTable
     Dim id_kelahiran As String = "K" & DateTime.Now.Ticks.ToString()
     Sub resetDataPasien()
@@ -28,7 +28,8 @@
         Cjk_bayi.SelectedIndex = 0
         kondisi_bayi.ClearSelected()
         asuhan_bayi.ClearSelected()
-
+        Tanak.Clear()
+        Tketerangan.Clear()
     End Sub
     Private Sub Tno_pasien_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tno_pasien.TextChanged
         If Tno_pasien.TextLength <> 0 Then
@@ -50,6 +51,13 @@
 
     Private Sub Fkelahiran_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Call setKoneksi()
+        fetchData(DGasuhan, "select nm_asuhan from tbl_asuhan_bayi")
+        For Each x As DataGridViewRow In DGasuhan.Rows
+            If Not x.IsNewRow Then
+                asuhan_bayi.Items.Add(x.Cells(0).Value)
+            End If
+        Next
+        asuhan_bayi.Refresh()
     End Sub
 
     Private Sub kondisi_bayi_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles kondisi_bayi.SelectedIndexChanged
@@ -112,8 +120,17 @@
             End If
         Next
         DGbayi.DataSource = Nothing
+        DGbayi.Refresh()
         Call resetIdKelahiran()
         Call resetKeadaanIbu()
         Call successMessage()
+    End Sub
+
+    Private Sub KeluarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KeluarToolStripMenuItem.Click
+        Me.Close()
+    End Sub
+
+    Private Sub PasienToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PasienToolStripMenuItem.Click
+        Fpasien.ShowDialog()
     End Sub
 End Class

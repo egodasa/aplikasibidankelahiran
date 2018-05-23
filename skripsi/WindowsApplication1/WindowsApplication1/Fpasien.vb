@@ -37,4 +37,24 @@
         Tnm_pasien.Focus()
         fetchData(DGpasien, "select no_pasien as `No Pasien`, nm_pasien as `Nama Pasien`, DATE_FORMAT(tgl_lahir, '%d/%m/%Y') as `Tgl lahir`, jk as `Jenis Kelamin`, pekerjaan as `Pekerjaaan`, alamat as `Alamat` from tbl_pasien")
     End Sub
+
+    Private Sub DGpasien_CellDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DGpasien.CellDoubleClick
+        Tnm_pasien.Text = DGpasien.CurrentRow.Cells(1).Value
+        'Ttgl_lahir.Value = DGpasien.CurrentRow.Cells(2).Value
+        Cjk.Text = DGpasien.CurrentRow.Cells(3).Value
+        Tpekerjaan.Text = DGpasien.CurrentRow.Cells(4).Value
+        Talamat.Text = DGpasien.CurrentRow.Cells(5).Value
+        Bsave.Enabled = False
+        Bedit.Enabled = True
+        Bcancel.Enabled = True
+        Bdelete.Enabled = True
+    End Sub
+
+    Private Sub Bcancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bcancel.Click
+        Bedit.Enabled = False
+        Bcancel.Enabled = False
+        Bdelete.Enabled = False
+        Bsave.Enabled = True
+        Call resetForm()
+    End Sub
 End Class

@@ -23,6 +23,7 @@ Partial Class Fkelola_obat
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Tnm_obat = New System.Windows.Forms.TextBox()
         Me.DGobat = New System.Windows.Forms.DataGridView()
         Me.Tcari = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -36,7 +37,9 @@ Partial Class Fkelola_obat
         Me.Bsave = New System.Windows.Forms.Button()
         Me.Bexit = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Tnm_obat = New System.Windows.Forms.TextBox()
+        Me.Bcancel = New System.Windows.Forms.Button()
+        Me.Bdelete = New System.Windows.Forms.Button()
+        Me.Bedit = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DGobat, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -58,22 +61,29 @@ Partial Class Fkelola_obat
         Me.GroupBox1.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(440, 409)
+        Me.GroupBox1.Size = New System.Drawing.Size(452, 327)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "ENTRI DATA OBAT"
         '
+        'Tnm_obat
+        '
+        Me.Tnm_obat.Location = New System.Drawing.Point(125, 24)
+        Me.Tnm_obat.Name = "Tnm_obat"
+        Me.Tnm_obat.Size = New System.Drawing.Size(227, 22)
+        Me.Tnm_obat.TabIndex = 13
+        '
         'DGobat
         '
         Me.DGobat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGobat.Location = New System.Drawing.Point(10, 214)
+        Me.DGobat.Location = New System.Drawing.Point(10, 164)
         Me.DGobat.Name = "DGobat"
         Me.DGobat.Size = New System.Drawing.Size(425, 150)
         Me.DGobat.TabIndex = 12
         '
         'Tcari
         '
-        Me.Tcari.Location = New System.Drawing.Point(125, 176)
+        Me.Tcari.Location = New System.Drawing.Point(125, 136)
         Me.Tcari.Name = "Tcari"
         Me.Tcari.Size = New System.Drawing.Size(227, 22)
         Me.Tcari.TabIndex = 11
@@ -82,7 +92,7 @@ Partial Class Fkelola_obat
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(7, 176)
+        Me.Label6.Location = New System.Drawing.Point(7, 136)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(104, 14)
         Me.Label6.TabIndex = 10
@@ -90,14 +100,14 @@ Partial Class Fkelola_obat
         '
         'Tstok
         '
-        Me.Tstok.Location = New System.Drawing.Point(125, 129)
+        Me.Tstok.Location = New System.Drawing.Point(125, 108)
         Me.Tstok.Name = "Tstok"
         Me.Tstok.Size = New System.Drawing.Size(64, 22)
         Me.Tstok.TabIndex = 9
         '
         'Thrg_obat
         '
-        Me.Thrg_obat.Location = New System.Drawing.Point(125, 92)
+        Me.Thrg_obat.Location = New System.Drawing.Point(125, 80)
         Me.Thrg_obat.Name = "Thrg_obat"
         Me.Thrg_obat.Size = New System.Drawing.Size(111, 22)
         Me.Thrg_obat.TabIndex = 8
@@ -105,7 +115,7 @@ Partial Class Fkelola_obat
         'Cjns_obat
         '
         Me.Cjns_obat.FormattingEnabled = True
-        Me.Cjns_obat.Location = New System.Drawing.Point(125, 55)
+        Me.Cjns_obat.Location = New System.Drawing.Point(125, 52)
         Me.Cjns_obat.Name = "Cjns_obat"
         Me.Cjns_obat.Size = New System.Drawing.Size(121, 22)
         Me.Cjns_obat.TabIndex = 7
@@ -114,7 +124,7 @@ Partial Class Fkelola_obat
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(7, 129)
+        Me.Label5.Location = New System.Drawing.Point(8, 108)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(75, 14)
         Me.Label5.TabIndex = 4
@@ -124,7 +134,7 @@ Partial Class Fkelola_obat
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(7, 92)
+        Me.Label4.Location = New System.Drawing.Point(8, 80)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(74, 14)
         Me.Label4.TabIndex = 3
@@ -134,7 +144,7 @@ Partial Class Fkelola_obat
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(6, 58)
+        Me.Label3.Location = New System.Drawing.Point(8, 55)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(71, 14)
         Me.Label3.TabIndex = 2
@@ -144,7 +154,7 @@ Partial Class Fkelola_obat
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(7, 27)
+        Me.Label2.Location = New System.Drawing.Point(8, 24)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(74, 14)
         Me.Label2.TabIndex = 1
@@ -163,7 +173,7 @@ Partial Class Fkelola_obat
         'Bexit
         '
         Me.Bexit.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Bexit.Location = New System.Drawing.Point(12, 41)
+        Me.Bexit.Location = New System.Drawing.Point(12, 129)
         Me.Bexit.Name = "Bexit"
         Me.Bexit.Size = New System.Drawing.Size(75, 23)
         Me.Bexit.TabIndex = 2
@@ -172,28 +182,57 @@ Partial Class Fkelola_obat
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Bcancel)
+        Me.GroupBox2.Controls.Add(Me.Bdelete)
+        Me.GroupBox2.Controls.Add(Me.Bedit)
         Me.GroupBox2.Controls.Add(Me.Bexit)
         Me.GroupBox2.Controls.Add(Me.Bsave)
         Me.GroupBox2.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(458, 19)
+        Me.GroupBox2.Location = New System.Drawing.Point(474, 12)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(97, 70)
+        Me.GroupBox2.Size = New System.Drawing.Size(97, 165)
         Me.GroupBox2.TabIndex = 3
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "PROSES"
         '
-        'Tnm_obat
+        'Bcancel
         '
-        Me.Tnm_obat.Location = New System.Drawing.Point(125, 24)
-        Me.Tnm_obat.Name = "Tnm_obat"
-        Me.Tnm_obat.Size = New System.Drawing.Size(227, 22)
-        Me.Tnm_obat.TabIndex = 13
+        Me.Bcancel.Enabled = False
+        Me.Bcancel.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Bcancel.Location = New System.Drawing.Point(12, 100)
+        Me.Bcancel.Name = "Bcancel"
+        Me.Bcancel.Size = New System.Drawing.Size(75, 23)
+        Me.Bcancel.TabIndex = 5
+        Me.Bcancel.Text = "CANCEL"
+        Me.Bcancel.UseVisualStyleBackColor = True
+        '
+        'Bdelete
+        '
+        Me.Bdelete.Enabled = False
+        Me.Bdelete.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Bdelete.Location = New System.Drawing.Point(12, 71)
+        Me.Bdelete.Name = "Bdelete"
+        Me.Bdelete.Size = New System.Drawing.Size(75, 23)
+        Me.Bdelete.TabIndex = 4
+        Me.Bdelete.Text = "DELETE"
+        Me.Bdelete.UseVisualStyleBackColor = True
+        '
+        'Bedit
+        '
+        Me.Bedit.Enabled = False
+        Me.Bedit.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Bedit.Location = New System.Drawing.Point(12, 42)
+        Me.Bedit.Name = "Bedit"
+        Me.Bedit.Size = New System.Drawing.Size(75, 23)
+        Me.Bedit.TabIndex = 3
+        Me.Bedit.Text = "EDIT"
+        Me.Bedit.UseVisualStyleBackColor = True
         '
         'Fkelola_obat
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(562, 427)
+        Me.ClientSize = New System.Drawing.Size(583, 344)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "Fkelola_obat"
@@ -220,4 +259,7 @@ Partial Class Fkelola_obat
     Friend WithEvents Bexit As System.Windows.Forms.Button
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents Tnm_obat As System.Windows.Forms.TextBox
+    Friend WithEvents Bcancel As System.Windows.Forms.Button
+    Friend WithEvents Bdelete As System.Windows.Forms.Button
+    Friend WithEvents Bedit As System.Windows.Forms.Button
 End Class
