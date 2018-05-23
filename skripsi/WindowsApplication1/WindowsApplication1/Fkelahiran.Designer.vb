@@ -23,6 +23,10 @@ Partial Class Fkelahiran
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Tkeadaan = New System.Windows.Forms.TextBox()
+        Me.Tcara = New System.Windows.Forms.TextBox()
+        Me.Tpenolong = New System.Windows.Forms.TextBox()
+        Me.Ttgl_persalinan = New System.Windows.Forms.DateTimePicker()
         Me.Tumur = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -33,6 +37,7 @@ Partial Class Fkelahiran
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Ttgl_lahir = New System.Windows.Forms.DateTimePicker()
         Me.Tnm_suami = New System.Windows.Forms.TextBox()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Talamat = New System.Windows.Forms.TextBox()
@@ -47,6 +52,13 @@ Partial Class Fkelahiran
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Btambah = New System.Windows.Forms.Button()
+        Me.Tketerangan = New System.Windows.Forms.TextBox()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.Label34 = New System.Windows.Forms.Label()
+        Me.Label33 = New System.Windows.Forms.Label()
+        Me.asuhan_bayi = New System.Windows.Forms.CheckedListBox()
+        Me.kondisi_bayi = New System.Windows.Forms.CheckedListBox()
         Me.Tnm_bayi = New System.Windows.Forms.TextBox()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.Cjk_bayi = New System.Windows.Forms.ComboBox()
@@ -60,6 +72,16 @@ Partial Class Fkelahiran
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.DGbayi = New System.Windows.Forms.DataGridView()
+        Me.nm_bayi = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.anak_ke = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.berat = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.panjang = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lingkar = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.jk = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.kondisi = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.asuhan = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.keterangan = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.TextBox25 = New System.Windows.Forms.TextBox()
         Me.TextBox22 = New System.Windows.Forms.TextBox()
@@ -79,35 +101,13 @@ Partial Class Fkelahiran
         Me.Label26 = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
-        Me.Ttgl_lahir = New System.Windows.Forms.DateTimePicker()
-        Me.kondisi_bayi = New System.Windows.Forms.CheckedListBox()
-        Me.asuhan_bayi = New System.Windows.Forms.CheckedListBox()
-        Me.Label33 = New System.Windows.Forms.Label()
-        Me.Label34 = New System.Windows.Forms.Label()
-        Me.DGbayi = New System.Windows.Forms.DataGridView()
-        Me.Tketerangan = New System.Windows.Forms.TextBox()
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.Btambah = New System.Windows.Forms.Button()
-        Me.nm_bayi = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.anak_ke = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.berat = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.panjang = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.lingkar = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.jk = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.kondisi = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.asuhan = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.keterangan = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Bsimpan = New System.Windows.Forms.Button()
-        Me.Ttgl_persalinan = New System.Windows.Forms.DateTimePicker()
-        Me.Tpenolong = New System.Windows.Forms.TextBox()
-        Me.Tcara = New System.Windows.Forms.TextBox()
-        Me.Tkeadaan = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
-        Me.GroupBox6.SuspendLayout()
         CType(Me.DGbayi, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox6.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -129,6 +129,39 @@ Partial Class Fkelahiran
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "IBU BERSALIN"
+        '
+        'Tkeadaan
+        '
+        Me.Tkeadaan.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tkeadaan.Location = New System.Drawing.Point(139, 161)
+        Me.Tkeadaan.Name = "Tkeadaan"
+        Me.Tkeadaan.Size = New System.Drawing.Size(135, 22)
+        Me.Tkeadaan.TabIndex = 19
+        '
+        'Tcara
+        '
+        Me.Tcara.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tcara.Location = New System.Drawing.Point(139, 133)
+        Me.Tcara.Name = "Tcara"
+        Me.Tcara.Size = New System.Drawing.Size(135, 22)
+        Me.Tcara.TabIndex = 18
+        '
+        'Tpenolong
+        '
+        Me.Tpenolong.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tpenolong.Location = New System.Drawing.Point(139, 105)
+        Me.Tpenolong.Name = "Tpenolong"
+        Me.Tpenolong.Size = New System.Drawing.Size(135, 22)
+        Me.Tpenolong.TabIndex = 17
+        '
+        'Ttgl_persalinan
+        '
+        Me.Ttgl_persalinan.CustomFormat = "dd-MM-yyyy HH : mm"
+        Me.Ttgl_persalinan.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.Ttgl_persalinan.Location = New System.Drawing.Point(8, 39)
+        Me.Ttgl_persalinan.Name = "Ttgl_persalinan"
+        Me.Ttgl_persalinan.Size = New System.Drawing.Size(267, 22)
+        Me.Ttgl_persalinan.TabIndex = 16
         '
         'Tumur
         '
@@ -241,6 +274,13 @@ Partial Class Fkelahiran
         Me.GroupBox2.TabIndex = 6
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "PASIEN"
+        '
+        'Ttgl_lahir
+        '
+        Me.Ttgl_lahir.Location = New System.Drawing.Point(109, 79)
+        Me.Ttgl_lahir.Name = "Ttgl_lahir"
+        Me.Ttgl_lahir.Size = New System.Drawing.Size(167, 22)
+        Me.Ttgl_lahir.TabIndex = 14
         '
         'Tnm_suami
         '
@@ -394,6 +434,72 @@ Partial Class Fkelahiran
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Bayi yang lahir"
         '
+        'Btambah
+        '
+        Me.Btambah.Location = New System.Drawing.Point(217, 520)
+        Me.Btambah.Name = "Btambah"
+        Me.Btambah.Size = New System.Drawing.Size(122, 21)
+        Me.Btambah.TabIndex = 26
+        Me.Btambah.Text = "Tambah Bayi"
+        Me.Btambah.UseVisualStyleBackColor = True
+        '
+        'Tketerangan
+        '
+        Me.Tketerangan.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tketerangan.Location = New System.Drawing.Point(6, 436)
+        Me.Tketerangan.Multiline = True
+        Me.Tketerangan.Name = "Tketerangan"
+        Me.Tketerangan.Size = New System.Drawing.Size(333, 78)
+        Me.Tketerangan.TabIndex = 25
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.Location = New System.Drawing.Point(6, 419)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(147, 14)
+        Me.Label21.TabIndex = 24
+        Me.Label21.Text = "keterangan tambahan"
+        '
+        'Label34
+        '
+        Me.Label34.AutoSize = True
+        Me.Label34.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label34.Location = New System.Drawing.Point(6, 308)
+        Me.Label34.Name = "Label34"
+        Me.Label34.Size = New System.Drawing.Size(120, 14)
+        Me.Label34.TabIndex = 23
+        Me.Label34.Text = "Asuhan pada bayi"
+        '
+        'Label33
+        '
+        Me.Label33.AutoSize = True
+        Me.Label33.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label33.Location = New System.Drawing.Point(6, 186)
+        Me.Label33.Name = "Label33"
+        Me.Label33.Size = New System.Drawing.Size(125, 14)
+        Me.Label33.TabIndex = 22
+        Me.Label33.Text = "Kondisi saat lahir"
+        '
+        'asuhan_bayi
+        '
+        Me.asuhan_bayi.FormattingEnabled = True
+        Me.asuhan_bayi.Items.AddRange(New Object() {"Inisiasi menyusu dini (IMD) dalam 1 jam pertama kelahiran bayi", "Suntikan vitamin K1", "Salep mata antibiotika profilaksis", "Imunisasi HBO"})
+        Me.asuhan_bayi.Location = New System.Drawing.Point(6, 325)
+        Me.asuhan_bayi.Name = "asuhan_bayi"
+        Me.asuhan_bayi.Size = New System.Drawing.Size(333, 89)
+        Me.asuhan_bayi.TabIndex = 18
+        '
+        'kondisi_bayi
+        '
+        Me.kondisi_bayi.FormattingEnabled = True
+        Me.kondisi_bayi.Items.AddRange(New Object() {"Segera menangis", "Menangis beberapa saat", "Tidak menangis", "Seluruh tubuh kemerahan", "Anggota gerak kebiruan", "Seluruh tubuh biru", "Kelainan bawaan", "Meninggal"})
+        Me.kondisi_bayi.Location = New System.Drawing.Point(6, 203)
+        Me.kondisi_bayi.Name = "kondisi_bayi"
+        Me.kondisi_bayi.Size = New System.Drawing.Size(333, 89)
+        Me.kondisi_bayi.TabIndex = 9
+        '
         'Tnm_bayi
         '
         Me.Tnm_bayi.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -514,6 +620,70 @@ Partial Class Fkelahiran
         Me.GroupBox5.TabIndex = 12
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Daftar bayi yang lahir"
+        '
+        'DGbayi
+        '
+        Me.DGbayi.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.DGbayi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGbayi.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.nm_bayi, Me.anak_ke, Me.berat, Me.panjang, Me.lingkar, Me.jk, Me.kondisi, Me.asuhan, Me.keterangan})
+        Me.DGbayi.Location = New System.Drawing.Point(9, 20)
+        Me.DGbayi.Name = "DGbayi"
+        Me.DGbayi.Size = New System.Drawing.Size(374, 124)
+        Me.DGbayi.TabIndex = 7
+        '
+        'nm_bayi
+        '
+        Me.nm_bayi.HeaderText = "Nama"
+        Me.nm_bayi.Name = "nm_bayi"
+        Me.nm_bayi.ReadOnly = True
+        '
+        'anak_ke
+        '
+        Me.anak_ke.HeaderText = "Anak ke"
+        Me.anak_ke.Name = "anak_ke"
+        Me.anak_ke.ReadOnly = True
+        '
+        'berat
+        '
+        Me.berat.HeaderText = "Berat"
+        Me.berat.Name = "berat"
+        Me.berat.ReadOnly = True
+        '
+        'panjang
+        '
+        Me.panjang.HeaderText = "Panjang badan"
+        Me.panjang.Name = "panjang"
+        Me.panjang.ReadOnly = True
+        '
+        'lingkar
+        '
+        Me.lingkar.HeaderText = "Lingkar kepala"
+        Me.lingkar.Name = "lingkar"
+        Me.lingkar.ReadOnly = True
+        '
+        'jk
+        '
+        Me.jk.HeaderText = "Jenis kelamin"
+        Me.jk.Name = "jk"
+        Me.jk.ReadOnly = True
+        '
+        'kondisi
+        '
+        Me.kondisi.HeaderText = "Kondisi Lahir"
+        Me.kondisi.Name = "kondisi"
+        Me.kondisi.ReadOnly = True
+        '
+        'asuhan
+        '
+        Me.asuhan.HeaderText = "Asuhan pada bayi"
+        Me.asuhan.Name = "asuhan"
+        Me.asuhan.ReadOnly = True
+        '
+        'keterangan
+        '
+        Me.keterangan.HeaderText = "Keterangan "
+        Me.keterangan.Name = "keterangan"
+        Me.keterangan.ReadOnly = True
         '
         'GroupBox6
         '
@@ -705,143 +875,6 @@ Partial Class Fkelahiran
         Me.Label24.TabIndex = 0
         Me.Label24.Text = "persalinan"
         '
-        'Ttgl_lahir
-        '
-        Me.Ttgl_lahir.Location = New System.Drawing.Point(109, 79)
-        Me.Ttgl_lahir.Name = "Ttgl_lahir"
-        Me.Ttgl_lahir.Size = New System.Drawing.Size(167, 22)
-        Me.Ttgl_lahir.TabIndex = 14
-        '
-        'kondisi_bayi
-        '
-        Me.kondisi_bayi.FormattingEnabled = True
-        Me.kondisi_bayi.Items.AddRange(New Object() {"Segera menangis", "Menangis beberapa saat", "Tidak menangis", "Seluruh tubuh kemerahan", "Anggota gerak kebiruan", "Seluruh tubuh biru", "Kelainan bawaan", "Meninggal"})
-        Me.kondisi_bayi.Location = New System.Drawing.Point(6, 203)
-        Me.kondisi_bayi.Name = "kondisi_bayi"
-        Me.kondisi_bayi.Size = New System.Drawing.Size(333, 89)
-        Me.kondisi_bayi.TabIndex = 9
-        '
-        'asuhan_bayi
-        '
-        Me.asuhan_bayi.FormattingEnabled = True
-        Me.asuhan_bayi.Items.AddRange(New Object() {"Inisiasi menyusu dini (IMD) dalam 1 jam pertama kelahiran bayi", "Suntikan vitamin K1", "Salep mata antibiotika profilaksis", "Imunisasi HBO"})
-        Me.asuhan_bayi.Location = New System.Drawing.Point(6, 325)
-        Me.asuhan_bayi.Name = "asuhan_bayi"
-        Me.asuhan_bayi.Size = New System.Drawing.Size(333, 89)
-        Me.asuhan_bayi.TabIndex = 18
-        '
-        'Label33
-        '
-        Me.Label33.AutoSize = True
-        Me.Label33.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label33.Location = New System.Drawing.Point(6, 186)
-        Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(125, 14)
-        Me.Label33.TabIndex = 22
-        Me.Label33.Text = "Kondisi saat lahir"
-        '
-        'Label34
-        '
-        Me.Label34.AutoSize = True
-        Me.Label34.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label34.Location = New System.Drawing.Point(6, 308)
-        Me.Label34.Name = "Label34"
-        Me.Label34.Size = New System.Drawing.Size(120, 14)
-        Me.Label34.TabIndex = 23
-        Me.Label34.Text = "Asuhan pada bayi"
-        '
-        'DGbayi
-        '
-        Me.DGbayi.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        Me.DGbayi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGbayi.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.nm_bayi, Me.anak_ke, Me.berat, Me.panjang, Me.lingkar, Me.jk, Me.kondisi, Me.asuhan, Me.keterangan})
-        Me.DGbayi.Location = New System.Drawing.Point(9, 20)
-        Me.DGbayi.Name = "DGbayi"
-        Me.DGbayi.Size = New System.Drawing.Size(374, 124)
-        Me.DGbayi.TabIndex = 7
-        '
-        'Tketerangan
-        '
-        Me.Tketerangan.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tketerangan.Location = New System.Drawing.Point(6, 436)
-        Me.Tketerangan.Multiline = True
-        Me.Tketerangan.Name = "Tketerangan"
-        Me.Tketerangan.Size = New System.Drawing.Size(333, 78)
-        Me.Tketerangan.TabIndex = 25
-        '
-        'Label21
-        '
-        Me.Label21.AutoSize = True
-        Me.Label21.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(6, 419)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(147, 14)
-        Me.Label21.TabIndex = 24
-        Me.Label21.Text = "keterangan tambahan"
-        '
-        'Btambah
-        '
-        Me.Btambah.Location = New System.Drawing.Point(217, 520)
-        Me.Btambah.Name = "Btambah"
-        Me.Btambah.Size = New System.Drawing.Size(122, 21)
-        Me.Btambah.TabIndex = 26
-        Me.Btambah.Text = "Tambah Bayi"
-        Me.Btambah.UseVisualStyleBackColor = True
-        '
-        'nm_bayi
-        '
-        Me.nm_bayi.HeaderText = "Nama"
-        Me.nm_bayi.Name = "nm_bayi"
-        Me.nm_bayi.ReadOnly = True
-        '
-        'anak_ke
-        '
-        Me.anak_ke.HeaderText = "Anak ke"
-        Me.anak_ke.Name = "anak_ke"
-        Me.anak_ke.ReadOnly = True
-        '
-        'berat
-        '
-        Me.berat.HeaderText = "Berat"
-        Me.berat.Name = "berat"
-        Me.berat.ReadOnly = True
-        '
-        'panjang
-        '
-        Me.panjang.HeaderText = "Panjang badan"
-        Me.panjang.Name = "panjang"
-        Me.panjang.ReadOnly = True
-        '
-        'lingkar
-        '
-        Me.lingkar.HeaderText = "Lingkar kepala"
-        Me.lingkar.Name = "lingkar"
-        Me.lingkar.ReadOnly = True
-        '
-        'jk
-        '
-        Me.jk.HeaderText = "Jenis kelamin"
-        Me.jk.Name = "jk"
-        Me.jk.ReadOnly = True
-        '
-        'kondisi
-        '
-        Me.kondisi.HeaderText = "Kondisi Lahir"
-        Me.kondisi.Name = "kondisi"
-        Me.kondisi.ReadOnly = True
-        '
-        'asuhan
-        '
-        Me.asuhan.HeaderText = "Asuhan pada bayi"
-        Me.asuhan.Name = "asuhan"
-        Me.asuhan.ReadOnly = True
-        '
-        'keterangan
-        '
-        Me.keterangan.HeaderText = "Keterangan "
-        Me.keterangan.Name = "keterangan"
-        Me.keterangan.ReadOnly = True
-        '
         'Bsimpan
         '
         Me.Bsimpan.Location = New System.Drawing.Point(918, 181)
@@ -850,39 +883,6 @@ Partial Class Fkelahiran
         Me.Bsimpan.TabIndex = 27
         Me.Bsimpan.Text = "Simpan kelahiran"
         Me.Bsimpan.UseVisualStyleBackColor = True
-        '
-        'Ttgl_persalinan
-        '
-        Me.Ttgl_persalinan.CustomFormat = "dd-MM-yyyy HH : mm"
-        Me.Ttgl_persalinan.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.Ttgl_persalinan.Location = New System.Drawing.Point(8, 39)
-        Me.Ttgl_persalinan.Name = "Ttgl_persalinan"
-        Me.Ttgl_persalinan.Size = New System.Drawing.Size(267, 22)
-        Me.Ttgl_persalinan.TabIndex = 16
-        '
-        'Tpenolong
-        '
-        Me.Tpenolong.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tpenolong.Location = New System.Drawing.Point(139, 105)
-        Me.Tpenolong.Name = "Tpenolong"
-        Me.Tpenolong.Size = New System.Drawing.Size(135, 22)
-        Me.Tpenolong.TabIndex = 17
-        '
-        'Tcara
-        '
-        Me.Tcara.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tcara.Location = New System.Drawing.Point(139, 133)
-        Me.Tcara.Name = "Tcara"
-        Me.Tcara.Size = New System.Drawing.Size(135, 22)
-        Me.Tcara.TabIndex = 18
-        '
-        'Tkeadaan
-        '
-        Me.Tkeadaan.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tkeadaan.Location = New System.Drawing.Point(139, 161)
-        Me.Tkeadaan.Name = "Tkeadaan"
-        Me.Tkeadaan.Size = New System.Drawing.Size(135, 22)
-        Me.Tkeadaan.TabIndex = 19
         '
         'Fkelahiran
         '
@@ -904,9 +904,9 @@ Partial Class Fkelahiran
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
+        CType(Me.DGbayi, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox6.PerformLayout()
-        CType(Me.DGbayi, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

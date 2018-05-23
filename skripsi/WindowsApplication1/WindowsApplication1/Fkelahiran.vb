@@ -12,6 +12,24 @@
     Sub resetIdKelahiran()
         id_kelahiran = "K" & DateTime.Now.Ticks.ToString()
     End Sub
+    Sub resetKeadaanIbu()
+        Ttgl_lahir.ResetText()
+        Tnm_suami.Clear()
+        Tcara.Clear()
+        Tpenolong.Clear()
+        Tumur.Clear()
+        Tkeadaan.Clear()
+    End Sub
+    Sub resetBayi()
+        Tnm_bayi.Clear()
+        Tberat.Clear()
+        Tpanjang.Clear()
+        Tlingkar.Clear()
+        Cjk_bayi.SelectedIndex = 0
+        kondisi_bayi.ClearSelected()
+        asuhan_bayi.ClearSelected()
+
+    End Sub
     Private Sub Tno_pasien_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tno_pasien.TextChanged
         If Tno_pasien.TextLength <> 0 Then
             fetchData(DGpasien, "select * from tbl_pasien where no_pasien = " & Tno_pasien.Text)
@@ -65,5 +83,37 @@
         End If
         DGbayi.Rows.Add(New String() {Tnm_bayi.Text, Tanak.Text, Tberat.Text, Tpanjang.Text, Tlingkar.Text, Cjk_bayi.Text, kondisi_tmp, asuhan_tmp, Tketerangan.Text})
         DGbayi.Refresh()
+        Call resetBayi()
+    End Sub
+
+    Private Sub Bsimpan_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bsimpan.Click
+        runQuery("insert into tbl_kelahiran (no_pasien,id_kelahiran,tgl_kelahiran,nm_suami,penolongan_persalinan,cara_persalinan,umur_kehamilan,keadaan_ibu) values (" & Tno_pasien.Text &
+                 ", '" & id_kelahiran &
+                 "', '" & Ttgl_lahir.Value.ToString("yyyy-MM-dd hh:mm:00") &
+                 "', '" & Tnm_suami.Text &
+                 "', '" & Tpenolong.Text &
+                 "', '" & Tcara.Text &
+                 "', " & Tumur.Text &
+                 ", '" & Tkeadaan.Text &
+                 "')")
+        For Each x As DataGridViewRow In DGbayi.Rows
+            If Not x.IsNewRow Then
+                runQuery("insert into tbl_bayi_lahir (id_kelahiran,nm_bayi,anak_ke,berat_lahir,panjang_badan,lingkar_kepala,jk,asuhan_bayi_saat_lahir,keterangan,kondisi_bayi) values('" & id_kelahiran &
+                         "', '" & x.Cells("nm_bayi").Value &
+                         "', " & x.Cells(1).Value &
+                         ", " & x.Cells(2).Value &
+                         ", " & x.Cells(3).Value &
+                         ", " & x.Cells(4).Value &
+                         ", '" & x.Cells(5).Value &
+                         "', '" & x.Cells(6).Value &
+                         "', '" & x.Cells(7).Value &
+                         "', '" & x.Cells(8).Value &
+                         "')")
+            End If
+        Next
+        DGbayi.DataSource = Nothing
+        Call resetIdKelahiran()
+        Call resetKeadaanIbu()
+        Call successMessage()
     End Sub
 End Class
