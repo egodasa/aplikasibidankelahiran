@@ -54,10 +54,19 @@ Partial Class Fkb
         Me.Button3 = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.DGrekap = New System.Windows.Forms.DataGridView()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.KeluarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PasienToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AsuhanBayiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.KondisiBayiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ObatToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.DGrekap, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox2
@@ -77,7 +86,7 @@ Partial Class Fkb
         Me.GroupBox2.Controls.Add(Me.Label17)
         Me.GroupBox2.Controls.Add(Me.Label18)
         Me.GroupBox2.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 12)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 41)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(304, 237)
         Me.GroupBox2.TabIndex = 7
@@ -223,7 +232,7 @@ Partial Class Fkb
         Me.GroupBox1.Controls.Add(Me.Tbrt_badan)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 255)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 284)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(304, 181)
         Me.GroupBox1.TabIndex = 8
@@ -343,7 +352,7 @@ Partial Class Fkb
         'Button4
         '
         Me.Button4.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.Location = New System.Drawing.Point(712, 389)
+        Me.Button4.Location = New System.Drawing.Point(712, 442)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(75, 23)
         Me.Button4.TabIndex = 10
@@ -353,7 +362,7 @@ Partial Class Fkb
         'Button3
         '
         Me.Button3.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(342, 389)
+        Me.Button3.Location = New System.Drawing.Point(342, 442)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 23)
         Me.Button3.TabIndex = 9
@@ -363,7 +372,7 @@ Partial Class Fkb
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.DGrekap)
-        Me.GroupBox3.Location = New System.Drawing.Point(342, 16)
+        Me.GroupBox3.Location = New System.Drawing.Point(337, 59)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(445, 366)
         Me.GroupBox3.TabIndex = 11
@@ -378,11 +387,65 @@ Partial Class Fkb
         Me.DGrekap.Size = New System.Drawing.Size(419, 333)
         Me.DGrekap.TabIndex = 0
         '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.DataToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(794, 24)
+        Me.MenuStrip1.TabIndex = 29
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'FileToolStripMenuItem
+        '
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.KeluarToolStripMenuItem})
+        Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
+        Me.FileToolStripMenuItem.Text = "File"
+        '
+        'KeluarToolStripMenuItem
+        '
+        Me.KeluarToolStripMenuItem.Name = "KeluarToolStripMenuItem"
+        Me.KeluarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.KeluarToolStripMenuItem.Text = "Keluar"
+        '
+        'DataToolStripMenuItem
+        '
+        Me.DataToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PasienToolStripMenuItem, Me.ObatToolStripMenuItem, Me.KondisiBayiToolStripMenuItem, Me.AsuhanBayiToolStripMenuItem})
+        Me.DataToolStripMenuItem.Name = "DataToolStripMenuItem"
+        Me.DataToolStripMenuItem.Size = New System.Drawing.Size(43, 20)
+        Me.DataToolStripMenuItem.Text = "Data"
+        '
+        'PasienToolStripMenuItem
+        '
+        Me.PasienToolStripMenuItem.Name = "PasienToolStripMenuItem"
+        Me.PasienToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.PasienToolStripMenuItem.Text = "Pasien"
+        '
+        'AsuhanBayiToolStripMenuItem
+        '
+        Me.AsuhanBayiToolStripMenuItem.Name = "AsuhanBayiToolStripMenuItem"
+        Me.AsuhanBayiToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.AsuhanBayiToolStripMenuItem.Text = "Asuhan bayi"
+        '
+        'KondisiBayiToolStripMenuItem
+        '
+        Me.KondisiBayiToolStripMenuItem.Name = "KondisiBayiToolStripMenuItem"
+        Me.KondisiBayiToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.KondisiBayiToolStripMenuItem.Text = "Kondisi bayi"
+        '
+        'ObatToolStripMenuItem
+        '
+        Me.ObatToolStripMenuItem.Name = "ObatToolStripMenuItem"
+        Me.ObatToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ObatToolStripMenuItem.Text = "Obat"
+        '
         'Fkb
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(794, 448)
+        Me.ClientSize = New System.Drawing.Size(794, 477)
+        Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.GroupBox1)
@@ -396,7 +459,10 @@ Partial Class Fkb
         Me.GroupBox1.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         CType(Me.DGrekap, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
@@ -431,4 +497,12 @@ Partial Class Fkb
     Friend WithEvents Thaid As System.Windows.Forms.DateTimePicker
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents DGrekap As System.Windows.Forms.DataGridView
+    Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
+    Friend WithEvents FileToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents KeluarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents DataToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents PasienToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AsuhanBayiToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents KondisiBayiToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ObatToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

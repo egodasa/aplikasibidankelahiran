@@ -17,3 +17,4 @@ F:\skprsifauzan\skripsi\WindowsApplication1\WindowsApplication1\obj\x86\Debug\Wi
 F:\skprsifauzan\skripsi\WindowsApplication1\WindowsApplication1\bin\Debug\MetroFramework.dll
 F:\skprsifauzan\skripsi\WindowsApplication1\WindowsApplication1\bin\Debug\MetroFramework.Fonts.dll
 F:\skprsifauzan\skripsi\WindowsApplication1\WindowsApplication1\obj\x86\Debug\WindowsApplication1.Fmenu.resources
+F:\skprsifauzan\skripsi\WindowsApplication1\WindowsApplication1\obj\x86\Debug\WindowsApplication1.laporan_harian.resources

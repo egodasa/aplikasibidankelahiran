@@ -1,7 +1,10 @@
 ﻿Public Class Fperiksa
-    Dim DGpasien As New DataGridView
+    Dim DGpasien, DGdaftar_obat As New DataGridView
     Dim data_pasien, obat_beli As New DataTable
     Dim id_periksa As String = DateTime.Now.Ticks.ToString()
+    Dim DTobat As New DataTable
+    Dim cari_obat As DataTable
+    Dim getDataBeli As String = "select a.id_terapi,a.id_obat,a.id_periksa,b.nm_obat as `Nama Obat`,a.jumlah as Jumlah,b.hrg_obat as `Harga`,b.hrg_obat*a.jumlah as `Total Harga` from tbl_terapi a join tbl_obat b on a.id_obat = b.id_obat where a.id_periksa = '" & id_periksa & "'"
     Sub resetDataPasien()
         Ttgl_lahir.ResetText()
         Tpekerjaan.Clear()
@@ -56,24 +59,25 @@
     Private Sub Fperiksa_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Call setKoneksi()
         fetchData(DGdaftar_obat, "select a.id_obat, a.nm_obat as `Nama Obat`, a.stok as Stok, b.nm_jobat as `Jenis`, a.status as Status from tbl_obat a inner join tbl_jenis_obat b on a.id_jobat = b.id_jobat")
-        DGdaftar_obat.Columns("id_obat").Visible = False
+        Cobat.DataSource = DGdaftar_obat.DataSource
+        fetchData(DGobat_beli, getDataBeli)
+        DGobat_beli.Columns("id_terapi").Visible = False
+        DGobat_beli.Columns("id_obat").Visible = False
+        DGobat_beli.Columns("id_periksa").Visible = False
+        DGobat_beli.Columns("Jumlah").ReadOnly = False
     End Sub
 
-    Private Sub Tnm_obat_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tnm_obat.TextChanged
-        If Tnm_obat.TextLength <> 0 Then
-            fetchData(DGdaftar_obat, "select a.id_obat, a.nm_obat as `Nama Obat`, a.stok as Stok, b.nm_jobat as `Jenis`, a.status as Status from tbl_obat a inner join tbl_jenis_obat b on a.id_jobat = b.id_jobat where a.nm_obat like '%" & Tnm_obat.Text & "%'")
-        Else
-            fetchData(DGdaftar_obat, "select a.id_obat, a.nm_obat as `Nama Obat`, a.stok as Stok, b.nm_jobat as `Jenis`, a.status as Status from tbl_obat a inner join tbl_jenis_obat b on a.id_jobat = b.id_jobat")
-        End If
+    Private Sub Tnm_obat_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tjumlah.TextChanged
+        
     End Sub
 
-    Private Sub DGdaftar_obat_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DGdaftar_obat.CellContentClick
-        End Sub
+    Private Sub DGdaftar_obat_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs)
+    End Sub
 
-    Private Sub DGdaftar_obat_CellContentDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DGdaftar_obat.CellContentDoubleClick
+    Private Sub DGdaftar_obat_CellContentDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs)
         DGobat_beli.Rows.Add(New String() {DGdaftar_obat.CurrentRow.Cells(0).Value, DGdaftar_obat.CurrentRow.Cells(1).Value, 0})
         DGobat_beli.Refresh()
-        Tnm_obat.Clear()
+        Tjumlah.Clear()
         fetchData(DGdaftar_obat, "select a.id_obat, a.nm_obat as `Nama Obat`, a.stok as Stok, b.nm_jobat as `Jenis`, a.status as Status from tbl_obat a inner join tbl_jenis_obat b on a.id_jobat = b.id_jobat")
     End Sub
 
@@ -93,7 +97,7 @@
             For Each x As DataGridViewRow In DGobat_beli.Rows
                 If Not x.IsNewRow Then
                     If x.Cells(2).Value <> 0 Then
-                        runQuery("insert into tbl_terapi(id_obat, jumlah, id_periksa) values (" & x.Cells(0).Value & "," & x.Cells(2).Value & ", " & id_periksa & ")")
+                        runQuery("insert into tbl_terapi(id_obat, jumlah, id_periksa) values (" & x.Cells("id_obat").Value & "," & x.Cells("Jumlah").Value & ", " & id_periksa & ")")
                     End If
                 End If
             Next
@@ -106,8 +110,13 @@
         Tno_pasien.Focus()
         DGobat_beli.DataSource = Nothing
         DGobat_beli.Refresh()
-        Tnm_obat.Clear()
+        Tjumlah.Clear()
         Call resetId()
+        fetchData(DGobat_beli, getDataBeli)
+        DGobat_beli.Columns("id_terapi").Visible = False
+        DGobat_beli.Columns("id_obat").Visible = False
+        DGobat_beli.Columns("id_periksa").Visible = False
+        DGobat_beli.Columns("Jumlah").ReadOnly = False
     End Sub
 
     Private Sub DGrekap_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DGrekap.CellContentClick
@@ -129,5 +138,57 @@
 
     Private Sub GroupBox4_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GroupBox4.Enter
 
+    End Sub
+
+    Private Sub Cobat_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cobat.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub Cobat_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cobat.TextChanged
+
+    End Sub
+
+    Private Sub Cobat_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles Cobat.KeyPress
+    End Sub
+
+    Private Sub Cobat_KeyUp(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles Cobat.KeyUp
+
+    End Sub
+
+    Private Sub Btambah_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btambah.Click
+        runQuery("insert into tbl_terapi (id_obat, id_periksa, jumlah) values (" & Cobat.SelectedValue & ", '" & id_periksa & "', " & Tjumlah.Text & ")")
+        Cobat.ResetText()
+        Tjumlah.Clear()
+        fetchData(DGobat_beli, getDataBeli)
+        DGobat_beli.Refresh()
+    End Sub
+
+    Private Sub Fperiksa_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
+        If DGobat_beli.Rows.Count > 0 Then
+            runQuery("delete from tbl_terapi where id_periksa = '" & id_periksa & "'")
+        End If
+    End Sub
+
+    Private Sub Bhapus_obat_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bhapus_obat.Click
+        If DGobat_beli.CurrentRow.Cells("id_terapi").Value.ToString <> "" Then
+            runQuery("delete from tbl_terapi where id_terapi = '" & DGobat_beli.CurrentRow.Cells("id_terapi").Value & "'")
+            fetchData(DGobat_beli, getDataBeli)
+        End If
+    End Sub
+
+    Private Sub KeluarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KeluarToolStripMenuItem.Click
+        Me.Close()
+    End Sub
+
+    Private Sub PasienToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PasienToolStripMenuItem.Click
+        Fpasien.ShowDialog()
+    End Sub
+
+    Private Sub AsuhanBayiToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AsuhanBayiToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub ObatToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ObatToolStripMenuItem.Click
+        Fkelola_obat.ShowDialog()
     End Sub
 End Class
