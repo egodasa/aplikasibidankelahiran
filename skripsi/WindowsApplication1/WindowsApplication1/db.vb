@@ -40,4 +40,5 @@ Module db
     Function deleteSql(ByVal t As String, ByVal id As String, ByVal id_val As String)
         Return "delete from " & t & " where " & id & " = " & id_val
     End Function
+    'Dim getDataCari As String = "select a.no_pasien,a.id_kelahiran,b.nm_pasien as `Nama Pasien`,a.tgl_kelahiran as `Tanggal Kelahiran`, a.nm_suami as `Nama Suami`, a.cara_persalinan as `Cara Persalinan`, a.penolongan_persalinan as `Penolongan Persalinan`, a.keadaan_ibu as `Keadaan Ibu`, a.umur_kehamilan as `Umur Kehamilan`,count(c.id_bayi) as `Banyak Anak` from tbl_kelahiran a join tbl_pasien b on a.no_pasien = b.no_pasien join tbl_bayi_lahir c on a.id_kelahiran = c.id_kelahiran where CONCAT(b.nm_pasien, ' ',a.nm_suami) like '% " & Tcari.Text & " %' group by a.id_kelahiran"
 End Module

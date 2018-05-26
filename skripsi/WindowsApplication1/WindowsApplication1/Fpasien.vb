@@ -1,5 +1,5 @@
 ﻿Public Class Fpasien
-    Dim getData As String = "select no_pasien as `No Pasien`, nm_pasien as `Nama Pasien`, DATE_FORMAT(tgl_lahir, '%d/%m/%Y') as `Tgl lahir`, jk as `Jenis Kelamin`, pekerjaan as `Pekerjaaan`, alamat as `Alamat` from tbl_pasien"
+    Dim getData As String = "select no_pasien as `No Pasien`, nm_pasien as `Nama Pasien`, DATE_FORMAT(tgl_lahir, '%d/%m/%Y') as `Tgl lahir`, jk as `Jenis Kelamin`, pekerjaan as `Pekerjaan`, alamat as `Alamat` from tbl_pasien"
     Sub resetForm()
         Tnm_pasien.Clear()
         Ttgl_lahir.ResetText()
@@ -79,5 +79,9 @@
             fetchData(DGpasien, getData)
             Bcancel.PerformClick()
         End If
+    End Sub
+
+    Private Sub Bcetak_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bcetak.Click
+        Fkartu_berobat.ShowDialog()
     End Sub
 End Class
