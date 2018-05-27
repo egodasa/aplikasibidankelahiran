@@ -40,10 +40,10 @@ Partial Class Fpasien
         Me.Bexit = New System.Windows.Forms.Button()
         Me.Bsave = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Bcetak = New System.Windows.Forms.Button()
         Me.Tcari = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.DGpasien = New System.Windows.Forms.DataGridView()
-        Me.Bcetak = New System.Windows.Forms.Button()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -191,7 +191,7 @@ Partial Class Fpasien
         Me.Bcancel.Name = "Bcancel"
         Me.Bcancel.Size = New System.Drawing.Size(75, 23)
         Me.Bcancel.TabIndex = 5
-        Me.Bcancel.Text = "CANCEL"
+        Me.Bcancel.Text = "BATAL"
         Me.Bcancel.UseVisualStyleBackColor = False
         '
         'Bdelete
@@ -206,7 +206,7 @@ Partial Class Fpasien
         Me.Bdelete.Name = "Bdelete"
         Me.Bdelete.Size = New System.Drawing.Size(75, 23)
         Me.Bdelete.TabIndex = 4
-        Me.Bdelete.Text = "DELETE"
+        Me.Bdelete.Text = "HAPUS"
         Me.Bdelete.UseVisualStyleBackColor = False
         '
         'Bedit
@@ -221,7 +221,7 @@ Partial Class Fpasien
         Me.Bedit.Name = "Bedit"
         Me.Bedit.Size = New System.Drawing.Size(75, 23)
         Me.Bedit.TabIndex = 3
-        Me.Bedit.Text = "EDIT"
+        Me.Bedit.Text = "UBAH"
         Me.Bedit.UseVisualStyleBackColor = False
         '
         'Bexit
@@ -235,7 +235,7 @@ Partial Class Fpasien
         Me.Bexit.Name = "Bexit"
         Me.Bexit.Size = New System.Drawing.Size(75, 23)
         Me.Bexit.TabIndex = 2
-        Me.Bexit.Text = "EXIT"
+        Me.Bexit.Text = "KELUAR"
         Me.Bexit.UseVisualStyleBackColor = False
         '
         'Bsave
@@ -249,7 +249,7 @@ Partial Class Fpasien
         Me.Bsave.Name = "Bsave"
         Me.Bsave.Size = New System.Drawing.Size(75, 23)
         Me.Bsave.TabIndex = 1
-        Me.Bsave.Text = "SAVE"
+        Me.Bsave.Text = "SIMPAN"
         Me.Bsave.UseVisualStyleBackColor = False
         '
         'GroupBox3
@@ -266,6 +266,20 @@ Partial Class Fpasien
         Me.GroupBox3.TabIndex = 14
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Daftar Pasien"
+        '
+        'Bcetak
+        '
+        Me.Bcetak.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Bcetak.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.Bcetak.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Bcetak.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Bcetak.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Bcetak.Location = New System.Drawing.Point(449, 16)
+        Me.Bcetak.Name = "Bcetak"
+        Me.Bcetak.Size = New System.Drawing.Size(107, 23)
+        Me.Bcetak.TabIndex = 15
+        Me.Bcetak.Text = "Cetak Kartu"
+        Me.Bcetak.UseVisualStyleBackColor = False
         '
         'Tcari
         '
@@ -293,20 +307,6 @@ Partial Class Fpasien
         Me.DGpasien.ReadOnly = True
         Me.DGpasien.Size = New System.Drawing.Size(547, 150)
         Me.DGpasien.TabIndex = 15
-        '
-        'Bcetak
-        '
-        Me.Bcetak.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Bcetak.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.Bcetak.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Bcetak.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Bcetak.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bcetak.Location = New System.Drawing.Point(449, 16)
-        Me.Bcetak.Name = "Bcetak"
-        Me.Bcetak.Size = New System.Drawing.Size(107, 23)
-        Me.Bcetak.TabIndex = 15
-        Me.Bcetak.Text = "Cetak Kartu"
-        Me.Bcetak.UseVisualStyleBackColor = False
         '
         'Fpasien
         '

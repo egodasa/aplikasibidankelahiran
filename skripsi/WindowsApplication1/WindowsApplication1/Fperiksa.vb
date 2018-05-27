@@ -191,4 +191,10 @@
     Private Sub ObatToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ObatToolStripMenuItem.Click
         Fkelola_obat.ShowDialog()
     End Sub
+
+    Private Sub Tcari_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tcari.TextChanged
+        If Tcari.Text.Length <> 0 Then
+            fetchData(DGrekap, "select tgl_periksa,keluhan, tensi from tbl_periksa where no_pasien = " & data_pasien.Rows(0).Item("no_pasien") & " and CONCAT(tgl_periksa,keluhan,tensi) like '% " & Tcari.Text & " %' ")
+        End If
+    End Sub
 End Class

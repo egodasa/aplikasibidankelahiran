@@ -84,4 +84,12 @@
     Private Sub Bcetak_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bcetak.Click
         Fkartu_berobat.ShowDialog()
     End Sub
+
+    Private Sub Tcari_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tcari.TextChanged
+        If Tcari.Text.Length <> 0 Then
+            fetchData(DGpasien, "select no_pasien as `No Pasien`, nm_pasien as `Nama Pasien`, DATE_FORMAT(tgl_lahir, '%d/%m/%Y') as `Tgl lahir`, jk as `Jenis Kelamin`, pekerjaan as `Pekerjaan`, alamat as `Alamat` from tbl_pasien where CONCAT(no_pasien,nm_pasien,tgl_lahir,jk,alamat) like '% " & Tcari.Text & " %'")
+        Else
+            fetchData(DGpasien, getData)
+        End If
+    End Sub
 End Class

@@ -1,0 +1,6 @@
+skripsi/WindowsApplication1/WindowsApplication1/bin
+skripsi/WindowsApplication1/WindowsApplication1/obj
+*.user
+*.suo
+_ReSharper*
+*.sln.cache

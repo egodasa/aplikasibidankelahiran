@@ -52,6 +52,7 @@ Partial Class Fkelahiran
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.Btambah = New System.Windows.Forms.Button()
         Me.Tketerangan = New System.Windows.Forms.TextBox()
         Me.Label21 = New System.Windows.Forms.Label()
@@ -108,10 +109,11 @@ Partial Class Fkelahiran
         Me.DataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PasienToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ObatToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AsuhanBayiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.KondisiBayiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.KelahiranToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.KelahiranToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TambahanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DaftarKondisiBayiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DaftarAsuhanPadaBayiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -420,6 +422,7 @@ Partial Class Fkelahiran
         'GroupBox3
         '
         Me.GroupBox3.BackColor = System.Drawing.Color.MintCream
+        Me.GroupBox3.Controls.Add(Me.Button2)
         Me.GroupBox3.Controls.Add(Me.Btambah)
         Me.GroupBox3.Controls.Add(Me.Tketerangan)
         Me.GroupBox3.Controls.Add(Me.Label21)
@@ -450,16 +453,30 @@ Partial Class Fkelahiran
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "BAYI YANG LAHIR"
         '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button2.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button2.Location = New System.Drawing.Point(10, 187)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(98, 28)
+        Me.Button2.TabIndex = 27
+        Me.Button2.Text = "Hapus Bayi"
+        Me.Button2.UseVisualStyleBackColor = False
+        '
         'Btambah
         '
-        Me.Btambah.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Btambah.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.Btambah.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.Btambah.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Btambah.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Btambah.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Btambah.Location = New System.Drawing.Point(150, 186)
+        Me.Btambah.Location = New System.Drawing.Point(174, 187)
         Me.Btambah.Name = "Btambah"
-        Me.Btambah.Size = New System.Drawing.Size(122, 28)
+        Me.Btambah.Size = New System.Drawing.Size(98, 28)
         Me.Btambah.TabIndex = 26
         Me.Btambah.Text = "Tambah Bayi"
         Me.Btambah.UseVisualStyleBackColor = False
@@ -916,7 +933,7 @@ Partial Class Fkelahiran
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.DataToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.DataToolStripMenuItem, Me.TambahanToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1301, 24)
@@ -938,7 +955,7 @@ Partial Class Fkelahiran
         '
         'DataToolStripMenuItem
         '
-        Me.DataToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PasienToolStripMenuItem, Me.ObatToolStripMenuItem, Me.AsuhanBayiToolStripMenuItem, Me.KondisiBayiToolStripMenuItem, Me.KelahiranToolStripMenuItem})
+        Me.DataToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PasienToolStripMenuItem, Me.KelahiranToolStripMenuItem, Me.ObatToolStripMenuItem})
         Me.DataToolStripMenuItem.Name = "DataToolStripMenuItem"
         Me.DataToolStripMenuItem.Size = New System.Drawing.Size(43, 20)
         Me.DataToolStripMenuItem.Text = "Data"
@@ -946,32 +963,14 @@ Partial Class Fkelahiran
         'PasienToolStripMenuItem
         '
         Me.PasienToolStripMenuItem.Name = "PasienToolStripMenuItem"
-        Me.PasienToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.PasienToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.PasienToolStripMenuItem.Text = "Pasien"
         '
         'ObatToolStripMenuItem
         '
         Me.ObatToolStripMenuItem.Name = "ObatToolStripMenuItem"
-        Me.ObatToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.ObatToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ObatToolStripMenuItem.Text = "Obat"
-        '
-        'AsuhanBayiToolStripMenuItem
-        '
-        Me.AsuhanBayiToolStripMenuItem.Name = "AsuhanBayiToolStripMenuItem"
-        Me.AsuhanBayiToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
-        Me.AsuhanBayiToolStripMenuItem.Text = "Asuhan bayi"
-        '
-        'KondisiBayiToolStripMenuItem
-        '
-        Me.KondisiBayiToolStripMenuItem.Name = "KondisiBayiToolStripMenuItem"
-        Me.KondisiBayiToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
-        Me.KondisiBayiToolStripMenuItem.Text = "Kondisi bayi"
-        '
-        'KelahiranToolStripMenuItem
-        '
-        Me.KelahiranToolStripMenuItem.Name = "KelahiranToolStripMenuItem"
-        Me.KelahiranToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
-        Me.KelahiranToolStripMenuItem.Text = "Kelahiran"
         '
         'Button1
         '
@@ -986,6 +985,31 @@ Partial Class Fkelahiran
         Me.Button1.TabIndex = 29
         Me.Button1.Text = "Batal"
         Me.Button1.UseVisualStyleBackColor = False
+        '
+        'KelahiranToolStripMenuItem
+        '
+        Me.KelahiranToolStripMenuItem.Name = "KelahiranToolStripMenuItem"
+        Me.KelahiranToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.KelahiranToolStripMenuItem.Text = "Kelahiran"
+        '
+        'TambahanToolStripMenuItem
+        '
+        Me.TambahanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DaftarKondisiBayiToolStripMenuItem, Me.DaftarAsuhanPadaBayiToolStripMenuItem})
+        Me.TambahanToolStripMenuItem.Name = "TambahanToolStripMenuItem"
+        Me.TambahanToolStripMenuItem.Size = New System.Drawing.Size(76, 20)
+        Me.TambahanToolStripMenuItem.Text = "Tambahan"
+        '
+        'DaftarKondisiBayiToolStripMenuItem
+        '
+        Me.DaftarKondisiBayiToolStripMenuItem.Name = "DaftarKondisiBayiToolStripMenuItem"
+        Me.DaftarKondisiBayiToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
+        Me.DaftarKondisiBayiToolStripMenuItem.Text = "Daftar Kondisi Bayi"
+        '
+        'DaftarAsuhanPadaBayiToolStripMenuItem
+        '
+        Me.DaftarAsuhanPadaBayiToolStripMenuItem.Name = "DaftarAsuhanPadaBayiToolStripMenuItem"
+        Me.DaftarAsuhanPadaBayiToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
+        Me.DaftarAsuhanPadaBayiToolStripMenuItem.Text = "Daftar Asuhan pada Bayi"
         '
         'Fkelahiran
         '
@@ -1105,9 +1129,11 @@ Partial Class Fkelahiran
     Friend WithEvents KeluarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DataToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PasienToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents AsuhanBayiToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents KondisiBayiToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ObatToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents KelahiranToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TambahanToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents DaftarKondisiBayiToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents DaftarAsuhanPadaBayiToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

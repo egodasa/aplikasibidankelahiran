@@ -2,6 +2,8 @@
     Dim DGpasien, DGkondisi, DGasuhan As New DataGridView
     Dim data_pasien As DataTable
     Dim id_kelahiran As String = "K" & DateTime.Now.Ticks.ToString()
+    Dim kondisi_tmp As String
+    Dim asuhan_tmp As String
     Sub resetDataPasien()
         Ttgl_lahir.ResetText()
         Tpekerjaan.Clear()
@@ -50,8 +52,8 @@
     End Sub
 
     Private Sub Fkelahiran_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Call setKoneksi()
-        fetchData(DGasuhan, "select nm_asuhan from tbl_asuhan_bayi")
+        fetchData(DGasuhan, "select * from tbl_asuhan_bayi")
+        MessageBox.Show(DGasuhan.Rows.Count())
         For Each x As DataGridViewRow In DGasuhan.Rows
             If Not x.IsNewRow Then
                 asuhan_bayi.Items.Add(x.Cells(0).Value)
@@ -77,8 +79,6 @@
     End Sub
 
     Private Sub Btambah_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btambah.Click
-        Dim kondisi_tmp As String
-        Dim asuhan_tmp As String
         If kondisi_bayi.CheckedItems.Count <> 0 Then
             For Each itm As String In kondisi_bayi.CheckedItems
                 kondisi_tmp += itm & vbCrLf
@@ -138,7 +138,7 @@
         Fkelola_obat.ShowDialog()
     End Sub
 
-    Private Sub KelahiranToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KelahiranToolStripMenuItem.Click
-        'Fdaftarkelahiran.ShowDialog()
+    Private Sub KelahiranToolStripMenuItem_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KelahiranToolStripMenuItem.Click
+        Fdaftar_kelahiran.Show()
     End Sub
 End Class

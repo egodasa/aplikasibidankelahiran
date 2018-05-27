@@ -88,7 +88,7 @@ Partial Class Fkelola_obat
         Me.Tcari.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Tcari.Location = New System.Drawing.Point(125, 136)
         Me.Tcari.Name = "Tcari"
-        Me.Tcari.Size = New System.Drawing.Size(227, 23)
+        Me.Tcari.Size = New System.Drawing.Size(310, 23)
         Me.Tcari.TabIndex = 11
         '
         'Label6
@@ -171,7 +171,7 @@ Partial Class Fkelola_obat
         Me.Bsave.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.Bsave.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.Bsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Bsave.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Bsave.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bsave.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Bsave.Location = New System.Drawing.Point(12, 13)
         Me.Bsave.Name = "Bsave"
@@ -185,7 +185,7 @@ Partial Class Fkelola_obat
         Me.Bexit.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Bexit.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.Bexit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Bexit.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Bexit.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bexit.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Bexit.Location = New System.Drawing.Point(12, 129)
         Me.Bexit.Name = "Bexit"
@@ -216,7 +216,7 @@ Partial Class Fkelola_obat
         Me.Bcancel.Enabled = False
         Me.Bcancel.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.Bcancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Bcancel.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Bcancel.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bcancel.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Bcancel.Location = New System.Drawing.Point(12, 100)
         Me.Bcancel.Name = "Bcancel"
@@ -231,7 +231,7 @@ Partial Class Fkelola_obat
         Me.Bdelete.Enabled = False
         Me.Bdelete.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.Bdelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Bdelete.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Bdelete.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bdelete.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Bdelete.Location = New System.Drawing.Point(12, 71)
         Me.Bdelete.Name = "Bdelete"
@@ -246,7 +246,7 @@ Partial Class Fkelola_obat
         Me.Bedit.Enabled = False
         Me.Bedit.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.Bedit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Bedit.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Bedit.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bedit.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Bedit.Location = New System.Drawing.Point(12, 42)
         Me.Bedit.Name = "Bedit"

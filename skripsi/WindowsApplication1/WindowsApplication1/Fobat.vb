@@ -70,4 +70,12 @@
         Bcancel.PerformClick()
         fetchData(DGobat, getData)
     End Sub
+
+    Private Sub Tcari_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tcari.TextChanged
+        If Tcari.Text.Length <> 0 Then
+            fetchData(DGobat, "select a.id_obat, a.nm_obat as `Nama Obat`, a.stok as Stok, b.nm_jobat as `Jenis`, a.hrg_obat as `Harga` from tbl_obat a inner join tbl_jenis_obat b on a.id_jobat = b.id_jobat where nm_obat like '% " & Tcari.Text & " %'")
+        Else
+            fetchData(DGobat, getData)
+        End If
+    End Sub
 End Class
