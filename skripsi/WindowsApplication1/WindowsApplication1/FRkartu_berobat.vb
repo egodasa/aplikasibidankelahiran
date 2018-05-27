@@ -1,6 +1,6 @@
 ﻿Imports CrystalDecisions.CrystalReports.Engine
 Imports CrystalDecisions.Shared
-Public Class Fkartu_berobat
+Public Class FRkartu_berobat
     Dim CR As New ReportDocument()
     Private Sub Fkartu_berobat_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         CR.Load("F:\skprsifauzan\skripsi\WindowsApplication1\WindowsApplication1\kartu berobat.rpt")

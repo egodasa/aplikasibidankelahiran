@@ -636,7 +636,7 @@ Partial Class Fperiksa
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(91, 15)
         Me.Label24.TabIndex = 0
-        Me.Label24.Text = "pencarian rekap"
+        Me.Label24.Text = "Pencarian rekap"
         '
         'Bsimpan
         '

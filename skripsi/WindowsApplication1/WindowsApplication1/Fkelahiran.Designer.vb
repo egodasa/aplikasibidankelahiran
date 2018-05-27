@@ -52,7 +52,7 @@ Partial Class Fkelahiran
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Bhapus = New System.Windows.Forms.Button()
         Me.Btambah = New System.Windows.Forms.Button()
         Me.Tketerangan = New System.Windows.Forms.TextBox()
         Me.Label21 = New System.Windows.Forms.Label()
@@ -108,12 +108,12 @@ Partial Class Fkelahiran
         Me.KeluarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PasienToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ObatToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.KelahiranToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ObatToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TambahanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DaftarKondisiBayiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DaftarAsuhanPadaBayiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -136,6 +136,7 @@ Partial Class Fkelahiran
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(11, 265)
         Me.GroupBox1.Name = "GroupBox1"
@@ -283,6 +284,7 @@ Partial Class Fkelahiran
         Me.GroupBox2.Controls.Add(Me.Label16)
         Me.GroupBox2.Controls.Add(Me.Label17)
         Me.GroupBox2.Controls.Add(Me.Label18)
+        Me.GroupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.GroupBox2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.Location = New System.Drawing.Point(11, 34)
         Me.GroupBox2.Name = "GroupBox2"
@@ -293,6 +295,7 @@ Partial Class Fkelahiran
         '
         'Ttgl_lahir
         '
+        Me.Ttgl_lahir.Enabled = False
         Me.Ttgl_lahir.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Ttgl_lahir.Location = New System.Drawing.Point(109, 79)
         Me.Ttgl_lahir.Name = "Ttgl_lahir"
@@ -319,6 +322,7 @@ Partial Class Fkelahiran
         '
         'Talamat
         '
+        Me.Talamat.Enabled = False
         Me.Talamat.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Talamat.Location = New System.Drawing.Point(109, 163)
         Me.Talamat.Name = "Talamat"
@@ -337,6 +341,7 @@ Partial Class Fkelahiran
         '
         'Tpekerjaan
         '
+        Me.Tpekerjaan.Enabled = False
         Me.Tpekerjaan.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Tpekerjaan.Location = New System.Drawing.Point(109, 135)
         Me.Tpekerjaan.Name = "Tpekerjaan"
@@ -345,6 +350,7 @@ Partial Class Fkelahiran
         '
         'Cjk
         '
+        Me.Cjk.Enabled = False
         Me.Cjk.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Cjk.FormattingEnabled = True
         Me.Cjk.Items.AddRange(New Object() {"Laki-laki", "Perempuan"})
@@ -355,6 +361,7 @@ Partial Class Fkelahiran
         '
         'Tnm_pasien
         '
+        Me.Tnm_pasien.Enabled = False
         Me.Tnm_pasien.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Tnm_pasien.Location = New System.Drawing.Point(109, 51)
         Me.Tnm_pasien.Name = "Tnm_pasien"
@@ -422,7 +429,7 @@ Partial Class Fkelahiran
         'GroupBox3
         '
         Me.GroupBox3.BackColor = System.Drawing.Color.MintCream
-        Me.GroupBox3.Controls.Add(Me.Button2)
+        Me.GroupBox3.Controls.Add(Me.Bhapus)
         Me.GroupBox3.Controls.Add(Me.Btambah)
         Me.GroupBox3.Controls.Add(Me.Tketerangan)
         Me.GroupBox3.Controls.Add(Me.Label21)
@@ -445,6 +452,7 @@ Partial Class Fkelahiran
         Me.GroupBox3.Controls.Add(Me.Label9)
         Me.GroupBox3.Controls.Add(Me.Label8)
         Me.GroupBox3.Controls.Add(Me.Label10)
+        Me.GroupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.GroupBox3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.Location = New System.Drawing.Point(298, 34)
         Me.GroupBox3.Name = "GroupBox3"
@@ -453,19 +461,19 @@ Partial Class Fkelahiran
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "BAYI YANG LAHIR"
         '
-        'Button2
+        'Bhapus
         '
-        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Button2.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button2.Location = New System.Drawing.Point(10, 187)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(98, 28)
-        Me.Button2.TabIndex = 27
-        Me.Button2.Text = "Hapus Bayi"
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.Bhapus.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Bhapus.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.Bhapus.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Bhapus.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Bhapus.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Bhapus.Location = New System.Drawing.Point(10, 187)
+        Me.Bhapus.Name = "Bhapus"
+        Me.Bhapus.Size = New System.Drawing.Size(98, 28)
+        Me.Bhapus.TabIndex = 27
+        Me.Bhapus.Text = "Hapus Bayi"
+        Me.Bhapus.UseVisualStyleBackColor = False
         '
         'Btambah
         '
@@ -735,6 +743,7 @@ Partial Class Fkelahiran
         Me.GroupBox6.Controls.Add(Me.Label26)
         Me.GroupBox6.Controls.Add(Me.Label25)
         Me.GroupBox6.Controls.Add(Me.Label24)
+        Me.GroupBox6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.GroupBox6.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox6.Location = New System.Drawing.Point(298, 402)
         Me.GroupBox6.Name = "GroupBox6"
@@ -923,6 +932,7 @@ Partial Class Fkelahiran
         '
         Me.GroupBox5.BackColor = System.Drawing.Color.MintCream
         Me.GroupBox5.Controls.Add(Me.DGbayi)
+        Me.GroupBox5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.GroupBox5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox5.Location = New System.Drawing.Point(298, 267)
         Me.GroupBox5.Name = "GroupBox5"
@@ -966,31 +976,17 @@ Partial Class Fkelahiran
         Me.PasienToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.PasienToolStripMenuItem.Text = "Pasien"
         '
-        'ObatToolStripMenuItem
-        '
-        Me.ObatToolStripMenuItem.Name = "ObatToolStripMenuItem"
-        Me.ObatToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.ObatToolStripMenuItem.Text = "Obat"
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button1.Location = New System.Drawing.Point(1158, 517)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(123, 27)
-        Me.Button1.TabIndex = 29
-        Me.Button1.Text = "Batal"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
         'KelahiranToolStripMenuItem
         '
         Me.KelahiranToolStripMenuItem.Name = "KelahiranToolStripMenuItem"
         Me.KelahiranToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.KelahiranToolStripMenuItem.Text = "Kelahiran"
+        '
+        'ObatToolStripMenuItem
+        '
+        Me.ObatToolStripMenuItem.Name = "ObatToolStripMenuItem"
+        Me.ObatToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ObatToolStripMenuItem.Text = "Obat"
         '
         'TambahanToolStripMenuItem
         '
@@ -1010,6 +1006,20 @@ Partial Class Fkelahiran
         Me.DaftarAsuhanPadaBayiToolStripMenuItem.Name = "DaftarAsuhanPadaBayiToolStripMenuItem"
         Me.DaftarAsuhanPadaBayiToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
         Me.DaftarAsuhanPadaBayiToolStripMenuItem.Text = "Daftar Asuhan pada Bayi"
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button1.Location = New System.Drawing.Point(1158, 517)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(123, 27)
+        Me.Button1.TabIndex = 29
+        Me.Button1.Text = "Batal"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Fkelahiran
         '
@@ -1131,7 +1141,7 @@ Partial Class Fkelahiran
     Friend WithEvents PasienToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ObatToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Bhapus As System.Windows.Forms.Button
     Friend WithEvents KelahiranToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents TambahanToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DaftarKondisiBayiToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem

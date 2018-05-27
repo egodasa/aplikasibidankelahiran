@@ -33,6 +33,17 @@
         Tanak.Clear()
         Tketerangan.Clear()
     End Sub
+    Sub resetBiayaKelahiran()
+        Tpersalinan.Clear()
+        Tperawatan.Clear()
+        Tperawatan_bayi.Clear()
+        Tcucian.Clear()
+        Takte.Clear()
+        Tobat.Clear()
+        Ttransportasi.Clear()
+        Tlain.Clear()
+        Tjumlah.Clear()
+    End Sub
     Private Sub Tno_pasien_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tno_pasien.TextChanged
         If Tno_pasien.TextLength <> 0 Then
             fetchData(DGpasien, "select * from tbl_pasien where no_pasien = " & Tno_pasien.Text)
@@ -52,14 +63,13 @@
     End Sub
 
     Private Sub Fkelahiran_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        fetchData(DGasuhan, "select * from tbl_asuhan_bayi")
+        Call fetchData(DGasuhan, "select * from tbl_asuhan_bayi")
         MessageBox.Show(DGasuhan.Rows.Count())
         For Each x As DataGridViewRow In DGasuhan.Rows
             If Not x.IsNewRow Then
                 asuhan_bayi.Items.Add(x.Cells(0).Value)
             End If
         Next
-        asuhan_bayi.Refresh()
     End Sub
 
     Private Sub kondisi_bayi_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles kondisi_bayi.SelectedIndexChanged
@@ -95,7 +105,7 @@
     End Sub
 
     Private Sub Bsimpan_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bsimpan.Click
-        runQuery("insert into tbl_kelahiran (no_pasien,id_kelahiran,tgl_kelahiran,nm_suami,penolongan_persalinan,cara_persalinan,umur_kehamilan,keadaan_ibu) values (" & Tno_pasien.Text &
+        runQuery("insert into tbl_kelahiran (no_pasien,id_kelahiran,tgl_kelahiran,nm_suami,penolongan_persalinan,cara_persalinan,umur_kehamilan,keadaan_ibu,biaya_perawatan_kelas,biaya_perawatan_bayi,biaya_obat_obatan,biaya_cucian,biaya_akte_kelahiran,biaya_transportasi,biaya_lain) values (" & Tno_pasien.Text &
                  ", '" & id_kelahiran &
                  "', '" & Ttgl_lahir.Value.ToString("yyyy-MM-dd hh:mm:00") &
                  "', '" & Tnm_suami.Text &
@@ -103,7 +113,14 @@
                  "', '" & Tcara.Text &
                  "', " & Tumur.Text &
                  ", '" & Tkeadaan.Text &
-                 "')")
+                 "', " & Tperawatan.Text &
+                 ", " & Tperawatan_bayi.Text &
+                 ", " & Tobat.Text &
+                 ", " & Tcucian.Text &
+                 ", " & Takte.Text &
+                 ", " & Ttransportasi.Text &
+                 ", " & Tlain.Text &
+                 ")")
         For Each x As DataGridViewRow In DGbayi.Rows
             If Not x.IsNewRow Then
                 runQuery("insert into tbl_bayi_lahir (id_kelahiran,nm_bayi,anak_ke,berat_lahir,panjang_badan,lingkar_kepala,jk,asuhan_bayi_saat_lahir,keterangan,kondisi_bayi) values('" & id_kelahiran &
@@ -120,9 +137,12 @@
             End If
         Next
         DGbayi.DataSource = Nothing
-        DGbayi.Refresh()
+        DGbayi.Rows.Clear()
+        DGbayi.Update()
         Call resetIdKelahiran()
         Call resetKeadaanIbu()
+        Call resetBiayaKelahiran()
+        Tno_pasien.Clear()
         Call successMessage()
     End Sub
 
@@ -140,5 +160,22 @@
 
     Private Sub KelahiranToolStripMenuItem_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KelahiranToolStripMenuItem.Click
         Fdaftar_kelahiran.Show()
+    End Sub
+
+    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bhapus.Click
+        If DGbayi.Rows.Count <> 0 Then
+            DGbayi.Rows.RemoveAt(DGbayi.CurrentRow.Index)
+        End If
+    End Sub
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        If MessageBox.Show("Apakah Anda yakin ingin membatalkan dan mengulangi entri data kelahiran? Semua data yang dientrikan tadi akan HILANG. Batalkan dan ulangi entri kelahiran?", "Peringatan!", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) = DialogResult.Yes Then
+
+            DGbayi.Refresh()
+            Call resetIdKelahiran()
+            Call resetKeadaanIbu()
+            Call resetBiayaKelahiran()
+            Tno_pasien.Clear()
+        End If
     End Sub
 End Class

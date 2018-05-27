@@ -34,7 +34,7 @@
             fetchData(DGpasien, "select * from tbl_pasien where no_pasien = " & Tno_pasien.Text)
             data_pasien = DGpasien.DataSource
             If data_pasien.Rows.Count = 1 Then
-                fetchData(DGrekap, "select tgl_periksa,keluhan, tensi from tbl_periksa where no_pasien = " & data_pasien.Rows(0).Item("no_pasien") & " ")
+                fetchData(DGrekap, "select a.tgl_periksa,a.keluhan, a.tensi, b.tinggi_bdn AS `Tinggi Badan`, b.berat_bdn as `Berat Badan`,b.hpht AS `HPHT`, b.htp as `HTP`, b.diagnosa as `Diagnosa`,b.umur_khmln as `Umur Kehamilan`,b.kb_terakhir as `KB Terakhir` from tbl_periksa a left join tbl_anc b on a.id_periksa = b.id_periksa where no_pasien = " & data_pasien.Rows(0).Item("no_pasien"))
                 Ttgl_lahir.Value = data_pasien.Rows(0).Item("tgl_lahir")
                 Tpekerjaan.Text = data_pasien.Rows(0).Item("pekerjaan")
                 Talamat.Text = data_pasien.Rows(0).Item("alamat")
@@ -88,8 +88,8 @@
     Private Sub Bsimpan_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bsimpan.Click
         runQuery("insert into tbl_periksa (id_periksa, no_pasien,keluhan, tensi) values ('" & id_periksa & "'," & Tno_pasien.Text & ",'" & Tkeluhan.Text & "','" & Ttkn_darah.Text & "')")
         If is_anc.Checked = True Then
-            runQuery("insert into tbl_anc (id_periksa,nm_suami,tinggi_bdn,berat_bdn,tekanan_drh,hpht,htp,diagnosa,umur_khmln,kb_terakhir) values ('" & id_periksa & "','" & Tnm_suami.Text & "'," & Ttgi_badan.Text & "," & Tbrt_badan.Text & ",'" & Ttkn_darah.Text &
-                     "', '" & Thpht.Value.ToString("yyyy-MM-dd") & "', '" & Thtp.Value.ToString("yyyy-MM-dd") & "','" & Tdiagnosa.Text & "'," & Tumr_kehamilan.Text & ", '" & Tkb.Value.ToString("yyyy-MM-dd") & "')")
+            runQuery("insert into tbl_anc (id_periksa,nm_suami,tinggi_bdn,berat_bdn,hpht,htp,diagnosa,umur_khmln,kb_terakhir) values ('" & id_periksa & "','" & Tnm_suami.Text & "'," & Ttgi_badan.Text & "," & Tbrt_badan.Text &
+                     ", '" & Thpht.Value.ToString("yyyy-MM-dd") & "', '" & Thtp.Value.ToString("yyyy-MM-dd") & "','" & Tdiagnosa.Text & "'," & Tumr_kehamilan.Text & ", '" & Tkb.Value.ToString("yyyy-MM-dd") & "')")
             Call resetAnc()
             is_anc.Checked = False
         End If
@@ -102,21 +102,7 @@
                 End If
             Next
         End If
-
-        Call resetDataPasien()
-        Tkeluhan.Clear()
-        Ttkn_darah.Clear()
-        Tno_pasien.Clear()
-        Tno_pasien.Focus()
-        DGobat_beli.DataSource = Nothing
-        DGobat_beli.Refresh()
-        Tjumlah.Clear()
-        Call resetId()
-        fetchData(DGobat_beli, getDataBeli)
-        DGobat_beli.Columns("id_terapi").Visible = False
-        DGobat_beli.Columns("id_obat").Visible = False
-        DGobat_beli.Columns("id_periksa").Visible = False
-        DGobat_beli.Columns("Jumlah").ReadOnly = False
+        Bbatal.PerformClick()
     End Sub
 
     Private Sub DGrekap_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DGrekap.CellContentClick
@@ -160,7 +146,6 @@
         Cobat.ResetText()
         Tjumlah.Clear()
         fetchData(DGobat_beli, getDataBeli)
-        DGobat_beli.Refresh()
     End Sub
 
     Private Sub Fperiksa_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
@@ -194,7 +179,22 @@
 
     Private Sub Tcari_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tcari.TextChanged
         If Tcari.Text.Length <> 0 Then
-            fetchData(DGrekap, "select tgl_periksa,keluhan, tensi from tbl_periksa where no_pasien = " & data_pasien.Rows(0).Item("no_pasien") & " and CONCAT(tgl_periksa,keluhan,tensi) like '% " & Tcari.Text & " %' ")
+            fetchData(DGrekap, "select a.tgl_periksa,a.keluhan, a.tensi, b.tinggi_bdn AS `Tinggi Badan`, b.berat_bdn as `Berat Badan`,b.hpht AS `HPHT`, b.htp as `HTP`, b.diagnosa as `Diagnosa`,b.umur_khmln as `Umur Kehamilan`,b.kb_terakhir as `KB Terakhir` from tbl_periksa a left join tbl_anc b on a.id_periksa = b.id_periksa where no_pasien = " & data_pasien.Rows(0).Item("no_pasien") & " AND tgl_periksa like '%" & Tcari.Text & "%' OR keluhan like '%" & Tcari.Text & "%' OR like '%" & Tcari.Text & "%' OR tensi like '% " & Tcari.Text & " %' ")
         End If
+    End Sub
+
+    Private Sub Bbatal_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bbatal.Click
+        Call resetDataPasien()
+        Tkeluhan.Clear()
+        Ttkn_darah.Clear()
+        Tno_pasien.Clear()
+        Tno_pasien.Focus()
+        Tjumlah.Clear()
+        Call resetId()
+        fetchData(DGobat_beli, getDataBeli)
+        DGobat_beli.Columns("id_terapi").Visible = False
+        DGobat_beli.Columns("id_obat").Visible = False
+        DGobat_beli.Columns("id_periksa").Visible = False
+        DGobat_beli.Columns("Jumlah").ReadOnly = False
     End Sub
 End Class

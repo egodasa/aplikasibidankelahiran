@@ -103,6 +103,18 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="db.vb" />
+    <Compile Include="FRakte.Designer.vb">
+      <DependentUpon>FRakte.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FRakte.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRbiaya_persalinan.Designer.vb">
+      <DependentUpon>FRbiaya_persalinan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FRbiaya_persalinan.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Fdaftar_kelahiran.Designer.vb">
       <DependentUpon>Fdaftar_kelahiran.vb</DependentUpon>
     </Compile>
@@ -115,10 +127,10 @@
     <Compile Include="Fjenis_obat.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Fkartu_berobat.Designer.vb">
-      <DependentUpon>Fkartu_berobat.vb</DependentUpon>
+    <Compile Include="FRkartu_berobat.Designer.vb">
+      <DependentUpon>FRkartu_berobat.vb</DependentUpon>
     </Compile>
-    <Compile Include="Fkartu_berobat.vb">
+    <Compile Include="FRkartu_berobat.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Fkb.Designer.vb">
@@ -208,14 +220,20 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>biayabersalinan.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="FRakte.resx">
+      <DependentUpon>FRakte.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRbiaya_persalinan.resx">
+      <DependentUpon>FRbiaya_persalinan.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Fdaftar_kelahiran.resx">
       <DependentUpon>Fdaftar_kelahiran.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fjenis_obat.resx">
       <DependentUpon>Fjenis_obat.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Fkartu_berobat.resx">
-      <DependentUpon>Fkartu_berobat.vb</DependentUpon>
+    <EmbeddedResource Include="FRkartu_berobat.resx">
+      <DependentUpon>FRkartu_berobat.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fkb.resx">
       <DependentUpon>Fkb.vb</DependentUpon>

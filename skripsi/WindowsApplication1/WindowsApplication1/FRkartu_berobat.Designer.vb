@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Fkartu_berobat
+Partial Class FRkartu_berobat
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -36,14 +36,14 @@ Partial Class Fkartu_berobat
         Me.CRpasien.Size = New System.Drawing.Size(960, 386)
         Me.CRpasien.TabIndex = 0
         '
-        'Fkartu_berobat
+        'FRkartu_berobat
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(960, 386)
         Me.Controls.Add(Me.CRpasien)
-        Me.Name = "Fkartu_berobat"
-        Me.Text = "Fkartu_berobat"
+        Me.Name = "FRkartu_berobat"
+        Me.Text = "Kartu Berobat"
         Me.ResumeLayout(False)
 
     End Sub
