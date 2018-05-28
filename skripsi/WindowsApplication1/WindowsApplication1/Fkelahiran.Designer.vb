@@ -114,6 +114,7 @@ Partial Class Fkelahiran
         Me.DaftarKondisiBayiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DaftarAsuhanPadaBayiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -757,6 +758,7 @@ Partial Class Fkelahiran
         Me.Tjumlah.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Tjumlah.Location = New System.Drawing.Point(811, 75)
         Me.Tjumlah.Name = "Tjumlah"
+        Me.Tjumlah.ReadOnly = True
         Me.Tjumlah.Size = New System.Drawing.Size(160, 23)
         Me.Tjumlah.TabIndex = 21
         '
@@ -916,16 +918,16 @@ Partial Class Fkelahiran
         '
         'Bsimpan
         '
-        Me.Bsimpan.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Bsimpan.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Bsimpan.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.Bsimpan.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Bsimpan.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bsimpan.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bsimpan.Location = New System.Drawing.Point(1010, 517)
+        Me.Bsimpan.Location = New System.Drawing.Point(800, 517)
         Me.Bsimpan.Name = "Bsimpan"
-        Me.Bsimpan.Size = New System.Drawing.Size(123, 27)
+        Me.Bsimpan.Size = New System.Drawing.Size(161, 27)
         Me.Bsimpan.TabIndex = 27
-        Me.Bsimpan.Text = "Simpan kelahiran"
+        Me.Bsimpan.Text = "SIMPAN KELAHIRAN"
         Me.Bsimpan.UseVisualStyleBackColor = False
         '
         'GroupBox5
@@ -973,19 +975,19 @@ Partial Class Fkelahiran
         'PasienToolStripMenuItem
         '
         Me.PasienToolStripMenuItem.Name = "PasienToolStripMenuItem"
-        Me.PasienToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.PasienToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
         Me.PasienToolStripMenuItem.Text = "Pasien"
         '
         'KelahiranToolStripMenuItem
         '
         Me.KelahiranToolStripMenuItem.Name = "KelahiranToolStripMenuItem"
-        Me.KelahiranToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.KelahiranToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
         Me.KelahiranToolStripMenuItem.Text = "Kelahiran"
         '
         'ObatToolStripMenuItem
         '
         Me.ObatToolStripMenuItem.Name = "ObatToolStripMenuItem"
-        Me.ObatToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ObatToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
         Me.ObatToolStripMenuItem.Text = "Obat"
         '
         'TambahanToolStripMenuItem
@@ -1009,17 +1011,31 @@ Partial Class Fkelahiran
         '
         'Button1
         '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button1.Location = New System.Drawing.Point(1158, 517)
+        Me.Button1.Location = New System.Drawing.Point(999, 517)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(123, 27)
         Me.Button1.TabIndex = 29
-        Me.Button1.Text = "Batal"
+        Me.Button1.Text = "BATAL"
         Me.Button1.UseVisualStyleBackColor = False
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button2.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button2.Location = New System.Drawing.Point(1157, 517)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(123, 27)
+        Me.Button2.TabIndex = 30
+        Me.Button2.Text = "KELUAR"
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'Fkelahiran
         '
@@ -1027,6 +1043,7 @@ Partial Class Fkelahiran
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.InactiveBorder
         Me.ClientSize = New System.Drawing.Size(1301, 588)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Bsimpan)
         Me.Controls.Add(Me.GroupBox6)
@@ -1146,4 +1163,5 @@ Partial Class Fkelahiran
     Friend WithEvents TambahanToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DaftarKondisiBayiToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DaftarAsuhanPadaBayiToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Button2 As System.Windows.Forms.Button
 End Class

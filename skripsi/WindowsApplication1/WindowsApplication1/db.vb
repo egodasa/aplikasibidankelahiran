@@ -29,7 +29,6 @@ Module db
         cmd.CommandType = CommandType.Text
         cmd.CommandText = q
         cmd.ExecuteNonQuery()
-
     End Sub
     Sub successMessage()
         MessageBox.Show("Data berhasil disimpan", "Pesan", MessageBoxButtons.OK, MessageBoxIcon.Information)

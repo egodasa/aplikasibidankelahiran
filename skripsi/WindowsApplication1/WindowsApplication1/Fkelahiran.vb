@@ -4,6 +4,11 @@
     Dim id_kelahiran As String = "K" & DateTime.Now.Ticks.ToString()
     Dim kondisi_tmp As String
     Dim asuhan_tmp As String
+    Dim total As Integer = 0
+    Sub hitungBayar()
+        total = Val(Tpersalinan.Text) + Val(Tperawatan.Text) + Val(Tperawatan_bayi.Text) + Val(Tcucian.Text) + Val(Takte.Text) + Val(Tobat.Text) + Val(Ttransportasi.Text) + Val(Tlain.Text)
+        Tjumlah.Text = total
+    End Sub
     Sub resetDataPasien()
         Ttgl_lahir.ResetText()
         Tpekerjaan.Clear()
@@ -176,6 +181,61 @@
             Call resetKeadaanIbu()
             Call resetBiayaKelahiran()
             Tno_pasien.Clear()
+        End If
+    End Sub
+
+    Private Sub Button2_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
+        If MessageBox.Show("Apakah Anda yakin ingin KELUAR?", "Peringatan!", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) = DialogResult.Yes Then
+            Fmenu.Show()
+            Me.Close()
+        End If
+    End Sub
+
+    Private Sub Tpersalinan_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tpersalinan.TextChanged
+        If Tpersalinan.Text.Length <> 0 Then
+            Call hitungBayar()
+        End If
+    End Sub
+
+    Private Sub Tperawatan_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tperawatan.TextChanged
+        If Tperawatan.Text.Length <> 0 Then
+            Call hitungBayar()
+        End If
+    End Sub
+
+    Private Sub Tperawatan_bayi_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tperawatan_bayi.TextChanged
+        If Tperawatan_bayi.Text.Length <> 0 Then
+            Call hitungBayar()
+        End If
+    End Sub
+
+    Private Sub Tcucian_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tcucian.TextChanged
+        If Tcucian.Text.Length <> 0 Then
+            Call hitungBayar()
+        End If
+    End Sub
+
+    Private Sub Takte_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Takte.TextChanged
+        If Takte.Text.Length <> 0 Then
+            Call hitungBayar()
+        End If
+    End Sub
+
+    Private Sub Tobat_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tobat.TextChanged
+        If Tobat.Text.Length <> 0 Then
+            Call hitungBayar()
+        End If
+    End Sub
+
+    Private Sub Ttransportasi_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Ttransportasi.TextChanged
+        If Ttransportasi.Text.Length <> 0 Then
+            Call hitungBayar()
+        End If
+    End Sub
+
+    Private Sub Tlain_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tlain.TextChanged
+        If Tlain.Text.Length <> 0 Then
+            Call hitungBayar()
         End If
     End Sub
 End Class

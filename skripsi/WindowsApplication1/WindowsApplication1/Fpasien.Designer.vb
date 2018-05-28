@@ -166,15 +166,15 @@ Partial Class Fpasien
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.MintCream
+        Me.GroupBox1.Controls.Add(Me.Bcetak)
         Me.GroupBox1.Controls.Add(Me.Bcancel)
         Me.GroupBox1.Controls.Add(Me.Bdelete)
         Me.GroupBox1.Controls.Add(Me.Bedit)
-        Me.GroupBox1.Controls.Add(Me.Bexit)
         Me.GroupBox1.Controls.Add(Me.Bsave)
-        Me.GroupBox1.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(481, 16)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(97, 168)
+        Me.GroupBox1.Size = New System.Drawing.Size(128, 168)
         Me.GroupBox1.TabIndex = 7
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "PROSES"
@@ -189,7 +189,7 @@ Partial Class Fpasien
         Me.Bcancel.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Bcancel.Location = New System.Drawing.Point(12, 100)
         Me.Bcancel.Name = "Bcancel"
-        Me.Bcancel.Size = New System.Drawing.Size(75, 23)
+        Me.Bcancel.Size = New System.Drawing.Size(102, 23)
         Me.Bcancel.TabIndex = 5
         Me.Bcancel.Text = "BATAL"
         Me.Bcancel.UseVisualStyleBackColor = False
@@ -204,7 +204,7 @@ Partial Class Fpasien
         Me.Bdelete.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Bdelete.Location = New System.Drawing.Point(12, 71)
         Me.Bdelete.Name = "Bdelete"
-        Me.Bdelete.Size = New System.Drawing.Size(75, 23)
+        Me.Bdelete.Size = New System.Drawing.Size(102, 23)
         Me.Bdelete.TabIndex = 4
         Me.Bdelete.Text = "HAPUS"
         Me.Bdelete.UseVisualStyleBackColor = False
@@ -219,7 +219,7 @@ Partial Class Fpasien
         Me.Bedit.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Bedit.Location = New System.Drawing.Point(12, 42)
         Me.Bedit.Name = "Bedit"
-        Me.Bedit.Size = New System.Drawing.Size(75, 23)
+        Me.Bedit.Size = New System.Drawing.Size(102, 23)
         Me.Bedit.TabIndex = 3
         Me.Bedit.Text = "UBAH"
         Me.Bedit.UseVisualStyleBackColor = False
@@ -231,7 +231,7 @@ Partial Class Fpasien
         Me.Bexit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Bexit.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bexit.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bexit.Location = New System.Drawing.Point(12, 129)
+        Me.Bexit.Location = New System.Drawing.Point(534, 395)
         Me.Bexit.Name = "Bexit"
         Me.Bexit.Size = New System.Drawing.Size(75, 23)
         Me.Bexit.TabIndex = 2
@@ -247,7 +247,7 @@ Partial Class Fpasien
         Me.Bsave.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Bsave.Location = New System.Drawing.Point(12, 13)
         Me.Bsave.Name = "Bsave"
-        Me.Bsave.Size = New System.Drawing.Size(75, 23)
+        Me.Bsave.Size = New System.Drawing.Size(102, 23)
         Me.Bsave.TabIndex = 1
         Me.Bsave.Text = "SIMPAN"
         Me.Bsave.UseVisualStyleBackColor = False
@@ -255,14 +255,13 @@ Partial Class Fpasien
         'GroupBox3
         '
         Me.GroupBox3.BackColor = System.Drawing.Color.MintCream
-        Me.GroupBox3.Controls.Add(Me.Bcetak)
         Me.GroupBox3.Controls.Add(Me.Tcari)
         Me.GroupBox3.Controls.Add(Me.Label2)
         Me.GroupBox3.Controls.Add(Me.DGpasien)
         Me.GroupBox3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.Location = New System.Drawing.Point(12, 190)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(566, 202)
+        Me.GroupBox3.Size = New System.Drawing.Size(597, 202)
         Me.GroupBox3.TabIndex = 14
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Daftar Pasien"
@@ -274,11 +273,11 @@ Partial Class Fpasien
         Me.Bcetak.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Bcetak.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bcetak.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bcetak.Location = New System.Drawing.Point(449, 16)
+        Me.Bcetak.Location = New System.Drawing.Point(12, 129)
         Me.Bcetak.Name = "Bcetak"
-        Me.Bcetak.Size = New System.Drawing.Size(107, 23)
+        Me.Bcetak.Size = New System.Drawing.Size(102, 23)
         Me.Bcetak.TabIndex = 15
-        Me.Bcetak.Text = "Cetak Kartu"
+        Me.Bcetak.Text = "CETAK KARTU"
         Me.Bcetak.UseVisualStyleBackColor = False
         '
         'Tcari
@@ -286,14 +285,14 @@ Partial Class Fpasien
         Me.Tcari.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Tcari.Location = New System.Drawing.Point(118, 16)
         Me.Tcari.Name = "Tcari"
-        Me.Tcari.Size = New System.Drawing.Size(310, 23)
+        Me.Tcari.Size = New System.Drawing.Size(465, 23)
         Me.Tcari.TabIndex = 16
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(6, 16)
+        Me.Label2.Location = New System.Drawing.Point(6, 19)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(64, 15)
         Me.Label2.TabIndex = 14
@@ -305,7 +304,7 @@ Partial Class Fpasien
         Me.DGpasien.Location = New System.Drawing.Point(9, 42)
         Me.DGpasien.Name = "DGpasien"
         Me.DGpasien.ReadOnly = True
-        Me.DGpasien.Size = New System.Drawing.Size(547, 150)
+        Me.DGpasien.Size = New System.Drawing.Size(574, 150)
         Me.DGpasien.TabIndex = 15
         '
         'Fpasien
@@ -313,10 +312,11 @@ Partial Class Fpasien
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.InactiveBorder
-        Me.ClientSize = New System.Drawing.Size(585, 395)
+        Me.ClientSize = New System.Drawing.Size(621, 430)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.Bexit)
         Me.Name = "Fpasien"
         Me.Text = "Form Pasien"
         Me.GroupBox2.ResumeLayout(False)

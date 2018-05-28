@@ -22,6 +22,7 @@ Partial Class Fdaftar_kelahiran
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Fdaftar_kelahiran))
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Bakte = New System.Windows.Forms.Button()
         Me.Bbiaya = New System.Windows.Forms.Button()
@@ -30,6 +31,7 @@ Partial Class Fdaftar_kelahiran
         Me.DGkelahiran = New System.Windows.Forms.DataGridView()
         Me.Tcari = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DGkelahiran, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -42,9 +44,9 @@ Partial Class Fdaftar_kelahiran
         Me.GroupBox2.Controls.Add(Me.Bbiaya)
         Me.GroupBox2.Controls.Add(Me.Bketerangan)
         Me.GroupBox2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(455, 12)
+        Me.GroupBox2.Location = New System.Drawing.Point(9, 241)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(228, 223)
+        Me.GroupBox2.Size = New System.Drawing.Size(692, 95)
         Me.GroupBox2.TabIndex = 15
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "PROSES"
@@ -56,7 +58,7 @@ Partial Class Fdaftar_kelahiran
         Me.Bakte.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Bakte.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bakte.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bakte.Location = New System.Drawing.Point(12, 92)
+        Me.Bakte.Location = New System.Drawing.Point(237, 23)
         Me.Bakte.Name = "Bakte"
         Me.Bakte.Size = New System.Drawing.Size(203, 50)
         Me.Bakte.TabIndex = 5
@@ -70,7 +72,7 @@ Partial Class Fdaftar_kelahiran
         Me.Bbiaya.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Bbiaya.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bbiaya.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bbiaya.Location = New System.Drawing.Point(12, 159)
+        Me.Bbiaya.Location = New System.Drawing.Point(472, 23)
         Me.Bbiaya.Name = "Bbiaya"
         Me.Bbiaya.Size = New System.Drawing.Size(203, 52)
         Me.Bbiaya.TabIndex = 2
@@ -100,7 +102,7 @@ Partial Class Fdaftar_kelahiran
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(9, 9)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(440, 226)
+        Me.GroupBox1.Size = New System.Drawing.Size(692, 226)
         Me.GroupBox1.TabIndex = 14
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "DAFTAR KELAHIRAN"
@@ -110,7 +112,7 @@ Partial Class Fdaftar_kelahiran
         Me.DGkelahiran.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGkelahiran.Location = New System.Drawing.Point(6, 64)
         Me.DGkelahiran.Name = "DGkelahiran"
-        Me.DGkelahiran.Size = New System.Drawing.Size(425, 150)
+        Me.DGkelahiran.Size = New System.Drawing.Size(680, 150)
         Me.DGkelahiran.TabIndex = 12
         '
         'Tcari
@@ -118,7 +120,7 @@ Partial Class Fdaftar_kelahiran
         Me.Tcari.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Tcari.Location = New System.Drawing.Point(168, 27)
         Me.Tcari.Name = "Tcari"
-        Me.Tcari.Size = New System.Drawing.Size(263, 23)
+        Me.Tcari.Size = New System.Drawing.Size(518, 23)
         Me.Tcari.TabIndex = 6
         '
         'Label2
@@ -131,14 +133,30 @@ Partial Class Fdaftar_kelahiran
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Pencarian Riwayat Kelahiran"
         '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button1.Location = New System.Drawing.Point(629, 342)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(72, 32)
+        Me.Button1.TabIndex = 6
+        Me.Button1.Text = "KELUAR"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
         'Fdaftar_kelahiran
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.InactiveBorder
-        Me.ClientSize = New System.Drawing.Size(696, 247)
+        Me.ClientSize = New System.Drawing.Size(715, 378)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Fdaftar_kelahiran"
         Me.Text = "Daftar Kelahiran"
         Me.GroupBox2.ResumeLayout(False)
@@ -156,4 +174,5 @@ Partial Class Fdaftar_kelahiran
     Friend WithEvents DGkelahiran As System.Windows.Forms.DataGridView
     Friend WithEvents Tcari As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class

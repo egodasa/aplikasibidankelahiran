@@ -83,6 +83,8 @@ Partial Class Fperiksa
         Me.AsuhanBayiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.KondisiBayiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Bbatal = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.Group_anc.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         CType(Me.DGobat_beli, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -289,6 +291,8 @@ Partial Class Fperiksa
         'GroupBox4
         '
         Me.GroupBox4.BackColor = System.Drawing.Color.MintCream
+        Me.GroupBox4.Controls.Add(Me.TextBox1)
+        Me.GroupBox4.Controls.Add(Me.Label13)
         Me.GroupBox4.Controls.Add(Me.Label14)
         Me.GroupBox4.Controls.Add(Me.Btambah)
         Me.GroupBox4.Controls.Add(Me.Cobat)
@@ -358,9 +362,9 @@ Partial Class Fperiksa
         'DGobat_beli
         '
         Me.DGobat_beli.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGobat_beli.Location = New System.Drawing.Point(9, 116)
+        Me.DGobat_beli.Location = New System.Drawing.Point(9, 105)
         Me.DGobat_beli.Name = "DGobat_beli"
-        Me.DGobat_beli.Size = New System.Drawing.Size(289, 118)
+        Me.DGobat_beli.Size = New System.Drawing.Size(289, 94)
         Me.DGobat_beli.TabIndex = 11
         '
         'Tjumlah
@@ -591,9 +595,9 @@ Partial Class Fperiksa
         Me.Bexit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Bexit.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bexit.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bexit.Location = New System.Drawing.Point(793, 455)
+        Me.Bexit.Location = New System.Drawing.Point(949, 455)
         Me.Bexit.Name = "Bexit"
-        Me.Bexit.Size = New System.Drawing.Size(75, 23)
+        Me.Bexit.Size = New System.Drawing.Size(85, 23)
         Me.Bexit.TabIndex = 7
         Me.Bexit.Text = "KELUAR"
         Me.Bexit.UseVisualStyleBackColor = False
@@ -645,7 +649,7 @@ Partial Class Fperiksa
         Me.Bsimpan.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Bsimpan.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bsimpan.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bsimpan.Location = New System.Drawing.Point(199, 455)
+        Me.Bsimpan.Location = New System.Drawing.Point(426, 455)
         Me.Bsimpan.Name = "Bsimpan"
         Me.Bsimpan.Size = New System.Drawing.Size(175, 23)
         Me.Bsimpan.TabIndex = 13
@@ -712,12 +716,31 @@ Partial Class Fperiksa
         Me.Bbatal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Bbatal.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bbatal.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bbatal.Location = New System.Drawing.Point(444, 455)
+        Me.Bbatal.Location = New System.Drawing.Point(643, 455)
         Me.Bbatal.Name = "Bbatal"
         Me.Bbatal.Size = New System.Drawing.Size(214, 23)
         Me.Bbatal.TabIndex = 30
         Me.Bbatal.Text = "BATAL/ULANG PEMERIKSAAN"
         Me.Bbatal.UseVisualStyleBackColor = False
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(90, 205)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.ReadOnly = True
+        Me.TextBox1.Size = New System.Drawing.Size(208, 23)
+        Me.TextBox1.TabIndex = 31
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(7, 205)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(66, 15)
+        Me.Label13.TabIndex = 30
+        Me.Label13.Text = "Total Bayar"
         '
         'Fperiksa
         '
@@ -812,4 +835,6 @@ Partial Class Fperiksa
     Friend WithEvents KondisiBayiToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ObatToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Bbatal As System.Windows.Forms.Button
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents Label13 As System.Windows.Forms.Label
 End Class

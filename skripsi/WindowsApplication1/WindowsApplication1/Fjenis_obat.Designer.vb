@@ -83,12 +83,11 @@ Partial Class Fjenis_obat
         Me.GroupBox2.Controls.Add(Me.Bcancel)
         Me.GroupBox2.Controls.Add(Me.Bdelete)
         Me.GroupBox2.Controls.Add(Me.Bedit)
-        Me.GroupBox2.Controls.Add(Me.Bexit)
         Me.GroupBox2.Controls.Add(Me.Bsave)
         Me.GroupBox2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.Location = New System.Drawing.Point(458, 12)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(97, 174)
+        Me.GroupBox2.Size = New System.Drawing.Size(97, 140)
         Me.GroupBox2.TabIndex = 13
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "PROSES"
@@ -145,7 +144,7 @@ Partial Class Fjenis_obat
         Me.Bexit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Bexit.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bexit.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bexit.Location = New System.Drawing.Point(12, 136)
+        Me.Bexit.Location = New System.Drawing.Point(470, 212)
         Me.Bexit.Name = "Bexit"
         Me.Bexit.Size = New System.Drawing.Size(75, 23)
         Me.Bexit.TabIndex = 2
@@ -174,8 +173,9 @@ Partial Class Fjenis_obat
         Me.ClientSize = New System.Drawing.Size(557, 247)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.Bexit)
         Me.Name = "Fjenis_obat"
-        Me.Text = "jenis_obat"
+        Me.Text = "Daftar Jenis Obat"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.DGjobat, System.ComponentModel.ISupportInitialize).EndInit()
