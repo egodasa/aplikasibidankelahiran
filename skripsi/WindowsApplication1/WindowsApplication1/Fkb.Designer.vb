@@ -59,9 +59,10 @@ Partial Class Fkb
         Me.KeluarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PasienToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AsuhanBayiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.KondisiBayiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ObatToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.KondisiBayiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AsuhanBayiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -71,6 +72,7 @@ Partial Class Fkb
         '
         'GroupBox2
         '
+        Me.GroupBox2.BackColor = System.Drawing.Color.MintCream
         Me.GroupBox2.Controls.Add(Me.Talamat)
         Me.GroupBox2.Controls.Add(Me.Tpekerjaan)
         Me.GroupBox2.Controls.Add(Me.Cjk)
@@ -85,8 +87,8 @@ Partial Class Fkb
         Me.GroupBox2.Controls.Add(Me.Label16)
         Me.GroupBox2.Controls.Add(Me.Label17)
         Me.GroupBox2.Controls.Add(Me.Label18)
-        Me.GroupBox2.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 41)
+        Me.GroupBox2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 27)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(304, 237)
         Me.GroupBox2.TabIndex = 7
@@ -95,130 +97,135 @@ Partial Class Fkb
         '
         'Talamat
         '
+        Me.Talamat.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Talamat.Location = New System.Drawing.Point(112, 158)
         Me.Talamat.Name = "Talamat"
-        Me.Talamat.Size = New System.Drawing.Size(170, 22)
+        Me.Talamat.Size = New System.Drawing.Size(170, 23)
         Me.Talamat.TabIndex = 16
         '
         'Tpekerjaan
         '
+        Me.Tpekerjaan.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Tpekerjaan.Location = New System.Drawing.Point(112, 130)
         Me.Tpekerjaan.Name = "Tpekerjaan"
-        Me.Tpekerjaan.Size = New System.Drawing.Size(170, 22)
+        Me.Tpekerjaan.Size = New System.Drawing.Size(170, 23)
         Me.Tpekerjaan.TabIndex = 15
         '
         'Cjk
         '
+        Me.Cjk.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Cjk.FormattingEnabled = True
         Me.Cjk.Items.AddRange(New Object() {"Laki-laki", "Perempuan"})
         Me.Cjk.Location = New System.Drawing.Point(112, 102)
         Me.Cjk.Name = "Cjk"
-        Me.Cjk.Size = New System.Drawing.Size(170, 22)
+        Me.Cjk.Size = New System.Drawing.Size(170, 23)
         Me.Cjk.TabIndex = 14
         '
         'Ttgl_lahir
         '
+        Me.Ttgl_lahir.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Ttgl_lahir.Location = New System.Drawing.Point(112, 74)
         Me.Ttgl_lahir.Name = "Ttgl_lahir"
-        Me.Ttgl_lahir.Size = New System.Drawing.Size(167, 22)
+        Me.Ttgl_lahir.Size = New System.Drawing.Size(167, 23)
         Me.Ttgl_lahir.TabIndex = 13
         '
         'Tnm_suami
         '
-        Me.Tnm_suami.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tnm_suami.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Tnm_suami.Location = New System.Drawing.Point(112, 186)
         Me.Tnm_suami.Name = "Tnm_suami"
-        Me.Tnm_suami.Size = New System.Drawing.Size(170, 22)
+        Me.Tnm_suami.Size = New System.Drawing.Size(170, 23)
         Me.Tnm_suami.TabIndex = 12
         '
         'Label23
         '
         Me.Label23.AutoSize = True
-        Me.Label23.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label23.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label23.Location = New System.Drawing.Point(10, 186)
         Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(87, 14)
+        Me.Label23.Size = New System.Drawing.Size(76, 15)
         Me.Label23.TabIndex = 11
         Me.Label23.Text = "Nama Suami"
         '
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.Location = New System.Drawing.Point(10, 158)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(53, 14)
+        Me.Label13.Size = New System.Drawing.Size(45, 15)
         Me.Label13.TabIndex = 9
         Me.Label13.Text = "Alamat"
         '
         'Tnm_ibu
         '
-        Me.Tnm_ibu.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tnm_ibu.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Tnm_ibu.Location = New System.Drawing.Point(112, 46)
         Me.Tnm_ibu.Name = "Tnm_ibu"
-        Me.Tnm_ibu.Size = New System.Drawing.Size(167, 22)
+        Me.Tnm_ibu.Size = New System.Drawing.Size(167, 23)
         Me.Tnm_ibu.TabIndex = 6
         '
         'Tno_pasien
         '
-        Me.Tno_pasien.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tno_pasien.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Tno_pasien.Location = New System.Drawing.Point(112, 18)
         Me.Tno_pasien.Name = "Tno_pasien"
-        Me.Tno_pasien.Size = New System.Drawing.Size(102, 22)
+        Me.Tno_pasien.Size = New System.Drawing.Size(102, 23)
         Me.Tno_pasien.TabIndex = 1
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.Location = New System.Drawing.Point(10, 130)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(70, 14)
+        Me.Label11.Size = New System.Drawing.Size(58, 15)
         Me.Label11.TabIndex = 5
         Me.Label11.Text = "Pekerjaan"
         '
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.Location = New System.Drawing.Point(10, 102)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(102, 14)
+        Me.Label12.Size = New System.Drawing.Size(79, 15)
         Me.Label12.TabIndex = 4
         Me.Label12.Text = "Jenis Kelamin"
         '
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label16.Location = New System.Drawing.Point(10, 74)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(95, 14)
+        Me.Label16.Size = New System.Drawing.Size(79, 15)
         Me.Label16.TabIndex = 3
         Me.Label16.Text = "Tanggal Lahir"
         '
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label17.Location = New System.Drawing.Point(10, 46)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(67, 14)
+        Me.Label17.Size = New System.Drawing.Size(59, 15)
         Me.Label17.TabIndex = 2
         Me.Label17.Text = "Nama Ibu"
         '
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label18.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label18.Location = New System.Drawing.Point(10, 18)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(71, 14)
+        Me.Label18.Size = New System.Drawing.Size(60, 15)
         Me.Label18.TabIndex = 1
         Me.Label18.Text = "No Pasien"
         '
         'GroupBox1
         '
+        Me.GroupBox1.BackColor = System.Drawing.Color.MintCream
         Me.GroupBox1.Controls.Add(Me.Thaid)
         Me.GroupBox1.Controls.Add(Me.Ckb)
         Me.GroupBox1.Controls.Add(Me.Tanak)
@@ -231,153 +238,164 @@ Partial Class Fkb
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.Tbrt_badan)
         Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 284)
+        Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 270)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(304, 181)
+        Me.GroupBox1.Size = New System.Drawing.Size(304, 161)
         Me.GroupBox1.TabIndex = 8
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Pemeriksaan KB"
+        Me.GroupBox1.Text = "PEMERIKSAAN KB"
         '
         'Thaid
         '
+        Me.Thaid.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Thaid.Location = New System.Drawing.Point(108, 127)
         Me.Thaid.Name = "Thaid"
-        Me.Thaid.Size = New System.Drawing.Size(172, 22)
+        Me.Thaid.Size = New System.Drawing.Size(172, 23)
         Me.Thaid.TabIndex = 35
         '
         'Ckb
         '
-        Me.Ckb.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Ckb.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Ckb.FormattingEnabled = True
         Me.Ckb.Location = New System.Drawing.Point(108, 99)
         Me.Ckb.Name = "Ckb"
-        Me.Ckb.Size = New System.Drawing.Size(121, 22)
+        Me.Ckb.Size = New System.Drawing.Size(121, 23)
         Me.Ckb.TabIndex = 34
         '
         'Tanak
         '
-        Me.Tanak.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tanak.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Tanak.Location = New System.Drawing.Point(108, 71)
         Me.Tanak.Name = "Tanak"
-        Me.Tanak.Size = New System.Drawing.Size(80, 22)
+        Me.Tanak.Size = New System.Drawing.Size(80, 23)
         Me.Tanak.TabIndex = 33
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.Location = New System.Drawing.Point(6, 127)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(92, 14)
+        Me.Label7.Size = New System.Drawing.Size(75, 15)
         Me.Label7.TabIndex = 32
-        Me.Label7.Text = "haid terakhir"
+        Me.Label7.Text = "Haid terakhir"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(6, 99)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(62, 14)
+        Me.Label3.Size = New System.Drawing.Size(50, 15)
         Me.Label3.TabIndex = 31
-        Me.Label3.Text = "jenis KB"
+        Me.Label3.Text = "Jenis KB"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(6, 71)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(57, 14)
+        Me.Label4.Size = New System.Drawing.Size(49, 15)
         Me.Label4.TabIndex = 30
-        Me.Label4.Text = "anak ke"
+        Me.Label4.Text = "Anak ke"
         '
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label19.Location = New System.Drawing.Point(195, 55)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(51, 14)
+        Me.Label19.Size = New System.Drawing.Size(46, 15)
         Me.Label19.TabIndex = 29
         Me.Label19.Text = "MMHG"
         '
         'Ttkn_darah
         '
-        Me.Ttkn_darah.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Ttkn_darah.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Ttkn_darah.Location = New System.Drawing.Point(108, 43)
         Me.Ttkn_darah.Name = "Ttkn_darah"
-        Me.Ttkn_darah.Size = New System.Drawing.Size(80, 22)
+        Me.Ttkn_darah.Size = New System.Drawing.Size(80, 23)
         Me.Ttkn_darah.TabIndex = 28
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(6, 43)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(100, 14)
+        Me.Label2.Size = New System.Drawing.Size(85, 15)
         Me.Label2.TabIndex = 27
-        Me.Label2.Text = "tekanan darah"
+        Me.Label2.Text = "Tekanan darah"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(195, 25)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(27, 14)
+        Me.Label1.Size = New System.Drawing.Size(22, 15)
         Me.Label1.TabIndex = 26
         Me.Label1.Text = "KG"
         '
         'Tbrt_badan
         '
-        Me.Tbrt_badan.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tbrt_badan.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Tbrt_badan.Location = New System.Drawing.Point(108, 17)
         Me.Tbrt_badan.Name = "Tbrt_badan"
-        Me.Tbrt_badan.Size = New System.Drawing.Size(80, 22)
+        Me.Tbrt_badan.Size = New System.Drawing.Size(80, 23)
         Me.Tbrt_badan.TabIndex = 25
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.Location = New System.Drawing.Point(6, 17)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(82, 14)
+        Me.Label5.Size = New System.Drawing.Size(70, 15)
         Me.Label5.TabIndex = 24
-        Me.Label5.Text = "berat badan"
+        Me.Label5.Text = "Berat badan"
         '
         'Button4
         '
-        Me.Button4.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.Location = New System.Drawing.Point(712, 442)
+        Me.Button4.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button4.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button4.Location = New System.Drawing.Point(692, 408)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(75, 23)
         Me.Button4.TabIndex = 10
-        Me.Button4.Text = "exit"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.Button4.Text = "KELUAR"
+        Me.Button4.UseVisualStyleBackColor = False
         '
         'Button3
         '
-        Me.Button3.Font = New System.Drawing.Font("Bookman Old Style", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(342, 442)
+        Me.Button3.BackColor = System.Drawing.Color.DarkCyan
+        Me.Button3.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button3.Location = New System.Drawing.Point(322, 408)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
+        Me.Button3.Size = New System.Drawing.Size(156, 23)
         Me.Button3.TabIndex = 9
-        Me.Button3.Text = "save"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.Button3.Text = "SIMPAN PEMERIKSAAN"
+        Me.Button3.UseVisualStyleBackColor = False
         '
         'GroupBox3
         '
+        Me.GroupBox3.BackColor = System.Drawing.Color.MintCream
         Me.GroupBox3.Controls.Add(Me.DGrekap)
-        Me.GroupBox3.Location = New System.Drawing.Point(337, 59)
+        Me.GroupBox3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox3.Location = New System.Drawing.Point(322, 27)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(445, 366)
         Me.GroupBox3.TabIndex = 11
         Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Rekap pemeriksaan KB"
+        Me.GroupBox3.Text = "REKAP PEMERIKSAAN KB"
         '
         'DGrekap
         '
@@ -392,7 +410,7 @@ Partial Class Fkb
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.DataToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(794, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(781, 24)
         Me.MenuStrip1.TabIndex = 29
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -406,7 +424,7 @@ Partial Class Fkb
         'KeluarToolStripMenuItem
         '
         Me.KeluarToolStripMenuItem.Name = "KeluarToolStripMenuItem"
-        Me.KeluarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.KeluarToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
         Me.KeluarToolStripMenuItem.Text = "Keluar"
         '
         'DataToolStripMenuItem
@@ -419,14 +437,14 @@ Partial Class Fkb
         'PasienToolStripMenuItem
         '
         Me.PasienToolStripMenuItem.Name = "PasienToolStripMenuItem"
-        Me.PasienToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.PasienToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
         Me.PasienToolStripMenuItem.Text = "Pasien"
         '
-        'AsuhanBayiToolStripMenuItem
+        'ObatToolStripMenuItem
         '
-        Me.AsuhanBayiToolStripMenuItem.Name = "AsuhanBayiToolStripMenuItem"
-        Me.AsuhanBayiToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
-        Me.AsuhanBayiToolStripMenuItem.Text = "Asuhan bayi"
+        Me.ObatToolStripMenuItem.Name = "ObatToolStripMenuItem"
+        Me.ObatToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.ObatToolStripMenuItem.Text = "Obat"
         '
         'KondisiBayiToolStripMenuItem
         '
@@ -434,17 +452,33 @@ Partial Class Fkb
         Me.KondisiBayiToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
         Me.KondisiBayiToolStripMenuItem.Text = "Kondisi bayi"
         '
-        'ObatToolStripMenuItem
+        'AsuhanBayiToolStripMenuItem
         '
-        Me.ObatToolStripMenuItem.Name = "ObatToolStripMenuItem"
-        Me.ObatToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.ObatToolStripMenuItem.Text = "Obat"
+        Me.AsuhanBayiToolStripMenuItem.Name = "AsuhanBayiToolStripMenuItem"
+        Me.AsuhanBayiToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.AsuhanBayiToolStripMenuItem.Text = "Asuhan bayi"
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button1.Location = New System.Drawing.Point(497, 408)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(173, 23)
+        Me.Button1.TabIndex = 30
+        Me.Button1.Text = "BATALKAN PEMERIKSAAN"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Fkb
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(794, 477)
+        Me.BackColor = System.Drawing.SystemColors.InactiveBorder
+        Me.ClientSize = New System.Drawing.Size(781, 442)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.Button4)
@@ -505,4 +539,5 @@ Partial Class Fkb
     Friend WithEvents AsuhanBayiToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents KondisiBayiToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ObatToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class

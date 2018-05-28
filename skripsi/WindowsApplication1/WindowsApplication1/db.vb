@@ -15,21 +15,19 @@ Module db
             MsgBox("lun")
         End If
     End Sub
-    Sub fetchData(ByVal dt As DataGridView, ByVal q As String)
+    Function fetchData(ByVal q As String)
         Call setKoneksi()
         da = New MySqlDataAdapter(q, kon)
         ds = New DataSet
         da.Fill(ds)
-        dt.DataSource = ds.Tables(0)
-        dt.ReadOnly = True
-    End Sub
+        Return ds.Tables(0)
+    End Function
     Sub runQuery(ByVal q As String)
         cmd = New MySqlCommand(q, kon)
         cmd.Connection = kon
         cmd.CommandType = CommandType.Text
         cmd.CommandText = q
         cmd.ExecuteNonQuery()
-
     End Sub
     Sub successMessage()
         MessageBox.Show("Data berhasil disimpan", "Pesan", MessageBoxButtons.OK, MessageBoxIcon.Information)
