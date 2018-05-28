@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Fjenis_obat
+Partial Class Fasuhan_bayi
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,60 +22,20 @@ Partial Class Fjenis_obat
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.DGjobat = New System.Windows.Forms.DataGridView()
-        Me.Tnm_jenis = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Bcancel = New System.Windows.Forms.Button()
         Me.Bdelete = New System.Windows.Forms.Button()
         Me.Bedit = New System.Windows.Forms.Button()
         Me.Bsave = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Tnm_kondisi = New System.Windows.Forms.TextBox()
+        Me.DGkondisi = New System.Windows.Forms.DataGridView()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Bexit = New System.Windows.Forms.Button()
-        Me.GroupBox1.SuspendLayout()
-        CType(Me.DGjobat, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
+        CType(Me.DGkondisi, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.BackColor = System.Drawing.Color.MintCream
-        Me.GroupBox1.Controls.Add(Me.DGjobat)
-        Me.GroupBox1.Controls.Add(Me.Tnm_jenis)
-        Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 9)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(440, 226)
-        Me.GroupBox1.TabIndex = 4
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "ENTRI DATA JENIS OBAT"
-        '
-        'DGjobat
-        '
-        Me.DGjobat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGjobat.Location = New System.Drawing.Point(6, 64)
-        Me.DGjobat.Name = "DGjobat"
-        Me.DGjobat.Size = New System.Drawing.Size(425, 150)
-        Me.DGjobat.TabIndex = 12
-        '
-        'Tnm_jenis
-        '
-        Me.Tnm_jenis.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tnm_jenis.Location = New System.Drawing.Point(125, 27)
-        Me.Tnm_jenis.Name = "Tnm_jenis"
-        Me.Tnm_jenis.Size = New System.Drawing.Size(306, 23)
-        Me.Tnm_jenis.TabIndex = 6
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(7, 27)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(97, 15)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Nama Jenis Obat"
         '
         'GroupBox2
         '
@@ -85,10 +45,10 @@ Partial Class Fjenis_obat
         Me.GroupBox2.Controls.Add(Me.Bedit)
         Me.GroupBox2.Controls.Add(Me.Bsave)
         Me.GroupBox2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(458, 12)
+        Me.GroupBox2.Location = New System.Drawing.Point(458, 15)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(97, 140)
-        Me.GroupBox2.TabIndex = 13
+        Me.GroupBox2.TabIndex = 19
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "PROSES"
         '
@@ -151,6 +111,46 @@ Partial Class Fjenis_obat
         Me.Bsave.Text = "SIMPAN"
         Me.Bsave.UseVisualStyleBackColor = False
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(7, 27)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(96, 15)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "Isi Nama Asuhan"
+        '
+        'Tnm_kondisi
+        '
+        Me.Tnm_kondisi.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tnm_kondisi.Location = New System.Drawing.Point(125, 27)
+        Me.Tnm_kondisi.Name = "Tnm_kondisi"
+        Me.Tnm_kondisi.Size = New System.Drawing.Size(306, 23)
+        Me.Tnm_kondisi.TabIndex = 6
+        '
+        'DGkondisi
+        '
+        Me.DGkondisi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGkondisi.Location = New System.Drawing.Point(6, 64)
+        Me.DGkondisi.Name = "DGkondisi"
+        Me.DGkondisi.Size = New System.Drawing.Size(425, 150)
+        Me.DGkondisi.TabIndex = 12
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.BackColor = System.Drawing.Color.MintCream
+        Me.GroupBox1.Controls.Add(Me.DGkondisi)
+        Me.GroupBox1.Controls.Add(Me.Tnm_kondisi)
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(440, 226)
+        Me.GroupBox1.TabIndex = 18
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "ENTRI DATA ASUHAN BAYI"
+        '
         'Bexit
         '
         Me.Bexit.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
@@ -158,39 +158,38 @@ Partial Class Fjenis_obat
         Me.Bexit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Bexit.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bexit.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bexit.Location = New System.Drawing.Point(470, 212)
+        Me.Bexit.Location = New System.Drawing.Point(470, 215)
         Me.Bexit.Name = "Bexit"
         Me.Bexit.Size = New System.Drawing.Size(75, 23)
-        Me.Bexit.TabIndex = 2
+        Me.Bexit.TabIndex = 17
         Me.Bexit.Text = "KELUAR"
         Me.Bexit.UseVisualStyleBackColor = False
         '
-        'Fjenis_obat
+        'Fasuhan_bayi
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.InactiveBorder
-        Me.ClientSize = New System.Drawing.Size(557, 247)
+        Me.ClientSize = New System.Drawing.Size(562, 248)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Bexit)
-        Me.Name = "Fjenis_obat"
-        Me.Text = "Daftar Jenis Obat"
+        Me.Name = "Fasuhan_bayi"
+        Me.Text = "Daftar Asuhan pada Bayi"
+        Me.GroupBox2.ResumeLayout(False)
+        CType(Me.DGkondisi, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.DGjobat, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox2.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents DGjobat As System.Windows.Forms.DataGridView
-    Friend WithEvents Tnm_jenis As System.Windows.Forms.TextBox
-    Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents Bcancel As System.Windows.Forms.Button
     Friend WithEvents Bdelete As System.Windows.Forms.Button
     Friend WithEvents Bedit As System.Windows.Forms.Button
-    Friend WithEvents Bexit As System.Windows.Forms.Button
     Friend WithEvents Bsave As System.Windows.Forms.Button
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Tnm_kondisi As System.Windows.Forms.TextBox
+    Friend WithEvents DGkondisi As System.Windows.Forms.DataGridView
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents Bexit As System.Windows.Forms.Button
 End Class

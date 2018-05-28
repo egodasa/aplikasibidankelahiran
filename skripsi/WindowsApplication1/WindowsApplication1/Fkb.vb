@@ -1,5 +1,4 @@
 ﻿Public Class Fkb
-    Dim DGkb, DGpasien As New DataGridView
     Dim data_pasien As New DataTable
     Sub resetDataPasien()
         Ttgl_lahir.ResetText()
@@ -17,12 +16,11 @@
     End Sub
     Private Sub Fkb_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         setKoneksi()
-        fetchData(DGkb, "select a.id_obat, a.nm_obat from tbl_obat a inner join tbl_jenis_obat b on a.id_jobat = b.id_jobat where b.nm_jobat = 'KB'")
-        Ckb.DataSource = DGkb.DataSource
+        Ckb.DataSource = fetchData("select a.id_obat, a.nm_obat,a.stok,a.hrg_obat from tbl_obat a inner join tbl_jenis_obat b on a.id_jobat = b.id_jobat where b.nm_jobat = 'KB'")
         Ckb.ValueMember = "id_obat"
         Ckb.DisplayMember = "nm_obat"
         Ckb.SelectedIndex = 0
-        fetchData(DGrekap, "select * from laporan_kb")
+        DGrekap.DataSource = fetchData("select * from laporan_kb")
     End Sub
 
     Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
@@ -34,14 +32,14 @@
 
     Private Sub Tno_pasien_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tno_pasien.TextChanged
         If Tno_pasien.TextLength <> 0 Then
-            fetchData(DGpasien, "select * from tbl_pasien where no_pasien = " & Tno_pasien.Text)
-            data_pasien = DGpasien.DataSource
+            data_pasien = fetchData("select * from tbl_pasien where no_pasien = " & Tno_pasien.Text)
             If data_pasien.Rows.Count = 1 Then
                 Ttgl_lahir.Value = data_pasien.Rows(0).Item("tgl_lahir")
                 Tpekerjaan.Text = data_pasien.Rows(0).Item("pekerjaan")
                 Talamat.Text = data_pasien.Rows(0).Item("alamat")
                 Cjk.Text = data_pasien.Rows(0).Item("jk")
                 Tnm_ibu.Text = data_pasien.Rows(0).Item("nm_pasien")
+                DGrekap.DataSource = fetchData("select * from tbl_periksa_kb where no_pasien " & Tno_pasien.Text)
             Else
                 Call resetDataPasien()
             End If
@@ -78,5 +76,12 @@
             Tno_pasien.Clear()
             Tno_pasien.Focus()
         End If
+    End Sub
+
+    Private Sub Ckb_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Ckb.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub Ckb_Leave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Ckb.Leave
     End Sub
 End Class

@@ -1,5 +1,4 @@
 ﻿Public Class Fkelola_obat
-    Dim DGjobat As New DataGridView
     Dim Cjobat As New DataTable
     Dim getData As String = "select a.id_obat, a.nm_obat as `Nama Obat`, a.stok as Stok, b.nm_jobat as `Jenis`, a.hrg_obat as `Harga` from tbl_obat a inner join tbl_jenis_obat b on a.id_jobat = b.id_jobat"
     Sub resetForm()
@@ -11,10 +10,9 @@
     End Sub
     Private Sub Fkelola_obat_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Call setKoneksi()
-        fetchData(DGobat, getData)
-        fetchData(DGjobat, "select * from tbl_jenis_obat")
+        DGobat.DataSource = fetchData(getData)
         'Menambahkan isi combobox dari database
-        Cjobat = DGjobat.DataSource  'Cjobat penampung sementara dari datagridview ke combobox
+        Cjobat = fetchData("select * from tbl_jenis_obat")
         Cjns_obat.Items.Clear()
         Cjns_obat.DataSource = Cjobat
         Cjns_obat.DisplayMember = Cjobat.Columns(1).Caption
@@ -32,7 +30,7 @@
     Private Sub Bsave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bsave.Click
         runQuery("insert into tbl_obat (nm_obat, stok, id_jobat, hrg_obat) values ('" & Tnm_obat.Text & "', " & Tstok.Text & ", " & Cjns_obat.SelectedValue & ", " & Thrg_obat.Text & ")")
         Call successMessage()
-        fetchData(DGobat, getData)
+        DGobat.DataSource = fetchData(getData)
         Call resetForm()
     End Sub
 
@@ -58,7 +56,7 @@
     Private Sub Bdelete_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bdelete.Click
         If MessageBox.Show("Apakah yakin data ini dihapus?", "Peringatan", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) = DialogResult.Yes Then
             runQuery(deleteSql("tbl_obat", "id_obat", DGobat.CurrentRow.Cells("id_obat").Value))
-            fetchData(DGobat, getData)
+            DGobat.DataSource = fetchData(getData)
             Bcancel.PerformClick()
         End If
     End Sub
@@ -71,14 +69,14 @@
                  " where id_obat = " & DGobat.CurrentRow.Cells("id_obat").Value)
         Call editMessage()
         Bcancel.PerformClick()
-        fetchData(DGobat, getData)
+        DGobat.DataSource = fetchData(getData)
     End Sub
 
     Private Sub Tcari_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tcari.TextChanged
         If Tcari.Text.Length <> 0 Then
-            fetchData(DGobat, "select a.id_obat, a.nm_obat as `Nama Obat`, a.stok as Stok, b.nm_jobat as `Jenis`, a.hrg_obat as `Harga` from tbl_obat a inner join tbl_jenis_obat b on a.id_jobat = b.id_jobat where nm_obat like '% " & Tcari.Text & " %'")
+            DGobat.DataSource = fetchData("select a.id_obat, a.nm_obat as `Nama Obat`, a.stok as Stok, b.nm_jobat as `Jenis`, a.hrg_obat as `Harga` from tbl_obat a inner join tbl_jenis_obat b on a.id_jobat = b.id_jobat where nm_obat like '% " & Tcari.Text & " %'")
         Else
-            fetchData(DGobat, getData)
+            DGobat.DataSource = fetchData(getData)
         End If
     End Sub
 End Class

@@ -1,6 +1,5 @@
 ﻿Public Class Fkelahiran
-    Dim DGpasien, DGkondisi, DGasuhan As New DataGridView
-    Dim data_pasien As DataTable
+    Dim data_pasien, data_asuhan, data_kondisi As DataTable
     Dim id_kelahiran As String = "K" & DateTime.Now.Ticks.ToString()
     Dim kondisi_tmp As String
     Dim asuhan_tmp As String
@@ -49,10 +48,23 @@
         Tlain.Clear()
         Tjumlah.Clear()
     End Sub
+    Sub getDataKondisi()
+        kondisi_bayi.Items.Clear()
+        data_kondisi = fetchData("select * from tbl_kondisi_lahir")
+        For Each x As DataRow In data_kondisi.Rows
+            kondisi_bayi.Items.Add(x.Item(1))
+        Next
+    End Sub
+    Sub getDataAsuhan()
+        asuhan_bayi.Items.Clear()
+        data_asuhan = fetchData("select * from tbl_asuhan_bayi")
+        For Each x As DataRow In data_asuhan.Rows
+            asuhan_bayi.Items.Add(x.Item(1))
+        Next
+    End Sub
     Private Sub Tno_pasien_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tno_pasien.TextChanged
         If Tno_pasien.TextLength <> 0 Then
-            fetchData(DGpasien, "select * from tbl_pasien where no_pasien = " & Tno_pasien.Text)
-            data_pasien = DGpasien.DataSource
+            data_pasien = fetchData("select * from tbl_pasien where no_pasien = " & Tno_pasien.Text)
             If data_pasien.Rows.Count = 1 Then
                 Ttgl_lahir.Value = data_pasien.Rows(0).Item("tgl_lahir")
                 Tpekerjaan.Text = data_pasien.Rows(0).Item("pekerjaan")
@@ -68,13 +80,8 @@
     End Sub
 
     Private Sub Fkelahiran_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Call fetchData(DGasuhan, "select * from tbl_asuhan_bayi")
-        MessageBox.Show(DGasuhan.Rows.Count())
-        For Each x As DataGridViewRow In DGasuhan.Rows
-            If Not x.IsNewRow Then
-                asuhan_bayi.Items.Add(x.Cells(0).Value)
-            End If
-        Next
+        getDataKondisi()
+        getDataAsuhan()
     End Sub
 
     Private Sub kondisi_bayi_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles kondisi_bayi.SelectedIndexChanged
@@ -110,7 +117,7 @@
     End Sub
 
     Private Sub Bsimpan_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bsimpan.Click
-        runQuery("insert into tbl_kelahiran (no_pasien,id_kelahiran,tgl_kelahiran,nm_suami,penolongan_persalinan,cara_persalinan,umur_kehamilan,keadaan_ibu,biaya_perawatan_kelas,biaya_perawatan_bayi,biaya_obat_obatan,biaya_cucian,biaya_akte_kelahiran,biaya_transportasi,biaya_lain) values (" & Tno_pasien.Text &
+        runQuery("insert into tbl_kelahiran (no_pasien,id_kelahiran,tgl_kelahiran,nm_suami,penolongan_persalinan,cara_persalinan,umur_kehamilan,keadaan_ibu,biaya_persalinan,biaya_perawatan_kelas,biaya_perawatan_bayi,biaya_obat_obatan,biaya_cucian,biaya_akte_kelahiran,biaya_transportasi,biaya_lain) values (" & Tno_pasien.Text &
                  ", '" & id_kelahiran &
                  "', '" & Ttgl_lahir.Value.ToString("yyyy-MM-dd hh:mm:00") &
                  "', '" & Tnm_suami.Text &
@@ -118,6 +125,7 @@
                  "', '" & Tcara.Text &
                  "', " & Tumur.Text &
                  ", '" & Tkeadaan.Text &
+                 "', '" & Tpersalinan.Text &
                  "', " & Tperawatan.Text &
                  ", " & Tperawatan_bayi.Text &
                  ", " & Tobat.Text &
@@ -237,5 +245,13 @@
         If Tlain.Text.Length <> 0 Then
             Call hitungBayar()
         End If
+    End Sub
+
+    Private Sub DaftarKondisiBayiToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DaftarKondisiBayiToolStripMenuItem.Click
+        Fkondisi_bayi.ShowDialog()
+    End Sub
+
+    Private Sub DaftarAsuhanPadaBayiToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DaftarAsuhanPadaBayiToolStripMenuItem.Click
+        Fasuhan_bayi.ShowDialog()
     End Sub
 End Class

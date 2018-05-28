@@ -533,7 +533,6 @@ Partial Class Fkelahiran
         '
         Me.asuhan_bayi.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.asuhan_bayi.FormattingEnabled = True
-        Me.asuhan_bayi.Items.AddRange(New Object() {"Inisiasi menyusu dini (IMD) dalam 1 jam pertama kelahiran bayi", "Suntikan vitamin K1", "Salep mata antibiotika profilaksis", "Imunisasi HBO"})
         Me.asuhan_bayi.Location = New System.Drawing.Point(628, 35)
         Me.asuhan_bayi.Name = "asuhan_bayi"
         Me.asuhan_bayi.Size = New System.Drawing.Size(354, 76)
@@ -543,7 +542,6 @@ Partial Class Fkelahiran
         '
         Me.kondisi_bayi.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.kondisi_bayi.FormattingEnabled = True
-        Me.kondisi_bayi.Items.AddRange(New Object() {"Segera menangis", "Menangis beberapa saat", "Tidak menangis", "Seluruh tubuh kemerahan", "Anggota gerak kebiruan", "Seluruh tubuh biru", "Kelainan bawaan", "Meninggal"})
         Me.kondisi_bayi.Location = New System.Drawing.Point(291, 35)
         Me.kondisi_bayi.Name = "kondisi_bayi"
         Me.kondisi_bayi.Size = New System.Drawing.Size(316, 76)

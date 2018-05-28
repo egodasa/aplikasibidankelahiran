@@ -42,6 +42,8 @@ Partial Class Fperiksa
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Btambah = New System.Windows.Forms.Button()
         Me.Cobat = New System.Windows.Forms.ComboBox()
@@ -83,8 +85,6 @@ Partial Class Fperiksa
         Me.AsuhanBayiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.KondisiBayiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Bbatal = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label13 = New System.Windows.Forms.Label()
         Me.Group_anc.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         CType(Me.DGobat_beli, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -307,6 +307,25 @@ Partial Class Fperiksa
         Me.GroupBox4.TabIndex = 4
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "TERAPI"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(90, 205)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.ReadOnly = True
+        Me.TextBox1.Size = New System.Drawing.Size(208, 23)
+        Me.TextBox1.TabIndex = 31
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(7, 205)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(66, 15)
+        Me.Label13.TabIndex = 30
+        Me.Label13.Text = "Total Bayar"
         '
         'Label14
         '
@@ -722,25 +741,6 @@ Partial Class Fperiksa
         Me.Bbatal.TabIndex = 30
         Me.Bbatal.Text = "BATAL/ULANG PEMERIKSAAN"
         Me.Bbatal.UseVisualStyleBackColor = False
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(90, 205)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(208, 23)
-        Me.TextBox1.TabIndex = 31
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(7, 205)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(66, 15)
-        Me.Label13.TabIndex = 30
-        Me.Label13.Text = "Total Bayar"
         '
         'Fperiksa
         '

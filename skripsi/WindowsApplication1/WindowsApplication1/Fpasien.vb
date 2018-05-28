@@ -8,7 +8,7 @@
         Tpekerjaan.Clear()
     End Sub
     Private Sub Fpasien_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        fetchData(DGpasien, getData)
+        DGpasien.DataSource = fetchData(getData)
     End Sub
 
     Private Sub Bexit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bexit.Click
@@ -39,7 +39,7 @@
         Call successMessage()
         Call resetForm()
         Tnm_pasien.Focus()
-        fetchData(DGpasien, getData)
+        DGpasien.DataSource = fetchData(getData)
     End Sub
 
     Private Sub DGpasien_CellDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DGpasien.CellDoubleClick
@@ -73,13 +73,13 @@
                  "' where no_pasien = " & DGpasien.CurrentRow.Cells(0).Value)
         Call editMessage()
         Bcancel.PerformClick()
-        fetchData(DGpasien, getData)
+        DGpasien.DataSource = fetchData(getData)
     End Sub
 
     Private Sub Bdelete_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bdelete.Click
         If MessageBox.Show("Apakah yakin data ini dihapus?", "Peringatan", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) = DialogResult.Yes Then
             runQuery(deleteSql("tbl_pasien", "no_pasien", DGpasien.CurrentRow.Cells(0).Value))
-            fetchData(DGpasien, getData)
+            DGpasien.DataSource = fetchData(getData)
             Bcancel.PerformClick()
         End If
     End Sub
@@ -90,9 +90,9 @@
 
     Private Sub Tcari_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tcari.TextChanged
         If Tcari.Text.Length <> 0 Then
-            fetchData(DGpasien, "select no_pasien as `No Pasien`, nm_pasien as `Nama Pasien`, DATE_FORMAT(tgl_lahir, '%d/%m/%Y') as `Tgl lahir`, jk as `Jenis Kelamin`, pekerjaan as `Pekerjaan`, alamat as `Alamat` from tbl_pasien where no_pasien like '% " & Tcari.Text & " %' OR nm_pasien like '% " & Tcari.Text & " %' OR tgl_lahir like '% " & Tcari.Text & " %' OR jk like '% " & Tcari.Text & " %' OR alamat like '%" & Tcari.Text & "%'")
+            DGpasien.DataSource = fetchData("select no_pasien as `No Pasien`, nm_pasien as `Nama Pasien`, DATE_FORMAT(tgl_lahir, '%d/%m/%Y') as `Tgl lahir`, jk as `Jenis Kelamin`, pekerjaan as `Pekerjaan`, alamat as `Alamat` from tbl_pasien where no_pasien like '% " & Tcari.Text & " %' OR nm_pasien like '% " & Tcari.Text & " %' OR tgl_lahir like '% " & Tcari.Text & " %' OR jk like '% " & Tcari.Text & " %' OR alamat like '%" & Tcari.Text & "%'")
         Else
-            fetchData(DGpasien, getData)
+            DGpasien.DataSource = fetchData(getData)
         End If
     End Sub
 End Class
