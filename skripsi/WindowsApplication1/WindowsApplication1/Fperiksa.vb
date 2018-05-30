@@ -1,6 +1,6 @@
 ﻿Public Class Fperiksa
     Dim data_pasien, obat_beli As New DataTable
-    Dim id_periksa As String = DateTime.Now.Ticks.ToString()
+    Dim id_periksa As String = DateTime.Now.ToString("ddMMyyhhmmssffff")
     Dim DTobat As New DataTable
     Dim cari_obat As DataTable
     Dim getDataBeli As String = "select a.id_terapi,a.id_obat,a.id_periksa,b.nm_obat as `Nama Obat`,a.jumlah as Jumlah,b.hrg_obat as `Harga`,b.hrg_obat*a.jumlah as `Total Harga` from tbl_terapi a join tbl_obat b on a.id_obat = b.id_obat where a.id_periksa = '" & id_periksa & "'"
@@ -22,7 +22,7 @@
         Tumr_kehamilan.Clear()
     End Sub
     Sub resetId()
-        id_periksa = DateTime.Now.Ticks.ToString()
+        id_periksa = DateTime.Now.ToString("ddMMyyhhmmssffff")
     End Sub
     Private Sub Label3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label3.Click
 
@@ -176,6 +176,8 @@
     Private Sub Tcari_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tcari.TextChanged
         If Tcari.Text.Length <> 0 Then
             DGrekap.DataSource = fetchData("select a.tgl_periksa,a.keluhan, a.tensi, b.tinggi_bdn AS `Tinggi Badan`, b.berat_bdn as `Berat Badan`,b.hpht AS `HPHT`, b.htp as `HTP`, b.diagnosa as `Diagnosa`,b.umur_khmln as `Umur Kehamilan`,b.kb_terakhir as `KB Terakhir` from tbl_periksa a left join tbl_anc b on a.id_periksa = b.id_periksa where no_pasien = " & data_pasien.Rows(0).Item("no_pasien") & " AND tgl_periksa like '%" & Tcari.Text & "%' OR keluhan like '%" & Tcari.Text & "%' OR like '%" & Tcari.Text & "%' OR tensi like '% " & Tcari.Text & " %' ")
+        Else
+            DGrekap.DataSource = fetchData("select a.tgl_periksa,a.keluhan, a.tensi, b.tinggi_bdn AS `Tinggi Badan`, b.berat_bdn as `Berat Badan`,b.hpht AS `HPHT`, b.htp as `HTP`, b.diagnosa as `Diagnosa`,b.umur_khmln as `Umur Kehamilan`,b.kb_terakhir as `KB Terakhir` from tbl_periksa a left join tbl_anc b on a.id_periksa = b.id_periksa where no_pasien = " & data_pasien.Rows(0).Item("no_pasien"))
         End If
     End Sub
 
@@ -187,7 +189,7 @@
         Tno_pasien.Focus()
         Tjumlah.Clear()
         Call resetId()
-        DGobat_beli.DataSource = fetchData(getDataBeli)
+        DGobat_beli.DataSource = fetchData("select a.id_terapi,a.id_obat,a.id_periksa,b.nm_obat as `Nama Obat`,a.jumlah as Jumlah,b.hrg_obat as `Harga`,b.hrg_obat*a.jumlah as `Total Harga` from tbl_terapi a join tbl_obat b on a.id_obat = b.id_obat where a.id_periksa = '" & id_periksa & "'")
         DGobat_beli.Columns("id_terapi").Visible = False
         DGobat_beli.Columns("id_obat").Visible = False
         DGobat_beli.Columns("id_periksa").Visible = False

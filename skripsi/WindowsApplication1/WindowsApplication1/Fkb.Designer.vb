@@ -63,6 +63,10 @@ Partial Class Fkb
         Me.KondisiBayiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AsuhanBayiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Tjumlah = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Ttotal = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -226,6 +230,10 @@ Partial Class Fkb
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.MintCream
+        Me.GroupBox1.Controls.Add(Me.Ttotal)
+        Me.GroupBox1.Controls.Add(Me.Label8)
+        Me.GroupBox1.Controls.Add(Me.Tjumlah)
+        Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.Thaid)
         Me.GroupBox1.Controls.Add(Me.Ckb)
         Me.GroupBox1.Controls.Add(Me.Tanak)
@@ -241,7 +249,7 @@ Partial Class Fkb
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(12, 270)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(304, 161)
+        Me.GroupBox1.Size = New System.Drawing.Size(304, 216)
         Me.GroupBox1.TabIndex = 8
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "PEMERIKSAAN KB"
@@ -249,7 +257,7 @@ Partial Class Fkb
         'Thaid
         '
         Me.Thaid.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Thaid.Location = New System.Drawing.Point(108, 127)
+        Me.Thaid.Location = New System.Drawing.Point(107, 100)
         Me.Thaid.Name = "Thaid"
         Me.Thaid.Size = New System.Drawing.Size(172, 23)
         Me.Thaid.TabIndex = 35
@@ -258,7 +266,7 @@ Partial Class Fkb
         '
         Me.Ckb.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Ckb.FormattingEnabled = True
-        Me.Ckb.Location = New System.Drawing.Point(108, 99)
+        Me.Ckb.Location = New System.Drawing.Point(108, 129)
         Me.Ckb.Name = "Ckb"
         Me.Ckb.Size = New System.Drawing.Size(121, 23)
         Me.Ckb.TabIndex = 34
@@ -275,7 +283,7 @@ Partial Class Fkb
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(6, 127)
+        Me.Label7.Location = New System.Drawing.Point(5, 100)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(75, 15)
         Me.Label7.TabIndex = 32
@@ -285,7 +293,7 @@ Partial Class Fkb
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(6, 99)
+        Me.Label3.Location = New System.Drawing.Point(6, 129)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(50, 15)
         Me.Label3.TabIndex = 31
@@ -305,7 +313,7 @@ Partial Class Fkb
         '
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(195, 55)
+        Me.Label19.Location = New System.Drawing.Point(195, 43)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(46, 15)
         Me.Label19.TabIndex = 29
@@ -333,7 +341,7 @@ Partial Class Fkb
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(195, 25)
+        Me.Label1.Location = New System.Drawing.Point(195, 17)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(22, 15)
         Me.Label1.TabIndex = 26
@@ -364,7 +372,7 @@ Partial Class Fkb
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button4.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button4.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button4.Location = New System.Drawing.Point(692, 408)
+        Me.Button4.Location = New System.Drawing.Point(692, 444)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(75, 23)
         Me.Button4.TabIndex = 10
@@ -378,7 +386,7 @@ Partial Class Fkb
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button3.Location = New System.Drawing.Point(322, 408)
+        Me.Button3.Location = New System.Drawing.Point(322, 444)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(156, 23)
         Me.Button3.TabIndex = 9
@@ -392,7 +400,7 @@ Partial Class Fkb
         Me.GroupBox3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.Location = New System.Drawing.Point(322, 27)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(445, 366)
+        Me.GroupBox3.Size = New System.Drawing.Size(445, 395)
         Me.GroupBox3.TabIndex = 11
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "REKAP PEMERIKSAAN KB"
@@ -402,7 +410,7 @@ Partial Class Fkb
         Me.DGrekap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGrekap.Location = New System.Drawing.Point(15, 19)
         Me.DGrekap.Name = "DGrekap"
-        Me.DGrekap.Size = New System.Drawing.Size(419, 333)
+        Me.DGrekap.Size = New System.Drawing.Size(419, 368)
         Me.DGrekap.TabIndex = 0
         '
         'MenuStrip1
@@ -465,19 +473,56 @@ Partial Class Fkb
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button1.Location = New System.Drawing.Point(497, 408)
+        Me.Button1.Location = New System.Drawing.Point(497, 444)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(173, 23)
         Me.Button1.TabIndex = 30
         Me.Button1.Text = "BATALKAN PEMERIKSAAN"
         Me.Button1.UseVisualStyleBackColor = False
         '
+        'Tjumlah
+        '
+        Me.Tjumlah.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tjumlah.Location = New System.Drawing.Point(108, 158)
+        Me.Tjumlah.Name = "Tjumlah"
+        Me.Tjumlah.Size = New System.Drawing.Size(36, 23)
+        Me.Tjumlah.TabIndex = 37
+        Me.Tjumlah.Text = "1"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(6, 158)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(46, 15)
+        Me.Label6.TabIndex = 36
+        Me.Label6.Text = "Jumlah"
+        '
+        'Ttotal
+        '
+        Me.Ttotal.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Ttotal.Location = New System.Drawing.Point(108, 187)
+        Me.Ttotal.Name = "Ttotal"
+        Me.Ttotal.Size = New System.Drawing.Size(171, 23)
+        Me.Ttotal.TabIndex = 39
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(6, 187)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(66, 15)
+        Me.Label8.TabIndex = 38
+        Me.Label8.Text = "Total Bayar"
+        '
         'Fkb
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.InactiveBorder
-        Me.ClientSize = New System.Drawing.Size(781, 442)
+        Me.ClientSize = New System.Drawing.Size(781, 510)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.GroupBox3)
@@ -540,4 +585,8 @@ Partial Class Fkb
     Friend WithEvents KondisiBayiToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ObatToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents Tjumlah As System.Windows.Forms.TextBox
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Ttotal As System.Windows.Forms.TextBox
+    Friend WithEvents Label8 As System.Windows.Forms.Label
 End Class
