@@ -10,10 +10,10 @@
     End Sub
     Sub resetPeriksa()
         Tnm_suami.Clear()
-        Tanak.Clear()
+        Tanak.ResetText()
         Thaid.ResetText()
-        Tbrt_badan.Clear()
-        Ttkn_darah.Clear()
+        Tbrt_badan.ResetText()
+        Ttkn_darah.ResetText()
         Tjumlah.Text = "1"
     End Sub
     Sub resetIdKb()
@@ -106,7 +106,11 @@
 
     End Sub
 
-    Private Sub Tjumlah_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tjumlah.TextChanged
+    Private Sub Tjumlah_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
+    End Sub
+
+    Private Sub Tjumlah_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tjumlah.ValueChanged
         If data_obat.Rows.Count <> 0 And Tjumlah.Text.Length <> 0 Then
             Ttotal.Text = Val(Tjumlah.Text) * Val(data_obat.Rows(Ckb.SelectedIndex).Item("hrg_obat"))
         End If

@@ -22,6 +22,7 @@ Partial Class Fpasien
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Fpasien))
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Ttgl_lahir = New System.Windows.Forms.DateTimePicker()
         Me.Talamat = New System.Windows.Forms.TextBox()
@@ -34,13 +35,13 @@ Partial Class Fpasien
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Bcetak = New System.Windows.Forms.Button()
         Me.Bcancel = New System.Windows.Forms.Button()
         Me.Bdelete = New System.Windows.Forms.Button()
         Me.Bedit = New System.Windows.Forms.Button()
-        Me.Bexit = New System.Windows.Forms.Button()
         Me.Bsave = New System.Windows.Forms.Button()
+        Me.Bexit = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.Bcetak = New System.Windows.Forms.Button()
         Me.Tcari = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.DGpasien = New System.Windows.Forms.DataGridView()
@@ -179,6 +180,20 @@ Partial Class Fpasien
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "PROSES"
         '
+        'Bcetak
+        '
+        Me.Bcetak.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Bcetak.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.Bcetak.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Bcetak.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Bcetak.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Bcetak.Location = New System.Drawing.Point(12, 129)
+        Me.Bcetak.Name = "Bcetak"
+        Me.Bcetak.Size = New System.Drawing.Size(102, 23)
+        Me.Bcetak.TabIndex = 15
+        Me.Bcetak.Text = "CETAK KARTU"
+        Me.Bcetak.UseVisualStyleBackColor = False
+        '
         'Bcancel
         '
         Me.Bcancel.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
@@ -224,20 +239,6 @@ Partial Class Fpasien
         Me.Bedit.Text = "UBAH"
         Me.Bedit.UseVisualStyleBackColor = False
         '
-        'Bexit
-        '
-        Me.Bexit.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Bexit.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.Bexit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Bexit.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Bexit.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bexit.Location = New System.Drawing.Point(534, 395)
-        Me.Bexit.Name = "Bexit"
-        Me.Bexit.Size = New System.Drawing.Size(75, 23)
-        Me.Bexit.TabIndex = 2
-        Me.Bexit.Text = "KELUAR"
-        Me.Bexit.UseVisualStyleBackColor = False
-        '
         'Bsave
         '
         Me.Bsave.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
@@ -252,6 +253,20 @@ Partial Class Fpasien
         Me.Bsave.Text = "SIMPAN"
         Me.Bsave.UseVisualStyleBackColor = False
         '
+        'Bexit
+        '
+        Me.Bexit.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Bexit.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.Bexit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Bexit.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Bexit.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Bexit.Location = New System.Drawing.Point(534, 395)
+        Me.Bexit.Name = "Bexit"
+        Me.Bexit.Size = New System.Drawing.Size(75, 23)
+        Me.Bexit.TabIndex = 2
+        Me.Bexit.Text = "KELUAR"
+        Me.Bexit.UseVisualStyleBackColor = False
+        '
         'GroupBox3
         '
         Me.GroupBox3.BackColor = System.Drawing.Color.MintCream
@@ -265,20 +280,6 @@ Partial Class Fpasien
         Me.GroupBox3.TabIndex = 14
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Daftar Pasien"
-        '
-        'Bcetak
-        '
-        Me.Bcetak.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Bcetak.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.Bcetak.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Bcetak.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Bcetak.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bcetak.Location = New System.Drawing.Point(12, 129)
-        Me.Bcetak.Name = "Bcetak"
-        Me.Bcetak.Size = New System.Drawing.Size(102, 23)
-        Me.Bcetak.TabIndex = 15
-        Me.Bcetak.Text = "CETAK KARTU"
-        Me.Bcetak.UseVisualStyleBackColor = False
         '
         'Tcari
         '
@@ -317,6 +318,7 @@ Partial Class Fpasien
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.Bexit)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Fpasien"
         Me.Text = "Form Pasien"
         Me.GroupBox2.ResumeLayout(False)

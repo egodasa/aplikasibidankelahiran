@@ -22,6 +22,7 @@ Partial Class FRbiaya_persalinan
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FRbiaya_persalinan))
         Me.CRbiaya = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.SuspendLayout()
         '
@@ -42,6 +43,7 @@ Partial Class FRbiaya_persalinan
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(963, 433)
         Me.Controls.Add(Me.CRbiaya)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FRbiaya_persalinan"
         Me.Text = "Biaya Persalinan"
         Me.ResumeLayout(False)

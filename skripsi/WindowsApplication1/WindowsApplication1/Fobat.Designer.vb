@@ -22,6 +22,7 @@ Partial Class Fkelola_obat
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Fkelola_obat))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Tnm_obat = New System.Windows.Forms.TextBox()
         Me.DGobat = New System.Windows.Forms.DataGridView()
@@ -263,6 +264,7 @@ Partial Class Fkelola_obat
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Bexit)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Fkelola_obat"
         Me.Text = "Kelola Obat"
         Me.GroupBox1.ResumeLayout(False)

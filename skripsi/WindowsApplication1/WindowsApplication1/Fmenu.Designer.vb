@@ -131,7 +131,7 @@ Partial Class Fmenu
         Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button7.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button7.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button7.Location = New System.Drawing.Point(445, 235)
+        Me.Button7.Location = New System.Drawing.Point(445, 294)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(104, 29)
         Me.Button7.TabIndex = 6
@@ -181,7 +181,7 @@ Partial Class Fmenu
         Me.Controls.Add(Me.Button1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Fmenu"
-        Me.Text = "Menu Aplikasi"
+        Me.Text = "Bidan Delima"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
