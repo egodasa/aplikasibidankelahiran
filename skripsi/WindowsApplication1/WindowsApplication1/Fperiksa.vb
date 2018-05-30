@@ -1,8 +1,9 @@
 ﻿Public Class Fperiksa
-    Dim data_pasien, obat_beli As New DataTable
+    Dim data_pasien, obat_beli, data_obat As New DataTable
     Dim id_periksa As String = DateTime.Now.ToString("ddMMyyhhmmssffff")
     Dim DTobat As New DataTable
     Dim cari_obat As DataTable
+    Dim total_harga As Integer = 0
     Dim getDataBeli As String = "select a.id_terapi,a.id_obat,a.id_periksa,b.nm_obat as `Nama Obat`,a.jumlah as Jumlah,b.hrg_obat as `Harga`,b.hrg_obat*a.jumlah as `Total Harga` from tbl_terapi a join tbl_obat b on a.id_obat = b.id_obat where a.id_periksa = '" & id_periksa & "'"
     Sub resetDataPasien()
         Ttgl_lahir.ResetText()
@@ -56,7 +57,8 @@
 
     Private Sub Fperiksa_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Call setKoneksi()
-        Cobat.DataSource = fetchData("select a.id_obat, a.nm_obat as `Nama Obat`, a.stok as Stok, b.nm_jobat as `Jenis`, a.status as Status from tbl_obat a inner join tbl_jenis_obat b on a.id_jobat = b.id_jobat")
+        Cobat.DataSource = fetchData("select a.id_obat, a.nm_obat as `Nama Obat`,a.hrg_obat, a.stok as Stok, b.nm_jobat as `Jenis`, a.status as Status from tbl_obat a inner join tbl_jenis_obat b on a.id_jobat = b.id_jobat")
+        data_obat = Cobat.DataSource
         DGobat_beli.DataSource = fetchData(getDataBeli)
         DGobat_beli.Columns("id_terapi").Visible = False
         DGobat_beli.Columns("id_obat").Visible = False
@@ -139,9 +141,13 @@
 
     Private Sub Btambah_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btambah.Click
         runQuery("insert into tbl_terapi (id_obat, id_periksa, jumlah) values (" & Cobat.SelectedValue & ", '" & id_periksa & "', " & Tjumlah.Text & ")")
+        DGobat_beli.DataSource = fetchData(getDataBeli)
+        If data_obat.Rows.Count <> 0 Then
+            total_harga += Val(data_obat.Rows(Cobat.SelectedIndex).Item("hrg_obat")) * Val(Tjumlah.Text)
+            Ttotal_harga.Text = total_harga
+        End If
         Cobat.ResetText()
         Tjumlah.Clear()
-        DGobat_beli.DataSource = fetchData(getDataBeli)
     End Sub
 
     Private Sub Fperiksa_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
@@ -153,6 +159,8 @@
     Private Sub Bhapus_obat_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bhapus_obat.Click
         If DGobat_beli.CurrentRow.Cells("id_terapi").Value.ToString <> "" Then
             runQuery("delete from tbl_terapi where id_terapi = '" & DGobat_beli.CurrentRow.Cells("id_terapi").Value & "'")
+            total_harga -= Val(DGobat_beli.CurrentRow.Cells("Total Harga").Value)
+            Ttotal_harga.Text = total_harga
             DGobat_beli.DataSource = fetchData(getDataBeli)
         End If
     End Sub

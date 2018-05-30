@@ -42,7 +42,7 @@ Partial Class Fperiksa
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Ttotal_harga = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Btambah = New System.Windows.Forms.Button()
@@ -291,7 +291,7 @@ Partial Class Fperiksa
         'GroupBox4
         '
         Me.GroupBox4.BackColor = System.Drawing.Color.MintCream
-        Me.GroupBox4.Controls.Add(Me.TextBox1)
+        Me.GroupBox4.Controls.Add(Me.Ttotal_harga)
         Me.GroupBox4.Controls.Add(Me.Label13)
         Me.GroupBox4.Controls.Add(Me.Label14)
         Me.GroupBox4.Controls.Add(Me.Btambah)
@@ -308,14 +308,14 @@ Partial Class Fperiksa
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "TERAPI"
         '
-        'TextBox1
+        'Ttotal_harga
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(90, 205)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(208, 23)
-        Me.TextBox1.TabIndex = 31
+        Me.Ttotal_harga.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Ttotal_harga.Location = New System.Drawing.Point(90, 205)
+        Me.Ttotal_harga.Name = "Ttotal_harga"
+        Me.Ttotal_harga.ReadOnly = True
+        Me.Ttotal_harga.Size = New System.Drawing.Size(208, 23)
+        Me.Ttotal_harga.TabIndex = 31
         '
         'Label13
         '
@@ -835,6 +835,6 @@ Partial Class Fperiksa
     Friend WithEvents KondisiBayiToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ObatToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Bbatal As System.Windows.Forms.Button
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents Ttotal_harga As System.Windows.Forms.TextBox
     Friend WithEvents Label13 As System.Windows.Forms.Label
 End Class
