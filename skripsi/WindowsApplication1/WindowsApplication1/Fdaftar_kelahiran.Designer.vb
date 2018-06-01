@@ -26,7 +26,6 @@ Partial Class Fdaftar_kelahiran
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Bakte = New System.Windows.Forms.Button()
         Me.Bbiaya = New System.Windows.Forms.Button()
-        Me.Bketerangan = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.DGkelahiran = New System.Windows.Forms.DataGridView()
         Me.Tcari = New System.Windows.Forms.TextBox()
@@ -42,7 +41,6 @@ Partial Class Fdaftar_kelahiran
         Me.GroupBox2.BackColor = System.Drawing.Color.MintCream
         Me.GroupBox2.Controls.Add(Me.Bakte)
         Me.GroupBox2.Controls.Add(Me.Bbiaya)
-        Me.GroupBox2.Controls.Add(Me.Bketerangan)
         Me.GroupBox2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.Location = New System.Drawing.Point(9, 241)
         Me.GroupBox2.Name = "GroupBox2"
@@ -58,9 +56,9 @@ Partial Class Fdaftar_kelahiran
         Me.Bakte.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Bakte.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bakte.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bakte.Location = New System.Drawing.Point(237, 23)
+        Me.Bakte.Location = New System.Drawing.Point(34, 22)
         Me.Bakte.Name = "Bakte"
-        Me.Bakte.Size = New System.Drawing.Size(203, 50)
+        Me.Bakte.Size = New System.Drawing.Size(261, 50)
         Me.Bakte.TabIndex = 5
         Me.Bakte.Text = "CETAK AKTE KELAHIRAN"
         Me.Bakte.UseVisualStyleBackColor = False
@@ -72,26 +70,12 @@ Partial Class Fdaftar_kelahiran
         Me.Bbiaya.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Bbiaya.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bbiaya.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bbiaya.Location = New System.Drawing.Point(472, 23)
+        Me.Bbiaya.Location = New System.Drawing.Point(386, 22)
         Me.Bbiaya.Name = "Bbiaya"
-        Me.Bbiaya.Size = New System.Drawing.Size(203, 52)
+        Me.Bbiaya.Size = New System.Drawing.Size(263, 52)
         Me.Bbiaya.TabIndex = 2
         Me.Bbiaya.Text = "CETAK BUKTI BIAYA PERSALINAN"
         Me.Bbiaya.UseVisualStyleBackColor = False
-        '
-        'Bketerangan
-        '
-        Me.Bketerangan.BackColor = System.Drawing.Color.DarkCyan
-        Me.Bketerangan.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.Bketerangan.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Bketerangan.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Bketerangan.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bketerangan.Location = New System.Drawing.Point(12, 20)
-        Me.Bketerangan.Name = "Bketerangan"
-        Me.Bketerangan.Size = New System.Drawing.Size(203, 53)
-        Me.Bketerangan.TabIndex = 1
-        Me.Bketerangan.Text = "CETAK SURAT KETERANGAN KELAHIRAN"
-        Me.Bketerangan.UseVisualStyleBackColor = False
         '
         'GroupBox1
         '
@@ -169,7 +153,6 @@ Partial Class Fdaftar_kelahiran
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents Bakte As System.Windows.Forms.Button
     Friend WithEvents Bbiaya As System.Windows.Forms.Button
-    Friend WithEvents Bketerangan As System.Windows.Forms.Button
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents DGkelahiran As System.Windows.Forms.DataGridView
     Friend WithEvents Tcari As System.Windows.Forms.TextBox

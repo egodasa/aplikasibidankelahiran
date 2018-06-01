@@ -22,6 +22,7 @@ Partial Class Fkelahiran
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Fkelahiran))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Tkeadaan = New System.Windows.Forms.TextBox()
         Me.Tcara = New System.Windows.Forms.TextBox()
@@ -1050,6 +1051,7 @@ Partial Class Fkelahiran
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "Fkelahiran"
         Me.Text = "Form Kelahiran"

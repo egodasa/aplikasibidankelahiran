@@ -22,6 +22,7 @@ Partial Class FRakte
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FRakte))
         Me.CRakte = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.SuspendLayout()
         '
@@ -42,6 +43,7 @@ Partial Class FRakte
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(699, 436)
         Me.Controls.Add(Me.CRakte)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FRakte"
         Me.Text = "Akte Kelahiran"
         Me.ResumeLayout(False)

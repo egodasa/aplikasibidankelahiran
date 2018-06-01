@@ -37,4 +37,9 @@
     Private Sub Button7_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button7.Click
         Me.Close()
     End Sub
+
+    Private Sub Blaporan_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Blaporan.Click
+        Flaporan.Show()
+        Me.Hide()
+    End Sub
 End Class

@@ -181,28 +181,28 @@
     <Compile Include="Fobat.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FRlaporan.Designer.vb">
+      <DependentUpon>FRlaporan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FRlaporan.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="kartu berobat.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>kartu berobat.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="laporanberobatperbulan.vb">
+    <Compile Include="laporan.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>laporanberobatperbulan.rpt</DependentUpon>
+      <DependentUpon>laporan.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="laporanberobatperhari.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>laporanberobatperhari.rpt</DependentUpon>
-      <SubType>Component</SubType>
+    <Compile Include="Flaporan.Designer.vb">
+      <DependentUpon>Flaporan.vb</DependentUpon>
     </Compile>
-    <Compile Include="laporan_harian.Designer.vb">
-      <DependentUpon>laporan_harian.vb</DependentUpon>
-    </Compile>
-    <Compile Include="laporan_harian.vb">
+    <Compile Include="Flaporan.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -271,20 +271,19 @@
     <EmbeddedResource Include="Fobat.resx">
       <DependentUpon>Fobat.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FRlaporan.resx">
+      <DependentUpon>FRlaporan.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="kartu berobat.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>kartu berobat.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="laporanberobatperbulan.rpt">
+    <EmbeddedResource Include="laporan.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>laporanberobatperbulan.vb</LastGenOutput>
+      <LastGenOutput>laporan.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="laporanberobatperhari.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>laporanberobatperhari.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="laporan_harian.resx">
-      <DependentUpon>laporan_harian.vb</DependentUpon>
+    <EmbeddedResource Include="Flaporan.resx">
+      <DependentUpon>Flaporan.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

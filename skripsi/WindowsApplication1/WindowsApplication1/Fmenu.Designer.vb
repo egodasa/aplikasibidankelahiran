@@ -31,6 +31,7 @@ Partial Class Fmenu
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Blaporan = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Button1
@@ -130,7 +131,7 @@ Partial Class Fmenu
         Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button7.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button7.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button7.Location = New System.Drawing.Point(445, 235)
+        Me.Button7.Location = New System.Drawing.Point(445, 294)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(104, 29)
         Me.Button7.TabIndex = 6
@@ -148,12 +149,28 @@ Partial Class Fmenu
         Me.Label1.TabIndex = 7
         Me.Label1.Text = "Menu Aplikasi"
         '
+        'Blaporan
+        '
+        Me.Blaporan.BackColor = System.Drawing.Color.LimeGreen
+        Me.Blaporan.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Blaporan.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Blaporan.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Blaporan.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Blaporan.Location = New System.Drawing.Point(14, 250)
+        Me.Blaporan.Name = "Blaporan"
+        Me.Blaporan.Size = New System.Drawing.Size(167, 73)
+        Me.Blaporan.TabIndex = 8
+        Me.Blaporan.Text = "Laporan Pemasukan"
+        Me.Blaporan.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.Blaporan.UseVisualStyleBackColor = False
+        '
         'Fmenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Azure
-        Me.ClientSize = New System.Drawing.Size(561, 281)
+        Me.ClientSize = New System.Drawing.Size(561, 362)
+        Me.Controls.Add(Me.Blaporan)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button7)
         Me.Controls.Add(Me.Button6)
@@ -164,7 +181,7 @@ Partial Class Fmenu
         Me.Controls.Add(Me.Button1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Fmenu"
-        Me.Text = "Menu Aplikasi"
+        Me.Text = "Bidan Delima"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -177,4 +194,5 @@ Partial Class Fmenu
     Friend WithEvents Button6 As System.Windows.Forms.Button
     Friend WithEvents Button7 As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Blaporan As System.Windows.Forms.Button
 End Class
