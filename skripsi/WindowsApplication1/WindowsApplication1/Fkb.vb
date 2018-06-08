@@ -13,8 +13,8 @@
     Sub resetPeriksa()
         Call fetchComboboxData("select * from daftar_obat where jenis = 'KB'", Ckb, "Nama Obat", "Id Obat")
         Ckb.SelectedIndex = -1
-        Call fetchComboboxData("select * from daftar_satuan where id_jsat = 5", Csat_tkn, "Nama Satuan", "Id Sat")
-        Call fetchComboboxData("select * from daftar_satuan where id_jsat = 1", Csat_berat, "Nama Satuan", "Id Sat")
+        Call fetchComboboxData("select * from daftar_satuan where `Id Jsat` = 5", Csat_tkn, "Nama Satuan", "Id Sat")
+        Call fetchComboboxData("select * from daftar_satuan where `Id Jsat` = 1", Csat_berat, "Nama Satuan", "Id Sat")
         Csat_tkn.Text = "MMHG"
         Csat_berat.Text = "Kg"
         Tnm_suami.Clear()

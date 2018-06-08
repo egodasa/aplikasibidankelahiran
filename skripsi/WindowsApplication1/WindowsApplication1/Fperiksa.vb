@@ -4,14 +4,16 @@
     Dim DTobat As New DataTable
     Dim cari_obat As DataTable
     Dim total_harga As Integer = 0
-    Dim getDataBeli As String = "select a.id_terapi,a.id_obat,a.id_periksa,b.nm_obat as `Nama Obat`,a.jumlah as Jumlah,b.hrg_obat as `Harga`,b.hrg_obat*a.jumlah as `Total Harga` from tbl_terapi a join tbl_obat b on a.id_obat = b.id_obat where a.id_periksa = '" & id_periksa & "'"
+    Dim getDataBeli As String = "select * from daftar_obat_beli where `Id Periksa` = '" & id_periksa & "'"
     Sub resetDataPasien()
+        Tno_pasien.Clear()
+        Tno_pasien.Focus()
         Ttgl_lahir.ResetText()
         Tpekerjaan.Clear()
         Talamat.Clear()
         Cjk.SelectedIndex = -1
         Tnm_pasien.Clear()
-        Call fetchComboboxData("select * from daftar_satuan where id_jsat = 5", Csat_tkn, "Nama Satuan", "Id Sat")
+        Call fetchComboboxData("select * from daftar_satuan where `Id Jsat` = 5", Csat_tkn, "Nama Satuan", "Id Sat")
         Csat_tkn.Text = "MMHG"
         Ttkn_darah.ResetText()
         Ttkn_darah1.ResetText()
@@ -30,9 +32,9 @@
         Thtp.ResetText()
         Tkb.ResetText()
         Tumr_kehamilan.ResetText()
-        Call fetchComboboxData("select * from daftar_satuan where id_jsat = 1", Csat_berat, "Nama Satuan", "Id Sat")
-        Call fetchComboboxData("select * from daftar_satuan where id_jsat = 2", Csat_tinggi, "Nama Satuan", "Id Sat")
-        Call fetchComboboxData("select * from daftar_satuan where id_jsat = 3", Csat_umur, "Nama Satuan", "Id Sat")
+        Call fetchComboboxData("select * from daftar_satuan where `Id Jsat` = 1", Csat_berat, "Nama Satuan", "Id Sat")
+        Call fetchComboboxData("select * from daftar_satuan where `Id Jsat` = 2", Csat_tinggi, "Nama Satuan", "Id Sat")
+        Call fetchComboboxData("select * from daftar_satuan where `Id Jsat` = 3", Csat_umur, "Nama Satuan", "Id Sat")
         Csat_berat.Text = "Kg"
         Csat_tinggi.Text = "Cm"
         Csat_umur.Text = "Minggu"
@@ -43,15 +45,25 @@
         data_obat = Cobat.DataSource
         Tjumlah.ResetText()
         Tjumlah.Maximum = 100000000
-        DGobat_beli.DataSource = fetchData("select a.id_terapi,a.id_obat,a.id_periksa,b.nm_obat as `Nama Obat`,a.jumlah as Jumlah,b.hrg_obat as `Harga`,b.hrg_obat*a.jumlah as `Total Harga` from tbl_terapi a join tbl_obat b on a.id_obat = b.id_obat where a.id_periksa = '" & id_periksa & "'")
-        DGobat_beli.Columns("id_terapi").Visible = False
-        DGobat_beli.Columns("id_obat").Visible = False
-        DGobat_beli.Columns("id_periksa").Visible = False
+        DGobat_beli.DataSource = fetchData("select * from daftar_obat_beli where `Id Periksa` = '" & id_periksa & "'")
+        DGobat_beli.Columns("Id Terapi").Visible = False
+        DGobat_beli.Columns("Id Obat").Visible = False
+        DGobat_beli.Columns("Id Periksa").Visible = False
         DGobat_beli.Columns("Jumlah").ReadOnly = False
         Lstok.ResetText()
+        If DGobat_beli.RowCount <> 0 Then
+            For Each x As DataGridViewRow In DGobat_beli.Rows
+                If Not x.IsNewRow Then
+                    If x.Cells(2).Value <> 0 Then
+                        runQuery("insert into tbl_terapi(id_obat, jumlah, id_periksa) values (" & x.Cells("id_obat").Value & "," & x.Cells("Jumlah").Value & ", " & id_periksa & ")")
+                    End If
+                End If
+            Next
+        End If
     End Sub
     Sub resetId()
         id_periksa = DateTime.Now.ToString("ddMMyyhhmmssffff")
+        getDataBeli = "select * from daftar_obat_beli where `Id Periksa` = '" & id_periksa & "'"
     End Sub
     Sub resetTransaksi()
         If DGobat_beli.Rows.Count <> 0 Then
@@ -71,8 +83,9 @@
         If Tno_pasien.TextLength <> 0 Then
             data_pasien = fetchData("select * from daftar_pasien where `No Pasien` = " & Tno_pasien.Text)
             If data_pasien.Rows.Count = 1 Then
-                DGrekap.DataSource = fetchData("select a.tgl_periksa,a.keluhan, a.tensi, b.tinggi_bdn AS `Tinggi Badan`, b.berat_bdn as `Berat Badan`,b.hpht AS `HPHT`, b.htp as `HTP`, b.diagnosa as `Diagnosa`,b.umur_khmln as `Umur Kehamilan`,b.kb_terakhir as `KB Terakhir` from tbl_periksa a left join tbl_anc b on a.id_periksa = b.id_periksa where no_pasien = " & data_pasien.Rows(0).Item("no_pasien"))
-                Ttgl_lahir.Value = data_pasien.Rows(0).Item("Tanggal Lahir")
+                DGrekap.DataSource = fetchData("select * from laporan_rekap_pasien where `No Pasien` = " & data_pasien.Rows(0).Item("No Pasien"))
+                Ttgl_lahir.Value = Date.ParseExact(data_pasien.Rows(0).Item("Tanggal Lahir"), "dd/MM/yyyy",
+            System.Globalization.DateTimeFormatInfo.InvariantInfo)
                 Tpekerjaan.Text = data_pasien.Rows(0).Item("Pekerjaan")
                 Talamat.Text = data_pasien.Rows(0).Item("Alamat")
                 Cjk.Text = data_pasien.Rows(0).Item("Jenis Kelamin")
@@ -95,7 +108,6 @@
 
     Private Sub Fperiksa_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Call setKoneksi()
-        Call resetId()
         Call resetDataPasien()
         Call resetRekap()
         Call resetPembayaran()
@@ -123,21 +135,16 @@
     Private Sub Bsimpan_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bsimpan.Click
         runQuery("insert into tbl_periksa (id_periksa, no_pasien,keluhan, tensi, id_sat_tensi) values ('" & id_periksa & "'," & Tno_pasien.Text & ",'" & Tkeluhan.Text & "','" & Ttkn_darah.Text & "/" & Ttkn_darah1.Text & "'," & Csat_tkn.SelectedValue & ")")
         If is_anc.Checked = True Then
-            runQuery("insert into tbl_anc (id_sat_tinggi, id_sat_berat, id_sat_umur, id_periksa,nm_suami,tinggi_bdn,berat_bdn,hpht,htp,diagnosa,umur_khmln,kb_terakhir) values (" & Csat_tinggi.SelectedValue & "," & Csat_berat.SelectedValue & "," & Csat_umur.SelectedValue & ",'" & id_periksa & "','" & Tnm_suami.Text & "'," & Ttgi_badan.Text & "," & Tbrt_badan.Text &
-                     ", '" & Thpht.Value.ToString("yyyy-MM-dd") & "', '" & Thtp.Value.ToString("yyyy-MM-dd") & "','" & Tkeluhan.Text & "'," & Tumr_kehamilan.Text & ", '" & Tkb.Value.ToString("yyyy-MM-dd") & "')")
-            Call resetAnc()
-            is_anc.Checked = False
-        End If
-        If DGobat_beli.RowCount <> 0 Then
-            For Each x As DataGridViewRow In DGobat_beli.Rows
-                If Not x.IsNewRow Then
-                    If x.Cells(2).Value <> 0 Then
-                        runQuery("insert into tbl_terapi(id_obat, jumlah, id_periksa) values (" & x.Cells("id_obat").Value & "," & x.Cells("Jumlah").Value & ", " & id_periksa & ")")
-                    End If
-                End If
-            Next
+            runQuery("insert into tbl_anc (id_sat_tinggi, id_sat_berat, id_sat_umur, id_periksa,nm_suami,tinggi_bdn,berat_bdn,hpht,htp,umur_khmln,kb_terakhir) values (" & Csat_tinggi.SelectedValue & "," & Csat_berat.SelectedValue & "," & Csat_umur.SelectedValue & ",'" & id_periksa & "','" & Tnm_suami.Text & "'," & Ttgi_badan.Text & "," & Tbrt_badan.Text &
+                     ", '" & Thpht.Value.ToString("yyyy-MM-dd") & "', '" & Thtp.Value.ToString("yyyy-MM-dd") & "'," & Tumr_kehamilan.Text & ", '" & Tkb.Value.ToString("yyyy-MM-dd") & "')")
         End If
         Call resetTransaksi()
+        Call resetId()
+        Call resetDataPasien()
+        Call resetRekap()
+        Call resetPembayaran()
+        Call resetAnc()
+        Call resetTerapi()
     End Sub
 
     Private Sub DGrekap_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DGrekap.CellContentClick
@@ -163,7 +170,7 @@
 
     Private Sub Cobat_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cobat.SelectedIndexChanged
         If data_obat.Rows.Count <> 0 And Cobat.SelectedIndex <> -1 Then
-            Lstok.Text = "Stok " & data_obat.Rows(Cobat.SelectedIndex).Item("Stok") & data_obat.Rows(Cobat.SelectedIndex).Item("Satuan")
+            Lstok.Text = "Stok " & data_obat.Rows(Cobat.SelectedIndex).Item("Stok") & " " & data_obat.Rows(Cobat.SelectedIndex).Item("Satuan")
             Tjumlah.Maximum = Val(data_obat.Rows(Cobat.SelectedIndex).Item("Stok"))
         End If
     End Sub
@@ -183,11 +190,13 @@
         If Cobat.SelectedIndex <> -1 And Cobat.Text <> "" Then
             runQuery("insert into tbl_terapi (id_obat, id_periksa, jumlah) values (" & Cobat.SelectedValue & ", '" & id_periksa & "', " & Tjumlah.Text & ")")
             DGobat_beli.DataSource = fetchData(getDataBeli)
-            If data_obat.Rows.Count <> 0 Then
-                total_harga += Val(data_obat.Rows(Cobat.SelectedIndex).Item("hrg_obat")) * Val(Tjumlah.Text)
-                Ttotal_harga.Text = Format(total_harga, "Rp,   ##,##0")
-            End If
+            total_harga = 0
+            For x As Integer = 0 To DGobat_beli.Rows.Count - 1
+                total_harga += DGobat_beli.Rows(x).Cells("Total Harga").Value
+            Next
+            Ttotal_harga.Text = Format(total_harga, "Rp,   ##,##0")
             Call fetchComboboxData("select * from daftar_obat", Cobat, "Nama Obat", "Id Obat")
+            data_obat = Cobat.DataSource
             Tjumlah.ResetText()
             Lstok.ResetText()
         End If
@@ -201,10 +210,13 @@
 
     Private Sub Bhapus_obat_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bhapus_obat.Click
         Try
-            runQuery("delete from tbl_terapi where id_terapi = '" & DGobat_beli.CurrentRow.Cells("id_terapi").Value & "'")
-            total_harga -= Val(DGobat_beli.CurrentRow.Cells("Total Harga").Value)
+            runQuery("delete from tbl_terapi where id_obat = " & DGobat_beli.CurrentRow.Cells("Id Obat").Value & " and id_periksa = '" & id_periksa & "'")
+            DGobat_beli.DataSource = fetchData(getDataBeli)
+            total_harga = 0
+            For x As Integer = 0 To DGobat_beli.Rows.Count - 1
+                total_harga += DGobat_beli.Rows(x).Cells("Total Harga").Value
+            Next
             Ttotal_harga.Text = Format(total_harga, "Rp,   ##,##0")
-            DGobat_beli.DataSource = fetchData("select a.id_terapi,a.id_obat,a.id_periksa,b.nm_obat as `Nama Obat`,a.jumlah as Jumlah,b.hrg_obat as `Harga`,b.hrg_obat*a.jumlah as `Total Harga` from tbl_terapi a join tbl_obat b on a.id_obat = b.id_obat where a.id_periksa = '" & id_periksa & "'")
             Call fetchComboboxData("select * from daftar_obat", Cobat, "Nama Obat", "Id Obat")
             data_obat = Cobat.DataSource
             Lstok.ResetText()
@@ -232,9 +244,9 @@
 
     Private Sub Tcari_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tcari.TextChanged
         If Tcari.Text.Length <> 0 Then
-            DGrekap.DataSource = fetchData("select a.tgl_periksa,a.keluhan, a.tensi, b.tinggi_bdn AS `Tinggi Badan`, b.berat_bdn as `Berat Badan`,b.hpht AS `HPHT`, b.htp as `HTP`, b.diagnosa as `Diagnosa`,b.umur_khmln as `Umur Kehamilan`,b.kb_terakhir as `KB Terakhir` from tbl_periksa a left join tbl_anc b on a.id_periksa = b.id_periksa where no_pasien = " & data_pasien.Rows(0).Item("no_pasien") & " AND tgl_periksa like '%" & Tcari.Text & "%' OR keluhan like '%" & Tcari.Text & "%' OR like '%" & Tcari.Text & "%' OR tensi like '% " & Tcari.Text & " %' ")
+            DGrekap.DataSource = fetchData("select * from laporan_rekap_pasien where `No Pasien` = " & data_pasien.Rows(0).Item("No Pasien") & " AND `Tanggal Periksa` like '%" & Tcari.Text & "%' OR `Keluhan/Diagnosa` like '%" & Tcari.Text & "%'")
         Else
-            DGrekap.DataSource = fetchData("select a.tgl_periksa,a.keluhan, a.tensi, b.tinggi_bdn AS `Tinggi Badan`, b.berat_bdn as `Berat Badan`,b.hpht AS `HPHT`, b.htp as `HTP`, b.diagnosa as `Diagnosa`,b.umur_khmln as `Umur Kehamilan`,b.kb_terakhir as `KB Terakhir` from tbl_periksa a left join tbl_anc b on a.id_periksa = b.id_periksa where no_pasien = " & data_pasien.Rows(0).Item("no_pasien"))
+            DGrekap.DataSource = fetchData("select * from laporan_rekap_pasien where `No Pasien` = " & data_pasien.Rows(0).Item("No Pasien"))
         End If
     End Sub
 

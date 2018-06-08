@@ -8,6 +8,9 @@ SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
 CREATE TABLE `daftar_obat` (`Id Obat` int(11), `Nama Obat` varchar(50), `Stok` int(11), `Id Jobat` int(11), `Jenis Obat` varchar(50), `Id Sat Obat` int(11), `Satuan` varchar(30), `Harga Obat` int(11));
 
 
+CREATE TABLE `daftar_obat_beli` (`Id Terapi` int(11), `Id Obat` int(11), `Id Periksa` varchar(50), `Nama Obat` varchar(50), `Jumlah` decimal(32,0), `Harga Obat` int(11), `Total Harga` decimal(42,0));
+
+
 CREATE TABLE `daftar_pasien` (`No Pasien` int(11), `Nama Pasien` varchar(100), `Tanggal Lahir` varchar(10), `Jenis Kelamin` enum('Laki-laki','Perempuan'), `Pekerjaan` varchar(100), `Alamat` varchar(250));
 
 
@@ -18,6 +21,9 @@ CREATE TABLE `laporan_kb` (`No Pasien` int(11), `Nama Pasien` varchar(100), `Tan
 
 
 CREATE TABLE `laporan_pemasukan` (`id_terapi` int(11), `id_periksa` varchar(50), `nm_obat` varchar(50), `jumlah` decimal(32,0), `total_bayar` decimal(42,0));
+
+
+CREATE TABLE `laporan_rekap_pasien` (`Id Periksa` varchar(50), `Nama Pasien` varchar(100), `Tanggal Periksa` timestamp, `No Pasien` int(11), `Keluhan/Diagnosa` varchar(100), `Tensi` varchar(40));
 
 
 CREATE TABLE `laporan_terapi` (`Id Periksa` varchar(50), `Id Obat` int(11), `Nama Obat` varchar(50), `Harga Obat` int(11), `Jumlah` int(11), `Total` bigint(21), `Satuan` varchar(30));
@@ -33,7 +39,6 @@ CREATE TABLE `tbl_anc` (
   `id_sat_berat` varchar(3) NOT NULL DEFAULT '1',
   `hpht` date NOT NULL,
   `htp` date NOT NULL,
-  `diagnosa` varchar(11) NOT NULL,
   `umur_khmln` int(11) NOT NULL,
   `id_sat_umur` int(11) NOT NULL DEFAULT '18',
   `kb_terakhir` date NOT NULL,
@@ -191,6 +196,9 @@ DELIMITER ;
 DROP TABLE IF EXISTS `daftar_obat`;
 CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `daftar_obat` AS select `a`.`id_obat` AS `Id Obat`,`a`.`nm_obat` AS `Nama Obat`,`a`.`stok` AS `Stok`,`b`.`id_jobat` AS `Id Jobat`,`b`.`nm_jobat` AS `Jenis Obat`,`a`.`id_sat_obat` AS `Id Sat Obat`,`c`.`Nama Satuan` AS `Satuan`,`a`.`hrg_obat` AS `Harga Obat` from ((`tbl_obat` `a` join `tbl_jenis_obat` `b` on((`a`.`id_jobat` = `b`.`id_jobat`))) join `daftar_satuan` `c` on((`a`.`id_sat_obat` = `c`.`Id Sat`)));
 
+DROP TABLE IF EXISTS `daftar_obat_beli`;
+CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `daftar_obat_beli` AS select `a`.`id_terapi` AS `Id Terapi`,`a`.`id_obat` AS `Id Obat`,`a`.`id_periksa` AS `Id Periksa`,`b`.`nm_obat` AS `Nama Obat`,sum(`a`.`jumlah`) AS `Jumlah`,`b`.`hrg_obat` AS `Harga Obat`,sum((`b`.`hrg_obat` * `a`.`jumlah`)) AS `Total Harga` from (`tbl_terapi` `a` join `tbl_obat` `b` on((`a`.`id_obat` = `b`.`id_obat`))) group by `a`.`id_periksa`,`a`.`id_obat`;
+
 DROP TABLE IF EXISTS `daftar_pasien`;
 CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `daftar_pasien` AS select `tbl_pasien`.`no_pasien` AS `No Pasien`,`tbl_pasien`.`nm_pasien` AS `Nama Pasien`,date_format(`tbl_pasien`.`tgl_lahir`,'%d/%m/%Y') AS `Tanggal Lahir`,`tbl_pasien`.`jk` AS `Jenis Kelamin`,`tbl_pasien`.`pekerjaan` AS `Pekerjaan`,`tbl_pasien`.`alamat` AS `Alamat` from `tbl_pasien`;
 
@@ -203,7 +211,10 @@ CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `laporan_kb` AS select `a`.
 DROP TABLE IF EXISTS `laporan_pemasukan`;
 CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `laporan_pemasukan` AS select `a`.`id_terapi` AS `id_terapi`,`a`.`id_periksa` AS `id_periksa`,`b`.`nm_obat` AS `nm_obat`,sum(`a`.`jumlah`) AS `jumlah`,sum((`a`.`jumlah` * `b`.`hrg_obat`)) AS `total_bayar` from (`tbl_terapi` `a` join `tbl_obat` `b` on((`a`.`id_obat` = `b`.`id_obat`))) group by `a`.`id_periksa`;
 
+DROP TABLE IF EXISTS `laporan_rekap_pasien`;
+CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `laporan_rekap_pasien` AS select `a`.`id_periksa` AS `Id Periksa`,`c`.`Nama Pasien` AS `Nama Pasien`,`a`.`tgl_periksa` AS `Tanggal Periksa`,`a`.`no_pasien` AS `No Pasien`,`a`.`keluhan` AS `Keluhan/Diagnosa`,concat(`a`.`tensi`,' ',`sat`.`Nama Satuan`) AS `Tensi` from ((`tbl_periksa` `a` join `daftar_satuan` `sat` on((`a`.`id_sat_tensi` = `sat`.`Id Sat`))) join `daftar_pasien` `c` on((`a`.`no_pasien` = `c`.`No Pasien`)));
+
 DROP TABLE IF EXISTS `laporan_terapi`;
 CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `laporan_terapi` AS select `a`.`id_periksa` AS `Id Periksa`,`a`.`id_obat` AS `Id Obat`,`b`.`Nama Obat` AS `Nama Obat`,`b`.`Harga Obat` AS `Harga Obat`,`a`.`jumlah` AS `Jumlah`,(`a`.`jumlah` * `b`.`Harga Obat`) AS `Total`,`b`.`Satuan` AS `Satuan` from (`tbl_terapi` `a` join `daftar_obat` `b` on((`a`.`id_obat` = `b`.`Id Obat`)));
 
--- 2018-06-08 11:20:36
+-- 2018-06-08 14:08:34
