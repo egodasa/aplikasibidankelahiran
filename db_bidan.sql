@@ -5,49 +5,60 @@ SET time_zone = '+00:00';
 SET foreign_key_checks = 0;
 SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
 
-DROP DATABASE IF EXISTS `db_bidan`;
-CREATE DATABASE `db_bidan` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `db_bidan`;
+CREATE TABLE `daftar_obat` (`Id Obat` int(11), `Nama Obat` varchar(50), `Stok` int(11), `Id Jobat` int(11), `Jenis Obat` varchar(50), `Id Sat Obat` int(11), `Satuan` varchar(30), `Harga Obat` int(11));
 
 
-DROP TABLE IF EXISTS `tbl_anc`;
+CREATE TABLE `daftar_pasien` (`No Pasien` int(11), `Nama Pasien` varchar(100), `Tanggal Lahir` varchar(10), `Jenis Kelamin` enum('Laki-laki','Perempuan'), `Pekerjaan` varchar(100), `Alamat` varchar(250));
+
+
+CREATE TABLE `daftar_satuan` (`Id Sat` int(11), `Nama Satuan` varchar(30), `Id Jsat` int(11), `Nama Jenis Satuan` varchar(30));
+
+
+CREATE TABLE `laporan_kb` (`No Pasien` int(11), `Nama Pasien` varchar(100), `Tanggal Lahir` date, `Tanggal Periksa` timestamp, `Anak Ke` int(11), `Haid Terakhir` date, `Berat Badan` int(11), `Id Sat Berat` int(11), `Satuan Berat` varchar(30), `Tensi` varchar(9), `Id Sat Tensi` int(11), `Satuan Tensi` varchar(30), `Nama Obat` varchar(50));
+
+
+CREATE TABLE `laporan_pemasukan` (`id_terapi` int(11), `id_periksa` varchar(50), `nm_obat` varchar(50), `jumlah` decimal(32,0), `total_bayar` decimal(42,0));
+
+
+CREATE TABLE `laporan_terapi` (`Id Periksa` varchar(50), `Id Obat` int(11), `Nama Obat` varchar(50), `Harga Obat` int(11), `Jumlah` int(11), `Total` bigint(21), `Satuan` varchar(30));
+
+
 CREATE TABLE `tbl_anc` (
   `id_periksa` varchar(50) NOT NULL,
   `id_anc` int(11) NOT NULL AUTO_INCREMENT,
   `nm_suami` varchar(100) NOT NULL,
   `tinggi_bdn` smallint(6) NOT NULL,
+  `id_sat_tinggi` int(11) NOT NULL DEFAULT '12',
   `berat_bdn` smallint(6) NOT NULL,
+  `id_sat_berat` varchar(3) NOT NULL DEFAULT '1',
   `hpht` date NOT NULL,
   `htp` date NOT NULL,
   `diagnosa` varchar(11) NOT NULL,
   `umur_khmln` int(11) NOT NULL,
+  `id_sat_umur` int(11) NOT NULL DEFAULT '18',
   `kb_terakhir` date NOT NULL,
   PRIMARY KEY (`id_anc`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
-DROP TABLE IF EXISTS `tbl_asuhan_bayi`;
 CREATE TABLE `tbl_asuhan_bayi` (
   `id_asuhan` int(11) NOT NULL AUTO_INCREMENT,
   `nm_asuhan` text NOT NULL,
   PRIMARY KEY (`id_asuhan`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO `tbl_asuhan_bayi` (`id_asuhan`, `nm_asuhan`) VALUES
-(1,	'Inisasi Menyusu Dini (IMD) dalam 1 jam pertama'),
-(2,	'Suntikan Vitamin K1'),
-(3,	'Salep mata antibiotika profilaksis'),
-(4,	'Imunisasi HBO');
 
-DROP TABLE IF EXISTS `tbl_bayi_lahir`;
 CREATE TABLE `tbl_bayi_lahir` (
   `id_bayi` int(11) NOT NULL AUTO_INCREMENT,
   `id_kelahiran` varchar(50) NOT NULL,
   `nm_bayi` varchar(100) NOT NULL,
   `anak_ke` int(11) NOT NULL,
   `berat_lahir` int(11) NOT NULL,
+  `id_sat_berat` int(11) NOT NULL DEFAULT '4',
   `panjang_badan` int(11) NOT NULL,
+  `id_sat_panjang` int(11) NOT NULL DEFAULT '12',
   `lingkar_kepala` int(11) NOT NULL,
+  `id_sat_lingkar` int(11) NOT NULL DEFAULT '12',
   `jk` varchar(30) NOT NULL,
   `asuhan_bayi_saat_lahir` text NOT NULL,
   `keterangan` text NOT NULL,
@@ -56,20 +67,20 @@ CREATE TABLE `tbl_bayi_lahir` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
-DROP TABLE IF EXISTS `tbl_jenis_obat`;
 CREATE TABLE `tbl_jenis_obat` (
   `id_jobat` int(11) NOT NULL AUTO_INCREMENT,
   `nm_jobat` varchar(50) NOT NULL,
   PRIMARY KEY (`id_jobat`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO `tbl_jenis_obat` (`id_jobat`, `nm_jobat`) VALUES
-(1,	'KB'),
-(2,	'Ringan'),
-(3,	'Keras'),
-(4,	'Suplemen');
 
-DROP TABLE IF EXISTS `tbl_kelahiran`;
+CREATE TABLE `tbl_jsatuan` (
+  `id_jsat` int(11) NOT NULL AUTO_INCREMENT,
+  `nm_jsat` varchar(30) NOT NULL,
+  PRIMARY KEY (`id_jsat`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
 CREATE TABLE `tbl_kelahiran` (
   `no_pasien` int(11) NOT NULL,
   `id_kelahiran` varchar(50) NOT NULL,
@@ -79,6 +90,7 @@ CREATE TABLE `tbl_kelahiran` (
   `cara_persalinan` text NOT NULL,
   `keadaan_ibu` text NOT NULL,
   `umur_kehamilan` int(11) NOT NULL,
+  `id_sat_umur` int(11) NOT NULL DEFAULT '18',
   `biaya_persalinan` int(11) NOT NULL,
   `biaya_perawatan_kelas` int(11) NOT NULL,
   `biaya_perawatan_bayi` int(11) NOT NULL,
@@ -91,24 +103,13 @@ CREATE TABLE `tbl_kelahiran` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
-DROP TABLE IF EXISTS `tbl_kondisi_lahir`;
 CREATE TABLE `tbl_kondisi_lahir` (
   `id_kondisi` int(11) NOT NULL AUTO_INCREMENT,
   `nm_kondisi` text NOT NULL,
   PRIMARY KEY (`id_kondisi`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO `tbl_kondisi_lahir` (`id_kondisi`, `nm_kondisi`) VALUES
-(1,	'Segera menangis'),
-(2,	'Menangis beberapa saat'),
-(3,	'Tidak menangis'),
-(4,	'Seluruh tubuh kemerahan'),
-(5,	'Anggota gerak kebiruan'),
-(6,	'Seluruh tubuh biru'),
-(7,	'Kelainan bawaan'),
-(8,	'Meninggal');
 
-DROP TABLE IF EXISTS `tbl_obat`;
 CREATE TABLE `tbl_obat` (
   `id_obat` int(11) NOT NULL AUTO_INCREMENT,
   `nm_obat` varchar(50) NOT NULL,
@@ -116,20 +117,11 @@ CREATE TABLE `tbl_obat` (
   `status` enum('Aktif','Tidak Aktif') NOT NULL DEFAULT 'Aktif',
   `id_jobat` int(11) NOT NULL,
   `hrg_obat` int(11) NOT NULL,
+  `id_sat_obat` int(11) NOT NULL DEFAULT '25',
   PRIMARY KEY (`id_obat`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO `tbl_obat` (`id_obat`, `nm_obat`, `stok`, `status`, `id_jobat`, `hrg_obat`) VALUES
-(1,	'Kabe',	12,	'Aktif',	1,	10000),
-(2,	'Ringan',	2,	'Aktif',	2,	1800),
-(8,	'Suntik',	9,	'Aktif',	1,	9000),
-(9,	'Parasetamol',	10,	'Aktif',	2,	1100),
-(10,	'STM',	10,	'Aktif',	2,	1000),
-(11,	'Promag',	30,	'Aktif',	2,	2000),
-(12,	'Amoxilin',	40,	'Aktif',	2,	3000),
-(13,	'Vitamin C',	12,	'Aktif',	2,	12000);
 
-DROP TABLE IF EXISTS `tbl_pasien`;
 CREATE TABLE `tbl_pasien` (
   `no_pasien` int(11) NOT NULL AUTO_INCREMENT,
   `nm_pasien` varchar(100) NOT NULL,
@@ -140,22 +132,18 @@ CREATE TABLE `tbl_pasien` (
   PRIMARY KEY (`no_pasien`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO `tbl_pasien` (`no_pasien`, `nm_pasien`, `tgl_lahir`, `jk`, `pekerjaan`, `alamat`) VALUES
-(4,	'Wanita Pasien',	'1971-05-28',	'Perempuan',	'Sebuah Pekerjaan',	'Alamat rumah contoh'),
-(5,	'Pasien Laki',	'1990-08-01',	'Laki-laki',	'Tukang Angkek',	'Perumahan ');
 
-DROP TABLE IF EXISTS `tbl_periksa`;
 CREATE TABLE `tbl_periksa` (
   `id_periksa` varchar(50) NOT NULL,
   `tgl_periksa` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `no_pasien` int(11) NOT NULL,
   `keluhan` varchar(100) NOT NULL,
   `tensi` varchar(9) NOT NULL,
+  `id_sat_tensi` int(11) NOT NULL DEFAULT '26',
   PRIMARY KEY (`id_periksa`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
-DROP TABLE IF EXISTS `tbl_periksa_kb`;
 CREATE TABLE `tbl_periksa_kb` (
   `no_pasien` int(11) NOT NULL,
   `id_kb` varchar(50) NOT NULL,
@@ -164,15 +152,23 @@ CREATE TABLE `tbl_periksa_kb` (
   `anak_ke` int(11) NOT NULL,
   `haid_terakhir` date NOT NULL,
   `berat_badan` int(11) NOT NULL,
+  `id_sat_berat` int(11) NOT NULL DEFAULT '1',
   `tensi` varchar(9) NOT NULL,
+  `id_sat_tensi` int(11) NOT NULL DEFAULT '26',
   PRIMARY KEY (`id_kb`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO `tbl_periksa_kb` (`no_pasien`, `id_kb`, `tgl_periksa`, `nm_suami`, `anak_ke`, `haid_terakhir`, `berat_badan`, `tensi`) VALUES
-(4,	'300520181126079965',	'2018-05-30 04:26:18',	'231',	2,	'2018-05-30',	432,	'11'),
-(4,	'300520181131455272',	'2018-05-30 04:32:31',	'qwe',	2,	'2018-05-30',	12,	'12');
 
-DROP TABLE IF EXISTS `tbl_terapi`;
+CREATE TABLE `tbl_satuan` (
+  `id_sat` int(11) NOT NULL AUTO_INCREMENT,
+  `nm_sat` varchar(30) NOT NULL,
+  `id_jsat` int(11) NOT NULL,
+  PRIMARY KEY (`id_sat`),
+  KEY `id_jsat` (`id_jsat`),
+  CONSTRAINT `tbl_satuan_ibfk_1` FOREIGN KEY (`id_jsat`) REFERENCES `tbl_jsatuan` (`id_jsat`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
 CREATE TABLE `tbl_terapi` (
   `id_terapi` int(11) NOT NULL AUTO_INCREMENT,
   `id_obat` int(11) NOT NULL,
@@ -181,11 +177,6 @@ CREATE TABLE `tbl_terapi` (
   PRIMARY KEY (`id_terapi`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO `tbl_terapi` (`id_terapi`, `id_obat`, `jumlah`, `id_periksa`) VALUES
-(41,	1,	1,	'300520181126079965'),
-(42,	1,	1,	'300520181131455272'),
-(44,	9,	10,	'3005181120014255'),
-(45,	2,	10,	'3005181122144613');
 
 DELIMITER ;;
 
@@ -197,13 +188,22 @@ update tbl_obat set stok = stok + OLD.jumlah where id_obat = OLD.id_obat;;
 
 DELIMITER ;
 
+DROP TABLE IF EXISTS `daftar_obat`;
+CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `daftar_obat` AS select `a`.`id_obat` AS `Id Obat`,`a`.`nm_obat` AS `Nama Obat`,`a`.`stok` AS `Stok`,`b`.`id_jobat` AS `Id Jobat`,`b`.`nm_jobat` AS `Jenis Obat`,`a`.`id_sat_obat` AS `Id Sat Obat`,`c`.`Nama Satuan` AS `Satuan`,`a`.`hrg_obat` AS `Harga Obat` from ((`tbl_obat` `a` join `tbl_jenis_obat` `b` on((`a`.`id_jobat` = `b`.`id_jobat`))) join `daftar_satuan` `c` on((`a`.`id_sat_obat` = `c`.`Id Sat`)));
+
+DROP TABLE IF EXISTS `daftar_pasien`;
+CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `daftar_pasien` AS select `tbl_pasien`.`no_pasien` AS `No Pasien`,`tbl_pasien`.`nm_pasien` AS `Nama Pasien`,date_format(`tbl_pasien`.`tgl_lahir`,'%d/%m/%Y') AS `Tanggal Lahir`,`tbl_pasien`.`jk` AS `Jenis Kelamin`,`tbl_pasien`.`pekerjaan` AS `Pekerjaan`,`tbl_pasien`.`alamat` AS `Alamat` from `tbl_pasien`;
+
+DROP TABLE IF EXISTS `daftar_satuan`;
+CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `daftar_satuan` AS select `a`.`id_sat` AS `Id Sat`,`a`.`nm_sat` AS `Nama Satuan`,`a`.`id_jsat` AS `Id Jsat`,`b`.`nm_jsat` AS `Nama Jenis Satuan` from (`tbl_satuan` `a` join `tbl_jsatuan` `b` on((`a`.`id_jsat` = `b`.`id_jsat`)));
+
 DROP TABLE IF EXISTS `laporan_kb`;
-CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `laporan_kb` AS select `a`.`no_pasien` AS `no_pasien`,`c`.`nm_pasien` AS `nm_pasien`,`c`.`tgl_lahir` AS `tgl_lahir`,`a`.`tgl_periksa` AS `tgl_periksa`,`a`.`anak_ke` AS `anak_ke`,`a`.`haid_terakhir` AS `haid_terakhir`,`a`.`berat_badan` AS `berat_badan`,`a`.`tensi` AS `tensi`,`b`.`nm_obat` AS `nm_obat` from ((`tbl_periksa_kb` `a` join `laporan_terapi` `b` on((`a`.`id_kb` = `b`.`id_periksa`))) join `tbl_pasien` `c` on((`a`.`no_pasien` = `c`.`no_pasien`)));
+CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `laporan_kb` AS select `a`.`no_pasien` AS `No Pasien`,`c`.`nm_pasien` AS `Nama Pasien`,`c`.`tgl_lahir` AS `Tanggal Lahir`,`a`.`tgl_periksa` AS `Tanggal Periksa`,`a`.`anak_ke` AS `Anak Ke`,`a`.`haid_terakhir` AS `Haid Terakhir`,`a`.`berat_badan` AS `Berat Badan`,`a`.`id_sat_berat` AS `Id Sat Berat`,`d`.`Nama Satuan` AS `Satuan Berat`,`a`.`tensi` AS `Tensi`,`a`.`id_sat_tensi` AS `Id Sat Tensi`,`d`.`Nama Satuan` AS `Satuan Tensi`,`b`.`Nama Obat` AS `Nama Obat` from (((`tbl_periksa_kb` `a` join `laporan_terapi` `b` on((`a`.`id_kb` = `b`.`Id Periksa`))) join `tbl_pasien` `c` on((`a`.`no_pasien` = `c`.`no_pasien`))) join `daftar_satuan` `d` on(((`a`.`id_sat_berat` = `d`.`Id Sat`) and (`a`.`id_sat_tensi` = `d`.`Id Sat`))));
 
 DROP TABLE IF EXISTS `laporan_pemasukan`;
 CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `laporan_pemasukan` AS select `a`.`id_terapi` AS `id_terapi`,`a`.`id_periksa` AS `id_periksa`,`b`.`nm_obat` AS `nm_obat`,sum(`a`.`jumlah`) AS `jumlah`,sum((`a`.`jumlah` * `b`.`hrg_obat`)) AS `total_bayar` from (`tbl_terapi` `a` join `tbl_obat` `b` on((`a`.`id_obat` = `b`.`id_obat`))) group by `a`.`id_periksa`;
 
 DROP TABLE IF EXISTS `laporan_terapi`;
-CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `laporan_terapi` AS select `a`.`id_periksa` AS `id_periksa`,`a`.`id_obat` AS `id_obat`,`b`.`nm_obat` AS `nm_obat`,`b`.`hrg_obat` AS `hrg_obat`,`a`.`jumlah` AS `jumlah`,(`a`.`jumlah` * `b`.`hrg_obat`) AS `total` from (`tbl_terapi` `a` join `tbl_obat` `b` on((`a`.`id_obat` = `b`.`id_obat`)));
+CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `laporan_terapi` AS select `a`.`id_periksa` AS `Id Periksa`,`a`.`id_obat` AS `Id Obat`,`b`.`Nama Obat` AS `Nama Obat`,`b`.`Harga Obat` AS `Harga Obat`,`a`.`jumlah` AS `Jumlah`,(`a`.`jumlah` * `b`.`Harga Obat`) AS `Total`,`b`.`Satuan` AS `Satuan` from (`tbl_terapi` `a` join `daftar_obat` `b` on((`a`.`id_obat` = `b`.`Id Obat`)));
 
--- 2018-06-01 02:48:13
+-- 2018-06-08 11:20:36
