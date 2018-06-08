@@ -24,6 +24,8 @@ Partial Class Fkelola_obat
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Fkelola_obat))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Csatuan = New System.Windows.Forms.ComboBox()
         Me.Tnm_obat = New System.Windows.Forms.TextBox()
         Me.DGobat = New System.Windows.Forms.DataGridView()
         Me.Tcari = New System.Windows.Forms.TextBox()
@@ -41,8 +43,6 @@ Partial Class Fkelola_obat
         Me.Bcancel = New System.Windows.Forms.Button()
         Me.Bdelete = New System.Windows.Forms.Button()
         Me.Bedit = New System.Windows.Forms.Button()
-        Me.Csatuan = New System.Windows.Forms.ComboBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DGobat, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -72,6 +72,25 @@ Partial Class Fkelola_obat
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "ENTRI DATA OBAT"
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(8, 137)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(44, 15)
+        Me.Label1.TabIndex = 15
+        Me.Label1.Text = "Satuan"
+        '
+        'Csatuan
+        '
+        Me.Csatuan.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Csatuan.FormattingEnabled = True
+        Me.Csatuan.Location = New System.Drawing.Point(125, 137)
+        Me.Csatuan.Name = "Csatuan"
+        Me.Csatuan.Size = New System.Drawing.Size(121, 23)
+        Me.Csatuan.TabIndex = 14
+        '
         'Tnm_obat
         '
         Me.Tnm_obat.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -85,6 +104,7 @@ Partial Class Fkelola_obat
         Me.DGobat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGobat.Location = New System.Drawing.Point(10, 199)
         Me.DGobat.Name = "DGobat"
+        Me.DGobat.ReadOnly = True
         Me.DGobat.Size = New System.Drawing.Size(425, 115)
         Me.DGobat.TabIndex = 12
         '
@@ -258,25 +278,6 @@ Partial Class Fkelola_obat
         Me.Bedit.TabIndex = 3
         Me.Bedit.Text = "UBAH"
         Me.Bedit.UseVisualStyleBackColor = False
-        '
-        'Csatuan
-        '
-        Me.Csatuan.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Csatuan.FormattingEnabled = True
-        Me.Csatuan.Location = New System.Drawing.Point(125, 137)
-        Me.Csatuan.Name = "Csatuan"
-        Me.Csatuan.Size = New System.Drawing.Size(121, 23)
-        Me.Csatuan.TabIndex = 14
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(8, 137)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(44, 15)
-        Me.Label1.TabIndex = 15
-        Me.Label1.Text = "Satuan"
         '
         'Fkelola_obat
         '

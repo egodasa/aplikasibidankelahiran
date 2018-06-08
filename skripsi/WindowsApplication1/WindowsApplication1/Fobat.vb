@@ -1,20 +1,22 @@
 ﻿Public Class Fkelola_obat
     Dim getData As String = "select * from daftar_obat"
     Sub resetForm()
+        Tnm_obat.Focus()
         Tnm_obat.Clear()
         Tstok.Clear()
         Cjns_obat.SelectedIndex = -1
         Thrg_obat.Clear()
-        Tnm_obat.Focus()
         Csatuan.SelectedIndex = -1
+        DGobat.DataSource = fetchData(getData)
+        Call fetchComboboxData("select * from tbl_jenis_obat", Cjns_obat, "nm_jobat", "id_jobat")
+        Call fetchComboboxData("select * from daftar_satuan where `Id Jsat` = 4", Csatuan, "Nama Satuan", "Id Sat")
+        DGobat.Columns("Id Obat").Visible = False
+        DGobat.Columns("Id Sat Obat").Visible = False
+        DGobat.Columns("Id Jobat").Visible = False
     End Sub
     Private Sub Fkelola_obat_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Call setKoneksi()
-        DGobat.DataSource = fetchData(getData)
-        'Menambahkan isi combobox dari database
-        Call fetchComboboxData("select * from tbl_jenis_obat", Cjns_obat, "nm_jobat", "id_jobat")
-        Call fetchComboboxData("select * from daftar_satuan where id_jsat = 4", Csatuan, "Nama Satuan", "Id Sat")
-        DGobat.Columns("id_obat").Visible = False
+        Call resetForm()
     End Sub
 
     Private Sub Bexit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bexit.Click
@@ -33,10 +35,10 @@
 
     Private Sub DGobat_CellDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DGobat.CellDoubleClick
         Tnm_obat.Text = DGobat.CurrentRow.Cells("Nama Obat").Value
-        Cjns_obat.SelectedValue = DGobat.CurrentRow.Cells("Id Jobat").Value
+        Cjns_obat.Text = DGobat.CurrentRow.Cells("Jenis Obat").Value
         Tstok.Text = DGobat.CurrentRow.Cells("Stok").Value
         Thrg_obat.Text = DGobat.CurrentRow.Cells("Harga Obat").Value
-        Csatuan.SelectedValue = DGobat.CurrentRow.Cells("Id Sat Obat").Value
+        Csatuan.Text = DGobat.CurrentRow.Cells("Satuan").Value
         Bedit.Enabled = True
         Bcancel.Enabled = True
         Bdelete.Enabled = True
@@ -53,7 +55,7 @@
 
     Private Sub Bdelete_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bdelete.Click
         If MessageBox.Show("Apakah yakin data ini dihapus?", "Peringatan", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) = DialogResult.Yes Then
-            runQuery(deleteSql("tbl_obat", "id_obat", DGobat.CurrentRow.Cells("id_obat").Value))
+            runQuery(deleteSql("tbl_obat", "id_obat", DGobat.CurrentRow.Cells("Id Obat").Value))
             DGobat.DataSource = fetchData(getData)
             Bcancel.PerformClick()
         End If
@@ -65,7 +67,7 @@
                  ", hrg_obat = " & Thrg_obat.Text &
                  ", stok = " & Tstok.Text &
                  ", id_sat_obat = " & Csatuan.SelectedValue &
-                 " where id_obat = " & DGobat.CurrentRow.Cells("id_obat").Value)
+                 " where id_obat = " & DGobat.CurrentRow.Cells("Id Obat").Value)
         Call editMessage()
         Bcancel.PerformClick()
         DGobat.DataSource = fetchData(getData)
