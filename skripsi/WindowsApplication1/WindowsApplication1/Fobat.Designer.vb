@@ -41,6 +41,8 @@ Partial Class Fkelola_obat
         Me.Bcancel = New System.Windows.Forms.Button()
         Me.Bdelete = New System.Windows.Forms.Button()
         Me.Bedit = New System.Windows.Forms.Button()
+        Me.Csatuan = New System.Windows.Forms.ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DGobat, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -49,6 +51,8 @@ Partial Class Fkelola_obat
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.MintCream
+        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Controls.Add(Me.Csatuan)
         Me.GroupBox1.Controls.Add(Me.Tnm_obat)
         Me.GroupBox1.Controls.Add(Me.DGobat)
         Me.GroupBox1.Controls.Add(Me.Tcari)
@@ -79,15 +83,15 @@ Partial Class Fkelola_obat
         'DGobat
         '
         Me.DGobat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGobat.Location = New System.Drawing.Point(10, 164)
+        Me.DGobat.Location = New System.Drawing.Point(10, 199)
         Me.DGobat.Name = "DGobat"
-        Me.DGobat.Size = New System.Drawing.Size(425, 150)
+        Me.DGobat.Size = New System.Drawing.Size(425, 115)
         Me.DGobat.TabIndex = 12
         '
         'Tcari
         '
         Me.Tcari.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tcari.Location = New System.Drawing.Point(125, 136)
+        Me.Tcari.Location = New System.Drawing.Point(125, 170)
         Me.Tcari.Name = "Tcari"
         Me.Tcari.Size = New System.Drawing.Size(310, 23)
         Me.Tcari.TabIndex = 11
@@ -96,7 +100,7 @@ Partial Class Fkelola_obat
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(7, 136)
+        Me.Label6.Location = New System.Drawing.Point(8, 170)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(88, 15)
         Me.Label6.TabIndex = 10
@@ -255,6 +259,25 @@ Partial Class Fkelola_obat
         Me.Bedit.Text = "UBAH"
         Me.Bedit.UseVisualStyleBackColor = False
         '
+        'Csatuan
+        '
+        Me.Csatuan.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Csatuan.FormattingEnabled = True
+        Me.Csatuan.Location = New System.Drawing.Point(125, 137)
+        Me.Csatuan.Name = "Csatuan"
+        Me.Csatuan.Size = New System.Drawing.Size(121, 23)
+        Me.Csatuan.TabIndex = 14
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(8, 137)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(44, 15)
+        Me.Label1.TabIndex = 15
+        Me.Label1.Text = "Satuan"
+        '
         'Fkelola_obat
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -292,4 +315,6 @@ Partial Class Fkelola_obat
     Friend WithEvents Bcancel As System.Windows.Forms.Button
     Friend WithEvents Bdelete As System.Windows.Forms.Button
     Friend WithEvents Bedit As System.Windows.Forms.Button
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Csatuan As System.Windows.Forms.ComboBox
 End Class

@@ -39,4 +39,11 @@ Module db
     Function deleteSql(ByVal t As String, ByVal id As String, ByVal id_val As String)
         Return "delete from " & t & " where " & id & " = " & id_val
     End Function
+    Sub fetchComboboxData(ByVal sql As String, ByVal name As ComboBox, ByVal caption As String, ByVal value As String)
+        name.DataSource = fetchData(sql)
+        name.ValueMember = value
+        name.DisplayMember = caption
+        name.ResetText()
+        name.Refresh()
+    End Sub
 End Module

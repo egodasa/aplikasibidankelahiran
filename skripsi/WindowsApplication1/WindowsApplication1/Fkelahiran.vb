@@ -5,14 +5,14 @@
     Dim asuhan_tmp As String
     Dim total As Integer = 0
     Sub hitungBayar()
-        total = Val(Tpersalinan.Text) + Val(Tperawatan.Text) + Val(Tperawatan_bayi.Text) + Val(Tcucian.Text) + Val(Takte.Text) + Val(Tobat.Text) + Val(Ttransportasi.Text) + Val(Tlain.Text)
-        Tjumlah.Text = total
+        total = Val(Tpersalinan.Value) + Val(Tperawatan.Value) + Val(Tperawatan_bayi.Value) + Val(Tcucian.Value) + Val(Takte.Value) + Val(Tobat.Value) + Val(Ttransportasi.Value) + Val(Tlain.Value)
+        Tjumlah.Text = Format(total, "Rp,   ##,##0")
     End Sub
     Sub resetDataPasien()
         Ttgl_lahir.ResetText()
         Tpekerjaan.Clear()
         Talamat.Clear()
-        Cjk.SelectedIndex = 0
+        Cjk.SelectedIndex = -1
         Tnm_pasien.Clear()
     End Sub
     Sub resetIdKelahiran()
@@ -31,21 +31,21 @@
         Tberat.Clear()
         Tpanjang.Clear()
         Tlingkar.Clear()
-        Cjk_bayi.SelectedIndex = 0
+        Cjk_bayi.SelectedIndex = -1
         kondisi_bayi.ClearSelected()
         asuhan_bayi.ClearSelected()
         Tanak.Clear()
         Tketerangan.Clear()
     End Sub
     Sub resetBiayaKelahiran()
-        Tpersalinan.Clear()
-        Tperawatan.Clear()
-        Tperawatan_bayi.Clear()
-        Tcucian.Clear()
-        Takte.Clear()
-        Tobat.Clear()
-        Ttransportasi.Clear()
-        Tlain.Clear()
+        Tpersalinan.ResetText()
+        Tperawatan.ResetText()
+        Tperawatan_bayi.ResetText()
+        Tcucian.ResetText()
+        Takte.ResetText()
+        Tobat.ResetText()
+        Ttransportasi.ResetText()
+        Tlain.ResetText()
         Tjumlah.Clear()
     End Sub
     Sub getDataKondisi()
@@ -161,6 +161,7 @@
 
     Private Sub KeluarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KeluarToolStripMenuItem.Click
         Me.Close()
+        Fmenu.Show()
     End Sub
 
     Private Sub PasienToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PasienToolStripMenuItem.Click
@@ -199,59 +200,19 @@
         End If
     End Sub
 
-    Private Sub Tpersalinan_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tpersalinan.TextChanged
-        If Tpersalinan.Text.Length <> 0 Then
-            Call hitungBayar()
-        End If
-    End Sub
-
-    Private Sub Tperawatan_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tperawatan.TextChanged
-        If Tperawatan.Text.Length <> 0 Then
-            Call hitungBayar()
-        End If
-    End Sub
-
-    Private Sub Tperawatan_bayi_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tperawatan_bayi.TextChanged
-        If Tperawatan_bayi.Text.Length <> 0 Then
-            Call hitungBayar()
-        End If
-    End Sub
-
-    Private Sub Tcucian_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tcucian.TextChanged
-        If Tcucian.Text.Length <> 0 Then
-            Call hitungBayar()
-        End If
-    End Sub
-
-    Private Sub Takte_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Takte.TextChanged
-        If Takte.Text.Length <> 0 Then
-            Call hitungBayar()
-        End If
-    End Sub
-
-    Private Sub Tobat_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tobat.TextChanged
-        If Tobat.Text.Length <> 0 Then
-            Call hitungBayar()
-        End If
-    End Sub
-
-    Private Sub Ttransportasi_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Ttransportasi.TextChanged
-        If Ttransportasi.Text.Length <> 0 Then
-            Call hitungBayar()
-        End If
-    End Sub
-
-    Private Sub Tlain_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tlain.TextChanged
-        If Tlain.Text.Length <> 0 Then
-            Call hitungBayar()
-        End If
-    End Sub
-
     Private Sub DaftarKondisiBayiToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DaftarKondisiBayiToolStripMenuItem.Click
         Fkondisi_bayi.ShowDialog()
     End Sub
 
     Private Sub DaftarAsuhanPadaBayiToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DaftarAsuhanPadaBayiToolStripMenuItem.Click
         Fasuhan_bayi.ShowDialog()
+    End Sub
+
+    Private Sub KBToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KBToolStripMenuItem.Click
+        Fkb.ShowDialog()
+    End Sub
+
+    Private Sub Tperawatan_KeyUp(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles Tpersalinan.KeyUp, Ttransportasi.KeyUp, Tperawatan_bayi.KeyUp, Tperawatan.KeyUp, Tobat.KeyUp, Tlain.KeyUp, Tcucian.KeyUp, Takte.KeyUp
+        Call hitungBayar()
     End Sub
 End Class

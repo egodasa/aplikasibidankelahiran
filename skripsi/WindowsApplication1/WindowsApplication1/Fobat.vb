@@ -1,22 +1,19 @@
 ﻿Public Class Fkelola_obat
-    Dim Cjobat As New DataTable
-    Dim getData As String = "select a.id_obat, a.nm_obat as `Nama Obat`, a.stok as Stok, b.nm_jobat as `Jenis`, a.hrg_obat as `Harga` from tbl_obat a inner join tbl_jenis_obat b on a.id_jobat = b.id_jobat"
+    Dim getData As String = "select * from daftar_obat"
     Sub resetForm()
         Tnm_obat.Clear()
         Tstok.Clear()
-        Cjns_obat.SelectedIndex = 0
+        Cjns_obat.SelectedIndex = -1
         Thrg_obat.Clear()
         Tnm_obat.Focus()
+        Csatuan.SelectedIndex = -1
     End Sub
     Private Sub Fkelola_obat_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Call setKoneksi()
         DGobat.DataSource = fetchData(getData)
         'Menambahkan isi combobox dari database
-        Cjobat = fetchData("select * from tbl_jenis_obat")
-        Cjns_obat.Items.Clear()
-        Cjns_obat.DataSource = Cjobat
-        Cjns_obat.DisplayMember = Cjobat.Columns(1).Caption
-        Cjns_obat.ValueMember = Cjobat.Columns(0).Caption
+        Call fetchComboboxData("select * from tbl_jenis_obat", Cjns_obat, "nm_jobat", "id_jobat")
+        Call fetchComboboxData("select * from daftar_satuan where id_jsat = 4", Csatuan, "Nama Satuan", "Id Sat")
         DGobat.Columns("id_obat").Visible = False
     End Sub
 
@@ -28,17 +25,18 @@
     End Sub
 
     Private Sub Bsave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bsave.Click
-        runQuery("insert into tbl_obat (nm_obat, stok, id_jobat, hrg_obat) values ('" & Tnm_obat.Text & "', " & Tstok.Text & ", " & Cjns_obat.SelectedValue & ", " & Thrg_obat.Text & ")")
+        runQuery("insert into tbl_obat (nm_obat, stok, id_jobat, hrg_obat, id_sat_obat) values ('" & Tnm_obat.Text & "', " & Tstok.Text & ", " & Cjns_obat.SelectedValue & ", " & Thrg_obat.Text & "," & Csatuan.SelectedValue & ")")
         Call successMessage()
         DGobat.DataSource = fetchData(getData)
         Call resetForm()
     End Sub
 
     Private Sub DGobat_CellDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DGobat.CellDoubleClick
-        Tnm_obat.Text = DGobat.CurrentRow.Cells(1).Value
-        Cjns_obat.Text = DGobat.CurrentRow.Cells(3).Value
-        Tstok.Text = DGobat.CurrentRow.Cells(2).Value
-        Thrg_obat.Text = DGobat.CurrentRow.Cells(4).Value
+        Tnm_obat.Text = DGobat.CurrentRow.Cells("Nama Obat").Value
+        Cjns_obat.SelectedValue = DGobat.CurrentRow.Cells("Id Jobat").Value
+        Tstok.Text = DGobat.CurrentRow.Cells("Stok").Value
+        Thrg_obat.Text = DGobat.CurrentRow.Cells("Harga Obat").Value
+        Csatuan.SelectedValue = DGobat.CurrentRow.Cells("Id Sat Obat").Value
         Bedit.Enabled = True
         Bcancel.Enabled = True
         Bdelete.Enabled = True
@@ -66,6 +64,7 @@
                  "', id_jobat = " & Cjns_obat.SelectedValue &
                  ", hrg_obat = " & Thrg_obat.Text &
                  ", stok = " & Tstok.Text &
+                 ", id_sat_obat = " & Csatuan.SelectedValue &
                  " where id_obat = " & DGobat.CurrentRow.Cells("id_obat").Value)
         Call editMessage()
         Bcancel.PerformClick()
@@ -74,7 +73,7 @@
 
     Private Sub Tcari_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tcari.TextChanged
         If Tcari.Text.Length <> 0 Then
-            DGobat.DataSource = fetchData("select a.id_obat, a.nm_obat as `Nama Obat`, a.stok as Stok, b.nm_jobat as `Jenis`, a.hrg_obat as `Harga` from tbl_obat a inner join tbl_jenis_obat b on a.id_jobat = b.id_jobat where a.nm_obat like '% " & Tcari.Text & " %'")
+            DGobat.DataSource = fetchData("select * from daftar_obat where `Nama Obat` like '%" & Tcari.Text & "%'")
         Else
             DGobat.DataSource = fetchData(getData)
         End If

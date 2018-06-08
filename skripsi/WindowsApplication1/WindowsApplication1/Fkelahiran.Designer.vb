@@ -85,14 +85,6 @@ Partial Class Fkelahiran
         Me.keterangan = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.Tjumlah = New System.Windows.Forms.TextBox()
-        Me.Tlain = New System.Windows.Forms.TextBox()
-        Me.Ttransportasi = New System.Windows.Forms.TextBox()
-        Me.Takte = New System.Windows.Forms.TextBox()
-        Me.Tcucian = New System.Windows.Forms.TextBox()
-        Me.Tobat = New System.Windows.Forms.TextBox()
-        Me.Tperawatan_bayi = New System.Windows.Forms.TextBox()
-        Me.Tperawatan = New System.Windows.Forms.TextBox()
-        Me.Tpersalinan = New System.Windows.Forms.TextBox()
         Me.Label30 = New System.Windows.Forms.Label()
         Me.Label31 = New System.Windows.Forms.Label()
         Me.Label32 = New System.Windows.Forms.Label()
@@ -116,6 +108,15 @@ Partial Class Fkelahiran
         Me.DaftarAsuhanPadaBayiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.KBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Tpersalinan = New System.Windows.Forms.NumericUpDown()
+        Me.Tperawatan = New System.Windows.Forms.NumericUpDown()
+        Me.Tperawatan_bayi = New System.Windows.Forms.NumericUpDown()
+        Me.Tcucian = New System.Windows.Forms.NumericUpDown()
+        Me.Takte = New System.Windows.Forms.NumericUpDown()
+        Me.Tobat = New System.Windows.Forms.NumericUpDown()
+        Me.Ttransportasi = New System.Windows.Forms.NumericUpDown()
+        Me.Tlain = New System.Windows.Forms.NumericUpDown()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -123,6 +124,14 @@ Partial Class Fkelahiran
         Me.GroupBox6.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
+        CType(Me.Tpersalinan, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Tperawatan, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Tperawatan_bayi, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Tcucian, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Takte, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Tobat, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Ttransportasi, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Tlain, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -725,15 +734,15 @@ Partial Class Fkelahiran
         'GroupBox6
         '
         Me.GroupBox6.BackColor = System.Drawing.Color.MintCream
-        Me.GroupBox6.Controls.Add(Me.Tjumlah)
         Me.GroupBox6.Controls.Add(Me.Tlain)
         Me.GroupBox6.Controls.Add(Me.Ttransportasi)
+        Me.GroupBox6.Controls.Add(Me.Tobat)
         Me.GroupBox6.Controls.Add(Me.Takte)
         Me.GroupBox6.Controls.Add(Me.Tcucian)
-        Me.GroupBox6.Controls.Add(Me.Tobat)
         Me.GroupBox6.Controls.Add(Me.Tperawatan_bayi)
         Me.GroupBox6.Controls.Add(Me.Tperawatan)
         Me.GroupBox6.Controls.Add(Me.Tpersalinan)
+        Me.GroupBox6.Controls.Add(Me.Tjumlah)
         Me.GroupBox6.Controls.Add(Me.Label30)
         Me.GroupBox6.Controls.Add(Me.Label31)
         Me.GroupBox6.Controls.Add(Me.Label32)
@@ -755,81 +764,17 @@ Partial Class Fkelahiran
         'Tjumlah
         '
         Me.Tjumlah.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tjumlah.Location = New System.Drawing.Point(811, 75)
+        Me.Tjumlah.Location = New System.Drawing.Point(796, 75)
         Me.Tjumlah.Name = "Tjumlah"
         Me.Tjumlah.ReadOnly = True
-        Me.Tjumlah.Size = New System.Drawing.Size(160, 23)
+        Me.Tjumlah.Size = New System.Drawing.Size(175, 23)
         Me.Tjumlah.TabIndex = 21
-        '
-        'Tlain
-        '
-        Me.Tlain.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tlain.Location = New System.Drawing.Point(811, 48)
-        Me.Tlain.Name = "Tlain"
-        Me.Tlain.Size = New System.Drawing.Size(160, 23)
-        Me.Tlain.TabIndex = 20
-        '
-        'Ttransportasi
-        '
-        Me.Ttransportasi.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Ttransportasi.Location = New System.Drawing.Point(811, 19)
-        Me.Ttransportasi.Name = "Ttransportasi"
-        Me.Ttransportasi.Size = New System.Drawing.Size(160, 23)
-        Me.Ttransportasi.TabIndex = 19
-        '
-        'Takte
-        '
-        Me.Takte.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Takte.Location = New System.Drawing.Point(447, 47)
-        Me.Takte.Name = "Takte"
-        Me.Takte.Size = New System.Drawing.Size(160, 23)
-        Me.Takte.TabIndex = 18
-        '
-        'Tcucian
-        '
-        Me.Tcucian.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tcucian.Location = New System.Drawing.Point(447, 21)
-        Me.Tcucian.Name = "Tcucian"
-        Me.Tcucian.Size = New System.Drawing.Size(160, 23)
-        Me.Tcucian.TabIndex = 17
-        '
-        'Tobat
-        '
-        Me.Tobat.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tobat.Location = New System.Drawing.Point(447, 76)
-        Me.Tobat.Name = "Tobat"
-        Me.Tobat.Size = New System.Drawing.Size(160, 23)
-        Me.Tobat.TabIndex = 16
-        '
-        'Tperawatan_bayi
-        '
-        Me.Tperawatan_bayi.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tperawatan_bayi.Location = New System.Drawing.Point(160, 73)
-        Me.Tperawatan_bayi.Name = "Tperawatan_bayi"
-        Me.Tperawatan_bayi.Size = New System.Drawing.Size(160, 23)
-        Me.Tperawatan_bayi.TabIndex = 15
-        '
-        'Tperawatan
-        '
-        Me.Tperawatan.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tperawatan.Location = New System.Drawing.Point(160, 47)
-        Me.Tperawatan.Name = "Tperawatan"
-        Me.Tperawatan.Size = New System.Drawing.Size(160, 23)
-        Me.Tperawatan.TabIndex = 14
-        '
-        'Tpersalinan
-        '
-        Me.Tpersalinan.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tpersalinan.Location = New System.Drawing.Point(160, 21)
-        Me.Tpersalinan.Name = "Tpersalinan"
-        Me.Tpersalinan.Size = New System.Drawing.Size(160, 23)
-        Me.Tpersalinan.TabIndex = 13
         '
         'Label30
         '
         Me.Label30.AutoSize = True
         Me.Label30.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label30.Location = New System.Drawing.Point(638, 76)
+        Me.Label30.Location = New System.Drawing.Point(638, 75)
         Me.Label30.Name = "Label30"
         Me.Label30.Size = New System.Drawing.Size(46, 15)
         Me.Label30.TabIndex = 8
@@ -839,7 +784,7 @@ Partial Class Fkelahiran
         '
         Me.Label31.AutoSize = True
         Me.Label31.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label31.Location = New System.Drawing.Point(638, 52)
+        Me.Label31.Location = New System.Drawing.Point(638, 47)
         Me.Label31.Name = "Label31"
         Me.Label31.Size = New System.Drawing.Size(51, 15)
         Me.Label31.TabIndex = 7
@@ -849,7 +794,7 @@ Partial Class Fkelahiran
         '
         Me.Label32.AutoSize = True
         Me.Label32.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label32.Location = New System.Drawing.Point(638, 23)
+        Me.Label32.Location = New System.Drawing.Point(638, 19)
         Me.Label32.Name = "Label32"
         Me.Label32.Size = New System.Drawing.Size(136, 15)
         Me.Label32.TabIndex = 6
@@ -859,7 +804,7 @@ Partial Class Fkelahiran
         '
         Me.Label27.AutoSize = True
         Me.Label27.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label27.Location = New System.Drawing.Point(343, 52)
+        Me.Label27.Location = New System.Drawing.Point(343, 47)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(82, 15)
         Me.Label27.TabIndex = 5
@@ -869,7 +814,7 @@ Partial Class Fkelahiran
         '
         Me.Label28.AutoSize = True
         Me.Label28.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label28.Location = New System.Drawing.Point(343, 23)
+        Me.Label28.Location = New System.Drawing.Point(343, 19)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(43, 15)
         Me.Label28.TabIndex = 4
@@ -889,7 +834,7 @@ Partial Class Fkelahiran
         '
         Me.Label26.AutoSize = True
         Me.Label26.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label26.Location = New System.Drawing.Point(6, 76)
+        Me.Label26.Location = New System.Drawing.Point(7, 79)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(87, 15)
         Me.Label26.TabIndex = 2
@@ -899,7 +844,7 @@ Partial Class Fkelahiran
         '
         Me.Label25.AutoSize = True
         Me.Label25.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label25.Location = New System.Drawing.Point(6, 50)
+        Me.Label25.Location = New System.Drawing.Point(6, 49)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(117, 15)
         Me.Label25.TabIndex = 1
@@ -909,7 +854,7 @@ Partial Class Fkelahiran
         '
         Me.Label24.AutoSize = True
         Me.Label24.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label24.Location = New System.Drawing.Point(6, 23)
+        Me.Label24.Location = New System.Drawing.Point(6, 19)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(61, 15)
         Me.Label24.TabIndex = 0
@@ -961,12 +906,12 @@ Partial Class Fkelahiran
         'KeluarToolStripMenuItem
         '
         Me.KeluarToolStripMenuItem.Name = "KeluarToolStripMenuItem"
-        Me.KeluarToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
+        Me.KeluarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.KeluarToolStripMenuItem.Text = "Keluar"
         '
         'DataToolStripMenuItem
         '
-        Me.DataToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PasienToolStripMenuItem, Me.KelahiranToolStripMenuItem, Me.ObatToolStripMenuItem})
+        Me.DataToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PasienToolStripMenuItem, Me.KBToolStripMenuItem, Me.KelahiranToolStripMenuItem, Me.ObatToolStripMenuItem})
         Me.DataToolStripMenuItem.Name = "DataToolStripMenuItem"
         Me.DataToolStripMenuItem.Size = New System.Drawing.Size(43, 20)
         Me.DataToolStripMenuItem.Text = "Data"
@@ -974,19 +919,19 @@ Partial Class Fkelahiran
         'PasienToolStripMenuItem
         '
         Me.PasienToolStripMenuItem.Name = "PasienToolStripMenuItem"
-        Me.PasienToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
+        Me.PasienToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.PasienToolStripMenuItem.Text = "Pasien"
         '
         'KelahiranToolStripMenuItem
         '
         Me.KelahiranToolStripMenuItem.Name = "KelahiranToolStripMenuItem"
-        Me.KelahiranToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
+        Me.KelahiranToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.KelahiranToolStripMenuItem.Text = "Kelahiran"
         '
         'ObatToolStripMenuItem
         '
         Me.ObatToolStripMenuItem.Name = "ObatToolStripMenuItem"
-        Me.ObatToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
+        Me.ObatToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ObatToolStripMenuItem.Text = "Obat"
         '
         'TambahanToolStripMenuItem
@@ -1036,6 +981,84 @@ Partial Class Fkelahiran
         Me.Button2.Text = "KELUAR"
         Me.Button2.UseVisualStyleBackColor = False
         '
+        'KBToolStripMenuItem
+        '
+        Me.KBToolStripMenuItem.Name = "KBToolStripMenuItem"
+        Me.KBToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.KBToolStripMenuItem.Text = "KB"
+        '
+        'Tpersalinan
+        '
+        Me.Tpersalinan.Increment = New Decimal(New Integer() {125000, 0, 0, 0})
+        Me.Tpersalinan.Location = New System.Drawing.Point(137, 19)
+        Me.Tpersalinan.Maximum = New Decimal(New Integer() {-1593835520, 466537709, 54210, 0})
+        Me.Tpersalinan.Name = "Tpersalinan"
+        Me.Tpersalinan.Size = New System.Drawing.Size(183, 23)
+        Me.Tpersalinan.TabIndex = 31
+        '
+        'Tperawatan
+        '
+        Me.Tperawatan.Increment = New Decimal(New Integer() {125000, 0, 0, 0})
+        Me.Tperawatan.Location = New System.Drawing.Point(137, 49)
+        Me.Tperawatan.Maximum = New Decimal(New Integer() {-1593835520, 466537709, 54210, 0})
+        Me.Tperawatan.Name = "Tperawatan"
+        Me.Tperawatan.Size = New System.Drawing.Size(183, 23)
+        Me.Tperawatan.TabIndex = 32
+        '
+        'Tperawatan_bayi
+        '
+        Me.Tperawatan_bayi.Increment = New Decimal(New Integer() {125000, 0, 0, 0})
+        Me.Tperawatan_bayi.Location = New System.Drawing.Point(137, 78)
+        Me.Tperawatan_bayi.Maximum = New Decimal(New Integer() {-1593835520, 466537709, 54210, 0})
+        Me.Tperawatan_bayi.Name = "Tperawatan_bayi"
+        Me.Tperawatan_bayi.Size = New System.Drawing.Size(183, 23)
+        Me.Tperawatan_bayi.TabIndex = 33
+        '
+        'Tcucian
+        '
+        Me.Tcucian.Increment = New Decimal(New Integer() {125000, 0, 0, 0})
+        Me.Tcucian.Location = New System.Drawing.Point(436, 19)
+        Me.Tcucian.Maximum = New Decimal(New Integer() {-1593835520, 466537709, 54210, 0})
+        Me.Tcucian.Name = "Tcucian"
+        Me.Tcucian.Size = New System.Drawing.Size(171, 23)
+        Me.Tcucian.TabIndex = 34
+        '
+        'Takte
+        '
+        Me.Takte.Increment = New Decimal(New Integer() {125000, 0, 0, 0})
+        Me.Takte.Location = New System.Drawing.Point(436, 47)
+        Me.Takte.Maximum = New Decimal(New Integer() {-1593835520, 466537709, 54210, 0})
+        Me.Takte.Name = "Takte"
+        Me.Takte.Size = New System.Drawing.Size(171, 23)
+        Me.Takte.TabIndex = 33
+        '
+        'Tobat
+        '
+        Me.Tobat.Increment = New Decimal(New Integer() {125000, 0, 0, 0})
+        Me.Tobat.Location = New System.Drawing.Point(436, 75)
+        Me.Tobat.Maximum = New Decimal(New Integer() {-1593835520, 466537709, 54210, 0})
+        Me.Tobat.Name = "Tobat"
+        Me.Tobat.Size = New System.Drawing.Size(171, 23)
+        Me.Tobat.TabIndex = 35
+        '
+        'Ttransportasi
+        '
+        Me.Ttransportasi.Increment = New Decimal(New Integer() {125000, 0, 0, 0})
+        Me.Ttransportasi.Location = New System.Drawing.Point(796, 19)
+        Me.Ttransportasi.Maximum = New Decimal(New Integer() {-1593835520, 466537709, 54210, 0})
+        Me.Ttransportasi.Name = "Ttransportasi"
+        Me.Ttransportasi.Size = New System.Drawing.Size(175, 23)
+        Me.Ttransportasi.TabIndex = 36
+        '
+        'Tlain
+        '
+        Me.Tlain.Increment = New Decimal(New Integer() {125000, 0, 0, 0})
+        Me.Tlain.Location = New System.Drawing.Point(796, 47)
+        Me.Tlain.Maximum = New Decimal(New Integer() {-1593835520, 466537709, 54210, 0})
+        Me.Tlain.Name = "Tlain"
+        Me.Tlain.Size = New System.Drawing.Size(175, 23)
+        Me.Tlain.TabIndex = 37
+        '
         'Fkelahiran
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1067,6 +1090,14 @@ Partial Class Fkelahiran
         Me.GroupBox5.ResumeLayout(False)
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.Tpersalinan, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Tperawatan, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Tperawatan_bayi, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Tcucian, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Takte, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Tobat, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Ttransportasi, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Tlain, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1110,14 +1141,6 @@ Partial Class Fkelahiran
     Friend WithEvents Label22 As System.Windows.Forms.Label
     Friend WithEvents GroupBox6 As System.Windows.Forms.GroupBox
     Friend WithEvents Tjumlah As System.Windows.Forms.TextBox
-    Friend WithEvents Tlain As System.Windows.Forms.TextBox
-    Friend WithEvents Ttransportasi As System.Windows.Forms.TextBox
-    Friend WithEvents Takte As System.Windows.Forms.TextBox
-    Friend WithEvents Tcucian As System.Windows.Forms.TextBox
-    Friend WithEvents Tobat As System.Windows.Forms.TextBox
-    Friend WithEvents Tperawatan_bayi As System.Windows.Forms.TextBox
-    Friend WithEvents Tperawatan As System.Windows.Forms.TextBox
-    Friend WithEvents Tpersalinan As System.Windows.Forms.TextBox
     Friend WithEvents Label30 As System.Windows.Forms.Label
     Friend WithEvents Label31 As System.Windows.Forms.Label
     Friend WithEvents Label32 As System.Windows.Forms.Label
@@ -1164,4 +1187,13 @@ Partial Class Fkelahiran
     Friend WithEvents DaftarKondisiBayiToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DaftarAsuhanPadaBayiToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents KBToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Tlain As System.Windows.Forms.NumericUpDown
+    Friend WithEvents Ttransportasi As System.Windows.Forms.NumericUpDown
+    Friend WithEvents Tobat As System.Windows.Forms.NumericUpDown
+    Friend WithEvents Takte As System.Windows.Forms.NumericUpDown
+    Friend WithEvents Tcucian As System.Windows.Forms.NumericUpDown
+    Friend WithEvents Tperawatan_bayi As System.Windows.Forms.NumericUpDown
+    Friend WithEvents Tperawatan As System.Windows.Forms.NumericUpDown
+    Friend WithEvents Tpersalinan As System.Windows.Forms.NumericUpDown
 End Class

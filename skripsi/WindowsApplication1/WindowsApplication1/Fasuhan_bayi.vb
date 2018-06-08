@@ -6,7 +6,7 @@
     End Sub
 
     Private Sub Bsave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bsave.Click
-        runQuery("insert into tbl_asuhan_bayi (nm_kondisi) values ('" & Tnm_kondisi.Text & "')")
+        runQuery("insert into tbl_asuhan_bayi (nm_asuhan) values ('" & Tnm_kondisi.Text & "')")
         Call successMessage()
         Tnm_kondisi.Clear()
         DGkondisi.DataSource = fetchData(getData)

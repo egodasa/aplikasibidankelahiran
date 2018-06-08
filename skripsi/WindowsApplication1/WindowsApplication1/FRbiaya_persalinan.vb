@@ -3,7 +3,7 @@ Imports CrystalDecisions.Shared
 Public Class FRbiaya_persalinan
     Dim CR As New ReportDocument()
     Private Sub FRbiaya_persalinan_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        CR.Load("F:\skprsifauzan\skripsi\WindowsApplication1\WindowsApplication1\biayabersalinan.rpt")
+        CR.Load(_DIR & "biayabersalinan.rpt")
         CR.SetParameterValue("nm_pasien", Fdaftar_kelahiran.DGkelahiran.CurrentRow.Cells("Nama Pasien").Value)
         CR.SetParameterValue("alamat", Fdaftar_kelahiran.DGkelahiran.CurrentRow.Cells("Alamat").Value)
         CR.SetParameterValue("tgl_persalinan", Fdaftar_kelahiran.DGkelahiran.CurrentRow.Cells("Tanggal Kelahiran").Value)

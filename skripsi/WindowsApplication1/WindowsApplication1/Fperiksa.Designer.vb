@@ -24,35 +24,40 @@ Partial Class Fperiksa
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Fperiksa))
         Me.Group_anc = New System.Windows.Forms.GroupBox()
+        Me.Csat_umur = New System.Windows.Forms.ComboBox()
+        Me.Csat_berat = New System.Windows.Forms.ComboBox()
+        Me.Csat_tinggi = New System.Windows.Forms.ComboBox()
+        Me.Tumr_kehamilan = New System.Windows.Forms.NumericUpDown()
+        Me.Tbrt_badan = New System.Windows.Forms.NumericUpDown()
+        Me.Ttgi_badan = New System.Windows.Forms.NumericUpDown()
         Me.Thtp = New System.Windows.Forms.DateTimePicker()
         Me.Thpht = New System.Windows.Forms.DateTimePicker()
         Me.Tkb = New System.Windows.Forms.DateTimePicker()
         Me.Label22 = New System.Windows.Forms.Label()
-        Me.Tumr_kehamilan = New System.Windows.Forms.TextBox()
         Me.Label20 = New System.Windows.Forms.Label()
-        Me.Tdiagnosa = New System.Windows.Forms.TextBox()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
         Me.Tnm_suami = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.Lstok = New System.Windows.Forms.Label()
         Me.Tjumlah = New System.Windows.Forms.NumericUpDown()
-        Me.Ttotal_harga = New System.Windows.Forms.TextBox()
-        Me.Label13 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Btambah = New System.Windows.Forms.Button()
         Me.Cobat = New System.Windows.Forms.ComboBox()
         Me.Bhapus_obat = New System.Windows.Forms.Button()
         Me.DGobat_beli = New System.Windows.Forms.DataGridView()
         Me.Label15 = New System.Windows.Forms.Label()
+        Me.Ttotal_harga = New System.Windows.Forms.TextBox()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Csat_tkn = New System.Windows.Forms.ComboBox()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.Ttkn_darah1 = New System.Windows.Forms.NumericUpDown()
+        Me.Ttkn_darah = New System.Windows.Forms.NumericUpDown()
         Me.Ttgl_lahir = New System.Windows.Forms.DateTimePicker()
-        Me.Label19 = New System.Windows.Forms.Label()
         Me.is_anc = New System.Windows.Forms.CheckBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Tkeluhan = New System.Windows.Forms.TextBox()
@@ -79,31 +84,30 @@ Partial Class Fperiksa
         Me.KeluarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PasienToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.KBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ObatToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AsuhanBayiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.KondisiBayiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Bbatal = New System.Windows.Forms.Button()
-        Me.Ttkn_darah = New System.Windows.Forms.NumericUpDown()
-        Me.Ttgi_badan = New System.Windows.Forms.NumericUpDown()
-        Me.Tbrt_badan = New System.Windows.Forms.NumericUpDown()
-        Me.Lstok = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Tkembalian = New System.Windows.Forms.TextBox()
+        Me.Label25 = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Tdibayarkan = New System.Windows.Forms.NumericUpDown()
         Me.Label26 = New System.Windows.Forms.Label()
-        Me.Tkembalian = New System.Windows.Forms.TextBox()
-        Me.Label25 = New System.Windows.Forms.Label()
         Me.Group_anc.SuspendLayout()
+        CType(Me.Tumr_kehamilan, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Tbrt_badan, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Ttgi_badan, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox4.SuspendLayout()
         CType(Me.Tjumlah, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DGobat_beli, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
+        CType(Me.Ttkn_darah1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Ttkn_darah, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
         CType(Me.DGrekap, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
-        CType(Me.Ttkn_darah, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Ttgi_badan, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Tbrt_badan, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.Tdibayarkan, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -111,19 +115,18 @@ Partial Class Fperiksa
         'Group_anc
         '
         Me.Group_anc.BackColor = System.Drawing.Color.MintCream
+        Me.Group_anc.Controls.Add(Me.Csat_umur)
+        Me.Group_anc.Controls.Add(Me.Csat_berat)
+        Me.Group_anc.Controls.Add(Me.Csat_tinggi)
+        Me.Group_anc.Controls.Add(Me.Tumr_kehamilan)
         Me.Group_anc.Controls.Add(Me.Tbrt_badan)
         Me.Group_anc.Controls.Add(Me.Ttgi_badan)
         Me.Group_anc.Controls.Add(Me.Thtp)
         Me.Group_anc.Controls.Add(Me.Thpht)
         Me.Group_anc.Controls.Add(Me.Tkb)
         Me.Group_anc.Controls.Add(Me.Label22)
-        Me.Group_anc.Controls.Add(Me.Tumr_kehamilan)
         Me.Group_anc.Controls.Add(Me.Label20)
-        Me.Group_anc.Controls.Add(Me.Tdiagnosa)
-        Me.Group_anc.Controls.Add(Me.Label12)
-        Me.Group_anc.Controls.Add(Me.Label11)
         Me.Group_anc.Controls.Add(Me.Tnm_suami)
-        Me.Group_anc.Controls.Add(Me.Label8)
         Me.Group_anc.Controls.Add(Me.Label7)
         Me.Group_anc.Controls.Add(Me.Label6)
         Me.Group_anc.Controls.Add(Me.Label5)
@@ -138,10 +141,64 @@ Partial Class Fperiksa
         Me.Group_anc.TabStop = False
         Me.Group_anc.Text = "KUNJUNGAN ANC"
         '
+        'Csat_umur
+        '
+        Me.Csat_umur.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Csat_umur.FormattingEnabled = True
+        Me.Csat_umur.Location = New System.Drawing.Point(325, 212)
+        Me.Csat_umur.Name = "Csat_umur"
+        Me.Csat_umur.Size = New System.Drawing.Size(72, 23)
+        Me.Csat_umur.TabIndex = 38
+        Me.Csat_umur.Text = "Minggu"
+        '
+        'Csat_berat
+        '
+        Me.Csat_berat.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Csat_berat.FormattingEnabled = True
+        Me.Csat_berat.Location = New System.Drawing.Point(336, 81)
+        Me.Csat_berat.Name = "Csat_berat"
+        Me.Csat_berat.Size = New System.Drawing.Size(61, 23)
+        Me.Csat_berat.TabIndex = 37
+        Me.Csat_berat.Text = "Kg"
+        '
+        'Csat_tinggi
+        '
+        Me.Csat_tinggi.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Csat_tinggi.FormattingEnabled = True
+        Me.Csat_tinggi.Location = New System.Drawing.Point(336, 51)
+        Me.Csat_tinggi.Name = "Csat_tinggi"
+        Me.Csat_tinggi.Size = New System.Drawing.Size(61, 23)
+        Me.Csat_tinggi.TabIndex = 35
+        Me.Csat_tinggi.Text = "Cm"
+        '
+        'Tumr_kehamilan
+        '
+        Me.Tumr_kehamilan.Location = New System.Drawing.Point(198, 212)
+        Me.Tumr_kehamilan.Maximum = New Decimal(New Integer() {500, 0, 0, 0})
+        Me.Tumr_kehamilan.Name = "Tumr_kehamilan"
+        Me.Tumr_kehamilan.Size = New System.Drawing.Size(121, 23)
+        Me.Tumr_kehamilan.TabIndex = 35
+        '
+        'Tbrt_badan
+        '
+        Me.Tbrt_badan.Location = New System.Drawing.Point(198, 81)
+        Me.Tbrt_badan.Maximum = New Decimal(New Integer() {500, 0, 0, 0})
+        Me.Tbrt_badan.Name = "Tbrt_badan"
+        Me.Tbrt_badan.Size = New System.Drawing.Size(132, 23)
+        Me.Tbrt_badan.TabIndex = 34
+        '
+        'Ttgi_badan
+        '
+        Me.Ttgi_badan.Location = New System.Drawing.Point(197, 52)
+        Me.Ttgi_badan.Maximum = New Decimal(New Integer() {500, 0, 0, 0})
+        Me.Ttgi_badan.Name = "Ttgi_badan"
+        Me.Ttgi_badan.Size = New System.Drawing.Size(133, 23)
+        Me.Ttgi_badan.TabIndex = 33
+        '
         'Thtp
         '
         Me.Thtp.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Thtp.Location = New System.Drawing.Point(198, 128)
+        Me.Thtp.Location = New System.Drawing.Point(198, 148)
         Me.Thtp.Name = "Thtp"
         Me.Thtp.Size = New System.Drawing.Size(199, 23)
         Me.Thtp.TabIndex = 32
@@ -149,7 +206,7 @@ Partial Class Fperiksa
         'Thpht
         '
         Me.Thpht.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Thpht.Location = New System.Drawing.Point(198, 100)
+        Me.Thpht.Location = New System.Drawing.Point(198, 114)
         Me.Thpht.Name = "Thpht"
         Me.Thpht.Size = New System.Drawing.Size(199, 23)
         Me.Thpht.TabIndex = 31
@@ -157,7 +214,7 @@ Partial Class Fperiksa
         'Tkb
         '
         Me.Tkb.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tkb.Location = New System.Drawing.Point(198, 156)
+        Me.Tkb.Location = New System.Drawing.Point(198, 183)
         Me.Tkb.Name = "Tkb"
         Me.Tkb.Size = New System.Drawing.Size(199, 23)
         Me.Tkb.TabIndex = 30
@@ -166,81 +223,35 @@ Partial Class Fperiksa
         '
         Me.Label22.AutoSize = True
         Me.Label22.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.Location = New System.Drawing.Point(6, 156)
+        Me.Label22.Location = New System.Drawing.Point(6, 183)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(67, 15)
         Me.Label22.TabIndex = 26
         Me.Label22.Text = "KB Terakhir"
         '
-        'Tumr_kehamilan
-        '
-        Me.Tumr_kehamilan.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tumr_kehamilan.Location = New System.Drawing.Point(197, 212)
-        Me.Tumr_kehamilan.Name = "Tumr_kehamilan"
-        Me.Tumr_kehamilan.Size = New System.Drawing.Size(200, 23)
-        Me.Tumr_kehamilan.TabIndex = 25
-        '
         'Label20
         '
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(6, 212)
+        Me.Label20.Location = New System.Drawing.Point(6, 214)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(95, 15)
         Me.Label20.TabIndex = 24
         Me.Label20.Text = "Umur kehamilan"
         '
-        'Tdiagnosa
-        '
-        Me.Tdiagnosa.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tdiagnosa.Location = New System.Drawing.Point(198, 184)
-        Me.Tdiagnosa.Name = "Tdiagnosa"
-        Me.Tdiagnosa.Size = New System.Drawing.Size(200, 23)
-        Me.Tdiagnosa.TabIndex = 19
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(371, 72)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(22, 15)
-        Me.Label12.TabIndex = 16
-        Me.Label12.Text = "KG"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(370, 44)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(25, 15)
-        Me.Label11.TabIndex = 15
-        Me.Label11.Text = "CM"
-        '
         'Tnm_suami
         '
         Me.Tnm_suami.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tnm_suami.Location = New System.Drawing.Point(198, 19)
+        Me.Tnm_suami.Location = New System.Drawing.Point(197, 19)
         Me.Tnm_suami.Name = "Tnm_suami"
-        Me.Tnm_suami.Size = New System.Drawing.Size(200, 23)
+        Me.Tnm_suami.Size = New System.Drawing.Size(201, 23)
         Me.Tnm_suami.TabIndex = 12
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(6, 184)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(57, 15)
-        Me.Label8.TabIndex = 7
-        Me.Label8.Text = "Diagnosa"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(6, 128)
+        Me.Label7.Location = New System.Drawing.Point(6, 148)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(162, 15)
         Me.Label7.TabIndex = 6
@@ -250,7 +261,7 @@ Partial Class Fperiksa
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(6, 100)
+        Me.Label6.Location = New System.Drawing.Point(6, 114)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(186, 15)
         Me.Label6.TabIndex = 5
@@ -260,7 +271,7 @@ Partial Class Fperiksa
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(6, 75)
+        Me.Label5.Location = New System.Drawing.Point(6, 81)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(70, 15)
         Me.Label5.TabIndex = 4
@@ -270,7 +281,7 @@ Partial Class Fperiksa
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(6, 47)
+        Me.Label4.Location = New System.Drawing.Point(6, 52)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(77, 15)
         Me.Label4.TabIndex = 3
@@ -305,31 +316,22 @@ Partial Class Fperiksa
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "TERAPI"
         '
+        'Lstok
+        '
+        Me.Lstok.AutoSize = True
+        Me.Lstok.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lstok.Location = New System.Drawing.Point(208, 51)
+        Me.Lstok.Name = "Lstok"
+        Me.Lstok.Size = New System.Drawing.Size(0, 15)
+        Me.Lstok.TabIndex = 33
+        '
         'Tjumlah
         '
         Me.Tjumlah.Location = New System.Drawing.Point(79, 48)
+        Me.Tjumlah.Maximum = New Decimal(New Integer() {500, 0, 0, 0})
         Me.Tjumlah.Name = "Tjumlah"
         Me.Tjumlah.Size = New System.Drawing.Size(118, 23)
         Me.Tjumlah.TabIndex = 32
-        '
-        'Ttotal_harga
-        '
-        Me.Ttotal_harga.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Ttotal_harga.Location = New System.Drawing.Point(88, 25)
-        Me.Ttotal_harga.Name = "Ttotal_harga"
-        Me.Ttotal_harga.ReadOnly = True
-        Me.Ttotal_harga.Size = New System.Drawing.Size(342, 23)
-        Me.Ttotal_harga.TabIndex = 31
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(5, 24)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(66, 15)
-        Me.Label13.TabIndex = 30
-        Me.Label13.Text = "Total Bayar"
         '
         'Label14
         '
@@ -387,6 +389,7 @@ Partial Class Fperiksa
         Me.DGobat_beli.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGobat_beli.Location = New System.Drawing.Point(9, 105)
         Me.DGobat_beli.Name = "DGobat_beli"
+        Me.DGobat_beli.ReadOnly = True
         Me.DGobat_beli.Size = New System.Drawing.Size(289, 130)
         Me.DGobat_beli.TabIndex = 11
         '
@@ -400,12 +403,33 @@ Partial Class Fperiksa
         Me.Label15.TabIndex = 0
         Me.Label15.Text = "Cari Obat"
         '
+        'Ttotal_harga
+        '
+        Me.Ttotal_harga.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Ttotal_harga.Location = New System.Drawing.Point(88, 25)
+        Me.Ttotal_harga.Name = "Ttotal_harga"
+        Me.Ttotal_harga.ReadOnly = True
+        Me.Ttotal_harga.Size = New System.Drawing.Size(342, 23)
+        Me.Ttotal_harga.TabIndex = 31
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(5, 24)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(66, 15)
+        Me.Label13.TabIndex = 30
+        Me.Label13.Text = "Total Bayar"
+        '
         'GroupBox2
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.MintCream
+        Me.GroupBox2.Controls.Add(Me.Csat_tkn)
+        Me.GroupBox2.Controls.Add(Me.Label27)
+        Me.GroupBox2.Controls.Add(Me.Ttkn_darah1)
         Me.GroupBox2.Controls.Add(Me.Ttkn_darah)
         Me.GroupBox2.Controls.Add(Me.Ttgl_lahir)
-        Me.GroupBox2.Controls.Add(Me.Label19)
         Me.GroupBox2.Controls.Add(Me.is_anc)
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.Tkeluhan)
@@ -429,6 +453,44 @@ Partial Class Fperiksa
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "PASIEN"
         '
+        'Csat_tkn
+        '
+        Me.Csat_tkn.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Csat_tkn.FormattingEnabled = True
+        Me.Csat_tkn.Location = New System.Drawing.Point(205, 207)
+        Me.Csat_tkn.Name = "Csat_tkn"
+        Me.Csat_tkn.Size = New System.Drawing.Size(66, 23)
+        Me.Csat_tkn.TabIndex = 36
+        Me.Csat_tkn.Text = "MMHG"
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.Font = New System.Drawing.Font("Arial Black", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label27.Location = New System.Drawing.Point(133, 203)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(17, 27)
+        Me.Label27.TabIndex = 35
+        Me.Label27.Text = "/"
+        '
+        'Ttkn_darah1
+        '
+        Me.Ttkn_darah1.Increment = New Decimal(New Integer() {40, 0, 0, 0})
+        Me.Ttkn_darah1.Location = New System.Drawing.Point(151, 207)
+        Me.Ttkn_darah1.Maximum = New Decimal(New Integer() {1000000, 0, 0, 0})
+        Me.Ttkn_darah1.Name = "Ttkn_darah1"
+        Me.Ttkn_darah1.Size = New System.Drawing.Size(48, 23)
+        Me.Ttkn_darah1.TabIndex = 34
+        '
+        'Ttkn_darah
+        '
+        Me.Ttkn_darah.Increment = New Decimal(New Integer() {30, 0, 0, 0})
+        Me.Ttkn_darah.Location = New System.Drawing.Point(88, 207)
+        Me.Ttkn_darah.Maximum = New Decimal(New Integer() {100000, 0, 0, 0})
+        Me.Ttkn_darah.Name = "Ttkn_darah"
+        Me.Ttkn_darah.Size = New System.Drawing.Size(46, 23)
+        Me.Ttkn_darah.TabIndex = 33
+        '
         'Ttgl_lahir
         '
         Me.Ttgl_lahir.CustomFormat = "dd-MM-yyyy"
@@ -439,16 +501,6 @@ Partial Class Fperiksa
         Me.Ttgl_lahir.Name = "Ttgl_lahir"
         Me.Ttgl_lahir.Size = New System.Drawing.Size(183, 23)
         Me.Ttgl_lahir.TabIndex = 29
-        '
-        'Label19
-        '
-        Me.Label19.AutoSize = True
-        Me.Label19.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(212, 209)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(46, 15)
-        Me.Label19.TabIndex = 28
-        Me.Label19.Text = "MMHG"
         '
         'is_anc
         '
@@ -485,9 +537,9 @@ Partial Class Fperiksa
         Me.Label9.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.Location = New System.Drawing.Point(5, 238)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(74, 15)
+        Me.Label9.Size = New System.Drawing.Size(129, 15)
         Me.Label9.TabIndex = 24
-        Me.Label9.Text = "Pemeriksaan"
+        Me.Label9.Text = "Pemeriksaan/Diagnosa"
         '
         'Talamat
         '
@@ -628,6 +680,7 @@ Partial Class Fperiksa
         Me.DGrekap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGrekap.Location = New System.Drawing.Point(12, 50)
         Me.DGrekap.Name = "DGrekap"
+        Me.DGrekap.ReadOnly = True
         Me.DGrekap.Size = New System.Drawing.Size(701, 105)
         Me.DGrekap.TabIndex = 14
         '
@@ -656,15 +709,16 @@ Partial Class Fperiksa
         Me.Bsimpan.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Bsimpan.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bsimpan.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bsimpan.Location = New System.Drawing.Point(478, 25)
+        Me.Bsimpan.Location = New System.Drawing.Point(554, 20)
         Me.Bsimpan.Name = "Bsimpan"
-        Me.Bsimpan.Size = New System.Drawing.Size(214, 23)
+        Me.Bsimpan.Size = New System.Drawing.Size(172, 67)
         Me.Bsimpan.TabIndex = 13
         Me.Bsimpan.Text = "SIMPAN PEMERIKSAAN"
         Me.Bsimpan.UseVisualStyleBackColor = False
         '
         'MenuStrip1
         '
+        Me.MenuStrip1.BackColor = System.Drawing.Color.MintCream
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.DataToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
@@ -687,7 +741,7 @@ Partial Class Fperiksa
         '
         'DataToolStripMenuItem
         '
-        Me.DataToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PasienToolStripMenuItem, Me.ObatToolStripMenuItem, Me.AsuhanBayiToolStripMenuItem, Me.KondisiBayiToolStripMenuItem})
+        Me.DataToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PasienToolStripMenuItem, Me.KBToolStripMenuItem, Me.ObatToolStripMenuItem, Me.AsuhanBayiToolStripMenuItem, Me.KondisiBayiToolStripMenuItem})
         Me.DataToolStripMenuItem.Name = "DataToolStripMenuItem"
         Me.DataToolStripMenuItem.Size = New System.Drawing.Size(43, 20)
         Me.DataToolStripMenuItem.Text = "Data"
@@ -697,6 +751,12 @@ Partial Class Fperiksa
         Me.PasienToolStripMenuItem.Name = "PasienToolStripMenuItem"
         Me.PasienToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
         Me.PasienToolStripMenuItem.Text = "Pasien"
+        '
+        'KBToolStripMenuItem
+        '
+        Me.KBToolStripMenuItem.Name = "KBToolStripMenuItem"
+        Me.KBToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.KBToolStripMenuItem.Text = "KB"
         '
         'ObatToolStripMenuItem
         '
@@ -723,42 +783,12 @@ Partial Class Fperiksa
         Me.Bbatal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Bbatal.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bbatal.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bbatal.Location = New System.Drawing.Point(478, 64)
+        Me.Bbatal.Location = New System.Drawing.Point(752, 20)
         Me.Bbatal.Name = "Bbatal"
-        Me.Bbatal.Size = New System.Drawing.Size(214, 23)
+        Me.Bbatal.Size = New System.Drawing.Size(154, 67)
         Me.Bbatal.TabIndex = 30
         Me.Bbatal.Text = "BATAL/ULANG PEMERIKSAAN"
         Me.Bbatal.UseVisualStyleBackColor = False
-        '
-        'Ttkn_darah
-        '
-        Me.Ttkn_darah.Location = New System.Drawing.Point(88, 208)
-        Me.Ttkn_darah.Name = "Ttkn_darah"
-        Me.Ttkn_darah.Size = New System.Drawing.Size(118, 23)
-        Me.Ttkn_darah.TabIndex = 33
-        '
-        'Ttgi_badan
-        '
-        Me.Ttgi_badan.Location = New System.Drawing.Point(197, 47)
-        Me.Ttgi_badan.Name = "Ttgi_badan"
-        Me.Ttgi_badan.Size = New System.Drawing.Size(167, 23)
-        Me.Ttgi_badan.TabIndex = 33
-        '
-        'Tbrt_badan
-        '
-        Me.Tbrt_badan.Location = New System.Drawing.Point(198, 75)
-        Me.Tbrt_badan.Name = "Tbrt_badan"
-        Me.Tbrt_badan.Size = New System.Drawing.Size(166, 23)
-        Me.Tbrt_badan.TabIndex = 34
-        '
-        'Lstok
-        '
-        Me.Lstok.AutoSize = True
-        Me.Lstok.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lstok.Location = New System.Drawing.Point(208, 51)
-        Me.Lstok.Name = "Lstok"
-        Me.Lstok.Size = New System.Drawing.Size(0, 15)
-        Me.Lstok.TabIndex = 33
         '
         'GroupBox1
         '
@@ -775,36 +805,10 @@ Partial Class Fperiksa
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(12, 455)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(710, 98)
+        Me.GroupBox1.Size = New System.Drawing.Size(912, 98)
         Me.GroupBox1.TabIndex = 34
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "PEMBAYARAN"
-        '
-        'Label23
-        '
-        Me.Label23.AutoSize = True
-        Me.Label23.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label23.Location = New System.Drawing.Point(208, 51)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(0, 15)
-        Me.Label23.TabIndex = 33
-        '
-        'Tdibayarkan
-        '
-        Me.Tdibayarkan.Location = New System.Drawing.Point(89, 64)
-        Me.Tdibayarkan.Name = "Tdibayarkan"
-        Me.Tdibayarkan.Size = New System.Drawing.Size(113, 23)
-        Me.Tdibayarkan.TabIndex = 32
-        '
-        'Label26
-        '
-        Me.Label26.AutoSize = True
-        Me.Label26.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label26.Location = New System.Drawing.Point(6, 64)
-        Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(67, 15)
-        Me.Label26.TabIndex = 16
-        Me.Label26.Text = "Dibayarkan"
         '
         'Tkembalian
         '
@@ -825,6 +829,33 @@ Partial Class Fperiksa
         Me.Label25.TabIndex = 34
         Me.Label25.Text = "Kembalian"
         '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label23.Location = New System.Drawing.Point(208, 51)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(0, 15)
+        Me.Label23.TabIndex = 33
+        '
+        'Tdibayarkan
+        '
+        Me.Tdibayarkan.Location = New System.Drawing.Point(88, 62)
+        Me.Tdibayarkan.Maximum = New Decimal(New Integer() {276447232, 23283, 0, 0})
+        Me.Tdibayarkan.Name = "Tdibayarkan"
+        Me.Tdibayarkan.Size = New System.Drawing.Size(113, 23)
+        Me.Tdibayarkan.TabIndex = 32
+        '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label26.Location = New System.Drawing.Point(6, 64)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(48, 15)
+        Me.Label26.TabIndex = 16
+        Me.Label26.Text = "Dibayar"
+        '
         'Fperiksa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -843,20 +874,22 @@ Partial Class Fperiksa
         Me.Text = "Form Pemeriksaan"
         Me.Group_anc.ResumeLayout(False)
         Me.Group_anc.PerformLayout()
+        CType(Me.Tumr_kehamilan, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Tbrt_badan, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Ttgi_badan, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
         CType(Me.Tjumlah, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DGobat_beli, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        CType(Me.Ttkn_darah1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Ttkn_darah, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         CType(Me.DGrekap, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        CType(Me.Ttkn_darah, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Ttgi_badan, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Tbrt_badan, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.Tdibayarkan, System.ComponentModel.ISupportInitialize).EndInit()
@@ -865,15 +898,11 @@ Partial Class Fperiksa
 
     End Sub
     Friend WithEvents Group_anc As System.Windows.Forms.GroupBox
-    Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Tdiagnosa As System.Windows.Forms.TextBox
-    Friend WithEvents Label12 As System.Windows.Forms.Label
-    Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents Tnm_suami As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
     Friend WithEvents Bhapus_obat As System.Windows.Forms.Button
@@ -888,13 +917,11 @@ Partial Class Fperiksa
     Friend WithEvents Label17 As System.Windows.Forms.Label
     Friend WithEvents Label18 As System.Windows.Forms.Label
     Friend WithEvents Bexit As System.Windows.Forms.Button
-    Friend WithEvents Tumr_kehamilan As System.Windows.Forms.TextBox
     Friend WithEvents Label20 As System.Windows.Forms.Label
     Friend WithEvents Talamat As System.Windows.Forms.TextBox
     Friend WithEvents Label21 As System.Windows.Forms.Label
     Friend WithEvents Label22 As System.Windows.Forms.Label
     Friend WithEvents DGobat_beli As System.Windows.Forms.DataGridView
-    Friend WithEvents Label19 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Tkeluhan As System.Windows.Forms.TextBox
     Friend WithEvents Label9 As System.Windows.Forms.Label
@@ -934,4 +961,12 @@ Partial Class Fperiksa
     Friend WithEvents Label23 As System.Windows.Forms.Label
     Friend WithEvents Tdibayarkan As System.Windows.Forms.NumericUpDown
     Friend WithEvents Label26 As System.Windows.Forms.Label
+    Friend WithEvents Label27 As System.Windows.Forms.Label
+    Friend WithEvents Ttkn_darah1 As System.Windows.Forms.NumericUpDown
+    Friend WithEvents Tumr_kehamilan As System.Windows.Forms.NumericUpDown
+    Friend WithEvents Csat_berat As System.Windows.Forms.ComboBox
+    Friend WithEvents Csat_tinggi As System.Windows.Forms.ComboBox
+    Friend WithEvents Csat_umur As System.Windows.Forms.ComboBox
+    Friend WithEvents KBToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Csat_tkn As System.Windows.Forms.ComboBox
 End Class
