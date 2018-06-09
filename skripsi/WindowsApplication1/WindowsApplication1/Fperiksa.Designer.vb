@@ -845,6 +845,7 @@ Partial Class Fperiksa
         Me.Tdibayarkan.Name = "Tdibayarkan"
         Me.Tdibayarkan.Size = New System.Drawing.Size(113, 23)
         Me.Tdibayarkan.TabIndex = 32
+        Me.Tdibayarkan.ThousandsSeparator = True
         '
         'Label26
         '

@@ -39,6 +39,7 @@ Partial Class Fkb
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Lstok = New System.Windows.Forms.Label()
         Me.Csat_berat = New System.Windows.Forms.ComboBox()
         Me.Csat_tkn = New System.Windows.Forms.ComboBox()
         Me.Label27 = New System.Windows.Forms.Label()
@@ -76,7 +77,6 @@ Partial Class Fkb
         Me.Tdibayarkan = New System.Windows.Forms.NumericUpDown()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
-        Me.Lstok = New System.Windows.Forms.Label()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.Ttkn_darah1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -277,6 +277,16 @@ Partial Class Fkb
         Me.GroupBox1.TabIndex = 8
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "PEMERIKSAAN KB"
+        '
+        'Lstok
+        '
+        Me.Lstok.AutoSize = True
+        Me.Lstok.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lstok.Location = New System.Drawing.Point(194, 165)
+        Me.Lstok.Name = "Lstok"
+        Me.Lstok.Size = New System.Drawing.Size(46, 15)
+        Me.Lstok.TabIndex = 50
+        Me.Lstok.Text = "Jumlah"
         '
         'Csat_berat
         '
@@ -606,6 +616,7 @@ Partial Class Fkb
         Me.Tdibayarkan.Name = "Tdibayarkan"
         Me.Tdibayarkan.Size = New System.Drawing.Size(113, 23)
         Me.Tdibayarkan.TabIndex = 32
+        Me.Tdibayarkan.ThousandsSeparator = True
         '
         'Label10
         '
@@ -626,16 +637,6 @@ Partial Class Fkb
         Me.Label26.Size = New System.Drawing.Size(48, 15)
         Me.Label26.TabIndex = 16
         Me.Label26.Text = "Dibayar"
-        '
-        'Lstok
-        '
-        Me.Lstok.AutoSize = True
-        Me.Lstok.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lstok.Location = New System.Drawing.Point(194, 165)
-        Me.Lstok.Name = "Lstok"
-        Me.Lstok.Size = New System.Drawing.Size(46, 15)
-        Me.Lstok.TabIndex = 50
-        Me.Lstok.Text = "Jumlah"
         '
         'Fkb
         '

@@ -23,19 +23,23 @@
         Tnm_suami.Clear()
         Tcara.Clear()
         Tpenolong.Clear()
-        Tumur.Clear()
+        Tumur.ResetText()
         Tkeadaan.Clear()
+        Csat_umur.Text = "Minggu"
     End Sub
     Sub resetBayi()
         Tnm_bayi.Clear()
-        Tberat.Clear()
-        Tpanjang.Clear()
-        Tlingkar.Clear()
+        Tberat.ResetText()
+        Tpanjang.ResetText()
+        Tlingkar.ResetText()
         Cjk_bayi.SelectedIndex = -1
         kondisi_bayi.ClearSelected()
         asuhan_bayi.ClearSelected()
-        Tanak.Clear()
+        Tanak.ResetText()
         Tketerangan.Clear()
+        Csat_berat.Text = "Gr"
+        Csat_panjang.Text = "Cm"
+        Csat_lingkar.Text = "Cm"
     End Sub
     Sub resetBiayaKelahiran()
         Tpersalinan.ResetText()
@@ -82,6 +86,13 @@
     Private Sub Fkelahiran_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         getDataKondisi()
         getDataAsuhan()
+        Call fetchComboboxData("select * from daftar_satuan where `Id Jsat` = 1", Csat_berat, "Nama Satuan", "Id Sat")
+        Call fetchComboboxData("select * from daftar_satuan where `Id Jsat` = 2", Csat_panjang, "Nama Satuan", "Id Sat")
+        Call fetchComboboxData("select * from daftar_satuan where `Id Jsat` = 2", Csat_lingkar, "Nama Satuan", "Id Sat")
+        Call fetchComboboxData("select * from daftar_satuan where `Id Jsat` = 3", Csat_umur, "Nama Satuan", "Id Sat")
+        Call resetDataPasien()
+        Call resetKeadaanIbu()
+        Call resetBayi()
     End Sub
 
     Private Sub kondisi_bayi_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles kondisi_bayi.SelectedIndexChanged
@@ -111,32 +122,32 @@
                 asuhan_tmp += itm & vbCrLf
             Next
         End If
-        DGbayi.Rows.Add(New String() {Tnm_bayi.Text, Tanak.Text, Tberat.Text, Tpanjang.Text, Tlingkar.Text, Cjk_bayi.Text, kondisi_tmp, asuhan_tmp, Tketerangan.Text})
+        DGbayi.Rows.Add(New String() {Tnm_bayi.Text, Tanak.Value, Tberat.Value, Tpanjang.Value, Tlingkar.Value, Cjk_bayi.Text, kondisi_tmp, asuhan_tmp, Tketerangan.Text, Csat_berat.SelectedValue, Csat_panjang.SelectedValue, Csat_lingkar.SelectedValue})
         DGbayi.Refresh()
         Call resetBayi()
     End Sub
 
     Private Sub Bsimpan_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bsimpan.Click
-        runQuery("insert into tbl_kelahiran (no_pasien,id_kelahiran,tgl_kelahiran,nm_suami,penolongan_persalinan,cara_persalinan,umur_kehamilan,keadaan_ibu,biaya_persalinan,biaya_perawatan_kelas,biaya_perawatan_bayi,biaya_obat_obatan,biaya_cucian,biaya_akte_kelahiran,biaya_transportasi,biaya_lain) values (" & Tno_pasien.Text &
-                 ", '" & id_kelahiran &
-                 "', '" & Ttgl_lahir.Value.ToString("yyyy-MM-dd hh:mm:00") &
-                 "', '" & Tnm_suami.Text &
-                 "', '" & Tpenolong.Text &
-                 "', '" & Tcara.Text &
-                 "', " & Tumur.Text &
-                 ", '" & Tkeadaan.Text &
-                 "', '" & Tpersalinan.Text &
-                 "', " & Tperawatan.Text &
-                 ", " & Tperawatan_bayi.Text &
-                 ", " & Tobat.Text &
-                 ", " & Tcucian.Text &
-                 ", " & Takte.Text &
-                 ", " & Ttransportasi.Text &
-                 ", " & Tlain.Text &
-                 ")")
+        runQuery("insert into tbl_kelahiran (no_pasien, id_kelahiran, tgl_kelahiran, nm_suami, penolongan_persalinan, cara_persalinan, umur_kehamilan, keadaan_ibu, biaya_persalinan, biaya_perawatan_kelas, biaya_perawatan_bayi, biaya_obat_obatan, biaya_cucian, biaya_akte_kelahiran, biaya_transportasi, biaya_lain, id_sat_umur ) values (" & Tno_pasien.Text &
+                ", '" & id_kelahiran &
+                "', '" & Ttgl_persalinan.Value.ToString("yyyy-MM-dd hh:mm:00") &
+                "', '" & Tnm_suami.Text &
+                "', '" & Tpenolong.Text &
+                "', '" & Tcara.Text &
+                "', " & Tumur.Value &
+                ", '" & Tkeadaan.Text &
+                "', '" & Tpersalinan.Value &
+                "', " & Tperawatan.Value &
+                ", " & Tperawatan_bayi.Value &
+                ", " & Tobat.Value &
+                ", " & Tcucian.Value &
+                ", " & Takte.Value &
+                ", " & Ttransportasi.Value &
+                ", " & Tlain.Value &
+                ", " & Csat_umur.SelectedValue & ")")
         For Each x As DataGridViewRow In DGbayi.Rows
             If Not x.IsNewRow Then
-                runQuery("insert into tbl_bayi_lahir (id_kelahiran,nm_bayi,anak_ke,berat_lahir,panjang_badan,lingkar_kepala,jk,asuhan_bayi_saat_lahir,keterangan,kondisi_bayi) values('" & id_kelahiran &
+                runQuery("insert into tbl_bayi_lahir (id_kelahiran,nm_bayi,anak_ke,berat_lahir,panjang_badan,lingkar_kepala,jk,asuhan_bayi_saat_lahir,keterangan,kondisi_bayi, id_sat_berat,id_sat_panjang,id_sat_lingkar) values('" & id_kelahiran &
                          "', '" & x.Cells("nm_bayi").Value &
                          "', " & x.Cells(1).Value &
                          ", " & x.Cells(2).Value &
@@ -146,7 +157,10 @@
                          "', '" & x.Cells(6).Value &
                          "', '" & x.Cells(7).Value &
                          "', '" & x.Cells(8).Value &
-                         "')")
+                         "', " & x.Cells("id_sat_berat").Value &
+                         ", " & x.Cells("id_sat_panjang").Value &
+                         ", " & x.Cells("id_sat_lingkar").Value &
+                         ")")
             End If
         Next
         DGbayi.DataSource = Nothing
@@ -156,6 +170,8 @@
         Call resetKeadaanIbu()
         Call resetBiayaKelahiran()
         Tno_pasien.Clear()
+        Call getDataAsuhan()
+        Call getDataKondisi()
         Call successMessage()
     End Sub
 
