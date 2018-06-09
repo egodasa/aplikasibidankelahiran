@@ -5,6 +5,9 @@ SET time_zone = '+00:00';
 SET foreign_key_checks = 0;
 SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
 
+CREATE TABLE `daftar_kelahiran` (`No Pasien` int(11), `Nama Pasien` varchar(100), `Id Kelahiran` varchar(50), `Tanggal Kelahiran` datetime, `Nama Suami` varchar(100), `Penolongan Persalinan` text, `Cara Persalinan` text, `Keadaan Ibu` text, `Umur Kehamilan` varchar(42), `Biaya Persalinan` int(11), `Biaya Perawatan` int(11), `Biaya Perawatan Bayi` int(11), `Biaya Obat-Obatan` int(11), `Biaya Cucian` int(11), `Biaya Akte` int(11), `Biaya Transportasi` int(11), `Biaya Lain` int(11));
+
+
 CREATE TABLE `daftar_obat` (`Id Obat` int(11), `Nama Obat` varchar(50), `Stok` int(11), `Id Jobat` int(11), `Jenis Obat` varchar(50), `Id Sat Obat` int(11), `Satuan` varchar(30), `Harga Obat` int(11));
 
 
@@ -15,6 +18,9 @@ CREATE TABLE `daftar_pasien` (`No Pasien` int(11), `Nama Pasien` varchar(100), `
 
 
 CREATE TABLE `daftar_satuan` (`Id Sat` int(11), `Nama Satuan` varchar(30), `Id Jsat` int(11), `Nama Jenis Satuan` varchar(30));
+
+
+CREATE TABLE `laporan_bayi_lahir` (`Id Kelahiran` varchar(50), `No Pasien` int(11), `Nama Pasien` varchar(100), `Nama Bayi` varchar(100), `Anak Ke` int(11), `Berat Lahir` varchar(42), `Panjang Badan` varchar(42), `Lingkar Kepala` varchar(42), `Jenis Kelamin` varchar(30), `Asuhan Bayi Saat Lahir` text, `Keterangan` text, `Kondisi Bayi` text);
 
 
 CREATE TABLE `laporan_kb` (`No Pasien` int(11), `Nama Pasien` varchar(100), `Tanggal Lahir` date, `Tanggal Periksa` timestamp, `Anak Ke` int(11), `Haid Terakhir` date, `Berat Badan` varchar(42), `Id Sat Berat` int(11), `Tensi` varchar(40), `Id Sat Tensi` int(11), `Nama Obat` varchar(50), `Jumlah` varchar(42));
@@ -193,6 +199,9 @@ update tbl_obat set stok = stok + OLD.jumlah where id_obat = OLD.id_obat;;
 
 DELIMITER ;
 
+DROP TABLE IF EXISTS `daftar_kelahiran`;
+CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `daftar_kelahiran` AS select `a`.`no_pasien` AS `No Pasien`,`b`.`Nama Pasien` AS `Nama Pasien`,`a`.`id_kelahiran` AS `Id Kelahiran`,`a`.`tgl_kelahiran` AS `Tanggal Kelahiran`,`a`.`nm_suami` AS `Nama Suami`,`a`.`penolongan_persalinan` AS `Penolongan Persalinan`,`a`.`cara_persalinan` AS `Cara Persalinan`,`a`.`keadaan_ibu` AS `Keadaan Ibu`,concat(`a`.`umur_kehamilan`,' ',`c`.`Nama Satuan`) AS `Umur Kehamilan`,`a`.`biaya_persalinan` AS `Biaya Persalinan`,`a`.`biaya_perawatan_kelas` AS `Biaya Perawatan`,`a`.`biaya_perawatan_bayi` AS `Biaya Perawatan Bayi`,`a`.`biaya_obat_obatan` AS `Biaya Obat-Obatan`,`a`.`biaya_cucian` AS `Biaya Cucian`,`a`.`biaya_akte_kelahiran` AS `Biaya Akte`,`a`.`biaya_transportasi` AS `Biaya Transportasi`,`a`.`biaya_lain` AS `Biaya Lain` from ((`tbl_kelahiran` `a` join `daftar_pasien` `b` on((`a`.`no_pasien` = `b`.`No Pasien`))) join `daftar_satuan` `c` on((`a`.`id_sat_umur` = `c`.`Id Sat`)));
+
 DROP TABLE IF EXISTS `daftar_obat`;
 CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `daftar_obat` AS select `a`.`id_obat` AS `Id Obat`,`a`.`nm_obat` AS `Nama Obat`,`a`.`stok` AS `Stok`,`b`.`id_jobat` AS `Id Jobat`,`b`.`nm_jobat` AS `Jenis Obat`,`a`.`id_sat_obat` AS `Id Sat Obat`,`c`.`Nama Satuan` AS `Satuan`,`a`.`hrg_obat` AS `Harga Obat` from ((`tbl_obat` `a` join `tbl_jenis_obat` `b` on((`a`.`id_jobat` = `b`.`id_jobat`))) join `daftar_satuan` `c` on((`a`.`id_sat_obat` = `c`.`Id Sat`)));
 
@@ -204,6 +213,9 @@ CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `daftar_pasien` AS select `
 
 DROP TABLE IF EXISTS `daftar_satuan`;
 CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `daftar_satuan` AS select `a`.`id_sat` AS `Id Sat`,`a`.`nm_sat` AS `Nama Satuan`,`a`.`id_jsat` AS `Id Jsat`,`b`.`nm_jsat` AS `Nama Jenis Satuan` from (`tbl_satuan` `a` join `tbl_jsatuan` `b` on((`a`.`id_jsat` = `b`.`id_jsat`)));
+
+DROP TABLE IF EXISTS `laporan_bayi_lahir`;
+CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `laporan_bayi_lahir` AS select `b`.`Id Kelahiran` AS `Id Kelahiran`,`b`.`No Pasien` AS `No Pasien`,`b`.`Nama Pasien` AS `Nama Pasien`,`a`.`nm_bayi` AS `Nama Bayi`,`a`.`anak_ke` AS `Anak Ke`,concat(`a`.`berat_lahir`,' ',`sat_berat`.`Nama Satuan`) AS `Berat Lahir`,concat(`a`.`panjang_badan`,' ',`sat_panjang`.`Nama Satuan`) AS `Panjang Badan`,concat(`a`.`lingkar_kepala`,' ',`sat_lingkar`.`Nama Satuan`) AS `Lingkar Kepala`,`a`.`jk` AS `Jenis Kelamin`,`a`.`asuhan_bayi_saat_lahir` AS `Asuhan Bayi Saat Lahir`,`a`.`keterangan` AS `Keterangan`,`a`.`kondisi_bayi` AS `Kondisi Bayi` from ((((`tbl_bayi_lahir` `a` join `daftar_kelahiran` `b` on((`a`.`id_kelahiran` = `b`.`Id Kelahiran`))) join `daftar_satuan` `sat_berat` on((`a`.`id_sat_berat` = `sat_berat`.`Id Sat`))) join `daftar_satuan` `sat_panjang` on((`a`.`id_sat_panjang` = `sat_panjang`.`Id Sat`))) join `daftar_satuan` `sat_lingkar` on((`a`.`id_sat_lingkar` = `sat_lingkar`.`Id Sat`)));
 
 DROP TABLE IF EXISTS `laporan_kb`;
 CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `laporan_kb` AS select `a`.`no_pasien` AS `No Pasien`,`c`.`nm_pasien` AS `Nama Pasien`,`c`.`tgl_lahir` AS `Tanggal Lahir`,`a`.`tgl_periksa` AS `Tanggal Periksa`,`a`.`anak_ke` AS `Anak Ke`,`a`.`haid_terakhir` AS `Haid Terakhir`,concat(`a`.`berat_badan`,' ',`d`.`Nama Satuan`) AS `Berat Badan`,`a`.`id_sat_berat` AS `Id Sat Berat`,concat(`a`.`tensi`,' ',`e`.`Nama Satuan`) AS `Tensi`,`a`.`id_sat_tensi` AS `Id Sat Tensi`,`b`.`Nama Obat` AS `Nama Obat`,concat(`b`.`Jumlah`,' ',`b`.`Satuan`) AS `Jumlah` from ((((`tbl_periksa_kb` `a` join `laporan_terapi` `b` on((`a`.`id_kb` = `b`.`Id Periksa`))) join `tbl_pasien` `c` on((`a`.`no_pasien` = `c`.`no_pasien`))) join `daftar_satuan` `d` on((`a`.`id_sat_berat` = `d`.`Id Sat`))) join `daftar_satuan` `e` on((`a`.`id_sat_tensi` = `e`.`Id Sat`)));
@@ -217,4 +229,4 @@ CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `laporan_rekap_pasien` AS s
 DROP TABLE IF EXISTS `laporan_terapi`;
 CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `laporan_terapi` AS select `a`.`id_periksa` AS `Id Periksa`,`a`.`id_obat` AS `Id Obat`,`b`.`Nama Obat` AS `Nama Obat`,`b`.`Harga Obat` AS `Harga Obat`,`a`.`jumlah` AS `Jumlah`,(`a`.`jumlah` * `b`.`Harga Obat`) AS `Total`,`b`.`Satuan` AS `Satuan` from (`tbl_terapi` `a` join `daftar_obat` `b` on((`a`.`id_obat` = `b`.`Id Obat`)));
 
--- 2018-06-09 09:09:56
+-- 2018-06-09 16:53:05
