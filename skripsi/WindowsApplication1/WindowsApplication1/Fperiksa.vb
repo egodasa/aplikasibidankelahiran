@@ -1,29 +1,77 @@
 ﻿Public Class Fperiksa
-    Dim DGpasien, DGdaftar_obat As New DataGridView
-    Dim data_pasien, obat_beli As New DataTable
-    Dim id_periksa As String = DateTime.Now.Ticks.ToString()
+    Dim data_pasien, obat_beli, data_obat As New DataTable
+    Dim id_periksa As String = DateTime.Now.ToString("ddMMyyhhmmssffff")
     Dim DTobat As New DataTable
     Dim cari_obat As DataTable
-    Dim getDataBeli As String = "select a.id_terapi,a.id_obat,a.id_periksa,b.nm_obat as `Nama Obat`,a.jumlah as Jumlah,b.hrg_obat as `Harga`,b.hrg_obat*a.jumlah as `Total Harga` from tbl_terapi a join tbl_obat b on a.id_obat = b.id_obat where a.id_periksa = '" & id_periksa & "'"
+    Dim total_harga As Integer = 0
+    Dim getDataBeli As String = "select * from daftar_obat_beli where `Id Periksa` = '" & id_periksa & "'"
     Sub resetDataPasien()
         Ttgl_lahir.ResetText()
         Tpekerjaan.Clear()
         Talamat.Clear()
-        Cjk.SelectedIndex = 0
+        Cjk.SelectedIndex = -1
         Tnm_pasien.Clear()
+        Call fetchComboboxData("select * from daftar_satuan where `Id Jsat` = 5", Csat_tkn, "Nama Satuan", "Id Sat")
+        Csat_tkn.Text = "MMHG"
+        Ttkn_darah.ResetText()
+        Ttkn_darah1.ResetText()
+        is_anc.Checked = False
+        Tkeluhan.Clear()
+    End Sub
+    Sub resetRekap()
+        Tcari.Clear()
+        DGrekap.DataSource = Nothing
     End Sub
     Sub resetAnc()
         Tnm_suami.Clear()
-        Ttgi_badan.Clear()
-        Tbrt_badan.Clear()
+        Ttgi_badan.ResetText()
+        Tbrt_badan.ResetText()
         Thpht.ResetText()
         Thtp.ResetText()
         Tkb.ResetText()
-        Tdiagnosa.Clear()
-        Tumr_kehamilan.Clear()
+        Tumr_kehamilan.ResetText()
+        Call fetchComboboxData("select * from daftar_satuan where `Id Jsat` = 1", Csat_berat, "Nama Satuan", "Id Sat")
+        Call fetchComboboxData("select * from daftar_satuan where `Id Jsat` = 2", Csat_tinggi, "Nama Satuan", "Id Sat")
+        Call fetchComboboxData("select * from daftar_satuan where `Id Jsat` = 3", Csat_umur, "Nama Satuan", "Id Sat")
+        Csat_berat.Text = "Kg"
+        Csat_tinggi.Text = "Cm"
+        Csat_umur.Text = "Minggu"
+    End Sub
+    Sub resetTerapi()
+        Call fetchComboboxData("select * from daftar_obat", Cobat, "Nama Obat", "Id Obat")
+        Cobat.SelectedIndex = -1
+        data_obat = Cobat.DataSource
+        Tjumlah.ResetText()
+        Tjumlah.Maximum = 100000000
+        DGobat_beli.DataSource = fetchData("select * from daftar_obat_beli where `Id Periksa` = '" & id_periksa & "'")
+        DGobat_beli.Columns("Id Terapi").Visible = False
+        DGobat_beli.Columns("Id Obat").Visible = False
+        DGobat_beli.Columns("Id Periksa").Visible = False
+        DGobat_beli.Columns("Jumlah").ReadOnly = False
+        Lstok.ResetText()
+        If DGobat_beli.RowCount <> 0 Then
+            For Each x As DataGridViewRow In DGobat_beli.Rows
+                If Not x.IsNewRow Then
+                    If x.Cells(2).Value <> 0 Then
+                        runQuery("insert into tbl_terapi(id_obat, jumlah, id_periksa) values (" & x.Cells("id_obat").Value & "," & x.Cells("Jumlah").Value & ", " & id_periksa & ")")
+                    End If
+                End If
+            Next
+        End If
     End Sub
     Sub resetId()
-        id_periksa = DateTime.Now.Ticks.ToString()
+        id_periksa = DateTime.Now.ToString("ddMMyyhhmmssffff")
+        getDataBeli = "select * from daftar_obat_beli where `Id Periksa` = '" & id_periksa & "'"
+    End Sub
+    Sub resetTransaksi()
+        If DGobat_beli.Rows.Count <> 0 Then
+            runQuery("delete from tbl_terapi where id_periksa = '" & id_periksa & "'")
+        End If
+    End Sub
+    Sub resetPembayaran()
+        Ttotal_harga.Clear()
+        Tdibayarkan.ResetText()
+        Tkembalian.Clear()
     End Sub
     Private Sub Label3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label3.Click
 
@@ -31,15 +79,17 @@
 
     Private Sub Tno_pasien_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tno_pasien.TextChanged
         If Tno_pasien.TextLength <> 0 Then
-            fetchData(DGpasien, "select * from tbl_pasien where no_pasien = " & Tno_pasien.Text)
-            data_pasien = DGpasien.DataSource
+            data_pasien = fetchData("select * from daftar_pasien where `No Pasien` = " & Tno_pasien.Text)
             If data_pasien.Rows.Count = 1 Then
-                fetchData(DGrekap, "select tgl_periksa,keluhan, tensi from tbl_periksa where no_pasien = " & data_pasien.Rows(0).Item("no_pasien") & " ")
-                Ttgl_lahir.Value = data_pasien.Rows(0).Item("tgl_lahir")
-                Tpekerjaan.Text = data_pasien.Rows(0).Item("pekerjaan")
-                Talamat.Text = data_pasien.Rows(0).Item("alamat")
-                Cjk.Text = data_pasien.Rows(0).Item("jk")
-                Tnm_pasien.Text = data_pasien.Rows(0).Item("nm_pasien")
+                DGrekap.DataSource = fetchData("select * from laporan_rekap_pasien where `No Pasien` = " & data_pasien.Rows(0).Item("No Pasien"))
+                DGrekap.Columns("Id Periksa").Visible = False
+                DGrekap.Columns("No Pasien").Visible = False
+                Ttgl_lahir.Value = Date.ParseExact(data_pasien.Rows(0).Item("Tanggal Lahir"), "dd/MM/yyyy",
+            System.Globalization.DateTimeFormatInfo.InvariantInfo)
+                Tpekerjaan.Text = data_pasien.Rows(0).Item("Pekerjaan")
+                Talamat.Text = data_pasien.Rows(0).Item("Alamat")
+                Cjk.Text = data_pasien.Rows(0).Item("Jenis Kelamin")
+                Tnm_pasien.Text = data_pasien.Rows(0).Item("Nama Pasien")
             Else
                 DGrekap.DataSource = Nothing
                 DGrekap.Refresh()
@@ -58,65 +108,43 @@
 
     Private Sub Fperiksa_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Call setKoneksi()
-        fetchData(DGdaftar_obat, "select a.id_obat, a.nm_obat as `Nama Obat`, a.stok as Stok, b.nm_jobat as `Jenis`, a.status as Status from tbl_obat a inner join tbl_jenis_obat b on a.id_jobat = b.id_jobat")
-        Cobat.DataSource = DGdaftar_obat.DataSource
-        fetchData(DGobat_beli, getDataBeli)
-        DGobat_beli.Columns("id_terapi").Visible = False
-        DGobat_beli.Columns("id_obat").Visible = False
-        DGobat_beli.Columns("id_periksa").Visible = False
-        DGobat_beli.Columns("Jumlah").ReadOnly = False
+        Call resetDataPasien()
+        Call resetRekap()
+        Call resetPembayaran()
+        Call resetAnc()
+        Call resetTerapi()
     End Sub
 
-    Private Sub Tnm_obat_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tjumlah.TextChanged
-        
+    Private Sub Tnm_obat_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
     End Sub
 
     Private Sub DGdaftar_obat_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs)
     End Sub
 
     Private Sub DGdaftar_obat_CellContentDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs)
-        DGobat_beli.Rows.Add(New String() {DGdaftar_obat.CurrentRow.Cells(0).Value, DGdaftar_obat.CurrentRow.Cells(1).Value, 0})
-        DGobat_beli.Refresh()
-        Tjumlah.Clear()
-        fetchData(DGdaftar_obat, "select a.id_obat, a.nm_obat as `Nama Obat`, a.stok as Stok, b.nm_jobat as `Jenis`, a.status as Status from tbl_obat a inner join tbl_jenis_obat b on a.id_jobat = b.id_jobat")
     End Sub
 
     Private Sub Bexit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bexit.Click
-        Me.Close()
+        If MessageBox.Show("Apakah Anda yakin ingin KELUAR?", "Peringatan!", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) = DialogResult.Yes Then
+            Fmenu.Show()
+            Me.Close()
+        End If
     End Sub
 
     Private Sub Bsimpan_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bsimpan.Click
-        runQuery("insert into tbl_periksa (id_periksa, no_pasien,keluhan, tensi) values ('" & id_periksa & "'," & Tno_pasien.Text & ",'" & Tkeluhan.Text & "','" & Ttkn_darah.Text & "')")
+        runQuery("insert into tbl_periksa (id_periksa, no_pasien,keluhan, tensi, id_sat_tensi) values ('" & id_periksa & "'," & Tno_pasien.Text & ",'" & Tkeluhan.Text & "','" & Ttkn_darah.Text & "/" & Ttkn_darah1.Text & "'," & Csat_tkn.SelectedValue & ")")
         If is_anc.Checked = True Then
-            runQuery("insert into tbl_anc (id_periksa,nm_suami,tinggi_bdn,berat_bdn,tekanan_drh,hpht,htp,diagnosa,umur_khmln,kb_terakhir) values ('" & id_periksa & "','" & Tnm_suami.Text & "'," & Ttgi_badan.Text & "," & Tbrt_badan.Text & ",'" & Ttkn_darah.Text &
-                     "', '" & Thpht.Value.ToString("yyyy-MM-dd") & "', '" & Thtp.Value.ToString("yyyy-MM-dd") & "','" & Tdiagnosa.Text & "'," & Tumr_kehamilan.Text & ", '" & Tkb.Value.ToString("yyyy-MM-dd") & "')")
-            Call resetAnc()
-            is_anc.Checked = False
+            runQuery("insert into tbl_anc (id_sat_tinggi, id_sat_berat, id_sat_umur, id_periksa,nm_suami,tinggi_bdn,berat_bdn,hpht,htp,umur_khmln,kb_terakhir) values (" & Csat_tinggi.SelectedValue & "," & Csat_berat.SelectedValue & "," & Csat_umur.SelectedValue & ",'" & id_periksa & "','" & Tnm_suami.Text & "'," & Ttgi_badan.Text & "," & Tbrt_badan.Text &
+                     ", '" & Thpht.Value.ToString("yyyy-MM-dd") & "', '" & Thtp.Value.ToString("yyyy-MM-dd") & "'," & Tumr_kehamilan.Text & ", '" & Tkb.Value.ToString("yyyy-MM-dd") & "')")
         End If
-        If DGobat_beli.RowCount <> 0 Then
-            For Each x As DataGridViewRow In DGobat_beli.Rows
-                If Not x.IsNewRow Then
-                    If x.Cells(2).Value <> 0 Then
-                        runQuery("insert into tbl_terapi(id_obat, jumlah, id_periksa) values (" & x.Cells("id_obat").Value & "," & x.Cells("Jumlah").Value & ", " & id_periksa & ")")
-                    End If
-                End If
-            Next
-        End If
-
-        Call resetDataPasien()
-        Tkeluhan.Clear()
-        Ttkn_darah.Clear()
-        Tno_pasien.Clear()
-        Tno_pasien.Focus()
-        DGobat_beli.DataSource = Nothing
-        DGobat_beli.Refresh()
-        Tjumlah.Clear()
+        Call resetTransaksi()
         Call resetId()
-        fetchData(DGobat_beli, getDataBeli)
-        DGobat_beli.Columns("id_terapi").Visible = False
-        DGobat_beli.Columns("id_obat").Visible = False
-        DGobat_beli.Columns("id_periksa").Visible = False
-        DGobat_beli.Columns("Jumlah").ReadOnly = False
+        Call resetDataPasien()
+        Call resetRekap()
+        Call resetPembayaran()
+        Call resetAnc()
+        Call resetTerapi()
     End Sub
 
     Private Sub DGrekap_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DGrekap.CellContentClick
@@ -141,26 +169,37 @@
     End Sub
 
     Private Sub Cobat_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cobat.SelectedIndexChanged
+        If data_obat.Rows.Count <> 0 And Cobat.SelectedIndex <> -1 Then
+            Lstok.Text = "Stok " & data_obat.Rows(Cobat.SelectedIndex).Item("Stok") & " " & data_obat.Rows(Cobat.SelectedIndex).Item("Satuan")
+            Tjumlah.Maximum = Val(data_obat.Rows(Cobat.SelectedIndex).Item("Stok"))
+        End If
+    End Sub
+
+    Private Sub Cobat_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
     End Sub
 
-    Private Sub Cobat_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cobat.TextChanged
-
+    Private Sub Cobat_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
     End Sub
 
-    Private Sub Cobat_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles Cobat.KeyPress
-    End Sub
-
-    Private Sub Cobat_KeyUp(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles Cobat.KeyUp
+    Private Sub Cobat_KeyUp(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs)
 
     End Sub
 
     Private Sub Btambah_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btambah.Click
-        runQuery("insert into tbl_terapi (id_obat, id_periksa, jumlah) values (" & Cobat.SelectedValue & ", '" & id_periksa & "', " & Tjumlah.Text & ")")
-        Cobat.ResetText()
-        Tjumlah.Clear()
-        fetchData(DGobat_beli, getDataBeli)
-        DGobat_beli.Refresh()
+        If Cobat.SelectedIndex <> -1 And Cobat.Text <> "" Then
+            runQuery("insert into tbl_terapi (id_obat, id_periksa, jumlah) values (" & Cobat.SelectedValue & ", '" & id_periksa & "', " & Tjumlah.Text & ")")
+            DGobat_beli.DataSource = fetchData(getDataBeli)
+            total_harga = 0
+            For x As Integer = 0 To DGobat_beli.Rows.Count - 1
+                total_harga += DGobat_beli.Rows(x).Cells("Total Harga").Value
+            Next
+            Ttotal_harga.Text = Format(total_harga, "Rp,   ##,##0")
+            Call fetchComboboxData("select * from daftar_obat", Cobat, "Nama Obat", "Id Obat")
+            data_obat = Cobat.DataSource
+            Tjumlah.ResetText()
+            Lstok.ResetText()
+        End If
     End Sub
 
     Private Sub Fperiksa_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
@@ -170,14 +209,25 @@
     End Sub
 
     Private Sub Bhapus_obat_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bhapus_obat.Click
-        If DGobat_beli.CurrentRow.Cells("id_terapi").Value.ToString <> "" Then
-            runQuery("delete from tbl_terapi where id_terapi = '" & DGobat_beli.CurrentRow.Cells("id_terapi").Value & "'")
-            fetchData(DGobat_beli, getDataBeli)
-        End If
+        Try
+            runQuery("delete from tbl_terapi where id_obat = " & DGobat_beli.CurrentRow.Cells("Id Obat").Value & " and id_periksa = '" & id_periksa & "'")
+            DGobat_beli.DataSource = fetchData(getDataBeli)
+            total_harga = 0
+            For x As Integer = 0 To DGobat_beli.Rows.Count - 1
+                total_harga += DGobat_beli.Rows(x).Cells("Total Harga").Value
+            Next
+            Ttotal_harga.Text = Format(total_harga, "Rp,   ##,##0")
+            Call fetchComboboxData("select * from daftar_obat", Cobat, "Nama Obat", "Id Obat")
+            data_obat = Cobat.DataSource
+            Lstok.ResetText()
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub KeluarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KeluarToolStripMenuItem.Click
         Me.Close()
+        Fmenu.Show()
     End Sub
 
     Private Sub PasienToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PasienToolStripMenuItem.Click
@@ -190,5 +240,53 @@
 
     Private Sub ObatToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ObatToolStripMenuItem.Click
         Fkelola_obat.ShowDialog()
+    End Sub
+
+    Private Sub Tcari_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tcari.TextChanged
+        If Tcari.Text.Length <> 0 Then
+            DGrekap.DataSource = fetchData("select * from laporan_rekap_pasien where `No Pasien` = " & data_pasien.Rows(0).Item("No Pasien") & " AND `Tanggal Periksa` like '%" & Tcari.Text & "%' OR `Keluhan/Diagnosa` like '%" & Tcari.Text & "%'")
+        Else
+            DGrekap.DataSource = fetchData("select * from laporan_rekap_pasien where `No Pasien` = " & data_pasien.Rows(0).Item("No Pasien"))
+        End If
+    End Sub
+
+    Private Sub Bbatal_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bbatal.Click
+        If MessageBox.Show("Apakah pemeriksaan ini akan DIBATALKAN?", "Peringatan", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) = Windows.Forms.DialogResult.OK Then
+            Call resetTransaksi()
+            Call resetId()
+            Call resetDataPasien()
+            Call resetRekap()
+            Call resetPembayaran()
+            Call resetAnc()
+            Call resetTerapi()
+        End If
+    End Sub
+
+    Private Sub DGobat_beli_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DGobat_beli.CellContentClick
+
+    End Sub
+
+    Private Sub NumericUpDown1_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tdibayarkan.ValueChanged
+        
+    End Sub
+
+    Private Sub Tdibayarkan_KeyUp(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles Tdibayarkan.KeyUp
+        If Ttotal_harga.Text <> "" Or Val(Ttotal_harga.Text) <> 0 Then
+            Tkembalian.Text = Format(Val(Tdibayarkan.Text) - total_harga, "Rp,   ##,##0")
+        End If
+    End Sub
+
+    Private Sub Ttgi_badan_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Ttgi_badan.ValueChanged
+
+    End Sub
+
+    Private Sub KBToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KBToolStripMenuItem.Click
+        Fkb.ShowDialog()
+    End Sub
+
+    Private Sub Fperiksa_FormClosing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
+        If DGobat_beli.Rows.Count > 0 Then
+            runQuery("delete from tbl_terapi where id_periksa = '" & id_periksa & "'")
+        End If
     End Sub
 End Class

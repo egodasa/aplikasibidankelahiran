@@ -22,6 +22,7 @@ Partial Class Fmenu
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Fmenu))
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
@@ -30,6 +31,7 @@ Partial Class Fmenu
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Blaporan = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Button1
@@ -37,7 +39,7 @@ Partial Class Fmenu
         Me.Button1.BackColor = System.Drawing.Color.LightSeaGreen
         Me.Button1.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Button1.Location = New System.Drawing.Point(14, 63)
         Me.Button1.Name = "Button1"
@@ -52,7 +54,7 @@ Partial Class Fmenu
         Me.Button2.BackColor = System.Drawing.Color.Crimson
         Me.Button2.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Button2.Location = New System.Drawing.Point(199, 63)
         Me.Button2.Name = "Button2"
@@ -82,7 +84,7 @@ Partial Class Fmenu
         Me.Button4.BackColor = System.Drawing.Color.Olive
         Me.Button4.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button4.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Button4.Location = New System.Drawing.Point(199, 156)
         Me.Button4.Name = "Button4"
@@ -97,7 +99,7 @@ Partial Class Fmenu
         Me.Button5.BackColor = System.Drawing.Color.DarkGoldenrod
         Me.Button5.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption
         Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button5.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button5.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button5.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Button5.Location = New System.Drawing.Point(382, 63)
         Me.Button5.Name = "Button5"
@@ -112,7 +114,7 @@ Partial Class Fmenu
         Me.Button6.BackColor = System.Drawing.Color.SandyBrown
         Me.Button6.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption
         Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button6.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button6.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button6.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Button6.Location = New System.Drawing.Point(382, 156)
         Me.Button6.Name = "Button6"
@@ -129,7 +131,7 @@ Partial Class Fmenu
         Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button7.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button7.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button7.Location = New System.Drawing.Point(445, 235)
+        Me.Button7.Location = New System.Drawing.Point(445, 294)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(104, 29)
         Me.Button7.TabIndex = 6
@@ -147,12 +149,28 @@ Partial Class Fmenu
         Me.Label1.TabIndex = 7
         Me.Label1.Text = "Menu Aplikasi"
         '
+        'Blaporan
+        '
+        Me.Blaporan.BackColor = System.Drawing.Color.LimeGreen
+        Me.Blaporan.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Blaporan.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Blaporan.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Blaporan.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Blaporan.Location = New System.Drawing.Point(14, 250)
+        Me.Blaporan.Name = "Blaporan"
+        Me.Blaporan.Size = New System.Drawing.Size(167, 73)
+        Me.Blaporan.TabIndex = 8
+        Me.Blaporan.Text = "Laporan Pemasukan"
+        Me.Blaporan.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.Blaporan.UseVisualStyleBackColor = False
+        '
         'Fmenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Azure
-        Me.ClientSize = New System.Drawing.Size(561, 281)
+        Me.BackColor = System.Drawing.Color.MintCream
+        Me.ClientSize = New System.Drawing.Size(561, 362)
+        Me.Controls.Add(Me.Blaporan)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button7)
         Me.Controls.Add(Me.Button6)
@@ -161,8 +179,9 @@ Partial Class Fmenu
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Fmenu"
-        Me.Text = "Menu Aplikasi"
+        Me.Text = "Bidan Delima"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -175,4 +194,5 @@ Partial Class Fmenu
     Friend WithEvents Button6 As System.Windows.Forms.Button
     Friend WithEvents Button7 As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Blaporan As System.Windows.Forms.Button
 End Class

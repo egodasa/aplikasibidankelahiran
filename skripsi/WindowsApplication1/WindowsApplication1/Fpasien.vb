@@ -1,18 +1,21 @@
 ﻿Public Class Fpasien
-    Dim getData As String = "select no_pasien as `No Pasien`, nm_pasien as `Nama Pasien`, DATE_FORMAT(tgl_lahir, '%d/%m/%Y') as `Tgl lahir`, jk as `Jenis Kelamin`, pekerjaan as `Pekerjaan`, alamat as `Alamat` from tbl_pasien"
+    Dim getData As String = "select * from daftar_pasien"
     Sub resetForm()
         Tnm_pasien.Clear()
         Ttgl_lahir.ResetText()
-        Cjk.SelectedIndex = 0
+        Cjk.SelectedIndex = -1
         Talamat.Clear()
         Tpekerjaan.Clear()
     End Sub
     Private Sub Fpasien_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        fetchData(DGpasien, getData)
+        DGpasien.DataSource = fetchData(getData)
     End Sub
 
     Private Sub Bexit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bexit.Click
-        Me.Close()
+        If MessageBox.Show("Apakah Anda yakin ingin KELUAR?", "Peringatan!", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) = DialogResult.Yes Then
+            Fmenu.Show()
+            Me.Close()
+        End If
     End Sub
 
     Private Sub GroupBox2_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GroupBox2.Enter
@@ -36,16 +39,16 @@
         Call successMessage()
         Call resetForm()
         Tnm_pasien.Focus()
-        fetchData(DGpasien, getData)
+        DGpasien.DataSource = fetchData(getData)
     End Sub
 
     Private Sub DGpasien_CellDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DGpasien.CellDoubleClick
-        Tnm_pasien.Text = DGpasien.CurrentRow.Cells(1).Value
-        Ttgl_lahir.Value = Date.ParseExact(DGpasien.CurrentRow.Cells(2).Value, "dd/MM/yyyy",
+        Tnm_pasien.Text = DGpasien.CurrentRow.Cells("Nama Pasien").Value
+        Ttgl_lahir.Value = Date.ParseExact(DGpasien.CurrentRow.Cells("Tanggal Lahir").Value, "dd/MM/yyyy",
             System.Globalization.DateTimeFormatInfo.InvariantInfo)
-        Cjk.Text = DGpasien.CurrentRow.Cells(3).Value
-        Tpekerjaan.Text = DGpasien.CurrentRow.Cells(4).Value
-        Talamat.Text = DGpasien.CurrentRow.Cells(5).Value
+        Cjk.Text = DGpasien.CurrentRow.Cells("Jenis Kelamin").Value
+        Tpekerjaan.Text = DGpasien.CurrentRow.Cells("Pekerjaan").Value
+        Talamat.Text = DGpasien.CurrentRow.Cells("Alamat").Value
         Bsave.Enabled = False
         Bedit.Enabled = True
         Bcancel.Enabled = True
@@ -70,18 +73,26 @@
                  "' where no_pasien = " & DGpasien.CurrentRow.Cells(0).Value)
         Call editMessage()
         Bcancel.PerformClick()
-        fetchData(DGpasien, getData)
+        DGpasien.DataSource = fetchData(getData)
     End Sub
 
     Private Sub Bdelete_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bdelete.Click
         If MessageBox.Show("Apakah yakin data ini dihapus?", "Peringatan", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) = DialogResult.Yes Then
             runQuery(deleteSql("tbl_pasien", "no_pasien", DGpasien.CurrentRow.Cells(0).Value))
-            fetchData(DGpasien, getData)
+            DGpasien.DataSource = fetchData(getData)
             Bcancel.PerformClick()
         End If
     End Sub
 
     Private Sub Bcetak_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bcetak.Click
-        Fkartu_berobat.ShowDialog()
+        FRkartu_berobat.ShowDialog()
+    End Sub
+
+    Private Sub Tcari_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tcari.TextChanged
+        If Tcari.Text.Length <> 0 Then
+            DGpasien.DataSource = fetchData("select * from daftar_pasien where `No Pasien` like '%" & Tcari.Text & "%' OR `Nama Pasien` like '%" & Tcari.Text & "%'")
+        Else
+            DGpasien.DataSource = fetchData(getData)
+        End If
     End Sub
 End Class

@@ -2,12 +2,10 @@
     Dim getData As String = "select id_jobat, nm_jobat as 'Jenis Obat' from tbl_jenis_obat"
     Private Sub Bexit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Me.Close()
-
     End Sub
 
     Private Sub jenis_obat_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        setKoneksi()
-        fetchData(DGjobat, getData)
+        DGjobat.DataSource = fetchData(getData)
         DGjobat.Columns("id_jobat").Visible = False
     End Sub
 
@@ -31,7 +29,7 @@
         runQuery("update tbl_jenis_obat set nm_jobat = '" & Tnm_jenis.Text & "' where id_jobat = " & DGjobat.CurrentRow.Cells(0).Value)
         Call editMessage()
         Bcancel.PerformClick()
-        fetchData(DGjobat, getData)
+        DGjobat.DataSource = fetchData(getData)
     End Sub
 
     Private Sub Bcancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bcancel.Click
@@ -45,7 +43,7 @@
     Private Sub Bdelete_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bdelete.Click
         If MessageBox.Show("Apakah yakin data ini dihapus?", "Peringatan", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) = DialogResult.Yes Then
             runQuery(deleteSql("tbl_jenis_obat", "id_jobat", DGjobat.CurrentRow.Cells("id_jobat").Value))
-            fetchData(DGjobat, getData)
+            DGjobat.DataSource = fetchData(getData)
             Bcancel.PerformClick()
         End If
     End Sub
@@ -54,11 +52,14 @@
         runQuery("insert into tbl_jenis_obat (nm_jobat) values ('" & Tnm_jenis.Text & "')")
         Call successMessage()
         Tnm_jenis.Clear()
-        fetchData(DGjobat, getData)
+        DGjobat.DataSource = fetchData(getData)
         Tnm_jenis.Focus()
     End Sub
 
     Private Sub Bexit_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bexit.Click
-        Me.Close()
+        If MessageBox.Show("Apakah Anda yakin ingin KELUAR?", "Peringatan!", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) = DialogResult.Yes Then
+            Fmenu.Show()
+            Me.Close()
+        End If
     End Sub
 End Class

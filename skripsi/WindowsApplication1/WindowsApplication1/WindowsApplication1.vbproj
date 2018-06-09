@@ -103,16 +103,46 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="db.vb" />
+    <Compile Include="Fasuhan_bayi.Designer.vb">
+      <DependentUpon>Fasuhan_bayi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fasuhan_bayi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fkondisi_bayi.Designer.vb">
+      <DependentUpon>Fkondisi_bayi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fkondisi_bayi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRakte.Designer.vb">
+      <DependentUpon>FRakte.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FRakte.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRbiaya_persalinan.Designer.vb">
+      <DependentUpon>FRbiaya_persalinan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FRbiaya_persalinan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fdaftar_kelahiran.Designer.vb">
+      <DependentUpon>Fdaftar_kelahiran.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fdaftar_kelahiran.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Fjenis_obat.Designer.vb">
       <DependentUpon>Fjenis_obat.vb</DependentUpon>
     </Compile>
     <Compile Include="Fjenis_obat.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Fkartu_berobat.Designer.vb">
-      <DependentUpon>Fkartu_berobat.vb</DependentUpon>
+    <Compile Include="FRkartu_berobat.Designer.vb">
+      <DependentUpon>FRkartu_berobat.vb</DependentUpon>
     </Compile>
-    <Compile Include="Fkartu_berobat.vb">
+    <Compile Include="FRkartu_berobat.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Fkb.Designer.vb">
@@ -151,28 +181,28 @@
     <Compile Include="Fobat.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FRlaporan.Designer.vb">
+      <DependentUpon>FRlaporan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FRlaporan.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="kartu berobat.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>kartu berobat.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="laporanberobatperbulan.vb">
+    <Compile Include="laporan.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>laporanberobatperbulan.rpt</DependentUpon>
+      <DependentUpon>laporan.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="laporanberobatperhari.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>laporanberobatperhari.rpt</DependentUpon>
-      <SubType>Component</SubType>
+    <Compile Include="Flaporan.Designer.vb">
+      <DependentUpon>Flaporan.vb</DependentUpon>
     </Compile>
-    <Compile Include="laporan_harian.Designer.vb">
-      <DependentUpon>laporan_harian.vb</DependentUpon>
-    </Compile>
-    <Compile Include="laporan_harian.vb">
+    <Compile Include="Flaporan.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -202,11 +232,26 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>biayabersalinan.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Fasuhan_bayi.resx">
+      <DependentUpon>Fasuhan_bayi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fkondisi_bayi.resx">
+      <DependentUpon>Fkondisi_bayi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRakte.resx">
+      <DependentUpon>FRakte.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRbiaya_persalinan.resx">
+      <DependentUpon>FRbiaya_persalinan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fdaftar_kelahiran.resx">
+      <DependentUpon>Fdaftar_kelahiran.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Fjenis_obat.resx">
       <DependentUpon>Fjenis_obat.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Fkartu_berobat.resx">
-      <DependentUpon>Fkartu_berobat.vb</DependentUpon>
+    <EmbeddedResource Include="FRkartu_berobat.resx">
+      <DependentUpon>FRkartu_berobat.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fkb.resx">
       <DependentUpon>Fkb.vb</DependentUpon>
@@ -226,20 +271,19 @@
     <EmbeddedResource Include="Fobat.resx">
       <DependentUpon>Fobat.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FRlaporan.resx">
+      <DependentUpon>FRlaporan.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="kartu berobat.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>kartu berobat.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="laporanberobatperbulan.rpt">
+    <EmbeddedResource Include="laporan.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>laporanberobatperbulan.vb</LastGenOutput>
+      <LastGenOutput>laporan.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="laporanberobatperhari.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>laporanberobatperhari.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="laporan_harian.resx">
-      <DependentUpon>laporan_harian.vb</DependentUpon>
+    <EmbeddedResource Include="Flaporan.resx">
+      <DependentUpon>Flaporan.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
