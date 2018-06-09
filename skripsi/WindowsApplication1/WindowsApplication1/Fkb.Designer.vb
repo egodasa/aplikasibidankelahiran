@@ -76,6 +76,7 @@ Partial Class Fkb
         Me.Tdibayarkan = New System.Windows.Forms.NumericUpDown()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
+        Me.Lstok = New System.Windows.Forms.Label()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.Ttkn_darah1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -117,19 +118,19 @@ Partial Class Fkb
         '
         'Talamat
         '
-        Me.Talamat.Enabled = False
         Me.Talamat.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Talamat.Location = New System.Drawing.Point(112, 158)
         Me.Talamat.Name = "Talamat"
+        Me.Talamat.ReadOnly = True
         Me.Talamat.Size = New System.Drawing.Size(170, 23)
         Me.Talamat.TabIndex = 16
         '
         'Tpekerjaan
         '
-        Me.Tpekerjaan.Enabled = False
         Me.Tpekerjaan.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Tpekerjaan.Location = New System.Drawing.Point(112, 130)
         Me.Tpekerjaan.Name = "Tpekerjaan"
+        Me.Tpekerjaan.ReadOnly = True
         Me.Tpekerjaan.Size = New System.Drawing.Size(170, 23)
         Me.Tpekerjaan.TabIndex = 15
         '
@@ -148,9 +149,10 @@ Partial Class Fkb
         '
         Me.Ttgl_lahir.Enabled = False
         Me.Ttgl_lahir.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Ttgl_lahir.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.Ttgl_lahir.Location = New System.Drawing.Point(112, 74)
         Me.Ttgl_lahir.Name = "Ttgl_lahir"
-        Me.Ttgl_lahir.Size = New System.Drawing.Size(167, 23)
+        Me.Ttgl_lahir.Size = New System.Drawing.Size(170, 23)
         Me.Ttgl_lahir.TabIndex = 13
         '
         'Tnm_suami
@@ -183,11 +185,11 @@ Partial Class Fkb
         '
         'Tnm_ibu
         '
-        Me.Tnm_ibu.Enabled = False
         Me.Tnm_ibu.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Tnm_ibu.Location = New System.Drawing.Point(112, 46)
         Me.Tnm_ibu.Name = "Tnm_ibu"
-        Me.Tnm_ibu.Size = New System.Drawing.Size(167, 23)
+        Me.Tnm_ibu.ReadOnly = True
+        Me.Tnm_ibu.Size = New System.Drawing.Size(170, 23)
         Me.Tnm_ibu.TabIndex = 6
         '
         'Tno_pasien
@@ -251,6 +253,7 @@ Partial Class Fkb
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.MintCream
+        Me.GroupBox1.Controls.Add(Me.Lstok)
         Me.GroupBox1.Controls.Add(Me.Csat_berat)
         Me.GroupBox1.Controls.Add(Me.Csat_tkn)
         Me.GroupBox1.Controls.Add(Me.Label27)
@@ -343,14 +346,14 @@ Partial Class Fkb
         Me.Tjumlah.Location = New System.Drawing.Point(107, 165)
         Me.Tjumlah.Maximum = New Decimal(New Integer() {1410065408, 2, 0, 0})
         Me.Tjumlah.Name = "Tjumlah"
-        Me.Tjumlah.Size = New System.Drawing.Size(120, 23)
+        Me.Tjumlah.Size = New System.Drawing.Size(81, 23)
         Me.Tjumlah.TabIndex = 40
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(8, 165)
+        Me.Label6.Location = New System.Drawing.Point(6, 165)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(46, 15)
         Me.Label6.TabIndex = 36
@@ -624,6 +627,16 @@ Partial Class Fkb
         Me.Label26.TabIndex = 16
         Me.Label26.Text = "Dibayar"
         '
+        'Lstok
+        '
+        Me.Lstok.AutoSize = True
+        Me.Lstok.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lstok.Location = New System.Drawing.Point(194, 165)
+        Me.Lstok.Name = "Lstok"
+        Me.Lstok.Size = New System.Drawing.Size(46, 15)
+        Me.Lstok.TabIndex = 50
+        Me.Lstok.Text = "Jumlah"
+        '
         'Fkb
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -712,4 +725,5 @@ Partial Class Fkb
     Friend WithEvents Label27 As System.Windows.Forms.Label
     Friend WithEvents Ttkn_darah1 As System.Windows.Forms.NumericUpDown
     Friend WithEvents Ttkn_darah As System.Windows.Forms.NumericUpDown
+    Friend WithEvents Lstok As System.Windows.Forms.Label
 End Class

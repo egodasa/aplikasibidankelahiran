@@ -6,8 +6,6 @@
     Dim total_harga As Integer = 0
     Dim getDataBeli As String = "select * from daftar_obat_beli where `Id Periksa` = '" & id_periksa & "'"
     Sub resetDataPasien()
-        Tno_pasien.Clear()
-        Tno_pasien.Focus()
         Ttgl_lahir.ResetText()
         Tpekerjaan.Clear()
         Talamat.Clear()
