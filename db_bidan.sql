@@ -17,7 +17,7 @@ CREATE TABLE `daftar_pasien` (`No Pasien` int(11), `Nama Pasien` varchar(100), `
 CREATE TABLE `daftar_satuan` (`Id Sat` int(11), `Nama Satuan` varchar(30), `Id Jsat` int(11), `Nama Jenis Satuan` varchar(30));
 
 
-CREATE TABLE `laporan_kb` (`No Pasien` int(11), `Nama Pasien` varchar(100), `Tanggal Lahir` date, `Tanggal Periksa` timestamp, `Anak Ke` int(11), `Haid Terakhir` date, `Berat Badan` int(11), `Id Sat Berat` int(11), `Satuan Berat` varchar(30), `Tensi` varchar(9), `Id Sat Tensi` int(11), `Satuan Tensi` varchar(30), `Nama Obat` varchar(50));
+CREATE TABLE `laporan_kb` (`No Pasien` int(11), `Nama Pasien` varchar(100), `Tanggal Lahir` date, `Tanggal Periksa` timestamp, `Anak Ke` int(11), `Haid Terakhir` date, `Berat Badan` varchar(42), `Id Sat Berat` int(11), `Tensi` varchar(40), `Id Sat Tensi` int(11), `Nama Obat` varchar(50), `Jumlah` varchar(42));
 
 
 CREATE TABLE `laporan_pemasukan` (`id_terapi` int(11), `id_periksa` varchar(50), `nm_obat` varchar(50), `jumlah` decimal(32,0), `total_bayar` decimal(42,0));
@@ -206,7 +206,7 @@ DROP TABLE IF EXISTS `daftar_satuan`;
 CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `daftar_satuan` AS select `a`.`id_sat` AS `Id Sat`,`a`.`nm_sat` AS `Nama Satuan`,`a`.`id_jsat` AS `Id Jsat`,`b`.`nm_jsat` AS `Nama Jenis Satuan` from (`tbl_satuan` `a` join `tbl_jsatuan` `b` on((`a`.`id_jsat` = `b`.`id_jsat`)));
 
 DROP TABLE IF EXISTS `laporan_kb`;
-CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `laporan_kb` AS select `a`.`no_pasien` AS `No Pasien`,`c`.`nm_pasien` AS `Nama Pasien`,`c`.`tgl_lahir` AS `Tanggal Lahir`,`a`.`tgl_periksa` AS `Tanggal Periksa`,`a`.`anak_ke` AS `Anak Ke`,`a`.`haid_terakhir` AS `Haid Terakhir`,`a`.`berat_badan` AS `Berat Badan`,`a`.`id_sat_berat` AS `Id Sat Berat`,`d`.`Nama Satuan` AS `Satuan Berat`,`a`.`tensi` AS `Tensi`,`a`.`id_sat_tensi` AS `Id Sat Tensi`,`d`.`Nama Satuan` AS `Satuan Tensi`,`b`.`Nama Obat` AS `Nama Obat` from (((`tbl_periksa_kb` `a` join `laporan_terapi` `b` on((`a`.`id_kb` = `b`.`Id Periksa`))) join `tbl_pasien` `c` on((`a`.`no_pasien` = `c`.`no_pasien`))) join `daftar_satuan` `d` on(((`a`.`id_sat_berat` = `d`.`Id Sat`) and (`a`.`id_sat_tensi` = `d`.`Id Sat`))));
+CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `laporan_kb` AS select `a`.`no_pasien` AS `No Pasien`,`c`.`nm_pasien` AS `Nama Pasien`,`c`.`tgl_lahir` AS `Tanggal Lahir`,`a`.`tgl_periksa` AS `Tanggal Periksa`,`a`.`anak_ke` AS `Anak Ke`,`a`.`haid_terakhir` AS `Haid Terakhir`,concat(`a`.`berat_badan`,' ',`d`.`Nama Satuan`) AS `Berat Badan`,`a`.`id_sat_berat` AS `Id Sat Berat`,concat(`a`.`tensi`,' ',`e`.`Nama Satuan`) AS `Tensi`,`a`.`id_sat_tensi` AS `Id Sat Tensi`,`b`.`Nama Obat` AS `Nama Obat`,concat(`b`.`Jumlah`,' ',`b`.`Satuan`) AS `Jumlah` from ((((`tbl_periksa_kb` `a` join `laporan_terapi` `b` on((`a`.`id_kb` = `b`.`Id Periksa`))) join `tbl_pasien` `c` on((`a`.`no_pasien` = `c`.`no_pasien`))) join `daftar_satuan` `d` on((`a`.`id_sat_berat` = `d`.`Id Sat`))) join `daftar_satuan` `e` on((`a`.`id_sat_tensi` = `e`.`Id Sat`)));
 
 DROP TABLE IF EXISTS `laporan_pemasukan`;
 CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `laporan_pemasukan` AS select `a`.`id_terapi` AS `id_terapi`,`a`.`id_periksa` AS `id_periksa`,`b`.`nm_obat` AS `nm_obat`,sum(`a`.`jumlah`) AS `jumlah`,sum((`a`.`jumlah` * `b`.`hrg_obat`)) AS `total_bayar` from (`tbl_terapi` `a` join `tbl_obat` `b` on((`a`.`id_obat` = `b`.`id_obat`))) group by `a`.`id_periksa`;
@@ -217,4 +217,4 @@ CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `laporan_rekap_pasien` AS s
 DROP TABLE IF EXISTS `laporan_terapi`;
 CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `laporan_terapi` AS select `a`.`id_periksa` AS `Id Periksa`,`a`.`id_obat` AS `Id Obat`,`b`.`Nama Obat` AS `Nama Obat`,`b`.`Harga Obat` AS `Harga Obat`,`a`.`jumlah` AS `Jumlah`,(`a`.`jumlah` * `b`.`Harga Obat`) AS `Total`,`b`.`Satuan` AS `Satuan` from (`tbl_terapi` `a` join `daftar_obat` `b` on((`a`.`id_obat` = `b`.`Id Obat`)));
 
--- 2018-06-08 14:08:34
+-- 2018-06-09 09:09:56
