@@ -82,6 +82,8 @@
             data_pasien = fetchData("select * from daftar_pasien where `No Pasien` = " & Tno_pasien.Text)
             If data_pasien.Rows.Count = 1 Then
                 DGrekap.DataSource = fetchData("select * from laporan_rekap_pasien where `No Pasien` = " & data_pasien.Rows(0).Item("No Pasien"))
+                DGrekap.Columns("Id Periksa").Visible = False
+                DGrekap.Columns("No Pasien").Visible = False
                 Ttgl_lahir.Value = Date.ParseExact(data_pasien.Rows(0).Item("Tanggal Lahir"), "dd/MM/yyyy",
             System.Globalization.DateTimeFormatInfo.InvariantInfo)
                 Tpekerjaan.Text = data_pasien.Rows(0).Item("Pekerjaan")

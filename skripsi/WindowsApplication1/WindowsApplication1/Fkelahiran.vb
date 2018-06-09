@@ -40,6 +40,8 @@
         Csat_berat.Text = "Gr"
         Csat_panjang.Text = "Cm"
         Csat_lingkar.Text = "Cm"
+        asuhan_tmp = ""
+        kondisi_tmp = ""
     End Sub
     Sub resetBiayaKelahiran()
         Tpersalinan.ResetText()

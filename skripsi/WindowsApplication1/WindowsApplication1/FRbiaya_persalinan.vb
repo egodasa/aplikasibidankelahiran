@@ -7,14 +7,14 @@ Public Class FRbiaya_persalinan
         CR.SetParameterValue("nm_pasien", Fdaftar_kelahiran.DGkelahiran.CurrentRow.Cells("Nama Pasien").Value)
         CR.SetParameterValue("alamat", Fdaftar_kelahiran.DGkelahiran.CurrentRow.Cells("Alamat").Value)
         CR.SetParameterValue("tgl_persalinan", Fdaftar_kelahiran.DGkelahiran.CurrentRow.Cells("Tanggal Kelahiran").Value)
-        CR.SetParameterValue("biaya_persalinan", Fdaftar_kelahiran.DGkelahiran.CurrentRow.Cells("Persalinan").Value)
-        CR.SetParameterValue("biaya_perawatan", Fdaftar_kelahiran.DGkelahiran.CurrentRow.Cells("Perawatan").Value)
-        CR.SetParameterValue("biaya_perawatan_bayi", Fdaftar_kelahiran.DGkelahiran.CurrentRow.Cells("Perawatan Bayi").Value)
-        CR.SetParameterValue("biaya_obat", Fdaftar_kelahiran.DGkelahiran.CurrentRow.Cells("Obat-Obatan").Value)
-        CR.SetParameterValue("biaya_cuci", Fdaftar_kelahiran.DGkelahiran.CurrentRow.Cells("Cucian").Value)
-        CR.SetParameterValue("biaya_akte", Fdaftar_kelahiran.DGkelahiran.CurrentRow.Cells("Akte").Value)
-        CR.SetParameterValue("biaya_transportasi", Fdaftar_kelahiran.DGkelahiran.CurrentRow.Cells("Transportasi").Value)
-        CR.SetParameterValue("biaya_lain", Fdaftar_kelahiran.DGkelahiran.CurrentRow.Cells("Lain").Value)
+        CR.SetParameterValue("biaya_persalinan", Fdaftar_kelahiran.DGkelahiran.CurrentRow.Cells("Biaya Persalinan").Value)
+        CR.SetParameterValue("biaya_perawatan", Fdaftar_kelahiran.DGkelahiran.CurrentRow.Cells("Biaya Perawatan").Value)
+        CR.SetParameterValue("biaya_perawatan_bayi", Fdaftar_kelahiran.DGkelahiran.CurrentRow.Cells("Biaya Perawatan Bayi").Value)
+        CR.SetParameterValue("biaya_obat", Fdaftar_kelahiran.DGkelahiran.CurrentRow.Cells("Biaya Obat-Obatan").Value)
+        CR.SetParameterValue("biaya_cuci", Fdaftar_kelahiran.DGkelahiran.CurrentRow.Cells("Biaya Cucian").Value)
+        CR.SetParameterValue("biaya_akte", Fdaftar_kelahiran.DGkelahiran.CurrentRow.Cells("Biaya Akte").Value)
+        CR.SetParameterValue("biaya_transportasi", Fdaftar_kelahiran.DGkelahiran.CurrentRow.Cells("Biaya Transportasi").Value)
+        CR.SetParameterValue("biaya_lain", Fdaftar_kelahiran.DGkelahiran.CurrentRow.Cells("Biaya Lain").Value)
         CRbiaya.ReportSource = CR
     End Sub
 End Class
