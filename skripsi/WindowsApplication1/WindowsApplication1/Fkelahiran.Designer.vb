@@ -24,6 +24,11 @@ Partial Class Fkelahiran
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Fkelahiran))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Tkeadaan = New System.Windows.Forms.TextBox()
+        Me.Tcara = New System.Windows.Forms.TextBox()
+        Me.Tpenolong = New System.Windows.Forms.TextBox()
+        Me.Csat_umur = New System.Windows.Forms.ComboBox()
+        Me.Tumur = New System.Windows.Forms.NumericUpDown()
         Me.Ttgl_persalinan = New System.Windows.Forms.DateTimePicker()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -49,6 +54,15 @@ Partial Class Fkelahiran
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Twaktu_lahir = New System.Windows.Forms.DateTimePicker()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Csat_lingkar = New System.Windows.Forms.ComboBox()
+        Me.Csat_panjang = New System.Windows.Forms.ComboBox()
+        Me.Csat_berat = New System.Windows.Forms.ComboBox()
+        Me.Tlingkar = New System.Windows.Forms.NumericUpDown()
+        Me.Tpanjang = New System.Windows.Forms.NumericUpDown()
+        Me.Tberat = New System.Windows.Forms.NumericUpDown()
+        Me.Tanak = New System.Windows.Forms.NumericUpDown()
         Me.Bhapus = New System.Windows.Forms.Button()
         Me.Btambah = New System.Windows.Forms.Button()
         Me.Tketerangan = New System.Windows.Forms.TextBox()
@@ -97,33 +111,27 @@ Partial Class Fkelahiran
         Me.DaftarAsuhanPadaBayiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.Tanak = New System.Windows.Forms.NumericUpDown()
-        Me.Tberat = New System.Windows.Forms.NumericUpDown()
-        Me.Tpanjang = New System.Windows.Forms.NumericUpDown()
-        Me.Tlingkar = New System.Windows.Forms.NumericUpDown()
-        Me.Csat_umur = New System.Windows.Forms.ComboBox()
-        Me.Tumur = New System.Windows.Forms.NumericUpDown()
-        Me.Tpenolong = New System.Windows.Forms.TextBox()
-        Me.Tcara = New System.Windows.Forms.TextBox()
-        Me.Tkeadaan = New System.Windows.Forms.TextBox()
-        Me.Csat_berat = New System.Windows.Forms.ComboBox()
-        Me.Csat_panjang = New System.Windows.Forms.ComboBox()
-        Me.Csat_lingkar = New System.Windows.Forms.ComboBox()
         Me.nm_bayi = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.anak_ke = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.berat = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.panjang = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.lingkar = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.waktu_lahir = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.berat_lahir = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.panjang_badan = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lingkar_kepala = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.jk = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.kondisi = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.asuhan = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.kondisi_lahir = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.asuhan_bayi_saat_lahir = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.keterangan = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.id_sat_berat = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.id_sat_panjang = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.id_sat_lingkar = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.Tumur, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
+        CType(Me.Tlingkar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Tpanjang, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Tberat, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Tanak, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DGbayi, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox6.SuspendLayout()
         CType(Me.Tlain, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -136,11 +144,6 @@ Partial Class Fkelahiran
         CType(Me.Tpersalinan, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox5.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
-        CType(Me.Tanak, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Tberat, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Tpanjang, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Tlingkar, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Tumur, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -166,6 +169,51 @@ Partial Class Fkelahiran
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "IBU BERSALIN"
         '
+        'Tkeadaan
+        '
+        Me.Tkeadaan.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tkeadaan.Location = New System.Drawing.Point(109, 203)
+        Me.Tkeadaan.Multiline = True
+        Me.Tkeadaan.Name = "Tkeadaan"
+        Me.Tkeadaan.Size = New System.Drawing.Size(164, 35)
+        Me.Tkeadaan.TabIndex = 42
+        '
+        'Tcara
+        '
+        Me.Tcara.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tcara.Location = New System.Drawing.Point(109, 153)
+        Me.Tcara.Multiline = True
+        Me.Tcara.Name = "Tcara"
+        Me.Tcara.Size = New System.Drawing.Size(164, 44)
+        Me.Tcara.TabIndex = 41
+        '
+        'Tpenolong
+        '
+        Me.Tpenolong.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tpenolong.Location = New System.Drawing.Point(109, 104)
+        Me.Tpenolong.Multiline = True
+        Me.Tpenolong.Name = "Tpenolong"
+        Me.Tpenolong.Size = New System.Drawing.Size(164, 43)
+        Me.Tpenolong.TabIndex = 40
+        '
+        'Csat_umur
+        '
+        Me.Csat_umur.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Csat_umur.FormattingEnabled = True
+        Me.Csat_umur.Location = New System.Drawing.Point(201, 75)
+        Me.Csat_umur.Name = "Csat_umur"
+        Me.Csat_umur.Size = New System.Drawing.Size(72, 23)
+        Me.Csat_umur.TabIndex = 40
+        Me.Csat_umur.Text = "Minggu"
+        '
+        'Tumur
+        '
+        Me.Tumur.Location = New System.Drawing.Point(109, 75)
+        Me.Tumur.Maximum = New Decimal(New Integer() {500, 0, 0, 0})
+        Me.Tumur.Name = "Tumur"
+        Me.Tumur.Size = New System.Drawing.Size(86, 23)
+        Me.Tumur.TabIndex = 39
+        '
         'Ttgl_persalinan
         '
         Me.Ttgl_persalinan.CustomFormat = "dd-MM-yyyy HH : mm"
@@ -180,7 +228,7 @@ Partial Class Fkelahiran
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(6, 191)
+        Me.Label7.Location = New System.Drawing.Point(6, 203)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(72, 15)
         Me.Label7.TabIndex = 6
@@ -190,7 +238,7 @@ Partial Class Fkelahiran
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(5, 145)
+        Me.Label6.Location = New System.Drawing.Point(5, 153)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(87, 15)
         Me.Label6.TabIndex = 5
@@ -419,6 +467,8 @@ Partial Class Fkelahiran
         'GroupBox3
         '
         Me.GroupBox3.BackColor = System.Drawing.Color.MintCream
+        Me.GroupBox3.Controls.Add(Me.Twaktu_lahir)
+        Me.GroupBox3.Controls.Add(Me.Label3)
         Me.GroupBox3.Controls.Add(Me.Csat_lingkar)
         Me.GroupBox3.Controls.Add(Me.Csat_panjang)
         Me.GroupBox3.Controls.Add(Me.Csat_berat)
@@ -451,6 +501,88 @@ Partial Class Fkelahiran
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "BAYI YANG LAHIR"
         '
+        'Twaktu_lahir
+        '
+        Me.Twaktu_lahir.CustomFormat = "dd-MM-yy hh:mm:ss"
+        Me.Twaktu_lahir.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Twaktu_lahir.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.Twaktu_lahir.Location = New System.Drawing.Point(123, 191)
+        Me.Twaktu_lahir.Name = "Twaktu_lahir"
+        Me.Twaktu_lahir.Size = New System.Drawing.Size(149, 23)
+        Me.Twaktu_lahir.TabIndex = 16
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(8, 191)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(71, 15)
+        Me.Label3.TabIndex = 15
+        Me.Label3.Text = "Waktu Lahir"
+        '
+        'Csat_lingkar
+        '
+        Me.Csat_lingkar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Csat_lingkar.FormattingEnabled = True
+        Me.Csat_lingkar.Location = New System.Drawing.Point(224, 133)
+        Me.Csat_lingkar.Name = "Csat_lingkar"
+        Me.Csat_lingkar.Size = New System.Drawing.Size(48, 23)
+        Me.Csat_lingkar.TabIndex = 42
+        Me.Csat_lingkar.Text = "Cm"
+        '
+        'Csat_panjang
+        '
+        Me.Csat_panjang.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Csat_panjang.FormattingEnabled = True
+        Me.Csat_panjang.Location = New System.Drawing.Point(224, 104)
+        Me.Csat_panjang.Name = "Csat_panjang"
+        Me.Csat_panjang.Size = New System.Drawing.Size(48, 23)
+        Me.Csat_panjang.TabIndex = 41
+        Me.Csat_panjang.Text = "Cm"
+        '
+        'Csat_berat
+        '
+        Me.Csat_berat.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Csat_berat.FormattingEnabled = True
+        Me.Csat_berat.Location = New System.Drawing.Point(224, 75)
+        Me.Csat_berat.Name = "Csat_berat"
+        Me.Csat_berat.Size = New System.Drawing.Size(48, 23)
+        Me.Csat_berat.TabIndex = 40
+        Me.Csat_berat.Text = "Gr"
+        '
+        'Tlingkar
+        '
+        Me.Tlingkar.Location = New System.Drawing.Point(123, 133)
+        Me.Tlingkar.Maximum = New Decimal(New Integer() {500, 0, 0, 0})
+        Me.Tlingkar.Name = "Tlingkar"
+        Me.Tlingkar.Size = New System.Drawing.Size(99, 23)
+        Me.Tlingkar.TabIndex = 39
+        '
+        'Tpanjang
+        '
+        Me.Tpanjang.Location = New System.Drawing.Point(123, 105)
+        Me.Tpanjang.Maximum = New Decimal(New Integer() {500, 0, 0, 0})
+        Me.Tpanjang.Name = "Tpanjang"
+        Me.Tpanjang.Size = New System.Drawing.Size(99, 23)
+        Me.Tpanjang.TabIndex = 38
+        '
+        'Tberat
+        '
+        Me.Tberat.Location = New System.Drawing.Point(123, 76)
+        Me.Tberat.Maximum = New Decimal(New Integer() {500, 0, 0, 0})
+        Me.Tberat.Name = "Tberat"
+        Me.Tberat.Size = New System.Drawing.Size(99, 23)
+        Me.Tberat.TabIndex = 37
+        '
+        'Tanak
+        '
+        Me.Tanak.Location = New System.Drawing.Point(123, 47)
+        Me.Tanak.Maximum = New Decimal(New Integer() {500, 0, 0, 0})
+        Me.Tanak.Name = "Tanak"
+        Me.Tanak.Size = New System.Drawing.Size(99, 23)
+        Me.Tanak.TabIndex = 36
+        '
         'Bhapus
         '
         Me.Bhapus.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
@@ -458,9 +590,9 @@ Partial Class Fkelahiran
         Me.Bhapus.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Bhapus.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bhapus.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bhapus.Location = New System.Drawing.Point(10, 187)
+        Me.Bhapus.Location = New System.Drawing.Point(618, 187)
         Me.Bhapus.Name = "Bhapus"
-        Me.Bhapus.Size = New System.Drawing.Size(98, 28)
+        Me.Bhapus.Size = New System.Drawing.Size(121, 28)
         Me.Bhapus.TabIndex = 27
         Me.Bhapus.Text = "Hapus Bayi"
         Me.Bhapus.UseVisualStyleBackColor = False
@@ -472,9 +604,9 @@ Partial Class Fkelahiran
         Me.Btambah.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Btambah.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Btambah.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Btambah.Location = New System.Drawing.Point(174, 187)
+        Me.Btambah.Location = New System.Drawing.Point(814, 186)
         Me.Btambah.Name = "Btambah"
-        Me.Btambah.Size = New System.Drawing.Size(98, 28)
+        Me.Btambah.Size = New System.Drawing.Size(157, 28)
         Me.Btambah.TabIndex = 26
         Me.Btambah.Text = "Tambah Bayi"
         Me.Btambah.UseVisualStyleBackColor = False
@@ -482,17 +614,17 @@ Partial Class Fkelahiran
         'Tketerangan
         '
         Me.Tketerangan.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tketerangan.Location = New System.Drawing.Point(291, 147)
+        Me.Tketerangan.Location = New System.Drawing.Point(618, 36)
         Me.Tketerangan.Multiline = True
         Me.Tketerangan.Name = "Tketerangan"
-        Me.Tketerangan.Size = New System.Drawing.Size(691, 66)
+        Me.Tketerangan.Size = New System.Drawing.Size(354, 145)
         Me.Tketerangan.TabIndex = 25
         '
         'Label21
         '
         Me.Label21.AutoSize = True
         Me.Label21.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(291, 130)
+        Me.Label21.Location = New System.Drawing.Point(615, 18)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(124, 15)
         Me.Label21.TabIndex = 24
@@ -502,7 +634,7 @@ Partial Class Fkelahiran
         '
         Me.Label34.AutoSize = True
         Me.Label34.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label34.Location = New System.Drawing.Point(625, 18)
+        Me.Label34.Location = New System.Drawing.Point(288, 121)
         Me.Label34.Name = "Label34"
         Me.Label34.Size = New System.Drawing.Size(101, 15)
         Me.Label34.TabIndex = 23
@@ -522,9 +654,9 @@ Partial Class Fkelahiran
         '
         Me.asuhan_bayi.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.asuhan_bayi.FormattingEnabled = True
-        Me.asuhan_bayi.Location = New System.Drawing.Point(628, 35)
+        Me.asuhan_bayi.Location = New System.Drawing.Point(291, 139)
         Me.asuhan_bayi.Name = "asuhan_bayi"
-        Me.asuhan_bayi.Size = New System.Drawing.Size(354, 76)
+        Me.asuhan_bayi.Size = New System.Drawing.Size(316, 76)
         Me.asuhan_bayi.TabIndex = 18
         '
         'kondisi_bayi
@@ -559,7 +691,7 @@ Partial Class Fkelahiran
         Me.Cjk_bayi.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Cjk_bayi.FormattingEnabled = True
         Me.Cjk_bayi.Items.AddRange(New Object() {"Laki-laki", "Perempuan"})
-        Me.Cjk_bayi.Location = New System.Drawing.Point(123, 158)
+        Me.Cjk_bayi.Location = New System.Drawing.Point(123, 163)
         Me.Cjk_bayi.Name = "Cjk_bayi"
         Me.Cjk_bayi.Size = New System.Drawing.Size(149, 23)
         Me.Cjk_bayi.TabIndex = 16
@@ -568,7 +700,7 @@ Partial Class Fkelahiran
         '
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(8, 158)
+        Me.Label20.Location = New System.Drawing.Point(8, 163)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(78, 15)
         Me.Label20.TabIndex = 14
@@ -588,7 +720,7 @@ Partial Class Fkelahiran
         '
         Me.DGbayi.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DGbayi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGbayi.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.nm_bayi, Me.anak_ke, Me.berat, Me.panjang, Me.lingkar, Me.jk, Me.kondisi, Me.asuhan, Me.keterangan, Me.id_sat_berat, Me.id_sat_panjang, Me.id_sat_lingkar})
+        Me.DGbayi.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.nm_bayi, Me.anak_ke, Me.waktu_lahir, Me.berat_lahir, Me.panjang_badan, Me.lingkar_kepala, Me.jk, Me.kondisi_lahir, Me.asuhan_bayi_saat_lahir, Me.keterangan, Me.id_sat_berat, Me.id_sat_panjang, Me.id_sat_lingkar})
         Me.DGbayi.Location = New System.Drawing.Point(9, 20)
         Me.DGbayi.Name = "DGbayi"
         Me.DGbayi.Size = New System.Drawing.Size(974, 103)
@@ -835,7 +967,7 @@ Partial Class Fkelahiran
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.DataToolStripMenuItem, Me.TambahanToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1301, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1290, 24)
         Me.MenuStrip1.TabIndex = 28
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -930,113 +1062,6 @@ Partial Class Fkelahiran
         Me.Button2.Text = "KELUAR"
         Me.Button2.UseVisualStyleBackColor = False
         '
-        'Tanak
-        '
-        Me.Tanak.Location = New System.Drawing.Point(123, 47)
-        Me.Tanak.Maximum = New Decimal(New Integer() {500, 0, 0, 0})
-        Me.Tanak.Name = "Tanak"
-        Me.Tanak.Size = New System.Drawing.Size(99, 23)
-        Me.Tanak.TabIndex = 36
-        '
-        'Tberat
-        '
-        Me.Tberat.Location = New System.Drawing.Point(123, 76)
-        Me.Tberat.Maximum = New Decimal(New Integer() {500, 0, 0, 0})
-        Me.Tberat.Name = "Tberat"
-        Me.Tberat.Size = New System.Drawing.Size(99, 23)
-        Me.Tberat.TabIndex = 37
-        '
-        'Tpanjang
-        '
-        Me.Tpanjang.Location = New System.Drawing.Point(123, 105)
-        Me.Tpanjang.Maximum = New Decimal(New Integer() {500, 0, 0, 0})
-        Me.Tpanjang.Name = "Tpanjang"
-        Me.Tpanjang.Size = New System.Drawing.Size(99, 23)
-        Me.Tpanjang.TabIndex = 38
-        '
-        'Tlingkar
-        '
-        Me.Tlingkar.Location = New System.Drawing.Point(123, 133)
-        Me.Tlingkar.Maximum = New Decimal(New Integer() {500, 0, 0, 0})
-        Me.Tlingkar.Name = "Tlingkar"
-        Me.Tlingkar.Size = New System.Drawing.Size(99, 23)
-        Me.Tlingkar.TabIndex = 39
-        '
-        'Csat_umur
-        '
-        Me.Csat_umur.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Csat_umur.FormattingEnabled = True
-        Me.Csat_umur.Location = New System.Drawing.Point(201, 75)
-        Me.Csat_umur.Name = "Csat_umur"
-        Me.Csat_umur.Size = New System.Drawing.Size(72, 23)
-        Me.Csat_umur.TabIndex = 40
-        Me.Csat_umur.Text = "Minggu"
-        '
-        'Tumur
-        '
-        Me.Tumur.Location = New System.Drawing.Point(139, 75)
-        Me.Tumur.Maximum = New Decimal(New Integer() {500, 0, 0, 0})
-        Me.Tumur.Name = "Tumur"
-        Me.Tumur.Size = New System.Drawing.Size(56, 23)
-        Me.Tumur.TabIndex = 39
-        '
-        'Tpenolong
-        '
-        Me.Tpenolong.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tpenolong.Location = New System.Drawing.Point(139, 104)
-        Me.Tpenolong.Multiline = True
-        Me.Tpenolong.Name = "Tpenolong"
-        Me.Tpenolong.Size = New System.Drawing.Size(134, 35)
-        Me.Tpenolong.TabIndex = 40
-        '
-        'Tcara
-        '
-        Me.Tcara.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tcara.Location = New System.Drawing.Point(139, 145)
-        Me.Tcara.Multiline = True
-        Me.Tcara.Name = "Tcara"
-        Me.Tcara.Size = New System.Drawing.Size(134, 35)
-        Me.Tcara.TabIndex = 41
-        '
-        'Tkeadaan
-        '
-        Me.Tkeadaan.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tkeadaan.Location = New System.Drawing.Point(139, 188)
-        Me.Tkeadaan.Multiline = True
-        Me.Tkeadaan.Name = "Tkeadaan"
-        Me.Tkeadaan.Size = New System.Drawing.Size(134, 35)
-        Me.Tkeadaan.TabIndex = 42
-        '
-        'Csat_berat
-        '
-        Me.Csat_berat.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Csat_berat.FormattingEnabled = True
-        Me.Csat_berat.Location = New System.Drawing.Point(224, 75)
-        Me.Csat_berat.Name = "Csat_berat"
-        Me.Csat_berat.Size = New System.Drawing.Size(48, 23)
-        Me.Csat_berat.TabIndex = 40
-        Me.Csat_berat.Text = "Gr"
-        '
-        'Csat_panjang
-        '
-        Me.Csat_panjang.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Csat_panjang.FormattingEnabled = True
-        Me.Csat_panjang.Location = New System.Drawing.Point(224, 104)
-        Me.Csat_panjang.Name = "Csat_panjang"
-        Me.Csat_panjang.Size = New System.Drawing.Size(48, 23)
-        Me.Csat_panjang.TabIndex = 41
-        Me.Csat_panjang.Text = "Cm"
-        '
-        'Csat_lingkar
-        '
-        Me.Csat_lingkar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Csat_lingkar.FormattingEnabled = True
-        Me.Csat_lingkar.Location = New System.Drawing.Point(224, 133)
-        Me.Csat_lingkar.Name = "Csat_lingkar"
-        Me.Csat_lingkar.Size = New System.Drawing.Size(48, 23)
-        Me.Csat_lingkar.TabIndex = 42
-        Me.Csat_lingkar.Text = "Cm"
-        '
         'nm_bayi
         '
         Me.nm_bayi.HeaderText = "Nama"
@@ -1047,35 +1072,40 @@ Partial Class Fkelahiran
         Me.anak_ke.HeaderText = "Anak ke"
         Me.anak_ke.Name = "anak_ke"
         '
-        'berat
+        'waktu_lahir
         '
-        Me.berat.HeaderText = "Berat"
-        Me.berat.Name = "berat"
+        Me.waktu_lahir.HeaderText = "Waktu Lahir"
+        Me.waktu_lahir.Name = "waktu_lahir"
         '
-        'panjang
+        'berat_lahir
         '
-        Me.panjang.HeaderText = "Panjang badan"
-        Me.panjang.Name = "panjang"
+        Me.berat_lahir.HeaderText = "Berat"
+        Me.berat_lahir.Name = "berat_lahir"
         '
-        'lingkar
+        'panjang_badan
         '
-        Me.lingkar.HeaderText = "Lingkar kepala"
-        Me.lingkar.Name = "lingkar"
+        Me.panjang_badan.HeaderText = "Panjang badan"
+        Me.panjang_badan.Name = "panjang_badan"
+        '
+        'lingkar_kepala
+        '
+        Me.lingkar_kepala.HeaderText = "Lingkar kepala"
+        Me.lingkar_kepala.Name = "lingkar_kepala"
         '
         'jk
         '
         Me.jk.HeaderText = "Jenis kelamin"
         Me.jk.Name = "jk"
         '
-        'kondisi
+        'kondisi_lahir
         '
-        Me.kondisi.HeaderText = "Kondisi Lahir"
-        Me.kondisi.Name = "kondisi"
+        Me.kondisi_lahir.HeaderText = "Kondisi Lahir"
+        Me.kondisi_lahir.Name = "kondisi_lahir"
         '
-        'asuhan
+        'asuhan_bayi_saat_lahir
         '
-        Me.asuhan.HeaderText = "Asuhan pada bayi"
-        Me.asuhan.Name = "asuhan"
+        Me.asuhan_bayi_saat_lahir.HeaderText = "Asuhan pada bayi"
+        Me.asuhan_bayi_saat_lahir.Name = "asuhan_bayi_saat_lahir"
         '
         'keterangan
         '
@@ -1105,7 +1135,7 @@ Partial Class Fkelahiran
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.InactiveBorder
-        Me.ClientSize = New System.Drawing.Size(1301, 588)
+        Me.ClientSize = New System.Drawing.Size(1290, 550)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Bsimpan)
@@ -1121,10 +1151,15 @@ Partial Class Fkelahiran
         Me.Text = "Form Kelahiran"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.Tumur, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
+        CType(Me.Tlingkar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Tpanjang, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Tberat, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Tanak, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DGbayi, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox6.PerformLayout()
@@ -1139,11 +1174,6 @@ Partial Class Fkelahiran
         Me.GroupBox5.ResumeLayout(False)
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        CType(Me.Tanak, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Tberat, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Tpanjang, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Tlingkar, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Tumur, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1234,14 +1264,17 @@ Partial Class Fkelahiran
     Friend WithEvents Csat_berat As System.Windows.Forms.ComboBox
     Friend WithEvents Csat_lingkar As System.Windows.Forms.ComboBox
     Friend WithEvents Csat_panjang As System.Windows.Forms.ComboBox
+    Friend WithEvents Twaktu_lahir As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents nm_bayi As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents anak_ke As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents berat As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents panjang As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents lingkar As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents waktu_lahir As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents berat_lahir As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents panjang_badan As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents lingkar_kepala As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents jk As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents kondisi As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents asuhan As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents kondisi_lahir As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents asuhan_bayi_saat_lahir As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents keterangan As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents id_sat_berat As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents id_sat_panjang As System.Windows.Forms.DataGridViewTextBoxColumn

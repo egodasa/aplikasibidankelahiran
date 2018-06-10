@@ -4,14 +4,15 @@
     Dim DTobat As New DataTable
     Dim cari_obat As DataTable
     Dim total_harga As Integer = 0
-    Dim getDataBeli As String = "select * from daftar_obat_beli where `Id Periksa` = '" & id_periksa & "'"
+    Dim getDataBeli As String = "select * from daftar_obat_beli where `Id_Periksa` = '" & id_periksa & "'"
+    Dim waktu_kb As String
     Sub resetDataPasien()
         Ttgl_lahir.ResetText()
         Tpekerjaan.Clear()
         Talamat.Clear()
         Cjk.SelectedIndex = -1
         Tnm_pasien.Clear()
-        Call fetchComboboxData("select * from daftar_satuan where `Id Jsat` = 5", Csat_tkn, "Nama Satuan", "Id Sat")
+        Call fetchComboboxData("select * from daftar_satuan where `Id_Jsat` = 5", Csat_tkn, "Nama_Satuan", "Id_Sat")
         Csat_tkn.Text = "MMHG"
         Ttkn_darah.ResetText()
         Ttkn_darah1.ResetText()
@@ -23,6 +24,7 @@
         DGrekap.DataSource = Nothing
     End Sub
     Sub resetAnc()
+        waktu_kb = ""
         Tnm_suami.Clear()
         Ttgi_badan.ResetText()
         Tbrt_badan.ResetText()
@@ -30,23 +32,23 @@
         Thtp.ResetText()
         Tkb.ResetText()
         Tumr_kehamilan.ResetText()
-        Call fetchComboboxData("select * from daftar_satuan where `Id Jsat` = 1", Csat_berat, "Nama Satuan", "Id Sat")
-        Call fetchComboboxData("select * from daftar_satuan where `Id Jsat` = 2", Csat_tinggi, "Nama Satuan", "Id Sat")
-        Call fetchComboboxData("select * from daftar_satuan where `Id Jsat` = 3", Csat_umur, "Nama Satuan", "Id Sat")
+        Call fetchComboboxData("select * from daftar_satuan where `Id_Jsat` = 1", Csat_berat, "Nama_Satuan", "Id_Sat")
+        Call fetchComboboxData("select * from daftar_satuan where `Id_Jsat` = 2", Csat_tinggi, "Nama_Satuan", "Id_Sat")
+        Call fetchComboboxData("select * from daftar_satuan where `Id_Jsat` = 3", Csat_umur, "Nama_Satuan", "Id_Sat")
         Csat_berat.Text = "Kg"
         Csat_tinggi.Text = "Cm"
         Csat_umur.Text = "Minggu"
     End Sub
     Sub resetTerapi()
-        Call fetchComboboxData("select * from daftar_obat", Cobat, "Nama Obat", "Id Obat")
+        Call fetchComboboxData("select * from daftar_obat", Cobat, "Nama_Obat", "Id_Obat")
         Cobat.SelectedIndex = -1
         data_obat = Cobat.DataSource
         Tjumlah.ResetText()
         Tjumlah.Maximum = 100000000
-        DGobat_beli.DataSource = fetchData("select * from daftar_obat_beli where `Id Periksa` = '" & id_periksa & "'")
-        DGobat_beli.Columns("Id Terapi").Visible = False
-        DGobat_beli.Columns("Id Obat").Visible = False
-        DGobat_beli.Columns("Id Periksa").Visible = False
+        DGobat_beli.DataSource = fetchData("select * from daftar_obat_beli where `Id_Periksa` = '" & id_periksa & "'")
+        DGobat_beli.Columns("Id_Terapi").Visible = False
+        DGobat_beli.Columns("Id_Obat").Visible = False
+        DGobat_beli.Columns("Id_Periksa").Visible = False
         DGobat_beli.Columns("Jumlah").ReadOnly = False
         Lstok.ResetText()
         If DGobat_beli.RowCount <> 0 Then
@@ -61,7 +63,7 @@
     End Sub
     Sub resetId()
         id_periksa = DateTime.Now.ToString("ddMMyyhhmmssffff")
-        getDataBeli = "select * from daftar_obat_beli where `Id Periksa` = '" & id_periksa & "'"
+        getDataBeli = "select * from daftar_obat_beli where `Id_Periksa` = '" & id_periksa & "'"
     End Sub
     Sub resetTransaksi()
         If DGobat_beli.Rows.Count <> 0 Then
@@ -79,17 +81,17 @@
 
     Private Sub Tno_pasien_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tno_pasien.TextChanged
         If Tno_pasien.TextLength <> 0 Then
-            data_pasien = fetchData("select * from daftar_pasien where `No Pasien` = " & Tno_pasien.Text)
+            data_pasien = fetchData("select * from daftar_pasien where `No_Pasien` = " & Tno_pasien.Text)
             If data_pasien.Rows.Count = 1 Then
-                DGrekap.DataSource = fetchData("select * from laporan_rekap_pasien where `No Pasien` = " & data_pasien.Rows(0).Item("No Pasien"))
-                DGrekap.Columns("Id Periksa").Visible = False
-                DGrekap.Columns("No Pasien").Visible = False
-                Ttgl_lahir.Value = Date.ParseExact(data_pasien.Rows(0).Item("Tanggal Lahir"), "dd/MM/yyyy",
+                DGrekap.DataSource = fetchData("select * from laporan_rekap_pasien where `No_Pasien` = " & data_pasien.Rows(0).Item("No_Pasien"))
+                DGrekap.Columns("Id_Periksa").Visible = False
+                DGrekap.Columns("No_Pasien").Visible = False
+                Ttgl_lahir.Value = Date.ParseExact(data_pasien.Rows(0).Item("Tanggal_Lahir"), "dd/MM/yyyy",
             System.Globalization.DateTimeFormatInfo.InvariantInfo)
                 Tpekerjaan.Text = data_pasien.Rows(0).Item("Pekerjaan")
                 Talamat.Text = data_pasien.Rows(0).Item("Alamat")
-                Cjk.Text = data_pasien.Rows(0).Item("Jenis Kelamin")
-                Tnm_pasien.Text = data_pasien.Rows(0).Item("Nama Pasien")
+                Cjk.Text = data_pasien.Rows(0).Item("Jenis_Kelamin")
+                Tnm_pasien.Text = data_pasien.Rows(0).Item("Nama_Pasien")
             Else
                 DGrekap.DataSource = Nothing
                 DGrekap.Refresh()
@@ -133,6 +135,11 @@
     End Sub
 
     Private Sub Bsimpan_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bsimpan.Click
+        If is_kb.Checked = False Then
+            waktu_kb = Tkb.Value.ToString("yyyy-MM-dd")
+        Else
+            waktu_kb = ""
+        End If
         runQuery("insert into tbl_periksa (id_periksa, no_pasien,keluhan, tensi, id_sat_tensi) values ('" & id_periksa & "'," & Tno_pasien.Text & ",'" & Tkeluhan.Text & "','" & Ttkn_darah.Text & "/" & Ttkn_darah1.Text & "'," & Csat_tkn.SelectedValue & ")")
         If is_anc.Checked = True Then
             runQuery("insert into tbl_anc (id_sat_tinggi, id_sat_berat, id_sat_umur, id_periksa,nm_suami,tinggi_bdn,berat_bdn,hpht,htp,umur_khmln,kb_terakhir) values (" & Csat_tinggi.SelectedValue & "," & Csat_berat.SelectedValue & "," & Csat_umur.SelectedValue & ",'" & id_periksa & "','" & Tnm_suami.Text & "'," & Ttgi_badan.Text & "," & Tbrt_badan.Text &
@@ -192,10 +199,10 @@
             DGobat_beli.DataSource = fetchData(getDataBeli)
             total_harga = 0
             For x As Integer = 0 To DGobat_beli.Rows.Count - 1
-                total_harga += DGobat_beli.Rows(x).Cells("Total Harga").Value
+                total_harga += DGobat_beli.Rows(x).Cells("Total_Harga").Value
             Next
             Ttotal_harga.Text = Format(total_harga, "Rp,   ##,##0")
-            Call fetchComboboxData("select * from daftar_obat", Cobat, "Nama Obat", "Id Obat")
+            Call fetchComboboxData("select * from daftar_obat", Cobat, "Nama_Obat", "Id_Obat")
             data_obat = Cobat.DataSource
             Tjumlah.ResetText()
             Lstok.ResetText()
@@ -210,14 +217,14 @@
 
     Private Sub Bhapus_obat_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bhapus_obat.Click
         Try
-            runQuery("delete from tbl_terapi where id_obat = " & DGobat_beli.CurrentRow.Cells("Id Obat").Value & " and id_periksa = '" & id_periksa & "'")
+            runQuery("delete from tbl_terapi where id_obat = " & DGobat_beli.CurrentRow.Cells("Id_Obat").Value & " and id_periksa = '" & id_periksa & "'")
             DGobat_beli.DataSource = fetchData(getDataBeli)
             total_harga = 0
             For x As Integer = 0 To DGobat_beli.Rows.Count - 1
-                total_harga += DGobat_beli.Rows(x).Cells("Total Harga").Value
+                total_harga += DGobat_beli.Rows(x).Cells("Total_Harga").Value
             Next
             Ttotal_harga.Text = Format(total_harga, "Rp,   ##,##0")
-            Call fetchComboboxData("select * from daftar_obat", Cobat, "Nama Obat", "Id Obat")
+            Call fetchComboboxData("select * from daftar_obat", Cobat, "Nama_Obat", "Id_Obat")
             data_obat = Cobat.DataSource
             Lstok.ResetText()
         Catch ex As Exception
@@ -244,9 +251,9 @@
 
     Private Sub Tcari_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tcari.TextChanged
         If Tcari.Text.Length <> 0 Then
-            DGrekap.DataSource = fetchData("select * from laporan_rekap_pasien where `No Pasien` = " & data_pasien.Rows(0).Item("No Pasien") & " AND `Tanggal Periksa` like '%" & Tcari.Text & "%' OR `Keluhan/Diagnosa` like '%" & Tcari.Text & "%'")
+            DGrekap.DataSource = fetchData("select * from laporan_rekap_pasien where `No_Pasien` = " & data_pasien.Rows(0).Item("No_Pasien") & " AND `Tanggal_Periksa` like '%" & Tcari.Text & "%' OR `Keluhan/Diagnosa` like '%" & Tcari.Text & "%'")
         Else
-            DGrekap.DataSource = fetchData("select * from laporan_rekap_pasien where `No Pasien` = " & data_pasien.Rows(0).Item("No Pasien"))
+            DGrekap.DataSource = fetchData("select * from laporan_rekap_pasien where `No_Pasien` = " & data_pasien.Rows(0).Item("No_Pasien"))
         End If
     End Sub
 
@@ -287,6 +294,13 @@
     Private Sub Fperiksa_FormClosing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
         If DGobat_beli.Rows.Count > 0 Then
             runQuery("delete from tbl_terapi where id_periksa = '" & id_periksa & "'")
+        End If
+    End Sub
+
+    Private Sub is_kb_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles is_kb.CheckedChanged
+        If is_kb.Checked = True Then
+            Tkb.Enabled = False
+        Else : Tkb.Enabled = True
         End If
     End Sub
 End Class

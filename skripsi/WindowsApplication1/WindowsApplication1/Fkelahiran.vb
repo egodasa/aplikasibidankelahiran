@@ -5,7 +5,7 @@
     Dim asuhan_tmp As String
     Dim total As Integer = 0
     Sub hitungBayar()
-        total = Val(Tpersalinan.Value) + Val(Tperawatan.Value) + Val(Tperawatan_bayi.Value) + Val(Tcucian.Value) + Val(Takte.Value) + Val(Tobat.Value) + Val(Ttransportasi.Value) + Val(Tlain.Value)
+        total = Tpersalinan.Value + Tperawatan.Value + Tperawatan_bayi.Value + Tcucian.Value + Takte.Value + Tobat.Value + Ttransportasi.Value + Tlain.Value
         Tjumlah.Text = Format(total, "Rp,   ##,##0")
     End Sub
     Sub resetDataPasien()
@@ -42,6 +42,7 @@
         Csat_lingkar.Text = "Cm"
         asuhan_tmp = ""
         kondisi_tmp = ""
+        Twaktu_lahir.ResetText()
     End Sub
     Sub resetBiayaKelahiran()
         Tpersalinan.ResetText()
@@ -88,10 +89,10 @@
     Private Sub Fkelahiran_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         getDataKondisi()
         getDataAsuhan()
-        Call fetchComboboxData("select * from daftar_satuan where `Id Jsat` = 1", Csat_berat, "Nama Satuan", "Id Sat")
-        Call fetchComboboxData("select * from daftar_satuan where `Id Jsat` = 2", Csat_panjang, "Nama Satuan", "Id Sat")
-        Call fetchComboboxData("select * from daftar_satuan where `Id Jsat` = 2", Csat_lingkar, "Nama Satuan", "Id Sat")
-        Call fetchComboboxData("select * from daftar_satuan where `Id Jsat` = 3", Csat_umur, "Nama Satuan", "Id Sat")
+        Call fetchComboboxData("select * from daftar_satuan where `Id_Jsat` = 1", Csat_berat, "Nama_Satuan", "Id_Sat")
+        Call fetchComboboxData("select * from daftar_satuan where `Id_Jsat` = 2", Csat_panjang, "Nama_Satuan", "Id_Sat")
+        Call fetchComboboxData("select * from daftar_satuan where `Id_Jsat` = 2", Csat_lingkar, "Nama_Satuan", "Id_Sat")
+        Call fetchComboboxData("select * from daftar_satuan where `Id_Jsat` = 3", Csat_umur, "Nama_Satuan", "Id_Sat")
         Call resetDataPasien()
         Call resetKeadaanIbu()
         Call resetBayi()
@@ -124,7 +125,7 @@
                 asuhan_tmp += itm & vbCrLf
             Next
         End If
-        DGbayi.Rows.Add(New String() {Tnm_bayi.Text, Tanak.Value, Tberat.Value, Tpanjang.Value, Tlingkar.Value, Cjk_bayi.Text, kondisi_tmp, asuhan_tmp, Tketerangan.Text, Csat_berat.SelectedValue, Csat_panjang.SelectedValue, Csat_lingkar.SelectedValue})
+        DGbayi.Rows.Add(New String() {Tnm_bayi.Text, Tanak.Value, Twaktu_lahir.Value.ToString("yyyy-MM-dd hh:mm:ss"), Tberat.Value, Tpanjang.Value, Tlingkar.Value, Cjk_bayi.Text, kondisi_tmp, asuhan_tmp, Tketerangan.Text, Csat_berat.SelectedValue, Csat_panjang.SelectedValue, Csat_lingkar.SelectedValue})
         DGbayi.Refresh()
         Call resetBayi()
     End Sub
@@ -149,20 +150,21 @@
                 ", " & Csat_umur.SelectedValue & ")")
         For Each x As DataGridViewRow In DGbayi.Rows
             If Not x.IsNewRow Then
-                runQuery("insert into tbl_bayi_lahir (id_kelahiran,nm_bayi,anak_ke,berat_lahir,panjang_badan,lingkar_kepala,jk,asuhan_bayi_saat_lahir,keterangan,kondisi_bayi, id_sat_berat,id_sat_panjang,id_sat_lingkar) values('" & id_kelahiran &
+                runQuery("insert into tbl_bayi_lahir (id_kelahiran,nm_bayi,anak_ke,berat_lahir,panjang_badan,lingkar_kepala,jk,asuhan_bayi_saat_lahir,keterangan,kondisi_bayi, id_sat_berat,id_sat_panjang,id_sat_lingkar, waktu_lahir) values('" & id_kelahiran &
                          "', '" & x.Cells("nm_bayi").Value &
-                         "', " & x.Cells(1).Value &
-                         ", " & x.Cells(2).Value &
-                         ", " & x.Cells(3).Value &
-                         ", " & x.Cells(4).Value &
-                         ", '" & x.Cells(5).Value &
-                         "', '" & x.Cells(6).Value &
-                         "', '" & x.Cells(7).Value &
-                         "', '" & x.Cells(8).Value &
+                         "', " & x.Cells("anak_ke").Value &
+                         ", " & x.Cells("berat_lahir").Value &
+                         ", " & x.Cells("panjang_badan").Value &
+                         ", " & x.Cells("lingkar_kepala").Value &
+                         ", '" & x.Cells("jk").Value &
+                         "', '" & x.Cells("asuhan_bayi_saat_lahir").Value &
+                         "', '" & x.Cells("keterangan").Value &
+                         "', '" & x.Cells("kondisi_lahir").Value &
                          "', " & x.Cells("id_sat_berat").Value &
                          ", " & x.Cells("id_sat_panjang").Value &
                          ", " & x.Cells("id_sat_lingkar").Value &
-                         ")")
+                         ", '" & x.Cells("waktu_lahir").Value &
+                         "')")
             End If
         Next
         DGbayi.DataSource = Nothing
@@ -230,7 +232,7 @@
         Fkb.ShowDialog()
     End Sub
 
-    Private Sub Tperawatan_KeyUp(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles Tpersalinan.KeyUp, Ttransportasi.KeyUp, Tperawatan_bayi.KeyUp, Tperawatan.KeyUp, Tobat.KeyUp, Tlain.KeyUp, Tcucian.KeyUp, Takte.KeyUp
+    Private Sub Tpersalinan_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Ttransportasi.ValueChanged, Tpersalinan.ValueChanged, Tperawatan_bayi.ValueChanged, Tperawatan.ValueChanged, Tobat.ValueChanged, Tlain.ValueChanged, Tcucian.ValueChanged, Takte.ValueChanged
         Call hitungBayar()
     End Sub
 End Class
