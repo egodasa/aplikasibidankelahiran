@@ -61,8 +61,10 @@
             End If
             DGrekap.DataSource = fetchData("select * from laporan_kb where `No_Pasien` = " & Tno_pasien.Text)
             DGrekap.Columns("No_Pasien").Visible = False
-            DGrekap.Columns("Id_Sat_Tensi").Visible = False
+            DGrekap.Columns("Id_Periksa").Visible = False
             DGrekap.Columns("Id_Sat_Berat").Visible = False
+            DGrekap.Columns("Tinggi_Badan").Visible = False
+            DGrekap.Columns("Keluhan/Diagnosa").Visible = False
         Else
             DGrekap.DataSource = Nothing
             Call resetDataPasien()
@@ -70,9 +72,11 @@
     End Sub
 
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
-        runQuery("insert into tbl_periksa_kb (id_kb, no_pasien,nm_suami,anak_ke,haid_terakhir, berat_badan, tensi, id_sat_tensi,id_sat_berat) values ('" & id_kb & "'," & Tno_pasien.Text & " , '" & Tnm_suami.Text & "', " & Tanak.Text & ", '" & Thaid.Value.ToString("yyyy-MM-dd") & "', " & Tbrt_badan.Text & ", '" & Ttkn_darah.Value & "/" & Ttkn_darah1.Value & "'," & Csat_tkn.SelectedValue & "," & Csat_berat.SelectedValue & ")")
+        runQuery("insert into tbl_periksa (id_periksa, no_pasien,keluhan, tensi, id_sat_tensi) values ('" & id_kb & "'," & Tno_pasien.Text & ",'Pemeriksaan/Pemasangan KB','" & Ttkn_darah.Text & "/" & Ttkn_darah1.Text & "'," & Csat_tkn.SelectedValue & ")")
+        runQuery("insert into tbl_periksa_kb (id_periksa, nm_suami,anak_ke,haid_terakhir, berat_badan,id_sat_berat) values ('" & id_kb & "', '" & Tnm_suami.Text & "', " & Tanak.Text & ", '" & Thaid.Value.ToString("yyyy-MM-dd") & "', " & Tbrt_badan.Text & "," & Csat_berat.SelectedValue & ")")
         runQuery("insert into tbl_terapi (id_periksa, id_obat, jumlah) values ('" & id_kb & "', " & Ckb.SelectedValue & ", " & Tjumlah.Text & ")")
         Call successMessage()
+        Call resetPembayaran()
         Call resetDataPasien()
         Call resetPeriksa()
         Call resetIdKb()
@@ -99,6 +103,7 @@
             Call resetPeriksa()
             Call resetPembayaran()
             Tno_pasien.Clear()
+            Call resetIdKb()
             Tno_pasien.Focus()
         End If
     End Sub

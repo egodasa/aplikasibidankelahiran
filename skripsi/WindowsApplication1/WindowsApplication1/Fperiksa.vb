@@ -145,7 +145,6 @@
             runQuery("insert into tbl_anc (id_sat_tinggi, id_sat_berat, id_sat_umur, id_periksa,nm_suami,tinggi_bdn,berat_bdn,hpht,htp,umur_khmln,kb_terakhir) values (" & Csat_tinggi.SelectedValue & "," & Csat_berat.SelectedValue & "," & Csat_umur.SelectedValue & ",'" & id_periksa & "','" & Tnm_suami.Text & "'," & Ttgi_badan.Text & "," & Tbrt_badan.Text &
                      ", '" & Thpht.Value.ToString("yyyy-MM-dd") & "', '" & Thtp.Value.ToString("yyyy-MM-dd") & "'," & Tumr_kehamilan.Text & ", '" & Tkb.Value.ToString("yyyy-MM-dd") & "')")
         End If
-        Call resetTransaksi()
         Call resetId()
         Call resetDataPasien()
         Call resetRekap()
