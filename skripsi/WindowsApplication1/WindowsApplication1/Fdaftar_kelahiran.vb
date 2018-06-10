@@ -2,13 +2,13 @@
     Dim getData As String = "select * from daftar_kelahiran"
     Private Sub Fdaftar_kelahiran_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         DGkelahiran.DataSource = fetchData(getData)
-        DGkelahiran.Columns("No Pasien").Visible = False
-        DGkelahiran.Columns("Id Kelahiran").Visible = False
+        DGkelahiran.Columns("No_Pasien").Visible = False
+        DGkelahiran.Columns("Id_Kelahiran").Visible = False
     End Sub
 
     Private Sub Tcari_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tcari.TextChanged
         If Tcari.Text.Length <> 0 Then
-            DGkelahiran.DataSource = fetchData(getData & " where `Nama Pasien` like '%" & Tcari.Text & "%' OR `Nama Suami` like '%" & Tcari.Text & "%' OR `No Pasien` like '%" & Tcari.Text & "%'")
+            DGkelahiran.DataSource = fetchData(getData & " where `Nama_Pasien` like '%" & Tcari.Text & "%' OR `Nama_Suami` like '%" & Tcari.Text & "%' OR `No_Pasien` like '%" & Tcari.Text & "%'")
         Else
             DGkelahiran.DataSource = fetchData(getData)
         End If

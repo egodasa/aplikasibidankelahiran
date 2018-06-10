@@ -9,10 +9,10 @@
         Csatuan.SelectedIndex = -1
         DGobat.DataSource = fetchData(getData)
         Call fetchComboboxData("select * from tbl_jenis_obat", Cjns_obat, "nm_jobat", "id_jobat")
-        Call fetchComboboxData("select * from daftar_satuan where `Id Jsat` = 4", Csatuan, "Nama Satuan", "Id Sat")
-        DGobat.Columns("Id Obat").Visible = False
-        DGobat.Columns("Id Sat Obat").Visible = False
-        DGobat.Columns("Id Jobat").Visible = False
+        Call fetchComboboxData("select * from daftar_satuan where `Id_Jsat` = 4", Csatuan, "Nama_Satuan", "Id_Sat")
+        DGobat.Columns("Id_Obat").Visible = False
+        DGobat.Columns("Id_Sat_Obat").Visible = False
+        DGobat.Columns("Id_Jobat").Visible = False
     End Sub
     Private Sub Fkelola_obat_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Call setKoneksi()
@@ -34,10 +34,10 @@
     End Sub
 
     Private Sub DGobat_CellDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DGobat.CellDoubleClick
-        Tnm_obat.Text = DGobat.CurrentRow.Cells("Nama Obat").Value
-        Cjns_obat.Text = DGobat.CurrentRow.Cells("Jenis Obat").Value
+        Tnm_obat.Text = DGobat.CurrentRow.Cells("Nama_Obat").Value
+        Cjns_obat.Text = DGobat.CurrentRow.Cells("Jenis_Obat").Value
         Tstok.Text = DGobat.CurrentRow.Cells("Stok").Value
-        Thrg_obat.Text = DGobat.CurrentRow.Cells("Harga Obat").Value
+        Thrg_obat.Text = DGobat.CurrentRow.Cells("Harga_Obat").Value
         Csatuan.Text = DGobat.CurrentRow.Cells("Satuan").Value
         Bedit.Enabled = True
         Bcancel.Enabled = True
@@ -55,7 +55,7 @@
 
     Private Sub Bdelete_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bdelete.Click
         If MessageBox.Show("Apakah yakin data ini dihapus?", "Peringatan", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) = DialogResult.Yes Then
-            runQuery(deleteSql("tbl_obat", "id_obat", DGobat.CurrentRow.Cells("Id Obat").Value))
+            runQuery(deleteSql("tbl_obat", "id_obat", DGobat.CurrentRow.Cells("Id_Obat").Value))
             DGobat.DataSource = fetchData(getData)
             Bcancel.PerformClick()
         End If
@@ -67,7 +67,7 @@
                  ", hrg_obat = " & Thrg_obat.Text &
                  ", stok = " & Tstok.Text &
                  ", id_sat_obat = " & Csatuan.SelectedValue &
-                 " where id_obat = " & DGobat.CurrentRow.Cells("Id Obat").Value)
+                 " where id_obat = " & DGobat.CurrentRow.Cells("Id_Obat").Value)
         Call editMessage()
         Bcancel.PerformClick()
         DGobat.DataSource = fetchData(getData)
@@ -75,7 +75,7 @@
 
     Private Sub Tcari_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tcari.TextChanged
         If Tcari.Text.Length <> 0 Then
-            DGobat.DataSource = fetchData("select * from daftar_obat where `Nama Obat` like '%" & Tcari.Text & "%'")
+            DGobat.DataSource = fetchData("select * from daftar_obat where `Nama_Obat` like '%" & Tcari.Text & "%'")
         Else
             DGobat.DataSource = fetchData(getData)
         End If

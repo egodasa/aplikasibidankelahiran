@@ -43,10 +43,10 @@
     End Sub
 
     Private Sub DGpasien_CellDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DGpasien.CellDoubleClick
-        Tnm_pasien.Text = DGpasien.CurrentRow.Cells("Nama Pasien").Value
-        Ttgl_lahir.Value = Date.ParseExact(DGpasien.CurrentRow.Cells("Tanggal Lahir").Value, "dd/MM/yyyy",
+        Tnm_pasien.Text = DGpasien.CurrentRow.Cells("Nama_Pasien").Value
+        Ttgl_lahir.Value = Date.ParseExact(DGpasien.CurrentRow.Cells("Tanggal_Lahir").Value, "dd/MM/yyyy",
             System.Globalization.DateTimeFormatInfo.InvariantInfo)
-        Cjk.Text = DGpasien.CurrentRow.Cells("Jenis Kelamin").Value
+        Cjk.Text = DGpasien.CurrentRow.Cells("Jenis_Kelamin").Value
         Tpekerjaan.Text = DGpasien.CurrentRow.Cells("Pekerjaan").Value
         Talamat.Text = DGpasien.CurrentRow.Cells("Alamat").Value
         Bsave.Enabled = False
@@ -90,7 +90,7 @@
 
     Private Sub Tcari_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tcari.TextChanged
         If Tcari.Text.Length <> 0 Then
-            DGpasien.DataSource = fetchData("select * from daftar_pasien where `No Pasien` like '%" & Tcari.Text & "%' OR `Nama Pasien` like '%" & Tcari.Text & "%'")
+            DGpasien.DataSource = fetchData("select * from daftar_pasien where `No_Pasien` like '%" & Tcari.Text & "%' OR `Nama_Pasien` like '%" & Tcari.Text & "%'")
         Else
             DGpasien.DataSource = fetchData(getData)
         End If

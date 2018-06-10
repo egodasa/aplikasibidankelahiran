@@ -95,6 +95,7 @@ Partial Class Fperiksa
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Tdibayarkan = New System.Windows.Forms.NumericUpDown()
         Me.Label26 = New System.Windows.Forms.Label()
+        Me.is_kb = New System.Windows.Forms.CheckBox()
         Me.Group_anc.SuspendLayout()
         CType(Me.Tumr_kehamilan, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Tbrt_badan, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -115,6 +116,7 @@ Partial Class Fperiksa
         'Group_anc
         '
         Me.Group_anc.BackColor = System.Drawing.Color.MintCream
+        Me.Group_anc.Controls.Add(Me.is_kb)
         Me.Group_anc.Controls.Add(Me.Csat_umur)
         Me.Group_anc.Controls.Add(Me.Csat_berat)
         Me.Group_anc.Controls.Add(Me.Csat_tinggi)
@@ -198,6 +200,7 @@ Partial Class Fperiksa
         'Thtp
         '
         Me.Thtp.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Thtp.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.Thtp.Location = New System.Drawing.Point(198, 148)
         Me.Thtp.Name = "Thtp"
         Me.Thtp.Size = New System.Drawing.Size(199, 23)
@@ -206,6 +209,7 @@ Partial Class Fperiksa
         'Thpht
         '
         Me.Thpht.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Thpht.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.Thpht.Location = New System.Drawing.Point(198, 114)
         Me.Thpht.Name = "Thpht"
         Me.Thpht.Size = New System.Drawing.Size(199, 23)
@@ -214,9 +218,10 @@ Partial Class Fperiksa
         'Tkb
         '
         Me.Tkb.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tkb.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.Tkb.Location = New System.Drawing.Point(198, 183)
         Me.Tkb.Name = "Tkb"
-        Me.Tkb.Size = New System.Drawing.Size(199, 23)
+        Me.Tkb.Size = New System.Drawing.Size(105, 23)
         Me.Tkb.TabIndex = 30
         '
         'Label22
@@ -857,6 +862,16 @@ Partial Class Fperiksa
         Me.Label26.TabIndex = 16
         Me.Label26.Text = "Dibayar"
         '
+        'is_kb
+        '
+        Me.is_kb.AutoSize = True
+        Me.is_kb.Location = New System.Drawing.Point(312, 183)
+        Me.is_kb.Name = "is_kb"
+        Me.is_kb.Size = New System.Drawing.Size(85, 19)
+        Me.is_kb.TabIndex = 37
+        Me.is_kb.Text = "Tidak Tahu"
+        Me.is_kb.UseVisualStyleBackColor = True
+        '
         'Fperiksa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -970,4 +985,5 @@ Partial Class Fperiksa
     Friend WithEvents Csat_umur As System.Windows.Forms.ComboBox
     Friend WithEvents KBToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Csat_tkn As System.Windows.Forms.ComboBox
+    Friend WithEvents is_kb As System.Windows.Forms.CheckBox
 End Class
