@@ -211,6 +211,12 @@
       <DependentUpon>lap_bulanan.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="lap_tahunan.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lap_tahunan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -294,6 +300,10 @@
     <EmbeddedResource Include="lap_bulanan.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>lap_bulanan.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lap_tahunan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>lap_tahunan.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

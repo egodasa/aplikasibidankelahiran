@@ -372,6 +372,7 @@ Partial Class Fkb
         'Thaid
         '
         Me.Thaid.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Thaid.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.Thaid.Location = New System.Drawing.Point(106, 107)
         Me.Thaid.Name = "Thaid"
         Me.Thaid.Size = New System.Drawing.Size(172, 23)
