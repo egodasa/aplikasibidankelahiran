@@ -291,8 +291,8 @@ CREATE VIEW `laporan_kb` AS select `f`.`Id_Periksa` AS `Id_Periksa`,`f`.`Nama_Pa
 
 CREATE VIEW `laporan_pemasukan` AS select `a`.`id_terapi` AS `id_terapi`,`a`.`id_periksa` AS `id_periksa`,`b`.`nm_obat` AS `nm_obat`,sum(`a`.`jumlah`) AS `jumlah`,sum((`a`.`jumlah` * `b`.`hrg_obat`)) AS `total_bayar` from (`tbl_terapi` `a` join `tbl_obat` `b` on((`a`.`id_obat` = `b`.`id_obat`))) group by `a`.`id_periksa`;
 
-CREATE VIEW `laporan_harian` AS select `a`.`Id_Periksa` AS `id_periksa`,`b`.`tgl_periksa` AS `tgl_periksa`,sum((`a`.`Jumlah` * `a`.`Total`)) AS `Total` from (`laporan_terapi` `a` join `tbl_periksa` `b` on((`a`.`Id_Periksa` = `b`.`id_periksa`))) group by `a`.`Id_Periksa`
+CREATE VIEW `laporan_harian` AS select `a`.`Id_Periksa` AS `id_periksa`,`b`.`tgl_periksa` AS `tgl_periksa`,sum((`a`.`Jumlah` * `a`.`Total`)) AS `Total` from (`laporan_terapi` `a` join `tbl_periksa` `b` on((`a`.`Id_Periksa` = `b`.`id_periksa`))) group by `a`.`Id_Periksa`;
 
-CREATE VIEW `laporan_bulanan` AS select `laporan_harian`.`id_periksa` AS `id_periksa`,`laporan_harian`.`tgl_periksa` AS `tgl_periksa`,`laporan_harian`.`Total` AS `Total` from `laporan_harian` where ((month(`laporan_harian`.`tgl_periksa`) = month(now())) and (year(`laporan_harian`.`tgl_periksa`) = year(now()))) group by dayofmonth(`laporan_harian`.`tgl_periksa`)
+CREATE VIEW `laporan_bulanan` AS select `laporan_harian`.`id_periksa` AS `id_periksa`,`laporan_harian`.`tgl_periksa` AS `tgl_periksa`,`laporan_harian`.`Total` AS `Total` from `laporan_harian` where ((month(`laporan_harian`.`tgl_periksa`) = month(now())) and (year(`laporan_harian`.`tgl_periksa`) = year(now()))) group by dayofmonth(`laporan_harian`.`tgl_periksa`);
 
-CREATE VIEW `laporan_tahunan` AS select month(`laporan_harian`.`tgl_periksa`) AS `bulan`,`laporan_harian`.`Total` AS `Total` from `laporan_harian` where (year(`laporan_harian`.`tgl_periksa`) = year(now())) group by year(`laporan_harian`.`tgl_periksa`)
+CREATE VIEW `laporan_tahunan` AS select month(`laporan_harian`.`tgl_periksa`) AS `bulan`,`laporan_harian`.`Total` AS `Total` from `laporan_harian` where (year(`laporan_harian`.`tgl_periksa`) = year(now())) group by year(`laporan_harian`.`tgl_periksa`);
