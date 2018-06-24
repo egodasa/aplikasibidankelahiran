@@ -6,9 +6,10 @@ Module db
     Public cmd As MySqlCommand
     Public dr As MySqlDataReader
     Public str As String
-    Public _DIR As String = "F:\skprsitia\WindowsApplication1\WindowsApplication1\"
+    Public username, jenis_pengguna As String
+    Public _DIR As String = "F:\skprsifauzan\skripsifauzan\skripsi\WindowsApplication1\WindowsApplication1\"
     Sub setKoneksi()
-        str = "Server=192.168.56.1;uid=root;pwd=123456;database=db_apotek;port=3306"
+        str = "Server=192.168.56.1;uid=root;pwd=123456;database=db_bidan;port=3306"
         kon = New MySqlConnection(str)
         If kon.State = ConnectionState.Closed Then
             Try
@@ -19,6 +20,7 @@ Module db
             End Try
         Else
             MsgBox("Tidak dapat terhubung kedatabase.", MsgBoxStyle.Critical, "Error")
+            Fmenu.Close()
         End If
     End Sub
     Function fetchData(ByVal q As String)

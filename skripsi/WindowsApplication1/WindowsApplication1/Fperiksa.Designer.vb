@@ -24,6 +24,7 @@ Partial Class Fperiksa
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Fperiksa))
         Me.Group_anc = New System.Windows.Forms.GroupBox()
+        Me.is_kb = New System.Windows.Forms.CheckBox()
         Me.Csat_umur = New System.Windows.Forms.ComboBox()
         Me.Csat_berat = New System.Windows.Forms.ComboBox()
         Me.Csat_tinggi = New System.Windows.Forms.ComboBox()
@@ -95,7 +96,6 @@ Partial Class Fperiksa
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Tdibayarkan = New System.Windows.Forms.NumericUpDown()
         Me.Label26 = New System.Windows.Forms.Label()
-        Me.is_kb = New System.Windows.Forms.CheckBox()
         Me.Group_anc.SuspendLayout()
         CType(Me.Tumr_kehamilan, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Tbrt_badan, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -142,6 +142,16 @@ Partial Class Fperiksa
         Me.Group_anc.TabIndex = 0
         Me.Group_anc.TabStop = False
         Me.Group_anc.Text = "KUNJUNGAN ANC"
+        '
+        'is_kb
+        '
+        Me.is_kb.AutoSize = True
+        Me.is_kb.Location = New System.Drawing.Point(312, 183)
+        Me.is_kb.Name = "is_kb"
+        Me.is_kb.Size = New System.Drawing.Size(85, 19)
+        Me.is_kb.TabIndex = 37
+        Me.is_kb.Text = "Tidak Tahu"
+        Me.is_kb.UseVisualStyleBackColor = True
         '
         'Csat_umur
         '
@@ -861,16 +871,6 @@ Partial Class Fperiksa
         Me.Label26.Size = New System.Drawing.Size(48, 15)
         Me.Label26.TabIndex = 16
         Me.Label26.Text = "Dibayar"
-        '
-        'is_kb
-        '
-        Me.is_kb.AutoSize = True
-        Me.is_kb.Location = New System.Drawing.Point(312, 183)
-        Me.is_kb.Name = "is_kb"
-        Me.is_kb.Size = New System.Drawing.Size(85, 19)
-        Me.is_kb.TabIndex = 37
-        Me.is_kb.Text = "Tidak Tahu"
-        Me.is_kb.UseVisualStyleBackColor = True
         '
         'Fperiksa
         '

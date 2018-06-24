@@ -302,4 +302,8 @@
         Else : Tkb.Enabled = True
         End If
     End Sub
+
+    Private Sub Thpht_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Thpht.ValueChanged
+        Thtp.Value = Thpht.Value.AddDays(7).AddMonths(-3).AddYears(1)
+    End Sub
 End Class

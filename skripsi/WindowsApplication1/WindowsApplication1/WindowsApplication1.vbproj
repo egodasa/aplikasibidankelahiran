@@ -115,6 +115,18 @@
     <Compile Include="Fkondisi_bayi.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Flogin.Designer.vb">
+      <DependentUpon>Flogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Flogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fpengguna.Designer.vb">
+      <DependentUpon>Fpengguna.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fpengguna.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FRakte.Designer.vb">
       <DependentUpon>FRakte.vb</DependentUpon>
     </Compile>
@@ -249,6 +261,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Fkondisi_bayi.resx">
       <DependentUpon>Fkondisi_bayi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Flogin.resx">
+      <DependentUpon>Flogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fpengguna.resx">
+      <DependentUpon>Fpengguna.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRakte.resx">
       <DependentUpon>FRakte.vb</DependentUpon>
