@@ -7,7 +7,7 @@ Module db
     Public dr As MySqlDataReader
     Public str As String
     Public username, jenis_pengguna As String
-    Public _DIR As String = "F:\skprsifauzan\skripsifauzan\skripsi\WindowsApplication1\WindowsApplication1\"
+    Public _DIR As String = "F:\skprsifauzan\skripsi\WindowsApplication1\WindowsApplication1\"
     Sub setKoneksi()
         str = "Server=192.168.56.1;uid=root;pwd=123456;database=db_bidan;port=3306"
         kon = New MySqlConnection(str)

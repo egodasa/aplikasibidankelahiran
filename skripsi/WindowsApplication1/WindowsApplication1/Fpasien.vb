@@ -69,7 +69,7 @@
                  "', jk = '" & Cjk.Text &
                  "', tgl_lahir = " & tgl &
                  ", pekerjaan = '" & Tpekerjaan.Text &
-                 "', alamat = '" & Tpekerjaan.Text &
+                 "', alamat = '" & Talamat.Text &
                  "' where no_pasien = " & DGpasien.CurrentRow.Cells(0).Value)
         Call editMessage()
         Bcancel.PerformClick()
