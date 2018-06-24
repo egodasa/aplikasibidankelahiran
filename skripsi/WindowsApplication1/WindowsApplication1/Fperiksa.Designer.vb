@@ -692,10 +692,14 @@ Partial Class Fperiksa
         '
         'DGrekap
         '
+        Me.DGrekap.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.DGrekap.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DGrekap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGrekap.Location = New System.Drawing.Point(12, 50)
         Me.DGrekap.Name = "DGrekap"
         Me.DGrekap.ReadOnly = True
+        Me.DGrekap.RowTemplate.Height = 50
+        Me.DGrekap.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DGrekap.Size = New System.Drawing.Size(701, 105)
         Me.DGrekap.TabIndex = 14
         '

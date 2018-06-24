@@ -83,7 +83,7 @@
         If Tno_pasien.TextLength <> 0 Then
             data_pasien = fetchData("select * from daftar_pasien where `No_Pasien` = " & Tno_pasien.Text)
             If data_pasien.Rows.Count = 1 Then
-                DGrekap.DataSource = fetchData("select * from laporan_rekap_pasien where `No_Pasien` = " & data_pasien.Rows(0).Item("No_Pasien"))
+                DGrekap.DataSource = fetchData("select * from laporan_rekap_pasien where `No_Pasien` = " & Tno_pasien.Text)
                 DGrekap.Columns("Id_Periksa").Visible = False
                 DGrekap.Columns("No_Pasien").Visible = False
                 Ttgl_lahir.Value = Date.ParseExact(data_pasien.Rows(0).Item("Tanggal_Lahir"), "dd/MM/yyyy",
@@ -151,11 +151,8 @@
         Call resetPembayaran()
         Call resetAnc()
         Call resetTerapi()
-    End Sub
-
-    Private Sub DGrekap_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DGrekap.CellContentClick
-        Ttkn_darah.Text = DGrekap.CurrentRow.Cells("tensi").Value
-        Tkeluhan.Text = DGrekap.CurrentRow.Cells("keluhan").Value
+        Tno_pasien.Clear()
+        Tno_pasien.Focus()
     End Sub
 
     Private Sub CheckBox1_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles is_anc.CheckedChanged
@@ -266,6 +263,8 @@
             Call resetAnc()
             Call resetTerapi()
         End If
+        Tno_pasien.Clear()
+        Tno_pasien.Focus()
     End Sub
 
     Private Sub DGobat_beli_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DGobat_beli.CellContentClick
