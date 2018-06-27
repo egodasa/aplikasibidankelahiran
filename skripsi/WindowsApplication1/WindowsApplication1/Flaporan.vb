@@ -38,4 +38,8 @@
     Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bcetak.Click
         FRlaporan.laporan("custom", Tawal.Value, Takhir.Value)
     End Sub
+
+    Private Sub Flaporan_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

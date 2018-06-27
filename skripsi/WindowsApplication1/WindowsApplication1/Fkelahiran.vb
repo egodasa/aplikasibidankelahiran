@@ -117,12 +117,12 @@
     Private Sub Btambah_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btambah.Click
         If kondisi_bayi.CheckedItems.Count <> 0 Then
             For Each itm As String In kondisi_bayi.CheckedItems
-                kondisi_tmp += itm & vbCrLf
+                kondisi_tmp += itm & " " & vbCrLf
             Next
         End If
         If asuhan_bayi.CheckedItems.Count <> 0 Then
             For Each itm As String In asuhan_bayi.CheckedItems
-                asuhan_tmp += itm & vbCrLf
+                asuhan_tmp += itm & " " & vbCrLf
             Next
         End If
         DGbayi.Rows.Add(New String() {Tnm_bayi.Text, Tanak.Value, Twaktu_lahir.Value.ToString("yyyy-MM-dd hh:mm:ss"), Tberat.Value, Tpanjang.Value, Tlingkar.Value, Cjk_bayi.Text, kondisi_tmp, asuhan_tmp, Tketerangan.Text, Csat_berat.SelectedValue, Csat_panjang.SelectedValue, Csat_lingkar.SelectedValue})
