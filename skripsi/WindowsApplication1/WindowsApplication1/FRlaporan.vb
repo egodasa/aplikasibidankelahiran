@@ -6,7 +6,7 @@ Public Class FRlaporan
     Sub laporan(ByVal tipe As String, Optional ByVal awal As Date = Nothing, Optional ByVal akhir As Date = Nothing)
         If tipe = "harian" Then
             CR.Load(_DIR & "laporan.rpt")
-            CR.SetParameterValue("judul", "Laporan Berobat Per Hari " & sekarang.ToString("dddd, dd MMMM yyyy") & "")
+            CR.SetParameterValue("judul", "Laporan Pemasukan Hari " & sekarang.ToString("dddd, dd MMMM yyyy") & "")
             CRlaporan.SelectionFormula = "{laporan_harian1.Tgl_Periksa} = Date(" & sekarang.ToString("yyyy") & "," & sekarang.ToString("MM") & "," & sekarang.ToString("dd") & ")"
         ElseIf tipe = "bulanan" Then
             CR.Load(_DIR & "lap_bulanan.rpt")
@@ -23,5 +23,9 @@ Public Class FRlaporan
         End If
         CRlaporan.ReportSource = CR
         Me.Show()
+    End Sub
+
+    Private Sub FRlaporan_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
     End Sub
 End Class
