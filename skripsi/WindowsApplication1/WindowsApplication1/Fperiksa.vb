@@ -47,6 +47,7 @@
         Tjumlah.Maximum = 100000000
         DGobat_beli.DataSource = fetchData("select * from daftar_obat_beli where `Id_Periksa` = '" & id_periksa & "'")
         DGobat_beli.Columns("Id_Terapi").Visible = False
+        DGobat_beli.Columns("Tgl_Periksa").Visible = False
         DGobat_beli.Columns("Id_Obat").Visible = False
         DGobat_beli.Columns("Id_Periksa").Visible = False
         DGobat_beli.Columns("Jumlah").ReadOnly = False
