@@ -23,106 +23,112 @@ Partial Class Fmenu
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Fmenu))
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
+        Me.data_pasien = New System.Windows.Forms.Button()
+        Me.data_obat = New System.Windows.Forms.Button()
+        Me.data_periksa = New System.Windows.Forms.Button()
+        Me.data_kb = New System.Windows.Forms.Button()
+        Me.data_jobat = New System.Windows.Forms.Button()
+        Me.data_kelahiran = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Blaporan = New System.Windows.Forms.Button()
+        Me.data_user = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'Button1
+        'data_pasien
         '
-        Me.Button1.BackColor = System.Drawing.Color.LightSeaGreen
-        Me.Button1.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button1.Location = New System.Drawing.Point(14, 63)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(167, 73)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Data Pasien"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.data_pasien.BackColor = System.Drawing.Color.LightSeaGreen
+        Me.data_pasien.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption
+        Me.data_pasien.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.data_pasien.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.data_pasien.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.data_pasien.Location = New System.Drawing.Point(14, 63)
+        Me.data_pasien.Name = "data_pasien"
+        Me.data_pasien.Size = New System.Drawing.Size(167, 73)
+        Me.data_pasien.TabIndex = 0
+        Me.data_pasien.Text = "Data Pasien"
+        Me.data_pasien.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.data_pasien.UseVisualStyleBackColor = False
+        Me.data_pasien.Visible = False
         '
-        'Button2
+        'data_obat
         '
-        Me.Button2.BackColor = System.Drawing.Color.Crimson
-        Me.Button2.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button2.Location = New System.Drawing.Point(199, 63)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(167, 73)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Data Obat"
-        Me.Button2.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.data_obat.BackColor = System.Drawing.Color.Crimson
+        Me.data_obat.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption
+        Me.data_obat.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.data_obat.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.data_obat.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.data_obat.Location = New System.Drawing.Point(199, 63)
+        Me.data_obat.Name = "data_obat"
+        Me.data_obat.Size = New System.Drawing.Size(167, 73)
+        Me.data_obat.TabIndex = 1
+        Me.data_obat.Text = "Data Obat"
+        Me.data_obat.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.data_obat.UseVisualStyleBackColor = False
+        Me.data_obat.Visible = False
         '
-        'Button3
+        'data_periksa
         '
-        Me.Button3.BackColor = System.Drawing.Color.DarkMagenta
-        Me.Button3.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button3.Location = New System.Drawing.Point(14, 156)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(167, 73)
-        Me.Button3.TabIndex = 2
-        Me.Button3.Text = "Pemeriksaan Pasien"
-        Me.Button3.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.Button3.UseVisualStyleBackColor = False
+        Me.data_periksa.BackColor = System.Drawing.Color.DarkMagenta
+        Me.data_periksa.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption
+        Me.data_periksa.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.data_periksa.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.data_periksa.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.data_periksa.Location = New System.Drawing.Point(14, 63)
+        Me.data_periksa.Name = "data_periksa"
+        Me.data_periksa.Size = New System.Drawing.Size(167, 73)
+        Me.data_periksa.TabIndex = 2
+        Me.data_periksa.Text = "Pemeriksaan Pasien"
+        Me.data_periksa.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.data_periksa.UseVisualStyleBackColor = False
+        Me.data_periksa.Visible = False
         '
-        'Button4
+        'data_kb
         '
-        Me.Button4.BackColor = System.Drawing.Color.Olive
-        Me.Button4.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button4.Location = New System.Drawing.Point(199, 156)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(167, 73)
-        Me.Button4.TabIndex = 3
-        Me.Button4.Text = "Pemeriksaan KB"
-        Me.Button4.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.Button4.UseVisualStyleBackColor = False
+        Me.data_kb.BackColor = System.Drawing.Color.Olive
+        Me.data_kb.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption
+        Me.data_kb.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.data_kb.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.data_kb.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.data_kb.Location = New System.Drawing.Point(199, 63)
+        Me.data_kb.Name = "data_kb"
+        Me.data_kb.Size = New System.Drawing.Size(167, 73)
+        Me.data_kb.TabIndex = 3
+        Me.data_kb.Text = "Pemeriksaan KB"
+        Me.data_kb.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.data_kb.UseVisualStyleBackColor = False
+        Me.data_kb.Visible = False
         '
-        'Button5
+        'data_jobat
         '
-        Me.Button5.BackColor = System.Drawing.Color.DarkGoldenrod
-        Me.Button5.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button5.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button5.Location = New System.Drawing.Point(382, 63)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(167, 73)
-        Me.Button5.TabIndex = 4
-        Me.Button5.Text = "Data Jenis Obat"
-        Me.Button5.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.Button5.UseVisualStyleBackColor = False
+        Me.data_jobat.BackColor = System.Drawing.Color.DarkGoldenrod
+        Me.data_jobat.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption
+        Me.data_jobat.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.data_jobat.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.data_jobat.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.data_jobat.Location = New System.Drawing.Point(199, 142)
+        Me.data_jobat.Name = "data_jobat"
+        Me.data_jobat.Size = New System.Drawing.Size(167, 73)
+        Me.data_jobat.TabIndex = 4
+        Me.data_jobat.Text = "Data Jenis Obat"
+        Me.data_jobat.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.data_jobat.UseVisualStyleBackColor = False
+        Me.data_jobat.Visible = False
         '
-        'Button6
+        'data_kelahiran
         '
-        Me.Button6.BackColor = System.Drawing.Color.SandyBrown
-        Me.Button6.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button6.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button6.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button6.Location = New System.Drawing.Point(382, 156)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(167, 73)
-        Me.Button6.TabIndex = 5
-        Me.Button6.Text = "Kelahiran"
-        Me.Button6.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.Button6.UseVisualStyleBackColor = False
+        Me.data_kelahiran.BackColor = System.Drawing.Color.SandyBrown
+        Me.data_kelahiran.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption
+        Me.data_kelahiran.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.data_kelahiran.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.data_kelahiran.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.data_kelahiran.Location = New System.Drawing.Point(14, 142)
+        Me.data_kelahiran.Name = "data_kelahiran"
+        Me.data_kelahiran.Size = New System.Drawing.Size(167, 73)
+        Me.data_kelahiran.TabIndex = 5
+        Me.data_kelahiran.Text = "Kelahiran"
+        Me.data_kelahiran.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.data_kelahiran.UseVisualStyleBackColor = False
+        Me.data_kelahiran.Visible = False
         '
         'Button7
         '
@@ -131,7 +137,7 @@ Partial Class Fmenu
         Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button7.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button7.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button7.Location = New System.Drawing.Point(445, 294)
+        Me.Button7.Location = New System.Drawing.Point(262, 221)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(104, 29)
         Me.Button7.TabIndex = 6
@@ -143,42 +149,43 @@ Partial Class Fmenu
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Verdana", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(12, 21)
+        Me.Label1.Location = New System.Drawing.Point(109, 23)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(175, 25)
         Me.Label1.TabIndex = 7
         Me.Label1.Text = "Menu Aplikasi"
         '
-        'Blaporan
+        'data_user
         '
-        Me.Blaporan.BackColor = System.Drawing.Color.LimeGreen
-        Me.Blaporan.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Blaporan.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Blaporan.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Blaporan.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Blaporan.Location = New System.Drawing.Point(14, 250)
-        Me.Blaporan.Name = "Blaporan"
-        Me.Blaporan.Size = New System.Drawing.Size(167, 73)
-        Me.Blaporan.TabIndex = 8
-        Me.Blaporan.Text = "Laporan Pemasukan"
-        Me.Blaporan.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.Blaporan.UseVisualStyleBackColor = False
+        Me.data_user.BackColor = System.Drawing.Color.YellowGreen
+        Me.data_user.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption
+        Me.data_user.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.data_user.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.data_user.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.data_user.Location = New System.Drawing.Point(14, 142)
+        Me.data_user.Name = "data_user"
+        Me.data_user.Size = New System.Drawing.Size(167, 73)
+        Me.data_user.TabIndex = 9
+        Me.data_user.Text = "Data User"
+        Me.data_user.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.data_user.UseVisualStyleBackColor = False
+        Me.data_user.Visible = False
         '
         'Fmenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.MintCream
-        Me.ClientSize = New System.Drawing.Size(561, 362)
-        Me.Controls.Add(Me.Blaporan)
+        Me.ClientSize = New System.Drawing.Size(379, 259)
+        Me.Controls.Add(Me.data_user)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button7)
-        Me.Controls.Add(Me.Button6)
-        Me.Controls.Add(Me.Button5)
-        Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.data_kelahiran)
+        Me.Controls.Add(Me.data_jobat)
+        Me.Controls.Add(Me.data_kb)
+        Me.Controls.Add(Me.data_periksa)
+        Me.Controls.Add(Me.data_obat)
+        Me.Controls.Add(Me.data_pasien)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Fmenu"
         Me.Text = "Bidan Delima"
@@ -186,13 +193,13 @@ Partial Class Fmenu
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents Button3 As System.Windows.Forms.Button
-    Friend WithEvents Button4 As System.Windows.Forms.Button
-    Friend WithEvents Button5 As System.Windows.Forms.Button
-    Friend WithEvents Button6 As System.Windows.Forms.Button
+    Friend WithEvents data_pasien As System.Windows.Forms.Button
+    Friend WithEvents data_obat As System.Windows.Forms.Button
+    Friend WithEvents data_periksa As System.Windows.Forms.Button
+    Friend WithEvents data_kb As System.Windows.Forms.Button
+    Friend WithEvents data_jobat As System.Windows.Forms.Button
+    Friend WithEvents data_kelahiran As System.Windows.Forms.Button
     Friend WithEvents Button7 As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Blaporan As System.Windows.Forms.Button
+    Friend WithEvents data_user As System.Windows.Forms.Button
 End Class

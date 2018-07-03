@@ -84,9 +84,7 @@ Partial Class Fperiksa
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.KeluarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PasienToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.KBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ObatToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AsuhanBayiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.KondisiBayiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Bbatal = New System.Windows.Forms.Button()
@@ -760,39 +758,27 @@ Partial Class Fperiksa
         '
         'DataToolStripMenuItem
         '
-        Me.DataToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PasienToolStripMenuItem, Me.KBToolStripMenuItem, Me.ObatToolStripMenuItem, Me.AsuhanBayiToolStripMenuItem, Me.KondisiBayiToolStripMenuItem})
+        Me.DataToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.KBToolStripMenuItem, Me.AsuhanBayiToolStripMenuItem, Me.KondisiBayiToolStripMenuItem})
         Me.DataToolStripMenuItem.Name = "DataToolStripMenuItem"
-        Me.DataToolStripMenuItem.Size = New System.Drawing.Size(43, 20)
+        Me.DataToolStripMenuItem.Size = New System.Drawing.Size(94, 20)
         Me.DataToolStripMenuItem.Text = "Data"
-        '
-        'PasienToolStripMenuItem
-        '
-        Me.PasienToolStripMenuItem.Name = "PasienToolStripMenuItem"
-        Me.PasienToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
-        Me.PasienToolStripMenuItem.Text = "Pasien"
         '
         'KBToolStripMenuItem
         '
         Me.KBToolStripMenuItem.Name = "KBToolStripMenuItem"
-        Me.KBToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.KBToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.KBToolStripMenuItem.Text = "KB"
-        '
-        'ObatToolStripMenuItem
-        '
-        Me.ObatToolStripMenuItem.Name = "ObatToolStripMenuItem"
-        Me.ObatToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
-        Me.ObatToolStripMenuItem.Text = "Obat"
         '
         'AsuhanBayiToolStripMenuItem
         '
         Me.AsuhanBayiToolStripMenuItem.Name = "AsuhanBayiToolStripMenuItem"
-        Me.AsuhanBayiToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.AsuhanBayiToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.AsuhanBayiToolStripMenuItem.Text = "Asuhan bayi"
         '
         'KondisiBayiToolStripMenuItem
         '
         Me.KondisiBayiToolStripMenuItem.Name = "KondisiBayiToolStripMenuItem"
-        Me.KondisiBayiToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.KondisiBayiToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.KondisiBayiToolStripMenuItem.Text = "Kondisi bayi"
         '
         'Bbatal
@@ -963,10 +949,8 @@ Partial Class Fperiksa
     Friend WithEvents FileToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents KeluarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DataToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents PasienToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AsuhanBayiToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents KondisiBayiToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ObatToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Bbatal As System.Windows.Forms.Button
     Friend WithEvents Ttotal_harga As System.Windows.Forms.TextBox
     Friend WithEvents Label13 As System.Windows.Forms.Label

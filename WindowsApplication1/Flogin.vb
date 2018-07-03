@@ -5,18 +5,19 @@
     End Sub
 
     Private Sub Bedit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bedit.Click
-        data_pengguna = fetchData("select * from tbl_pengguna where username = '" & Tusername.Text & "' AND password=md5('" & Tpassword.Text & "')")
+        data_pengguna = fetchData("select * from tbl_user where username = '" & Tusername.Text & "' AND password=md5('" & Tpassword.Text & "')")
         If data_pengguna.Rows.Count = 1 Then
             username = Tusername.Text
             jenis_pengguna = data_pengguna.Rows(0).Item("jenis")
             Tusername.Clear()
             Tpassword.Clear()
-            If data_pengguna.Rows(0).Item("jenis") = "Admin" Or data_pengguna.Rows(0).Item("jenis") = "Apoteker" Then
+            If jenis_pengguna <> "Pemilik" Then
                 Fmenu.Show()
+                Me.Hide()
             Else
                 Flaporan.Show()
+                Me.Hide()
             End If
-            Me.Hide()
         Else
             MessageBox.Show("Username atau password salah!", "Pesan", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
             Tusername.Clear()

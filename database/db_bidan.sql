@@ -288,10 +288,12 @@ CREATE TABLE `tbl_user` (
   `id_user` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(20) NOT NULL,
   `password` text NOT NULL,
-  `jenis` enum('Bidan','Pemilik') NOT NULL,
+  `jenis` enum('Admin','Bidan','Pemilik') NOT NULL,
   `nama` varchar(50) NOT NULL,
   PRIMARY KEY (`id_user`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `tbl_user` (`username`,`password`,`jenis`,nama) values ('admin',md5('admin'),'Admin','Admin');
 
 CREATE TRIGGER `kurangi_stok` AFTER INSERT ON `tbl_terapi` FOR EACH ROW update tbl_obat set stok = stok - new.jumlah where id_obat = new.id_obat;
 

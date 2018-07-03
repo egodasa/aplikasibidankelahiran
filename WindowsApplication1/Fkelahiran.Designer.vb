@@ -77,6 +77,19 @@ Partial Class Fkelahiran
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.DGbayi = New System.Windows.Forms.DataGridView()
+        Me.nm_bayi = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.anak_ke = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.waktu_lahir = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.berat_lahir = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.panjang_badan = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lingkar_kepala = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.jk = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.kondisi_lahir = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.asuhan_bayi_saat_lahir = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.keterangan = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_sat_berat = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_sat_panjang = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_sat_lingkar = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.Tlain = New System.Windows.Forms.NumericUpDown()
         Me.Ttransportasi = New System.Windows.Forms.NumericUpDown()
@@ -102,28 +115,13 @@ Partial Class Fkelahiran
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.KeluarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PasienToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.KBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.KelahiranToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ObatToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TambahanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DaftarKondisiBayiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DaftarAsuhanPadaBayiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.nm_bayi = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.anak_ke = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.waktu_lahir = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.berat_lahir = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.panjang_badan = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.lingkar_kepala = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.jk = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.kondisi_lahir = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.asuhan_bayi_saat_lahir = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.keterangan = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.id_sat_berat = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.id_sat_panjang = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.id_sat_lingkar = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.KelahiranToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1.SuspendLayout()
         CType(Me.Tumur, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -726,6 +724,74 @@ Partial Class Fkelahiran
         Me.DGbayi.Size = New System.Drawing.Size(974, 103)
         Me.DGbayi.TabIndex = 7
         '
+        'nm_bayi
+        '
+        Me.nm_bayi.HeaderText = "Nama"
+        Me.nm_bayi.Name = "nm_bayi"
+        '
+        'anak_ke
+        '
+        Me.anak_ke.HeaderText = "Anak ke"
+        Me.anak_ke.Name = "anak_ke"
+        '
+        'waktu_lahir
+        '
+        Me.waktu_lahir.HeaderText = "Waktu Lahir"
+        Me.waktu_lahir.Name = "waktu_lahir"
+        '
+        'berat_lahir
+        '
+        Me.berat_lahir.HeaderText = "Berat"
+        Me.berat_lahir.Name = "berat_lahir"
+        '
+        'panjang_badan
+        '
+        Me.panjang_badan.HeaderText = "Panjang badan"
+        Me.panjang_badan.Name = "panjang_badan"
+        '
+        'lingkar_kepala
+        '
+        Me.lingkar_kepala.HeaderText = "Lingkar kepala"
+        Me.lingkar_kepala.Name = "lingkar_kepala"
+        '
+        'jk
+        '
+        Me.jk.HeaderText = "Jenis kelamin"
+        Me.jk.Name = "jk"
+        '
+        'kondisi_lahir
+        '
+        Me.kondisi_lahir.HeaderText = "Kondisi Lahir"
+        Me.kondisi_lahir.Name = "kondisi_lahir"
+        '
+        'asuhan_bayi_saat_lahir
+        '
+        Me.asuhan_bayi_saat_lahir.HeaderText = "Asuhan pada bayi"
+        Me.asuhan_bayi_saat_lahir.Name = "asuhan_bayi_saat_lahir"
+        '
+        'keterangan
+        '
+        Me.keterangan.HeaderText = "Keterangan "
+        Me.keterangan.Name = "keterangan"
+        '
+        'id_sat_berat
+        '
+        Me.id_sat_berat.HeaderText = "id_sat_berat"
+        Me.id_sat_berat.Name = "id_sat_berat"
+        Me.id_sat_berat.Visible = False
+        '
+        'id_sat_panjang
+        '
+        Me.id_sat_panjang.HeaderText = "id_sat_panjang"
+        Me.id_sat_panjang.Name = "id_sat_panjang"
+        Me.id_sat_panjang.Visible = False
+        '
+        'id_sat_lingkar
+        '
+        Me.id_sat_lingkar.HeaderText = "id_sat_lingkar"
+        Me.id_sat_lingkar.Name = "id_sat_lingkar"
+        Me.id_sat_lingkar.Visible = False
+        '
         'GroupBox6
         '
         Me.GroupBox6.BackColor = System.Drawing.Color.MintCream
@@ -986,34 +1052,16 @@ Partial Class Fkelahiran
         '
         'DataToolStripMenuItem
         '
-        Me.DataToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PasienToolStripMenuItem, Me.KBToolStripMenuItem, Me.KelahiranToolStripMenuItem, Me.ObatToolStripMenuItem})
+        Me.DataToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.KBToolStripMenuItem, Me.KelahiranToolStripMenuItem})
         Me.DataToolStripMenuItem.Name = "DataToolStripMenuItem"
         Me.DataToolStripMenuItem.Size = New System.Drawing.Size(43, 20)
         Me.DataToolStripMenuItem.Text = "Data"
         '
-        'PasienToolStripMenuItem
-        '
-        Me.PasienToolStripMenuItem.Name = "PasienToolStripMenuItem"
-        Me.PasienToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
-        Me.PasienToolStripMenuItem.Text = "Pasien"
-        '
         'KBToolStripMenuItem
         '
         Me.KBToolStripMenuItem.Name = "KBToolStripMenuItem"
-        Me.KBToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
+        Me.KBToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.KBToolStripMenuItem.Text = "KB"
-        '
-        'KelahiranToolStripMenuItem
-        '
-        Me.KelahiranToolStripMenuItem.Name = "KelahiranToolStripMenuItem"
-        Me.KelahiranToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
-        Me.KelahiranToolStripMenuItem.Text = "Kelahiran"
-        '
-        'ObatToolStripMenuItem
-        '
-        Me.ObatToolStripMenuItem.Name = "ObatToolStripMenuItem"
-        Me.ObatToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
-        Me.ObatToolStripMenuItem.Text = "Obat"
         '
         'TambahanToolStripMenuItem
         '
@@ -1062,73 +1110,11 @@ Partial Class Fkelahiran
         Me.Button2.Text = "KELUAR"
         Me.Button2.UseVisualStyleBackColor = False
         '
-        'nm_bayi
+        'KelahiranToolStripMenuItem
         '
-        Me.nm_bayi.HeaderText = "Nama"
-        Me.nm_bayi.Name = "nm_bayi"
-        '
-        'anak_ke
-        '
-        Me.anak_ke.HeaderText = "Anak ke"
-        Me.anak_ke.Name = "anak_ke"
-        '
-        'waktu_lahir
-        '
-        Me.waktu_lahir.HeaderText = "Waktu Lahir"
-        Me.waktu_lahir.Name = "waktu_lahir"
-        '
-        'berat_lahir
-        '
-        Me.berat_lahir.HeaderText = "Berat"
-        Me.berat_lahir.Name = "berat_lahir"
-        '
-        'panjang_badan
-        '
-        Me.panjang_badan.HeaderText = "Panjang badan"
-        Me.panjang_badan.Name = "panjang_badan"
-        '
-        'lingkar_kepala
-        '
-        Me.lingkar_kepala.HeaderText = "Lingkar kepala"
-        Me.lingkar_kepala.Name = "lingkar_kepala"
-        '
-        'jk
-        '
-        Me.jk.HeaderText = "Jenis kelamin"
-        Me.jk.Name = "jk"
-        '
-        'kondisi_lahir
-        '
-        Me.kondisi_lahir.HeaderText = "Kondisi Lahir"
-        Me.kondisi_lahir.Name = "kondisi_lahir"
-        '
-        'asuhan_bayi_saat_lahir
-        '
-        Me.asuhan_bayi_saat_lahir.HeaderText = "Asuhan pada bayi"
-        Me.asuhan_bayi_saat_lahir.Name = "asuhan_bayi_saat_lahir"
-        '
-        'keterangan
-        '
-        Me.keterangan.HeaderText = "Keterangan "
-        Me.keterangan.Name = "keterangan"
-        '
-        'id_sat_berat
-        '
-        Me.id_sat_berat.HeaderText = "id_sat_berat"
-        Me.id_sat_berat.Name = "id_sat_berat"
-        Me.id_sat_berat.Visible = False
-        '
-        'id_sat_panjang
-        '
-        Me.id_sat_panjang.HeaderText = "id_sat_panjang"
-        Me.id_sat_panjang.Name = "id_sat_panjang"
-        Me.id_sat_panjang.Visible = False
-        '
-        'id_sat_lingkar
-        '
-        Me.id_sat_lingkar.HeaderText = "id_sat_lingkar"
-        Me.id_sat_lingkar.Name = "id_sat_lingkar"
-        Me.id_sat_lingkar.Visible = False
+        Me.KelahiranToolStripMenuItem.Name = "KelahiranToolStripMenuItem"
+        Me.KelahiranToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.KelahiranToolStripMenuItem.Text = "Kelahiran"
         '
         'Fkelahiran
         '
@@ -1234,11 +1220,8 @@ Partial Class Fkelahiran
     Friend WithEvents FileToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents KeluarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DataToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents PasienToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ObatToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Bhapus As System.Windows.Forms.Button
-    Friend WithEvents KelahiranToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents TambahanToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DaftarKondisiBayiToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DaftarAsuhanPadaBayiToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -1279,4 +1262,5 @@ Partial Class Fkelahiran
     Friend WithEvents id_sat_berat As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents id_sat_panjang As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents id_sat_lingkar As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents KelahiranToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

@@ -64,9 +64,6 @@ Partial Class Fkb
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.KeluarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PasienToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ObatToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Tkembalian = New System.Windows.Forms.TextBox()
@@ -494,7 +491,7 @@ Partial Class Fkb
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.DataToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(637, 24)
@@ -511,27 +508,8 @@ Partial Class Fkb
         'KeluarToolStripMenuItem
         '
         Me.KeluarToolStripMenuItem.Name = "KeluarToolStripMenuItem"
-        Me.KeluarToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
+        Me.KeluarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.KeluarToolStripMenuItem.Text = "Keluar"
-        '
-        'DataToolStripMenuItem
-        '
-        Me.DataToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PasienToolStripMenuItem, Me.ObatToolStripMenuItem})
-        Me.DataToolStripMenuItem.Name = "DataToolStripMenuItem"
-        Me.DataToolStripMenuItem.Size = New System.Drawing.Size(43, 20)
-        Me.DataToolStripMenuItem.Text = "Data"
-        '
-        'PasienToolStripMenuItem
-        '
-        Me.PasienToolStripMenuItem.Name = "PasienToolStripMenuItem"
-        Me.PasienToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.PasienToolStripMenuItem.Text = "Pasien"
-        '
-        'ObatToolStripMenuItem
-        '
-        Me.ObatToolStripMenuItem.Name = "ObatToolStripMenuItem"
-        Me.ObatToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.ObatToolStripMenuItem.Text = "Obat"
         '
         'Button1
         '
@@ -690,9 +668,6 @@ Partial Class Fkb
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
     Friend WithEvents FileToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents KeluarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents DataToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents PasienToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ObatToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Ttotal As System.Windows.Forms.TextBox

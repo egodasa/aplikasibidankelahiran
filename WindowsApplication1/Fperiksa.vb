@@ -234,7 +234,7 @@
         Fmenu.Show()
     End Sub
 
-    Private Sub PasienToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PasienToolStripMenuItem.Click
+    Private Sub PasienToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Fpasien.ShowDialog()
     End Sub
 
@@ -242,7 +242,7 @@
 
     End Sub
 
-    Private Sub ObatToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ObatToolStripMenuItem.Click
+    Private Sub ObatToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Fkelola_obat.ShowDialog()
     End Sub
 

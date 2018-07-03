@@ -8,6 +8,10 @@ Module db
     Public str As String
     Public username, jenis_pengguna As String
     Public _DIR As String = "F:\skprsifauzan\skripsi\WindowsApplication1\WindowsApplication1\"
+    Sub logout()
+        username = Nothing
+        jenis_pengguna = Nothing
+    End Sub
     Sub setKoneksi()
         str = "Server=192.168.56.1;uid=root;pwd=123456;database=db_bidan;port=3306"
         kon = New MySqlConnection(str)

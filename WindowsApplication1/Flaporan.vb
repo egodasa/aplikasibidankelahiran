@@ -19,7 +19,8 @@
     End Sub
 
     Private Sub Bexit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bexit.Click
-        Fmenu.Show()
+        Flogin.Show()
+        Call logout()
         Me.Close()
     End Sub
 
