@@ -32,11 +32,11 @@
         Call getPengguna()
     End Sub
 
-    Private Sub DGpengguna_CellContentDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DGpengguna.CellContentDoubleClick
+    Private Sub DGpengguna_CellContentDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DGpengguna.CellDoubleClick
         Tusername.Text = DGpengguna.CurrentRow.Cells("username").Value
         Tpassword.Text = DGpengguna.CurrentRow.Cells("password").Value
         Cjenis.Text = DGpengguna.CurrentRow.Cells("jenis").Value
-        Tnm_lengkap.Text = DGpengguna.CurrentRow.Cells("nm_lengkap").Value
+        Tnm_lengkap.Text = DGpengguna.CurrentRow.Cells("nama").Value
         Bsave.Enabled = False
         Bedit.Enabled = True
         Bdelete.Enabled = True
@@ -62,5 +62,9 @@
     Private Sub Bexit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bexit.Click
         Fmenu.Show()
         Me.Close()
+    End Sub
+
+    Private Sub DGpengguna_CellDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DGpengguna.CellDoubleClick
+
     End Sub
 End Class
