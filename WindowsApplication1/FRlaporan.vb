@@ -20,6 +20,10 @@ Public Class FRlaporan
             CR.Load(_DIR & "laporan.rpt")
             CR.SetParameterValue("judul", "Laporan Berobat Per Tanggal " & awal.ToString("dd-MM-yyyy") & " - " & akhir.ToString("dd-MM-yyyy"))
             CRlaporan.SelectionFormula = "{laporan_harian1.Tgl_Periksa} in Date(" & awal.ToString("yyyy,M,d") & ") to Date(" & akhir.ToString("yyyy,M,d") & ")"
+        ElseIf tipe = "bayi" Then
+            CR.Load(_DIR & "bayi.rpt")
+        ElseIf tipe = "pasien" Then
+            CR.Load(_DIR & "pasien.rpt")
         End If
         CRlaporan.ReportSource = CR
         Me.Show()
