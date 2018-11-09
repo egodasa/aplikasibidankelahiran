@@ -27,7 +27,7 @@ Partial Class Fmenu
         Me.data_obat = New System.Windows.Forms.Button()
         Me.data_periksa = New System.Windows.Forms.Button()
         Me.data_kb = New System.Windows.Forms.Button()
-        Me.data_jobat = New System.Windows.Forms.Button()
+        Me.data_rekap = New System.Windows.Forms.Button()
         Me.data_kelahiran = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -98,21 +98,21 @@ Partial Class Fmenu
         Me.data_kb.UseVisualStyleBackColor = False
         Me.data_kb.Visible = False
         '
-        'data_jobat
+        'data_rekap
         '
-        Me.data_jobat.BackColor = System.Drawing.Color.DarkGoldenrod
-        Me.data_jobat.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption
-        Me.data_jobat.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.data_jobat.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.data_jobat.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.data_jobat.Location = New System.Drawing.Point(199, 142)
-        Me.data_jobat.Name = "data_jobat"
-        Me.data_jobat.Size = New System.Drawing.Size(167, 73)
-        Me.data_jobat.TabIndex = 4
-        Me.data_jobat.Text = "Data Jenis Obat"
-        Me.data_jobat.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.data_jobat.UseVisualStyleBackColor = False
-        Me.data_jobat.Visible = False
+        Me.data_rekap.BackColor = System.Drawing.Color.DarkGoldenrod
+        Me.data_rekap.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption
+        Me.data_rekap.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.data_rekap.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.data_rekap.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.data_rekap.Location = New System.Drawing.Point(199, 142)
+        Me.data_rekap.Name = "data_rekap"
+        Me.data_rekap.Size = New System.Drawing.Size(167, 73)
+        Me.data_rekap.TabIndex = 4
+        Me.data_rekap.Text = "Data Rekap"
+        Me.data_rekap.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.data_rekap.UseVisualStyleBackColor = False
+        Me.data_rekap.Visible = False
         '
         'data_kelahiran
         '
@@ -181,7 +181,7 @@ Partial Class Fmenu
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button7)
         Me.Controls.Add(Me.data_kelahiran)
-        Me.Controls.Add(Me.data_jobat)
+        Me.Controls.Add(Me.data_rekap)
         Me.Controls.Add(Me.data_kb)
         Me.Controls.Add(Me.data_periksa)
         Me.Controls.Add(Me.data_obat)
@@ -197,7 +197,7 @@ Partial Class Fmenu
     Friend WithEvents data_obat As System.Windows.Forms.Button
     Friend WithEvents data_periksa As System.Windows.Forms.Button
     Friend WithEvents data_kb As System.Windows.Forms.Button
-    Friend WithEvents data_jobat As System.Windows.Forms.Button
+    Friend WithEvents data_rekap As System.Windows.Forms.Button
     Friend WithEvents data_kelahiran As System.Windows.Forms.Button
     Friend WithEvents Button7 As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label

@@ -116,12 +116,16 @@ Partial Class Fkelahiran
         Me.KeluarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.KBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.KelahiranToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TambahanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DaftarKondisiBayiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DaftarAsuhanPadaBayiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.KelahiranToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Ttensi = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Tbulan = New System.Windows.Forms.TextBox()
+        Me.Label15 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.Tumur, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -147,6 +151,10 @@ Partial Class Fkelahiran
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.MintCream
+        Me.GroupBox1.Controls.Add(Me.Tbulan)
+        Me.GroupBox1.Controls.Add(Me.Label15)
+        Me.GroupBox1.Controls.Add(Me.Ttensi)
+        Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.Tkeadaan)
         Me.GroupBox1.Controls.Add(Me.Tcara)
         Me.GroupBox1.Controls.Add(Me.Tpenolong)
@@ -162,7 +170,7 @@ Partial Class Fkelahiran
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(11, 265)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(281, 246)
+        Me.GroupBox1.Size = New System.Drawing.Size(281, 310)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "IBU BERSALIN"
@@ -721,7 +729,7 @@ Partial Class Fkelahiran
         Me.DGbayi.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.nm_bayi, Me.anak_ke, Me.waktu_lahir, Me.berat_lahir, Me.panjang_badan, Me.lingkar_kepala, Me.jk, Me.kondisi_lahir, Me.asuhan_bayi_saat_lahir, Me.keterangan, Me.id_sat_berat, Me.id_sat_panjang, Me.id_sat_lingkar})
         Me.DGbayi.Location = New System.Drawing.Point(9, 20)
         Me.DGbayi.Name = "DGbayi"
-        Me.DGbayi.Size = New System.Drawing.Size(974, 103)
+        Me.DGbayi.Size = New System.Drawing.Size(974, 119)
         Me.DGbayi.TabIndex = 7
         '
         'nm_bayi
@@ -815,7 +823,7 @@ Partial Class Fkelahiran
         Me.GroupBox6.Controls.Add(Me.Label24)
         Me.GroupBox6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.GroupBox6.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox6.Location = New System.Drawing.Point(298, 402)
+        Me.GroupBox6.Location = New System.Drawing.Point(298, 418)
         Me.GroupBox6.Name = "GroupBox6"
         Me.GroupBox6.Size = New System.Drawing.Size(983, 109)
         Me.GroupBox6.TabIndex = 17
@@ -1008,7 +1016,7 @@ Partial Class Fkelahiran
         Me.Bsimpan.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Bsimpan.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bsimpan.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bsimpan.Location = New System.Drawing.Point(800, 517)
+        Me.Bsimpan.Location = New System.Drawing.Point(800, 548)
         Me.Bsimpan.Name = "Bsimpan"
         Me.Bsimpan.Size = New System.Drawing.Size(161, 27)
         Me.Bsimpan.TabIndex = 27
@@ -1023,7 +1031,7 @@ Partial Class Fkelahiran
         Me.GroupBox5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox5.Location = New System.Drawing.Point(298, 267)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(991, 129)
+        Me.GroupBox5.Size = New System.Drawing.Size(991, 145)
         Me.GroupBox5.TabIndex = 12
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Daftar bayi yang lahir"
@@ -1041,45 +1049,51 @@ Partial Class Fkelahiran
         '
         Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.KeluarToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(35, 20)
         Me.FileToolStripMenuItem.Text = "File"
         '
         'KeluarToolStripMenuItem
         '
         Me.KeluarToolStripMenuItem.Name = "KeluarToolStripMenuItem"
-        Me.KeluarToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
+        Me.KeluarToolStripMenuItem.Size = New System.Drawing.Size(104, 22)
         Me.KeluarToolStripMenuItem.Text = "Keluar"
         '
         'DataToolStripMenuItem
         '
         Me.DataToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.KBToolStripMenuItem, Me.KelahiranToolStripMenuItem})
         Me.DataToolStripMenuItem.Name = "DataToolStripMenuItem"
-        Me.DataToolStripMenuItem.Size = New System.Drawing.Size(43, 20)
+        Me.DataToolStripMenuItem.Size = New System.Drawing.Size(42, 20)
         Me.DataToolStripMenuItem.Text = "Data"
         '
         'KBToolStripMenuItem
         '
         Me.KBToolStripMenuItem.Name = "KBToolStripMenuItem"
-        Me.KBToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.KBToolStripMenuItem.Size = New System.Drawing.Size(118, 22)
         Me.KBToolStripMenuItem.Text = "KB"
+        '
+        'KelahiranToolStripMenuItem
+        '
+        Me.KelahiranToolStripMenuItem.Name = "KelahiranToolStripMenuItem"
+        Me.KelahiranToolStripMenuItem.Size = New System.Drawing.Size(118, 22)
+        Me.KelahiranToolStripMenuItem.Text = "Kelahiran"
         '
         'TambahanToolStripMenuItem
         '
         Me.TambahanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DaftarKondisiBayiToolStripMenuItem, Me.DaftarAsuhanPadaBayiToolStripMenuItem})
         Me.TambahanToolStripMenuItem.Name = "TambahanToolStripMenuItem"
-        Me.TambahanToolStripMenuItem.Size = New System.Drawing.Size(76, 20)
+        Me.TambahanToolStripMenuItem.Size = New System.Drawing.Size(69, 20)
         Me.TambahanToolStripMenuItem.Text = "Tambahan"
         '
         'DaftarKondisiBayiToolStripMenuItem
         '
         Me.DaftarKondisiBayiToolStripMenuItem.Name = "DaftarKondisiBayiToolStripMenuItem"
-        Me.DaftarKondisiBayiToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
+        Me.DaftarKondisiBayiToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
         Me.DaftarKondisiBayiToolStripMenuItem.Text = "Daftar Kondisi Bayi"
         '
         'DaftarAsuhanPadaBayiToolStripMenuItem
         '
         Me.DaftarAsuhanPadaBayiToolStripMenuItem.Name = "DaftarAsuhanPadaBayiToolStripMenuItem"
-        Me.DaftarAsuhanPadaBayiToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
+        Me.DaftarAsuhanPadaBayiToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
         Me.DaftarAsuhanPadaBayiToolStripMenuItem.Text = "Daftar Asuhan pada Bayi"
         '
         'Button1
@@ -1089,7 +1103,7 @@ Partial Class Fkelahiran
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button1.Location = New System.Drawing.Point(999, 517)
+        Me.Button1.Location = New System.Drawing.Point(999, 548)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(123, 27)
         Me.Button1.TabIndex = 29
@@ -1103,25 +1117,55 @@ Partial Class Fkelahiran
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button2.Location = New System.Drawing.Point(1157, 517)
+        Me.Button2.Location = New System.Drawing.Point(1158, 548)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(123, 27)
         Me.Button2.TabIndex = 30
         Me.Button2.Text = "KELUAR"
         Me.Button2.UseVisualStyleBackColor = False
         '
-        'KelahiranToolStripMenuItem
+        'Ttensi
         '
-        Me.KelahiranToolStripMenuItem.Name = "KelahiranToolStripMenuItem"
-        Me.KelahiranToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.KelahiranToolStripMenuItem.Text = "Kelahiran"
+        Me.Ttensi.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Ttensi.Location = New System.Drawing.Point(108, 244)
+        Me.Ttensi.Name = "Ttensi"
+        Me.Ttensi.Size = New System.Drawing.Size(167, 23)
+        Me.Ttensi.TabIndex = 44
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(5, 247)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(35, 15)
+        Me.Label5.TabIndex = 43
+        Me.Label5.Text = "Tensi"
+        '
+        'Tbulan
+        '
+        Me.Tbulan.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tbulan.Location = New System.Drawing.Point(109, 273)
+        Me.Tbulan.Name = "Tbulan"
+        Me.Tbulan.Size = New System.Drawing.Size(167, 23)
+        Me.Tbulan.TabIndex = 46
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Location = New System.Drawing.Point(6, 276)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(96, 15)
+        Me.Label15.TabIndex = 45
+        Me.Label15.Text = "Bulan Kehamilan"
         '
         'Fkelahiran
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.InactiveBorder
-        Me.ClientSize = New System.Drawing.Size(1290, 550)
+        Me.ClientSize = New System.Drawing.Size(1290, 598)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Bsimpan)
@@ -1263,4 +1307,8 @@ Partial Class Fkelahiran
     Friend WithEvents id_sat_panjang As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents id_sat_lingkar As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents KelahiranToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Tbulan As System.Windows.Forms.TextBox
+    Friend WithEvents Label15 As System.Windows.Forms.Label
+    Friend WithEvents Ttensi As System.Windows.Forms.TextBox
+    Friend WithEvents Label5 As System.Windows.Forms.Label
 End Class

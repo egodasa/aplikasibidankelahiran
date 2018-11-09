@@ -108,6 +108,84 @@
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="lap_pemasukan.vb">
+      <DependentUpon>lap_pemasukan.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Frekap_pasiens.Designer.vb">
+      <DependentUpon>Frekap_pasiens.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frekap_pasiens.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="lap_kelahiran_biaya.vb">
+      <DependentUpon>lap_kelahiran_biaya.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="lap_kb_biaya.vb">
+      <DependentUpon>lap_kb_biaya.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="lap_berobat_umum_biaya.vb">
+      <DependentUpon>lap_berobat_umum_biaya.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="lap_kb_perorang.vb">
+      <DependentUpon>lap_kb_perorang.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="lap_kehamilan_perorang.vb">
+      <DependentUpon>lap_kehamilan_perorang.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="lap_berobat_umum_perorang.vb">
+      <DependentUpon>lap_berobat_umum_perorang.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="lap_kelahiran_perorang.vb">
+      <DependentUpon>lap_kelahiran_perorang.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="lap_kehamilan.vb">
+      <DependentUpon>lap_kehamilan.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="lap_kelahiran.vb">
+      <DependentUpon>lap_kelahiran.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="lap_kb.vb">
+      <DependentUpon>lap_kb.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="lap_berobat_umum.vb">
+      <DependentUpon>lap_berobat_umum.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="pasien.vb">
       <DependentUpon>pasien.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -271,6 +349,57 @@
     <EmbeddedResource Include="bayi.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>bayi.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lap_pemasukan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>lap_pemasukan.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frekap_pasiens.resx">
+      <DependentUpon>Frekap_pasiens.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lap_kelahiran_biaya.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>lap_kelahiran_biaya.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lap_kb_biaya.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>lap_kb_biaya.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lap_berobat_umum_biaya.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>lap_berobat_umum_biaya.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lap_kb_perorang.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>lap_kb_perorang.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lap_kehamilan_perorang.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>lap_kehamilan_perorang.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lap_berobat_umum_perorang.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>lap_berobat_umum_perorang.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lap_kelahiran_perorang.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>lap_kelahiran_perorang.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lap_kehamilan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>lap_kehamilan.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lap_kelahiran.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>lap_kelahiran.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lap_kb.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>lap_kb.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lap_berobat_umum.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>lap_berobat_umum.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="pasien.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

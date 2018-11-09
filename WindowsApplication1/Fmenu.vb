@@ -3,7 +3,7 @@
     Private Sub Fmenu_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         If jenis_pengguna = "Admin" Then
             data_obat.Visible = True
-            data_jobat.Visible = True
+            data_rekap.Visible = True
             data_pasien.Visible = True
             data_user.Visible = True
             data_periksa.Visible = False
@@ -14,11 +14,11 @@
             data_kb.Visible = True
             data_kelahiran.Visible = True
             data_obat.Visible = False
-            data_jobat.Visible = False
+            data_rekap.Visible = True
             data_pasien.Visible = False
             data_user.Visible = False
         End If
-        
+
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles data_pasien.Click
@@ -41,8 +41,8 @@
         Me.Hide()
     End Sub
 
-    Private Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles data_jobat.Click
-        Fjenis_obat.Show()
+    Private Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles data_rekap.Click
+        Frekap_pasiens.Show()
         Me.Hide()
     End Sub
 

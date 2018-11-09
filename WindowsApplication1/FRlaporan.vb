@@ -28,7 +28,39 @@ Public Class FRlaporan
         CRlaporan.ReportSource = CR
         Me.Show()
     End Sub
-
+    Sub laporanRekapPasien(ByVal no_pasien As Integer, ByVal tipe As String)
+        Dim laporan As String = Nothing
+        If tipe = "Rekap Berobat Umum" Then
+            laporan = "lap_berobat_umum_perorang.rpt"
+        ElseIf tipe = "Rekap KB" Then
+            laporan = "lap_kb_perorang.rpt"
+        ElseIf tipe = "Rekap Kehamilan" Then
+            laporan = "lap_kehamilan_perorang.rpt"
+        ElseIf tipe = "Rekap Kelahiran" Then
+            laporan = "lap_kelahiran_perorang.rpt"
+        End If
+        CR.Load(_DIR & laporan)
+        CR.SetParameterValue("no_pasien", no_pasien)
+        CRlaporan.ReportSource = CR
+        Me.Show()
+    End Sub
+    Sub laporanRekapKeseluruhan(ByVal tipe As String, ByVal waktu As Date)
+        Dim laporan As String = Nothing
+        If tipe = "Rekap Berobat Umum" Then
+            laporan = "lap_berobat_umum.rpt"
+        ElseIf tipe = "Rekap KB" Then
+            laporan = "lap_kb.rpt"
+        ElseIf tipe = "Rekap Kehamilan" Then
+            laporan = "lap_kehamilan.rpt"
+        ElseIf tipe = "Rekap Kelahiran" Then
+            laporan = "lap_kelahiran.rpt"
+        End If
+        CR.Load(_DIR & laporan)
+        CR.SetParameterValue("bulan", waktu.Month())
+        CR.SetParameterValue("tahun", waktu.Year())
+        CRlaporan.ReportSource = CR
+        Me.Show()
+    End Sub
     Private Sub FRlaporan_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
     End Sub

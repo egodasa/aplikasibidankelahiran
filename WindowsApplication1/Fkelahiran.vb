@@ -26,6 +26,8 @@
         Tumur.ResetText()
         Tkeadaan.Clear()
         Csat_umur.Text = "Minggu"
+        Tbulan.Clear()
+        Ttensi.Clear()
     End Sub
     Sub resetBayi()
         Tnm_bayi.Clear()
@@ -131,10 +133,12 @@
     End Sub
 
     Private Sub Bsimpan_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bsimpan.Click
-        runQuery("insert into tbl_kelahiran (no_pasien, id_kelahiran, tgl_kelahiran, nm_suami, penolongan_persalinan, cara_persalinan, umur_kehamilan, keadaan_ibu, biaya_persalinan, biaya_perawatan_kelas, biaya_perawatan_bayi, biaya_obat_obatan, biaya_cucian, biaya_akte_kelahiran, biaya_transportasi, biaya_lain, id_sat_umur ) values (" & Tno_pasien.Text &
+        runQuery("insert into tbl_kelahiran (no_pasien, id_kelahiran, tgl_kelahiran, nm_suami,bulan,tensi penolongan_persalinan, cara_persalinan, umur_kehamilan, keadaan_ibu, biaya_persalinan, biaya_perawatan_kelas, biaya_perawatan_bayi, biaya_obat_obatan, biaya_cucian, biaya_akte_kelahiran, biaya_transportasi, biaya_lain, id_sat_umur ) values (" & Tno_pasien.Text &
                 ", '" & id_kelahiran &
                 "', '" & Ttgl_persalinan.Value.ToString("yyyy-MM-dd hh:mm:00") &
                 "', '" & Tnm_suami.Text &
+                "', '" & Tbulan.Text &
+                "', '" & Ttensi.Text &
                 "', '" & Tpenolong.Text &
                 "', '" & Tcara.Text &
                 "', " & Tumur.Value &
