@@ -24,148 +24,83 @@ Partial Class Flaporan
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Flaporan))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Bcetak = New System.Windows.Forms.Button()
-        Me.Takhir = New System.Windows.Forms.DateTimePicker()
-        Me.Tawal = New System.Windows.Forms.DateTimePicker()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.Btahun = New System.Windows.Forms.Button()
-        Me.Bbulan = New System.Windows.Forms.Button()
-        Me.Bharian = New System.Windows.Forms.Button()
-        Me.Bexit = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Cjenis2 = New System.Windows.Forms.ComboBox()
+        Me.Twaktu = New System.Windows.Forms.DateTimePicker()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Bexit = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.MintCream
+        Me.GroupBox1.Controls.Add(Me.Button3)
+        Me.GroupBox1.Controls.Add(Me.Label4)
+        Me.GroupBox1.Controls.Add(Me.Cjenis2)
+        Me.GroupBox1.Controls.Add(Me.Twaktu)
+        Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Button2)
         Me.GroupBox1.Controls.Add(Me.Button1)
-        Me.GroupBox1.Controls.Add(Me.Bcetak)
-        Me.GroupBox1.Controls.Add(Me.Takhir)
-        Me.GroupBox1.Controls.Add(Me.Tawal)
-        Me.GroupBox1.Controls.Add(Me.CheckBox1)
-        Me.GroupBox1.Controls.Add(Me.Btahun)
-        Me.GroupBox1.Controls.Add(Me.Bbulan)
-        Me.GroupBox1.Controls.Add(Me.Bharian)
         Me.GroupBox1.Location = New System.Drawing.Point(10, 9)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(324, 232)
+        Me.GroupBox1.Size = New System.Drawing.Size(324, 190)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Silahkan Pilih Waktu Laporan"
         '
-        'Bcetak
+        'Button3
         '
-        Me.Bcetak.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Bcetak.Enabled = False
-        Me.Bcetak.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.Bcetak.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Bcetak.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Bcetak.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Bcetak.Location = New System.Drawing.Point(224, 102)
-        Me.Bcetak.Name = "Bcetak"
-        Me.Bcetak.Size = New System.Drawing.Size(88, 30)
-        Me.Bcetak.TabIndex = 7
-        Me.Bcetak.Text = "Cetak"
-        Me.Bcetak.UseVisualStyleBackColor = False
+        Me.Button3.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Button3.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button3.Location = New System.Drawing.Point(95, 72)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(70, 23)
+        Me.Button3.TabIndex = 25
+        Me.Button3.Text = "CETAK"
+        Me.Button3.UseVisualStyleBackColor = False
         '
-        'Takhir
+        'Label4
         '
-        Me.Takhir.Enabled = False
-        Me.Takhir.Location = New System.Drawing.Point(156, 73)
-        Me.Takhir.Name = "Takhir"
-        Me.Takhir.Size = New System.Drawing.Size(156, 20)
-        Me.Takhir.TabIndex = 6
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(9, 45)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(73, 13)
+        Me.Label4.TabIndex = 24
+        Me.Label4.Text = "Jenis Laporan"
         '
-        'Tawal
+        'Cjenis2
         '
-        Me.Tawal.Enabled = False
-        Me.Tawal.Location = New System.Drawing.Point(156, 42)
-        Me.Tawal.Name = "Tawal"
-        Me.Tawal.Size = New System.Drawing.Size(156, 20)
-        Me.Tawal.TabIndex = 5
+        Me.Cjenis2.FormattingEnabled = True
+        Me.Cjenis2.Items.AddRange(New Object() {"Pemasukan dari Berobat Umum", "Pemasukan dari KB", "Pemasukan dari Kelahiran", "Pemasukan Keseluruhan"})
+        Me.Cjenis2.Location = New System.Drawing.Point(95, 45)
+        Me.Cjenis2.Name = "Cjenis2"
+        Me.Cjenis2.Size = New System.Drawing.Size(214, 21)
+        Me.Cjenis2.TabIndex = 23
         '
-        'CheckBox1
+        'Twaktu
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(156, 19)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(122, 17)
-        Me.CheckBox1.TabIndex = 4
-        Me.CheckBox1.Text = "Pilih Waktu Laporan"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.Twaktu.CustomFormat = "MMMM yyyy"
+        Me.Twaktu.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.Twaktu.Location = New System.Drawing.Point(95, 19)
+        Me.Twaktu.Name = "Twaktu"
+        Me.Twaktu.Size = New System.Drawing.Size(214, 20)
+        Me.Twaktu.TabIndex = 22
         '
-        'Btahun
+        'Label2
         '
-        Me.Btahun.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Btahun.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.Btahun.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Btahun.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btahun.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Btahun.Location = New System.Drawing.Point(15, 102)
-        Me.Btahun.Name = "Btahun"
-        Me.Btahun.Size = New System.Drawing.Size(88, 32)
-        Me.Btahun.TabIndex = 2
-        Me.Btahun.Text = "Tahun Ini"
-        Me.Btahun.UseVisualStyleBackColor = False
-        '
-        'Bbulan
-        '
-        Me.Bbulan.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Bbulan.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.Bbulan.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Bbulan.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Bbulan.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Bbulan.Location = New System.Drawing.Point(15, 61)
-        Me.Bbulan.Name = "Bbulan"
-        Me.Bbulan.Size = New System.Drawing.Size(88, 32)
-        Me.Bbulan.TabIndex = 1
-        Me.Bbulan.Text = "Bulan Ini"
-        Me.Bbulan.UseVisualStyleBackColor = False
-        '
-        'Bharian
-        '
-        Me.Bharian.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Bharian.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.Bharian.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Bharian.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Bharian.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Bharian.Location = New System.Drawing.Point(15, 19)
-        Me.Bharian.Name = "Bharian"
-        Me.Bharian.Size = New System.Drawing.Size(88, 32)
-        Me.Bharian.TabIndex = 0
-        Me.Bharian.Text = "Hari Ini"
-        Me.Bharian.UseVisualStyleBackColor = False
-        '
-        'Bexit
-        '
-        Me.Bexit.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Bexit.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.Bexit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Bexit.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Bexit.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bexit.Location = New System.Drawing.Point(259, 247)
-        Me.Bexit.Name = "Bexit"
-        Me.Bexit.Size = New System.Drawing.Size(75, 23)
-        Me.Bexit.TabIndex = 18
-        Me.Bexit.Text = "KELUAR"
-        Me.Bexit.UseVisualStyleBackColor = False
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button1.Location = New System.Drawing.Point(15, 156)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(297, 30)
-        Me.Button1.TabIndex = 8
-        Me.Button1.Text = "Laporan Daftar Bayi Lahir"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(9, 19)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(81, 13)
+        Me.Label2.TabIndex = 21
+        Me.Label2.Text = "Waktu Laporan"
         '
         'Button2
         '
@@ -174,19 +109,47 @@ Partial Class Flaporan
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button2.Location = New System.Drawing.Point(15, 192)
+        Me.Button2.Location = New System.Drawing.Point(12, 147)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(297, 30)
         Me.Button2.TabIndex = 9
         Me.Button2.Text = "Laporan Daftar Pasien"
         Me.Button2.UseVisualStyleBackColor = False
         '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Button1.Location = New System.Drawing.Point(12, 111)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(297, 30)
+        Me.Button1.TabIndex = 8
+        Me.Button1.Text = "Laporan Daftar Bayi Lahir"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'Bexit
+        '
+        Me.Bexit.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Bexit.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.Bexit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Bexit.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Bexit.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Bexit.Location = New System.Drawing.Point(259, 205)
+        Me.Bexit.Name = "Bexit"
+        Me.Bexit.Size = New System.Drawing.Size(75, 23)
+        Me.Bexit.TabIndex = 18
+        Me.Bexit.Text = "KELUAR"
+        Me.Bexit.UseVisualStyleBackColor = False
+        '
         'Flaporan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.InactiveBorder
-        Me.ClientSize = New System.Drawing.Size(347, 275)
+        Me.ClientSize = New System.Drawing.Size(347, 235)
         Me.Controls.Add(Me.Bexit)
         Me.Controls.Add(Me.GroupBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -198,14 +161,12 @@ Partial Class Flaporan
 
     End Sub
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents Btahun As System.Windows.Forms.Button
-    Friend WithEvents Bbulan As System.Windows.Forms.Button
-    Friend WithEvents Bharian As System.Windows.Forms.Button
-    Friend WithEvents Bcetak As System.Windows.Forms.Button
-    Friend WithEvents Takhir As System.Windows.Forms.DateTimePicker
-    Friend WithEvents Tawal As System.Windows.Forms.DateTimePicker
-    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
     Friend WithEvents Bexit As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents Cjenis2 As System.Windows.Forms.ComboBox
+    Friend WithEvents Twaktu As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label2 As System.Windows.Forms.Label
 End Class

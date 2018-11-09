@@ -191,7 +191,7 @@ Partial Class Frekap_pasiens
         Me.Controls.Add(Me.Bexit)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "Frekap_pasiens"
-        Me.Text = "Frekap_pasiens"
+        Me.Text = "Rekap Pasien"
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)

@@ -58,6 +58,28 @@ Public Class FRlaporan
         CR.Load(_DIR & laporan)
         CR.SetParameterValue("bulan", waktu.Month())
         CR.SetParameterValue("tahun", waktu.Year())
+        CR.SetParameterValue("waktu", waktu)
+        CRlaporan.ReportSource = CR
+        Me.Show()
+    End Sub
+    Sub laporanPemasukan(ByVal tipe As String, ByVal waktu As Date)
+        Dim laporan As String = Nothing
+        If tipe = "Pemasukan dari Berobat Umum" Then
+            laporan = "lap_berobat_umum_biaya.rpt"
+        ElseIf tipe = "Pemasukan dari KB" Then
+            laporan = "lap_kb_biaya.rpt"
+        ElseIf tipe = "Pemasukan dari Kelahiran" Then
+            laporan = "lap_kelahiran_biaya.rpt"
+        ElseIf tipe = "Pemasukan Keseluruhan" Then
+            laporan = "lap_pemasukan.rpt"
+        End If
+        CR.Load(_DIR & laporan)
+        CR.SetParameterValue("bulan", waktu.Month())
+        CR.SetParameterValue("tahun", waktu.Year())
+        CR.SetParameterValue("waktu", waktu)
+        If tipe = "Pemasukan Keseluruhan" Then
+            CR.SetParameterValue("tahun12", 12)
+        End If
         CRlaporan.ReportSource = CR
         Me.Show()
     End Sub
