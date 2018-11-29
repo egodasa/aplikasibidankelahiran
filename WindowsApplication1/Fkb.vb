@@ -50,8 +50,7 @@
         If Tno_pasien.TextLength <> 0 Then
             data_pasien = fetchData("select * from daftar_pasien where `No_Pasien` = " & Tno_pasien.Text)
             If data_pasien.Rows.Count = 1 Then
-                Ttgl_lahir.Value = Date.ParseExact(data_pasien.Rows(0).Item("Tanggal_Lahir"), "dd/MM/yyyy",
-            System.Globalization.DateTimeFormatInfo.InvariantInfo)
+                Ttgl_lahir.Value = data_pasien.Rows(0).Item("Tanggal_Lahir")
                 Tpekerjaan.Text = data_pasien.Rows(0).Item("Pekerjaan")
                 Talamat.Text = data_pasien.Rows(0).Item("Alamat")
                 Cjk.Text = data_pasien.Rows(0).Item("Jenis_Kelamin")
@@ -64,7 +63,7 @@
             DGrekap.Columns("Id_Periksa").Visible = False
             DGrekap.Columns("Id_Sat_Berat").Visible = False
             DGrekap.Columns("Tinggi_Badan").Visible = False
-            DGrekap.Columns("Keluhan/Diagnosa").Visible = False
+            DGrekap.Columns("Keluhan").Visible = False
         Else
             DGrekap.DataSource = Nothing
             Call resetDataPasien()

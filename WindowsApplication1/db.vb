@@ -13,7 +13,7 @@ Module db
         jenis_pengguna = Nothing
     End Sub
     Sub setKoneksi()
-        str = "Server=192.168.56.1;uid=root;pwd=123456;database=db_bidan;port=3306"
+        str = "Server=localhost;uid=root;pwd=;database=db_bidan;port=3306"
         kon = New MySqlConnection(str)
         If kon.State = ConnectionState.Closed Then
             Try
