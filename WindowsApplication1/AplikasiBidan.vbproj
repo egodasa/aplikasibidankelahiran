@@ -1,0 +1,520 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{54E52264-F716-4290-940D-1E15954EC0DF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>WindowsApplication1.My.MyApplication</StartupObject>
+    <RootNamespace>WindowsApplication1</RootNamespace>
+    <AssemblyName>WindowsApplication1</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>WindowsApplication1.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>WindowsApplication1.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="MetroFramework">
+      <HintPath>.\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design">
+      <HintPath>.\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts">
+      <HintPath>.\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.3.2.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\MySQL\MySQL Connector Net 6.3.2\Assemblies\v2.0\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity, Version=6.3.2.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="biayabersalinan.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>biayabersalinan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bayi.vb">
+      <DependentUpon>bayi.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="lap_pemasukan.vb">
+      <DependentUpon>lap_pemasukan.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Frekap_pasiens.Designer.vb">
+      <DependentUpon>Frekap_pasiens.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frekap_pasiens.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="lap_kelahiran_biaya.vb">
+      <DependentUpon>lap_kelahiran_biaya.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="lap_kb_biaya.vb">
+      <DependentUpon>lap_kb_biaya.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="lap_berobat_umum_biaya.vb">
+      <DependentUpon>lap_berobat_umum_biaya.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="lap_kb_perorang.vb">
+      <DependentUpon>lap_kb_perorang.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="lap_kehamilan_perorang.vb">
+      <DependentUpon>lap_kehamilan_perorang.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="lap_berobat_umum_perorang.vb">
+      <DependentUpon>lap_berobat_umum_perorang.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="lap_kelahiran_perorang.vb">
+      <DependentUpon>lap_kelahiran_perorang.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="lap_kehamilan.vb">
+      <DependentUpon>lap_kehamilan.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="lap_kelahiran.vb">
+      <DependentUpon>lap_kelahiran.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="lap_kb.vb">
+      <DependentUpon>lap_kb.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="lap_berobat_umum.vb">
+      <DependentUpon>lap_berobat_umum.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="pasien.vb">
+      <DependentUpon>pasien.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="db.vb" />
+    <Compile Include="Fasuhan_bayi.Designer.vb">
+      <DependentUpon>Fasuhan_bayi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fasuhan_bayi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fkondisi_bayi.Designer.vb">
+      <DependentUpon>Fkondisi_bayi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fkondisi_bayi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Flogin.Designer.vb">
+      <DependentUpon>Flogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Flogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fpengguna.Designer.vb">
+      <DependentUpon>Fpengguna.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fpengguna.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRakte.Designer.vb">
+      <DependentUpon>FRakte.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FRakte.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRbiaya_persalinan.Designer.vb">
+      <DependentUpon>FRbiaya_persalinan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FRbiaya_persalinan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fdaftar_kelahiran.Designer.vb">
+      <DependentUpon>Fdaftar_kelahiran.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fdaftar_kelahiran.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fjenis_obat.Designer.vb">
+      <DependentUpon>Fjenis_obat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fjenis_obat.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRkartu_berobat.Designer.vb">
+      <DependentUpon>FRkartu_berobat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FRkartu_berobat.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fkb.Designer.vb">
+      <DependentUpon>Fkb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fkb.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fmenu.Designer.vb">
+      <DependentUpon>Fmenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fmenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fpasien.Designer.vb">
+      <DependentUpon>Fpasien.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fpasien.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fperiksa.Designer.vb">
+      <DependentUpon>Fperiksa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fperiksa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fkelahiran.Designer.vb">
+      <DependentUpon>Fkelahiran.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fkelahiran.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fobat.Designer.vb">
+      <DependentUpon>Fobat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fobat.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRlaporan.Designer.vb">
+      <DependentUpon>FRlaporan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FRlaporan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kartu berobat.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>kartu berobat.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="laporan.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>laporan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Flaporan.Designer.vb">
+      <DependentUpon>Flaporan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Flaporan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="lap_bulanan.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lap_bulanan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="lap_tahunan.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lap_tahunan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="suratketerangankelahiran.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>suratketerangankelahiran.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="biayabersalinan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>biayabersalinan.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bayi.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>bayi.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lap_pemasukan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>lap_pemasukan.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frekap_pasiens.resx">
+      <DependentUpon>Frekap_pasiens.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lap_kelahiran_biaya.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>lap_kelahiran_biaya.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lap_kb_biaya.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>lap_kb_biaya.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lap_berobat_umum_biaya.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>lap_berobat_umum_biaya.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lap_kb_perorang.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>lap_kb_perorang.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lap_kehamilan_perorang.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>lap_kehamilan_perorang.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lap_berobat_umum_perorang.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>lap_berobat_umum_perorang.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lap_kelahiran_perorang.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>lap_kelahiran_perorang.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lap_kehamilan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>lap_kehamilan.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lap_kelahiran.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>lap_kelahiran.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lap_kb.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>lap_kb.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lap_berobat_umum.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>lap_berobat_umum.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pasien.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>pasien.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fasuhan_bayi.resx">
+      <DependentUpon>Fasuhan_bayi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fkondisi_bayi.resx">
+      <DependentUpon>Fkondisi_bayi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Flogin.resx">
+      <DependentUpon>Flogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fpengguna.resx">
+      <DependentUpon>Fpengguna.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRakte.resx">
+      <DependentUpon>FRakte.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRbiaya_persalinan.resx">
+      <DependentUpon>FRbiaya_persalinan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fdaftar_kelahiran.resx">
+      <DependentUpon>Fdaftar_kelahiran.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fjenis_obat.resx">
+      <DependentUpon>Fjenis_obat.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRkartu_berobat.resx">
+      <DependentUpon>FRkartu_berobat.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fkb.resx">
+      <DependentUpon>Fkb.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fmenu.resx">
+      <DependentUpon>Fmenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fpasien.resx">
+      <DependentUpon>Fpasien.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fperiksa.resx">
+      <DependentUpon>Fperiksa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fkelahiran.resx">
+      <DependentUpon>Fkelahiran.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fobat.resx">
+      <DependentUpon>Fobat.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRlaporan.resx">
+      <DependentUpon>FRlaporan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kartu berobat.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>kartu berobat.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="laporan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>laporan.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Flaporan.resx">
+      <DependentUpon>Flaporan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lap_bulanan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>lap_bulanan.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lap_tahunan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>lap_tahunan.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="suratketerangankelahiran.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>suratketerangankelahiran.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="CrystalActiveXReportViewerLib13">
+      <Guid>{B816E96D-D151-4000-BADB-53A2D8F3FC65}</Guid>
+      <VersionMajor>13</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
