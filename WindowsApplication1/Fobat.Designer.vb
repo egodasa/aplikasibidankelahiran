@@ -290,6 +290,7 @@ Partial Class Fkelola_obat
         Me.Controls.Add(Me.Bexit)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Fkelola_obat"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Kelola Obat"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

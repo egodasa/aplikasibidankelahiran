@@ -241,9 +241,9 @@ Partial Class Fkb
         Me.Label18.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label18.Location = New System.Drawing.Point(10, 18)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(60, 15)
+        Me.Label18.Size = New System.Drawing.Size(46, 15)
         Me.Label18.TabIndex = 1
-        Me.Label18.Text = "No Pasien"
+        Me.Label18.Text = "No Reg"
         '
         'GroupBox1
         '
@@ -508,7 +508,7 @@ Partial Class Fkb
         'KeluarToolStripMenuItem
         '
         Me.KeluarToolStripMenuItem.Name = "KeluarToolStripMenuItem"
-        Me.KeluarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.KeluarToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
         Me.KeluarToolStripMenuItem.Text = "Keluar"
         '
         'Button1
@@ -617,6 +617,7 @@ Partial Class Fkb
         Me.Controls.Add(Me.GroupBox2)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Fkb"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form Keluarga Berencana"
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()

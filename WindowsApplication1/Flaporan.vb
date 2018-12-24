@@ -19,7 +19,7 @@
     End Sub
 
     Private Sub Flaporan_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
+        Call fetchComboboxData("select No_Pasien, Nama_Pasien FROM daftar_pasien", Cnm_pasien, "Nama_Pasien", "No_Pasien")
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
@@ -32,5 +32,17 @@
 
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
         FRlaporan.laporanPemasukan(Cjenis2.Text, Twaktu.Value)
+    End Sub
+
+    Private Sub Label2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label2.Click
+
+    End Sub
+
+    Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
+    End Sub
+
+    Private Sub Button4_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
+        FRlaporan.laporanRekapPasien(Cnm_pasien.SelectedValue, Cjenis3.Text)
     End Sub
 End Class

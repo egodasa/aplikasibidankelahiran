@@ -7,7 +7,7 @@ Module db
     Public dr As MySqlDataReader
     Public str As String
     Public username, jenis_pengguna As String
-    Public _DIR As String = "F:\Program\visual_basic\skprsifauzan\WindowsApplication1\"
+    Public _DIR As String = "E:\abdullahfauzanassalam_SKRIPSI\aplikasibidankelahiran\WindowsApplication1\"
     Sub logout()
         username = Nothing
         jenis_pengguna = Nothing

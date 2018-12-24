@@ -1,5 +1,5 @@
 ﻿Public Class Fpasien
-    Dim getData As String = "select * from daftar_pasien"
+    Dim getData As String = "select * from daftar_pasien_revisi"
     Sub resetForm()
         Tnm_pasien.Clear()
         Ttgl_lahir.ResetText()

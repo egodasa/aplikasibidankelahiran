@@ -80,4 +80,8 @@
             DGobat.DataSource = fetchData(getData)
         End If
     End Sub
+
+    Private Sub Csatuan_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Csatuan.SelectedIndexChanged
+
+    End Sub
 End Class

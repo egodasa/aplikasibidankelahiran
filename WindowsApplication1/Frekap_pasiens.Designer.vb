@@ -22,12 +22,6 @@ Partial Class Frekap_pasiens
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Cjenis2 = New System.Windows.Forms.ComboBox()
-        Me.Twaktu = New System.Windows.Forms.DateTimePicker()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Bexit = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Cnm_pasien = New System.Windows.Forms.ComboBox()
@@ -35,74 +29,8 @@ Partial Class Frekap_pasiens
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Cjenis1 = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.BackColor = System.Drawing.Color.MintCream
-        Me.GroupBox2.Controls.Add(Me.Button2)
-        Me.GroupBox2.Controls.Add(Me.Label4)
-        Me.GroupBox2.Controls.Add(Me.Cjenis2)
-        Me.GroupBox2.Controls.Add(Me.Twaktu)
-        Me.GroupBox2.Controls.Add(Me.Label2)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 131)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(360, 108)
-        Me.GroupBox2.TabIndex = 20
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Rekap Pasien Keseluruhan"
-        '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Button2.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button2.Location = New System.Drawing.Point(86, 79)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 20
-        Me.Button2.Text = "CETAK"
-        Me.Button2.UseVisualStyleBackColor = False
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(6, 53)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(66, 13)
-        Me.Label4.TabIndex = 4
-        Me.Label4.Text = "Jenis Rekap"
-        '
-        'Cjenis2
-        '
-        Me.Cjenis2.FormattingEnabled = True
-        Me.Cjenis2.Items.AddRange(New Object() {"Rekap Berobat Umum", "Rekap KB", "Rekap Kehamilan", "Rekap Kelahiran"})
-        Me.Cjenis2.Location = New System.Drawing.Point(86, 53)
-        Me.Cjenis2.Name = "Cjenis2"
-        Me.Cjenis2.Size = New System.Drawing.Size(268, 21)
-        Me.Cjenis2.TabIndex = 3
-        '
-        'Twaktu
-        '
-        Me.Twaktu.CustomFormat = "MMMM yyyy"
-        Me.Twaktu.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.Twaktu.Location = New System.Drawing.Point(86, 27)
-        Me.Twaktu.Name = "Twaktu"
-        Me.Twaktu.Size = New System.Drawing.Size(268, 20)
-        Me.Twaktu.TabIndex = 2
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(6, 27)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(74, 13)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Waktu Rekap"
         '
         'Bexit
         '
@@ -111,7 +39,7 @@ Partial Class Frekap_pasiens
         Me.Bexit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Bexit.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bexit.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bexit.Location = New System.Drawing.Point(297, 245)
+        Me.Bexit.Location = New System.Drawing.Point(291, 131)
         Me.Bexit.Name = "Bexit"
         Me.Bexit.Size = New System.Drawing.Size(75, 23)
         Me.Bexit.TabIndex = 21
@@ -131,7 +59,7 @@ Partial Class Frekap_pasiens
         Me.GroupBox1.Size = New System.Drawing.Size(360, 113)
         Me.GroupBox1.TabIndex = 19
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Rekap Pasien"
+        Me.GroupBox1.Text = "lap pemeriksaan perpasien"
         '
         'Cnm_pasien
         '
@@ -186,25 +114,17 @@ Partial Class Frekap_pasiens
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(379, 277)
-        Me.Controls.Add(Me.GroupBox2)
+        Me.ClientSize = New System.Drawing.Size(379, 161)
         Me.Controls.Add(Me.Bexit)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "Frekap_pasiens"
-        Me.Text = "Rekap Pasien"
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "laporan data pemeriksaan"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
-    Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Cjenis2 As System.Windows.Forms.ComboBox
-    Friend WithEvents Twaktu As System.Windows.Forms.DateTimePicker
-    Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Bexit As System.Windows.Forms.Button
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents Cnm_pasien As System.Windows.Forms.ComboBox

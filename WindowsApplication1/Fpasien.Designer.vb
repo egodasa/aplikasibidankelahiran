@@ -24,6 +24,8 @@ Partial Class Fpasien
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Fpasien))
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Ttgl_lahir = New System.Windows.Forms.DateTimePicker()
         Me.Talamat = New System.Windows.Forms.TextBox()
         Me.Label21 = New System.Windows.Forms.Label()
@@ -54,6 +56,8 @@ Partial Class Fpasien
         'GroupBox2
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.MintCream
+        Me.GroupBox2.Controls.Add(Me.DateTimePicker1)
+        Me.GroupBox2.Controls.Add(Me.Label3)
         Me.GroupBox2.Controls.Add(Me.Ttgl_lahir)
         Me.GroupBox2.Controls.Add(Me.Talamat)
         Me.GroupBox2.Controls.Add(Me.Label21)
@@ -67,15 +71,32 @@ Partial Class Fpasien
         Me.GroupBox2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(461, 172)
+        Me.GroupBox2.Size = New System.Drawing.Size(461, 205)
         Me.GroupBox2.TabIndex = 6
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "DATA PASIEN"
         '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker1.Location = New System.Drawing.Point(118, 15)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(335, 23)
+        Me.DateTimePicker1.TabIndex = 13
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(8, 26)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(60, 15)
+        Me.Label3.TabIndex = 12
+        Me.Label3.Text = "Tgl Daftar"
+        '
         'Ttgl_lahir
         '
         Me.Ttgl_lahir.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Ttgl_lahir.Location = New System.Drawing.Point(118, 51)
+        Me.Ttgl_lahir.Location = New System.Drawing.Point(118, 84)
         Me.Ttgl_lahir.Name = "Ttgl_lahir"
         Me.Ttgl_lahir.Size = New System.Drawing.Size(335, 23)
         Me.Ttgl_lahir.TabIndex = 11
@@ -83,7 +104,7 @@ Partial Class Fpasien
         'Talamat
         '
         Me.Talamat.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Talamat.Location = New System.Drawing.Point(118, 139)
+        Me.Talamat.Location = New System.Drawing.Point(118, 174)
         Me.Talamat.Name = "Talamat"
         Me.Talamat.Size = New System.Drawing.Size(335, 23)
         Me.Talamat.TabIndex = 10
@@ -92,7 +113,7 @@ Partial Class Fpasien
         '
         Me.Label21.AutoSize = True
         Me.Label21.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(6, 139)
+        Me.Label21.Location = New System.Drawing.Point(6, 174)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(45, 15)
         Me.Label21.TabIndex = 9
@@ -101,7 +122,7 @@ Partial Class Fpasien
         'Tpekerjaan
         '
         Me.Tpekerjaan.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tpekerjaan.Location = New System.Drawing.Point(118, 110)
+        Me.Tpekerjaan.Location = New System.Drawing.Point(118, 145)
         Me.Tpekerjaan.Name = "Tpekerjaan"
         Me.Tpekerjaan.Size = New System.Drawing.Size(335, 23)
         Me.Tpekerjaan.TabIndex = 8
@@ -111,7 +132,7 @@ Partial Class Fpasien
         Me.Cjk.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Cjk.FormattingEnabled = True
         Me.Cjk.Items.AddRange(New Object() {"Laki-laki", "Perempuan"})
-        Me.Cjk.Location = New System.Drawing.Point(118, 80)
+        Me.Cjk.Location = New System.Drawing.Point(118, 115)
         Me.Cjk.Name = "Cjk"
         Me.Cjk.Size = New System.Drawing.Size(335, 23)
         Me.Cjk.TabIndex = 1
@@ -119,7 +140,7 @@ Partial Class Fpasien
         'Tnm_pasien
         '
         Me.Tnm_pasien.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tnm_pasien.Location = New System.Drawing.Point(118, 22)
+        Me.Tnm_pasien.Location = New System.Drawing.Point(118, 52)
         Me.Tnm_pasien.Name = "Tnm_pasien"
         Me.Tnm_pasien.Size = New System.Drawing.Size(335, 23)
         Me.Tnm_pasien.TabIndex = 6
@@ -128,7 +149,7 @@ Partial Class Fpasien
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(6, 110)
+        Me.Label1.Location = New System.Drawing.Point(6, 145)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(58, 15)
         Me.Label1.TabIndex = 5
@@ -138,7 +159,7 @@ Partial Class Fpasien
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(6, 80)
+        Me.Label10.Location = New System.Drawing.Point(6, 117)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(79, 15)
         Me.Label10.TabIndex = 4
@@ -148,7 +169,7 @@ Partial Class Fpasien
         '
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(6, 51)
+        Me.Label16.Location = New System.Drawing.Point(6, 88)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(79, 15)
         Me.Label16.TabIndex = 3
@@ -158,7 +179,7 @@ Partial Class Fpasien
         '
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(6, 22)
+        Me.Label17.Location = New System.Drawing.Point(6, 57)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(76, 15)
         Me.Label17.TabIndex = 2
@@ -260,7 +281,7 @@ Partial Class Fpasien
         Me.Bexit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Bexit.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bexit.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bexit.Location = New System.Drawing.Point(534, 395)
+        Me.Bexit.Location = New System.Drawing.Point(534, 429)
         Me.Bexit.Name = "Bexit"
         Me.Bexit.Size = New System.Drawing.Size(75, 23)
         Me.Bexit.TabIndex = 2
@@ -274,9 +295,9 @@ Partial Class Fpasien
         Me.GroupBox3.Controls.Add(Me.Label2)
         Me.GroupBox3.Controls.Add(Me.DGpasien)
         Me.GroupBox3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox3.Location = New System.Drawing.Point(12, 190)
+        Me.GroupBox3.Location = New System.Drawing.Point(12, 223)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(597, 202)
+        Me.GroupBox3.Size = New System.Drawing.Size(597, 200)
         Me.GroupBox3.TabIndex = 14
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Daftar Pasien"
@@ -313,13 +334,14 @@ Partial Class Fpasien
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.InactiveBorder
-        Me.ClientSize = New System.Drawing.Size(621, 430)
+        Me.ClientSize = New System.Drawing.Size(621, 457)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.Bexit)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Fpasien"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form Pasien"
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
@@ -352,4 +374,6 @@ Partial Class Fpasien
     Friend WithEvents Bdelete As System.Windows.Forms.Button
     Friend WithEvents Bedit As System.Windows.Forms.Button
     Friend WithEvents Bcetak As System.Windows.Forms.Button
+    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label3 As System.Windows.Forms.Label
 End Class

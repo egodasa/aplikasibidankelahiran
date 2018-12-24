@@ -24,6 +24,10 @@ Partial Class Fkelahiran
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Fkelahiran))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Tbulan = New System.Windows.Forms.TextBox()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Ttensi = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.Tkeadaan = New System.Windows.Forms.TextBox()
         Me.Tcara = New System.Windows.Forms.TextBox()
         Me.Tpenolong = New System.Windows.Forms.TextBox()
@@ -115,17 +119,9 @@ Partial Class Fkelahiran
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.KeluarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.KBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.KelahiranToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TambahanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DaftarKondisiBayiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DaftarAsuhanPadaBayiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.Ttensi = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Tbulan = New System.Windows.Forms.TextBox()
-        Me.Label15 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.Tumur, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -174,6 +170,42 @@ Partial Class Fkelahiran
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "IBU BERSALIN"
+        '
+        'Tbulan
+        '
+        Me.Tbulan.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tbulan.Location = New System.Drawing.Point(109, 273)
+        Me.Tbulan.Name = "Tbulan"
+        Me.Tbulan.Size = New System.Drawing.Size(167, 23)
+        Me.Tbulan.TabIndex = 46
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Location = New System.Drawing.Point(6, 276)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(96, 15)
+        Me.Label15.TabIndex = 45
+        Me.Label15.Text = "Bulan Kehamilan"
+        '
+        'Ttensi
+        '
+        Me.Ttensi.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Ttensi.Location = New System.Drawing.Point(108, 244)
+        Me.Ttensi.Name = "Ttensi"
+        Me.Ttensi.Size = New System.Drawing.Size(167, 23)
+        Me.Ttensi.TabIndex = 44
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(5, 247)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(35, 15)
+        Me.Label5.TabIndex = 43
+        Me.Label5.Text = "Tensi"
         '
         'Tkeadaan
         '
@@ -466,9 +498,9 @@ Partial Class Fkelahiran
         Me.Label18.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label18.Location = New System.Drawing.Point(6, 23)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(60, 15)
+        Me.Label18.Size = New System.Drawing.Size(46, 15)
         Me.Label18.TabIndex = 1
-        Me.Label18.Text = "No Pasien"
+        Me.Label18.Text = "No Reg"
         '
         'GroupBox3
         '
@@ -560,7 +592,7 @@ Partial Class Fkelahiran
         'Tlingkar
         '
         Me.Tlingkar.Location = New System.Drawing.Point(123, 133)
-        Me.Tlingkar.Maximum = New Decimal(New Integer() {500, 0, 0, 0})
+        Me.Tlingkar.Maximum = New Decimal(New Integer() {999999999, 0, 0, 0})
         Me.Tlingkar.Name = "Tlingkar"
         Me.Tlingkar.Size = New System.Drawing.Size(99, 23)
         Me.Tlingkar.TabIndex = 39
@@ -568,7 +600,7 @@ Partial Class Fkelahiran
         'Tpanjang
         '
         Me.Tpanjang.Location = New System.Drawing.Point(123, 105)
-        Me.Tpanjang.Maximum = New Decimal(New Integer() {500, 0, 0, 0})
+        Me.Tpanjang.Maximum = New Decimal(New Integer() {999999999, 0, 0, 0})
         Me.Tpanjang.Name = "Tpanjang"
         Me.Tpanjang.Size = New System.Drawing.Size(99, 23)
         Me.Tpanjang.TabIndex = 38
@@ -576,7 +608,7 @@ Partial Class Fkelahiran
         'Tberat
         '
         Me.Tberat.Location = New System.Drawing.Point(123, 76)
-        Me.Tberat.Maximum = New Decimal(New Integer() {500, 0, 0, 0})
+        Me.Tberat.Maximum = New Decimal(New Integer() {999999999, 0, 0, 0})
         Me.Tberat.Name = "Tberat"
         Me.Tberat.Size = New System.Drawing.Size(99, 23)
         Me.Tberat.TabIndex = 37
@@ -584,7 +616,7 @@ Partial Class Fkelahiran
         'Tanak
         '
         Me.Tanak.Location = New System.Drawing.Point(123, 47)
-        Me.Tanak.Maximum = New Decimal(New Integer() {500, 0, 0, 0})
+        Me.Tanak.Maximum = New Decimal(New Integer() {999999999, 0, 0, 0})
         Me.Tanak.Name = "Tanak"
         Me.Tanak.Size = New System.Drawing.Size(99, 23)
         Me.Tanak.TabIndex = 36
@@ -1038,7 +1070,7 @@ Partial Class Fkelahiran
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.DataToolStripMenuItem, Me.TambahanToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.DataToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1290, 24)
@@ -1049,52 +1081,27 @@ Partial Class Fkelahiran
         '
         Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.KeluarToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(35, 20)
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
         Me.FileToolStripMenuItem.Text = "File"
         '
         'KeluarToolStripMenuItem
         '
         Me.KeluarToolStripMenuItem.Name = "KeluarToolStripMenuItem"
-        Me.KeluarToolStripMenuItem.Size = New System.Drawing.Size(104, 22)
+        Me.KeluarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.KeluarToolStripMenuItem.Text = "Keluar"
         '
         'DataToolStripMenuItem
         '
-        Me.DataToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.KBToolStripMenuItem, Me.KelahiranToolStripMenuItem})
+        Me.DataToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.KelahiranToolStripMenuItem})
         Me.DataToolStripMenuItem.Name = "DataToolStripMenuItem"
-        Me.DataToolStripMenuItem.Size = New System.Drawing.Size(42, 20)
+        Me.DataToolStripMenuItem.Size = New System.Drawing.Size(43, 20)
         Me.DataToolStripMenuItem.Text = "Data"
-        '
-        'KBToolStripMenuItem
-        '
-        Me.KBToolStripMenuItem.Name = "KBToolStripMenuItem"
-        Me.KBToolStripMenuItem.Size = New System.Drawing.Size(118, 22)
-        Me.KBToolStripMenuItem.Text = "KB"
         '
         'KelahiranToolStripMenuItem
         '
         Me.KelahiranToolStripMenuItem.Name = "KelahiranToolStripMenuItem"
-        Me.KelahiranToolStripMenuItem.Size = New System.Drawing.Size(118, 22)
+        Me.KelahiranToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.KelahiranToolStripMenuItem.Text = "Kelahiran"
-        '
-        'TambahanToolStripMenuItem
-        '
-        Me.TambahanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DaftarKondisiBayiToolStripMenuItem, Me.DaftarAsuhanPadaBayiToolStripMenuItem})
-        Me.TambahanToolStripMenuItem.Name = "TambahanToolStripMenuItem"
-        Me.TambahanToolStripMenuItem.Size = New System.Drawing.Size(69, 20)
-        Me.TambahanToolStripMenuItem.Text = "Tambahan"
-        '
-        'DaftarKondisiBayiToolStripMenuItem
-        '
-        Me.DaftarKondisiBayiToolStripMenuItem.Name = "DaftarKondisiBayiToolStripMenuItem"
-        Me.DaftarKondisiBayiToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
-        Me.DaftarKondisiBayiToolStripMenuItem.Text = "Daftar Kondisi Bayi"
-        '
-        'DaftarAsuhanPadaBayiToolStripMenuItem
-        '
-        Me.DaftarAsuhanPadaBayiToolStripMenuItem.Name = "DaftarAsuhanPadaBayiToolStripMenuItem"
-        Me.DaftarAsuhanPadaBayiToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
-        Me.DaftarAsuhanPadaBayiToolStripMenuItem.Text = "Daftar Asuhan pada Bayi"
         '
         'Button1
         '
@@ -1124,42 +1131,6 @@ Partial Class Fkelahiran
         Me.Button2.Text = "KELUAR"
         Me.Button2.UseVisualStyleBackColor = False
         '
-        'Ttensi
-        '
-        Me.Ttensi.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Ttensi.Location = New System.Drawing.Point(108, 244)
-        Me.Ttensi.Name = "Ttensi"
-        Me.Ttensi.Size = New System.Drawing.Size(167, 23)
-        Me.Ttensi.TabIndex = 44
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(5, 247)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(35, 15)
-        Me.Label5.TabIndex = 43
-        Me.Label5.Text = "Tensi"
-        '
-        'Tbulan
-        '
-        Me.Tbulan.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tbulan.Location = New System.Drawing.Point(109, 273)
-        Me.Tbulan.Name = "Tbulan"
-        Me.Tbulan.Size = New System.Drawing.Size(167, 23)
-        Me.Tbulan.TabIndex = 46
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(6, 276)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(96, 15)
-        Me.Label15.TabIndex = 45
-        Me.Label15.Text = "Bulan Kehamilan"
-        '
         'Fkelahiran
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1178,6 +1149,7 @@ Partial Class Fkelahiran
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "Fkelahiran"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form Kelahiran"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
@@ -1266,11 +1238,7 @@ Partial Class Fkelahiran
     Friend WithEvents DataToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Bhapus As System.Windows.Forms.Button
-    Friend WithEvents TambahanToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents DaftarKondisiBayiToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents DaftarAsuhanPadaBayiToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents KBToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Tlain As System.Windows.Forms.NumericUpDown
     Friend WithEvents Ttransportasi As System.Windows.Forms.NumericUpDown
     Friend WithEvents Tobat As System.Windows.Forms.NumericUpDown

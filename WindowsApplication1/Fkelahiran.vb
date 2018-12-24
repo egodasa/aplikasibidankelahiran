@@ -133,7 +133,7 @@
     End Sub
 
     Private Sub Bsimpan_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bsimpan.Click
-        runQuery("insert into tbl_kelahiran (no_pasien, id_kelahiran, tgl_kelahiran, nm_suami,bulan,tensi penolongan_persalinan, cara_persalinan, umur_kehamilan, keadaan_ibu, biaya_persalinan, biaya_perawatan_kelas, biaya_perawatan_bayi, biaya_obat_obatan, biaya_cucian, biaya_akte_kelahiran, biaya_transportasi, biaya_lain, id_sat_umur ) values (" & Tno_pasien.Text &
+        runQuery("insert into tbl_kelahiran (no_pasien, id_kelahiran, tgl_kelahiran, nm_suami,bulan,tensi,penolongan_persalinan, cara_persalinan, umur_kehamilan, keadaan_ibu, biaya_persalinan, biaya_perawatan_kelas, biaya_perawatan_bayi, biaya_obat_obatan, biaya_cucian, biaya_akte_kelahiran, biaya_transportasi, biaya_lain, id_sat_umur ) values (" & Tno_pasien.Text &
                 ", '" & id_kelahiran &
                 "', '" & Ttgl_persalinan.Value.ToString("yyyy-MM-dd hh:mm:00") &
                 "', '" & Tnm_suami.Text &
@@ -224,19 +224,23 @@
         End If
     End Sub
 
-    Private Sub DaftarKondisiBayiToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DaftarKondisiBayiToolStripMenuItem.Click
+    Private Sub DaftarKondisiBayiToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Fkondisi_bayi.ShowDialog()
     End Sub
 
-    Private Sub DaftarAsuhanPadaBayiToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DaftarAsuhanPadaBayiToolStripMenuItem.Click
+    Private Sub DaftarAsuhanPadaBayiToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Fasuhan_bayi.ShowDialog()
     End Sub
 
-    Private Sub KBToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KBToolStripMenuItem.Click
+    Private Sub KBToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Fkb.ShowDialog()
     End Sub
 
     Private Sub Tpersalinan_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Ttransportasi.ValueChanged, Tpersalinan.ValueChanged, Tperawatan_bayi.ValueChanged, Tperawatan.ValueChanged, Tobat.ValueChanged, Tlain.ValueChanged, Tcucian.ValueChanged, Takte.ValueChanged
         Call hitungBayar()
+    End Sub
+
+    Private Sub GroupBox3_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GroupBox3.Enter
+
     End Sub
 End Class

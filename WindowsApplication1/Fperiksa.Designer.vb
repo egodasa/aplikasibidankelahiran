@@ -24,6 +24,10 @@ Partial Class Fperiksa
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Fperiksa))
         Me.Group_anc = New System.Windows.Forms.GroupBox()
+        Me.biaya = New System.Windows.Forms.TextBox()
+        Me.haidterakhir = New System.Windows.Forms.DateTimePicker()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.is_kb = New System.Windows.Forms.CheckBox()
         Me.Csat_umur = New System.Windows.Forms.ComboBox()
         Me.Csat_berat = New System.Windows.Forms.ComboBox()
@@ -85,8 +89,6 @@ Partial Class Fperiksa
         Me.KeluarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.KBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AsuhanBayiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.KondisiBayiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Bbatal = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Tkembalian = New System.Windows.Forms.TextBox()
@@ -94,6 +96,7 @@ Partial Class Fperiksa
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Tdibayarkan = New System.Windows.Forms.NumericUpDown()
         Me.Label26 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Group_anc.SuspendLayout()
         CType(Me.Tumr_kehamilan, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Tbrt_badan, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -114,6 +117,10 @@ Partial Class Fperiksa
         'Group_anc
         '
         Me.Group_anc.BackColor = System.Drawing.Color.MintCream
+        Me.Group_anc.Controls.Add(Me.biaya)
+        Me.Group_anc.Controls.Add(Me.haidterakhir)
+        Me.Group_anc.Controls.Add(Me.Label11)
+        Me.Group_anc.Controls.Add(Me.Label8)
         Me.Group_anc.Controls.Add(Me.is_kb)
         Me.Group_anc.Controls.Add(Me.Csat_umur)
         Me.Group_anc.Controls.Add(Me.Csat_berat)
@@ -136,10 +143,42 @@ Partial Class Fperiksa
         Me.Group_anc.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Group_anc.Location = New System.Drawing.Point(621, 203)
         Me.Group_anc.Name = "Group_anc"
-        Me.Group_anc.Size = New System.Drawing.Size(413, 246)
+        Me.Group_anc.Size = New System.Drawing.Size(413, 303)
         Me.Group_anc.TabIndex = 0
         Me.Group_anc.TabStop = False
         Me.Group_anc.Text = "KUNJUNGAN ANC"
+        '
+        'biaya
+        '
+        Me.biaya.Location = New System.Drawing.Point(197, 271)
+        Me.biaya.Name = "biaya"
+        Me.biaya.Size = New System.Drawing.Size(100, 23)
+        Me.biaya.TabIndex = 37
+        '
+        'haidterakhir
+        '
+        Me.haidterakhir.Location = New System.Drawing.Point(198, 241)
+        Me.haidterakhir.Name = "haidterakhir"
+        Me.haidterakhir.Size = New System.Drawing.Size(200, 23)
+        Me.haidterakhir.TabIndex = 40
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(6, 272)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(102, 15)
+        Me.Label11.TabIndex = 36
+        Me.Label11.Text = "Biaya Periksa ANC"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(6, 241)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(75, 15)
+        Me.Label8.TabIndex = 39
+        Me.Label8.Text = "Haid terakhir"
         '
         'is_kb
         '
@@ -276,9 +315,9 @@ Partial Class Fperiksa
         Me.Label6.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(6, 114)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(186, 15)
+        Me.Label6.Size = New System.Drawing.Size(183, 15)
         Me.Label6.TabIndex = 5
-        Me.Label6.Text = "HPHT (hari pertama haid terakhir)"
+        Me.Label6.Text = "HPHT (hari pertama hari terakhir)"
         '
         'Label5
         '
@@ -656,9 +695,9 @@ Partial Class Fperiksa
         Me.Label18.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label18.Location = New System.Drawing.Point(6, 29)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(60, 15)
+        Me.Label18.Size = New System.Drawing.Size(46, 15)
         Me.Label18.TabIndex = 1
-        Me.Label18.Text = "No Pasien"
+        Me.Label18.Text = "No Reg"
         '
         'Bexit
         '
@@ -726,9 +765,9 @@ Partial Class Fperiksa
         Me.Bsimpan.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Bsimpan.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bsimpan.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bsimpan.Location = New System.Drawing.Point(554, 20)
+        Me.Bsimpan.Location = New System.Drawing.Point(449, 23)
         Me.Bsimpan.Name = "Bsimpan"
-        Me.Bsimpan.Size = New System.Drawing.Size(172, 67)
+        Me.Bsimpan.Size = New System.Drawing.Size(154, 25)
         Me.Bsimpan.TabIndex = 13
         Me.Bsimpan.Text = "SIMPAN PEMERIKSAAN"
         Me.Bsimpan.UseVisualStyleBackColor = False
@@ -758,28 +797,16 @@ Partial Class Fperiksa
         '
         'DataToolStripMenuItem
         '
-        Me.DataToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.KBToolStripMenuItem, Me.AsuhanBayiToolStripMenuItem, Me.KondisiBayiToolStripMenuItem})
+        Me.DataToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.KBToolStripMenuItem})
         Me.DataToolStripMenuItem.Name = "DataToolStripMenuItem"
-        Me.DataToolStripMenuItem.Size = New System.Drawing.Size(94, 20)
+        Me.DataToolStripMenuItem.Size = New System.Drawing.Size(43, 20)
         Me.DataToolStripMenuItem.Text = "Data"
         '
         'KBToolStripMenuItem
         '
         Me.KBToolStripMenuItem.Name = "KBToolStripMenuItem"
-        Me.KBToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.KBToolStripMenuItem.Size = New System.Drawing.Size(88, 22)
         Me.KBToolStripMenuItem.Text = "KB"
-        '
-        'AsuhanBayiToolStripMenuItem
-        '
-        Me.AsuhanBayiToolStripMenuItem.Name = "AsuhanBayiToolStripMenuItem"
-        Me.AsuhanBayiToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.AsuhanBayiToolStripMenuItem.Text = "Asuhan bayi"
-        '
-        'KondisiBayiToolStripMenuItem
-        '
-        Me.KondisiBayiToolStripMenuItem.Name = "KondisiBayiToolStripMenuItem"
-        Me.KondisiBayiToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.KondisiBayiToolStripMenuItem.Text = "Kondisi bayi"
         '
         'Bbatal
         '
@@ -788,9 +815,9 @@ Partial Class Fperiksa
         Me.Bbatal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Bbatal.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bbatal.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bbatal.Location = New System.Drawing.Point(752, 20)
+        Me.Bbatal.Location = New System.Drawing.Point(449, 51)
         Me.Bbatal.Name = "Bbatal"
-        Me.Bbatal.Size = New System.Drawing.Size(154, 67)
+        Me.Bbatal.Size = New System.Drawing.Size(100, 43)
         Me.Bbatal.TabIndex = 30
         Me.Bbatal.Text = "BATAL/ULANG PEMERIKSAAN"
         Me.Bbatal.UseVisualStyleBackColor = False
@@ -798,6 +825,7 @@ Partial Class Fperiksa
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.MintCream
+        Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.Tkembalian)
         Me.GroupBox1.Controls.Add(Me.Bbatal)
         Me.GroupBox1.Controls.Add(Me.Label25)
@@ -808,9 +836,9 @@ Partial Class Fperiksa
         Me.GroupBox1.Controls.Add(Me.Label13)
         Me.GroupBox1.Controls.Add(Me.Label26)
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 455)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 503)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(912, 98)
+        Me.GroupBox1.Size = New System.Drawing.Size(912, 89)
         Me.GroupBox1.TabIndex = 34
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "PEMBAYARAN"
@@ -862,12 +890,21 @@ Partial Class Fperiksa
         Me.Label26.TabIndex = 16
         Me.Label26.Text = "Dibayar"
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(771, 9)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(111, 23)
+        Me.Button1.TabIndex = 36
+        Me.Button1.Text = "cetak berobat"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'Fperiksa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.InactiveBorder
-        Me.ClientSize = New System.Drawing.Size(1045, 565)
+        Me.ClientSize = New System.Drawing.Size(1045, 604)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.GroupBox3)
@@ -877,6 +914,7 @@ Partial Class Fperiksa
         Me.Controls.Add(Me.Group_anc)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Fperiksa"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form Pemeriksaan"
         Me.Group_anc.ResumeLayout(False)
         Me.Group_anc.PerformLayout()
@@ -949,8 +987,6 @@ Partial Class Fperiksa
     Friend WithEvents FileToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents KeluarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DataToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents AsuhanBayiToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents KondisiBayiToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Bbatal As System.Windows.Forms.Button
     Friend WithEvents Ttotal_harga As System.Windows.Forms.TextBox
     Friend WithEvents Label13 As System.Windows.Forms.Label
@@ -974,4 +1010,9 @@ Partial Class Fperiksa
     Friend WithEvents KBToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Csat_tkn As System.Windows.Forms.ComboBox
     Friend WithEvents is_kb As System.Windows.Forms.CheckBox
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents haidterakhir As System.Windows.Forms.DateTimePicker
+    Friend WithEvents biaya As System.Windows.Forms.TextBox
+    Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class

@@ -242,6 +242,7 @@ Partial Class Fpengguna
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Bexit)
         Me.Name = "Fpengguna"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Kelola Pengguna"
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)

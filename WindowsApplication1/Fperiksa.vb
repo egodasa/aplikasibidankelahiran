@@ -38,6 +38,7 @@
         Csat_berat.Text = "Kg"
         Csat_tinggi.Text = "Cm"
         Csat_umur.Text = "Minggu"
+        biaya.Clear()
     End Sub
     Sub resetTerapi()
         Call fetchComboboxData("select * from daftar_obat", Cobat, "Nama_Obat", "Id_Obat")
@@ -138,12 +139,12 @@
         If is_kb.Checked = False Then
             waktu_kb = Tkb.Value.ToString("yyyy-MM-dd")
         Else
-            waktu_kb = ""
+            waktu_kb = Tkb.Value.ToString("yyyy-MM-dd")
         End If
         runQuery("insert into tbl_periksa (id_periksa, no_pasien,keluhan, tensi, id_sat_tensi) values ('" & id_periksa & "'," & Tno_pasien.Text & ",'" & Tkeluhan.Text & "','" & Ttkn_darah.Text & "/" & Ttkn_darah1.Text & "'," & Csat_tkn.SelectedValue & ")")
         If is_anc.Checked = True Then
-            runQuery("insert into tbl_anc (id_sat_tinggi, id_sat_berat, id_sat_umur, id_periksa,nm_suami,tinggi_bdn,berat_bdn,hpht,htp,umur_khmln,kb_terakhir) values (" & Csat_tinggi.SelectedValue & "," & Csat_berat.SelectedValue & "," & Csat_umur.SelectedValue & ",'" & id_periksa & "','" & Tnm_suami.Text & "'," & Ttgi_badan.Text & "," & Tbrt_badan.Text &
-                     ", '" & Thpht.Value.ToString("yyyy-MM-dd") & "', '" & Thtp.Value.ToString("yyyy-MM-dd") & "'," & Tumr_kehamilan.Text & ", '" & Tkb.Value.ToString("yyyy-MM-dd") & "')")
+            runQuery("insert into tbl_anc (id_sat_tinggi, id_sat_berat, id_sat_umur, id_periksa,nm_suami,tinggi_bdn,berat_bdn,hpht,htp,umur_khmln,kb_terakhir,haid_terakhir,biaya_periksa) values (" & Csat_tinggi.SelectedValue & "," & Csat_berat.SelectedValue & "," & Csat_umur.SelectedValue & ",'" & id_periksa & "','" & Tnm_suami.Text & "'," & Ttgi_badan.Text & "," & Tbrt_badan.Text &
+                     ", '" & Thpht.Value.ToString("yyyy-MM-dd") & "', '" & Thtp.Value.ToString("yyyy-MM-dd") & "'," & Tumr_kehamilan.Text & ", '" & Tkb.Value.ToString("yyyy-MM-dd") & "','" & haidterakhir.Value.ToString("yyyy-MM-dd") & "'," & biaya.Text & ")")
         End If
         Call resetId()
         Call resetDataPasien()
@@ -237,7 +238,7 @@
         Fpasien.ShowDialog()
     End Sub
 
-    Private Sub AsuhanBayiToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AsuhanBayiToolStripMenuItem.Click
+    Private Sub AsuhanBayiToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
     End Sub
 
@@ -304,5 +305,17 @@
 
     Private Sub Thpht_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Thpht.ValueChanged
         Thtp.Value = Thpht.Value.AddDays(7).AddMonths(-3).AddYears(1)
+    End Sub
+
+    Private Sub GroupBox1_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GroupBox1.Enter
+
+    End Sub
+
+    Private Sub Label8_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label8.Click
+
+    End Sub
+
+    Private Sub DataToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DataToolStripMenuItem.Click
+
     End Sub
 End Class

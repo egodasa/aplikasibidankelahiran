@@ -3,8 +3,8 @@
         FRlaporan.laporanRekapPasien(Cnm_pasien.SelectedValue, Cjenis1.Text)
     End Sub
 
-    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
-        FRlaporan.laporanRekapKeseluruhan(Cjenis2.Text, Twaktu.Value)
+    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
     End Sub
 
     Private Sub Flaporan_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -14,5 +14,21 @@
     Private Sub Bexit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bexit.Click
         Fmenu.Show()
         Me.Close()
+    End Sub
+
+    Private Sub Twaktu_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
+    End Sub
+
+    Private Sub DateTimePicker1_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
+    End Sub
+
+    Private Sub GroupBox1_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GroupBox1.Enter
+
+    End Sub
+
+    Private Sub Cjenis2_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
     End Sub
 End Class
