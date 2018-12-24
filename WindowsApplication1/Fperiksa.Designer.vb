@@ -91,12 +91,12 @@ Partial Class Fperiksa
         Me.KBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Bbatal = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Tkembalian = New System.Windows.Forms.TextBox()
         Me.Label25 = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Tdibayarkan = New System.Windows.Forms.NumericUpDown()
         Me.Label26 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Group_anc.SuspendLayout()
         CType(Me.Tumr_kehamilan, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Tbrt_badan, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -152,7 +152,7 @@ Partial Class Fperiksa
         '
         Me.biaya.Location = New System.Drawing.Point(197, 271)
         Me.biaya.Name = "biaya"
-        Me.biaya.Size = New System.Drawing.Size(100, 23)
+        Me.biaya.Size = New System.Drawing.Size(200, 23)
         Me.biaya.TabIndex = 37
         '
         'haidterakhir
@@ -706,7 +706,7 @@ Partial Class Fperiksa
         Me.Bexit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Bexit.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bexit.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bexit.Location = New System.Drawing.Point(948, 530)
+        Me.Bexit.Location = New System.Drawing.Point(948, 517)
         Me.Bexit.Name = "Bexit"
         Me.Bexit.Size = New System.Drawing.Size(85, 23)
         Me.Bexit.TabIndex = 7
@@ -765,7 +765,7 @@ Partial Class Fperiksa
         Me.Bsimpan.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Bsimpan.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bsimpan.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bsimpan.Location = New System.Drawing.Point(449, 23)
+        Me.Bsimpan.Location = New System.Drawing.Point(438, 23)
         Me.Bsimpan.Name = "Bsimpan"
         Me.Bsimpan.Size = New System.Drawing.Size(154, 25)
         Me.Bsimpan.TabIndex = 13
@@ -815,9 +815,9 @@ Partial Class Fperiksa
         Me.Bbatal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Bbatal.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bbatal.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bbatal.Location = New System.Drawing.Point(449, 51)
+        Me.Bbatal.Location = New System.Drawing.Point(622, 510)
         Me.Bbatal.Name = "Bbatal"
-        Me.Bbatal.Size = New System.Drawing.Size(100, 43)
+        Me.Bbatal.Size = New System.Drawing.Size(188, 32)
         Me.Bbatal.TabIndex = 30
         Me.Bbatal.Text = "BATAL/ULANG PEMERIKSAAN"
         Me.Bbatal.UseVisualStyleBackColor = False
@@ -827,21 +827,34 @@ Partial Class Fperiksa
         Me.GroupBox1.BackColor = System.Drawing.Color.MintCream
         Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.Tkembalian)
-        Me.GroupBox1.Controls.Add(Me.Bbatal)
         Me.GroupBox1.Controls.Add(Me.Label25)
         Me.GroupBox1.Controls.Add(Me.Label23)
         Me.GroupBox1.Controls.Add(Me.Tdibayarkan)
-        Me.GroupBox1.Controls.Add(Me.Bsimpan)
         Me.GroupBox1.Controls.Add(Me.Ttotal_harga)
         Me.GroupBox1.Controls.Add(Me.Label13)
         Me.GroupBox1.Controls.Add(Me.Label26)
+        Me.GroupBox1.Controls.Add(Me.Bsimpan)
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 503)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 455)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(912, 89)
+        Me.GroupBox1.Size = New System.Drawing.Size(603, 99)
         Me.GroupBox1.TabIndex = 34
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "PEMBAYARAN"
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button1.Location = New System.Drawing.Point(438, 64)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(154, 22)
+        Me.Button1.TabIndex = 34
+        Me.Button1.Text = "CETAK BUKTI"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Tkembalian
         '
@@ -890,24 +903,16 @@ Partial Class Fperiksa
         Me.Label26.TabIndex = 16
         Me.Label26.Text = "Dibayar"
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(771, 9)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(111, 23)
-        Me.Button1.TabIndex = 36
-        Me.Button1.Text = "cetak berobat"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'Fperiksa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.InactiveBorder
-        Me.ClientSize = New System.Drawing.Size(1045, 604)
+        Me.ClientSize = New System.Drawing.Size(1045, 560)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.GroupBox3)
+        Me.Controls.Add(Me.Bbatal)
         Me.Controls.Add(Me.Bexit)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox4)

@@ -1,6 +1,7 @@
 ﻿Public Class Fperiksa
     Dim data_pasien, obat_beli, data_obat As New DataTable
     Dim id_periksa As String = DateTime.Now.ToString("ddMMyyhhmmssffff")
+    Public id_periksa_siap As String
     Dim DTobat As New DataTable
     Dim cari_obat As DataTable
     Dim total_harga As Integer = 0
@@ -136,6 +137,7 @@
     End Sub
 
     Private Sub Bsimpan_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bsimpan.Click
+        id_periksa_siap = id_periksa
         If is_kb.Checked = False Then
             waktu_kb = Tkb.Value.ToString("yyyy-MM-dd")
         Else
@@ -198,6 +200,9 @@
             For x As Integer = 0 To DGobat_beli.Rows.Count - 1
                 total_harga += DGobat_beli.Rows(x).Cells("Total_Harga").Value
             Next
+            If biaya.Text <> "" Then
+                total_harga += Val(biaya.Text)
+            End If
             Ttotal_harga.Text = Format(total_harga, "Rp,   ##,##0")
             Call fetchComboboxData("select * from daftar_obat", Cobat, "Nama_Obat", "Id_Obat")
             data_obat = Cobat.DataSource
@@ -307,15 +312,14 @@
         Thtp.Value = Thpht.Value.AddDays(7).AddMonths(-3).AddYears(1)
     End Sub
 
-    Private Sub GroupBox1_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GroupBox1.Enter
-
+    Private Sub biaya_Leave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles biaya.Leave
+        If biaya.Text <> "" Then
+            total_harga += Val(biaya.Text)
+        End If
+        Ttotal_harga.Text = Format(total_harga, "Rp,   ##,##0")
     End Sub
 
-    Private Sub Label8_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label8.Click
-
-    End Sub
-
-    Private Sub DataToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DataToolStripMenuItem.Click
-
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        Fcetak_bukti.Show()
     End Sub
 End Class
