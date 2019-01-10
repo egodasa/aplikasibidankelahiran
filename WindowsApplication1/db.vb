@@ -7,13 +7,13 @@ Module db
     Public dr As MySqlDataReader
     Public str As String
     Public username, jenis_pengguna As String
-    Public _DIR As String = "E:\abdullahfauzanassalam_SKRIPSI\aplikasibidankelahiran\WindowsApplication1\"
+    Public _DIR As String = "G:\Program\visual_basic\skprsifauzan\WindowsApplication1\"
     Sub logout()
         username = Nothing
         jenis_pengguna = Nothing
     End Sub
     Sub setKoneksi()
-        str = "Server=localhost;uid=root;pwd=;database=db_bidan;port=3306"
+        str = "Server=localhost;uid=root;pwd=mysql;database=db_bidan_revisi;port=3306"
         kon = New MySqlConnection(str)
         If kon.State = ConnectionState.Closed Then
             Try

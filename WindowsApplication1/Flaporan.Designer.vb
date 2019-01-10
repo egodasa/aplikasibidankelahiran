@@ -32,8 +32,6 @@ Partial Class Flaporan
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Bexit = New System.Windows.Forms.Button()
-        Me.Cnm_pasien = New System.Windows.Forms.ComboBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -151,23 +149,6 @@ Partial Class Flaporan
         Me.Bexit.Text = "KELUAR"
         Me.Bexit.UseVisualStyleBackColor = False
         '
-        'Cnm_pasien
-        '
-        Me.Cnm_pasien.FormattingEnabled = True
-        Me.Cnm_pasien.Location = New System.Drawing.Point(186, 19)
-        Me.Cnm_pasien.Name = "Cnm_pasien"
-        Me.Cnm_pasien.Size = New System.Drawing.Size(176, 21)
-        Me.Cnm_pasien.TabIndex = 22
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(6, 19)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(70, 13)
-        Me.Label1.TabIndex = 21
-        Me.Label1.Text = "Nama Pasien"
-        '
         'DateTimePicker1
         '
         Me.DateTimePicker1.Location = New System.Drawing.Point(186, 52)
@@ -218,14 +199,12 @@ Partial Class Flaporan
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.Cnm_pasien)
         Me.GroupBox2.Controls.Add(Me.Button4)
         Me.GroupBox2.Controls.Add(Me.DateTimePicker1)
         Me.GroupBox2.Controls.Add(Me.Button1)
         Me.GroupBox2.Controls.Add(Me.Cjenis3)
         Me.GroupBox2.Controls.Add(Me.Label3)
         Me.GroupBox2.Controls.Add(Me.Button2)
-        Me.GroupBox2.Controls.Add(Me.Label1)
         Me.GroupBox2.Controls.Add(Me.Label5)
         Me.GroupBox2.Location = New System.Drawing.Point(10, 113)
         Me.GroupBox2.Name = "GroupBox2"
@@ -263,8 +242,6 @@ Partial Class Flaporan
     Friend WithEvents Cjenis2 As System.Windows.Forms.ComboBox
     Friend WithEvents Twaktu As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents Cnm_pasien As System.Windows.Forms.ComboBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
     Friend WithEvents Button4 As System.Windows.Forms.Button
     Friend WithEvents Label3 As System.Windows.Forms.Label
