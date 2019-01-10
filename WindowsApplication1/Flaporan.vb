@@ -45,4 +45,7 @@
     Private Sub Button4_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
         FRlaporan.laporanRekapKeseluruhan(Cjenis3.Text, DateTimePicker1.Value)
     End Sub
+
+    Private Sub Cjenis3_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cjenis3.SelectedIndexChanged
+    End Sub
 End Class

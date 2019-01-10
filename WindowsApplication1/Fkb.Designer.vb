@@ -72,6 +72,8 @@ Partial Class Fkb
         Me.Tdibayarkan = New System.Windows.Forms.NumericUpDown()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.Ttkn_darah1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -89,6 +91,8 @@ Partial Class Fkb
         'GroupBox2
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.MintCream
+        Me.GroupBox2.Controls.Add(Me.TextBox1)
+        Me.GroupBox2.Controls.Add(Me.Label1)
         Me.GroupBox2.Controls.Add(Me.Talamat)
         Me.GroupBox2.Controls.Add(Me.Tpekerjaan)
         Me.GroupBox2.Controls.Add(Me.Cjk)
@@ -106,7 +110,7 @@ Partial Class Fkb
         Me.GroupBox2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.Location = New System.Drawing.Point(12, 27)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(304, 237)
+        Me.GroupBox2.Size = New System.Drawing.Size(304, 246)
         Me.GroupBox2.TabIndex = 7
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "PASIEN"
@@ -474,9 +478,9 @@ Partial Class Fkb
         Me.GroupBox3.BackColor = System.Drawing.Color.MintCream
         Me.GroupBox3.Controls.Add(Me.DGrekap)
         Me.GroupBox3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox3.Location = New System.Drawing.Point(12, 270)
+        Me.GroupBox3.Location = New System.Drawing.Point(12, 279)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(614, 136)
+        Me.GroupBox3.Size = New System.Drawing.Size(614, 127)
         Me.GroupBox3.TabIndex = 11
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "REKAP PEMERIKSAAN KB"
@@ -603,6 +607,22 @@ Partial Class Fkb
         Me.Label26.TabIndex = 16
         Me.Label26.Text = "Dibayar"
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(10, 222)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(72, 15)
+        Me.Label1.TabIndex = 17
+        Me.Label1.Text = "Nama Bidan"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(112, 217)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(170, 23)
+        Me.TextBox1.TabIndex = 18
+        '
         'Fkb
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -688,4 +708,6 @@ Partial Class Fkb
     Friend WithEvents Ttkn_darah1 As System.Windows.Forms.NumericUpDown
     Friend WithEvents Ttkn_darah As System.Windows.Forms.NumericUpDown
     Friend WithEvents Lstok As System.Windows.Forms.Label
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 End Class

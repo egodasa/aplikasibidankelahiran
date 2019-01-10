@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 23 Des 2018 pada 09.43
+-- Waktu pembuatan: 09 Jan 2019 pada 14.17
 -- Versi server: 10.1.32-MariaDB
 -- Versi PHP: 5.6.36
 
@@ -49,11 +49,11 @@ CREATE TABLE `daftar_kelahiran` (
 ,`bulan` int(11)
 ,`umur` bigint(21)
 ,`tensi` varchar(12)
-,`Nama_Pasien` varchar(100)
-,`Alamat` varchar(250)
+,`Nama_Pasien` varchar(50)
+,`Alamat` varchar(50)
 ,`Id_Kelahiran` varchar(50)
 ,`Tanggal_Kelahiran` datetime
-,`Nama_Suami` varchar(100)
+,`Nama_Suami` varchar(50)
 ,`Penolongan_Persalinan` text
 ,`Cara_Persalinan` text
 ,`Keadaan_Ibu` text
@@ -111,12 +111,12 @@ CREATE TABLE `daftar_obat_beli` (
 --
 CREATE TABLE `daftar_pasien` (
 `No_Pasien` int(11)
-,`Nama_Pasien` varchar(100)
+,`Nama_Pasien` varchar(50)
 ,`umur` bigint(21)
 ,`Tanggal_Lahir` date
 ,`Jenis_Kelamin` enum('Laki-laki','Perempuan')
-,`Pekerjaan` varchar(100)
-,`Alamat` varchar(250)
+,`Pekerjaan` varchar(50)
+,`Alamat` varchar(50)
 );
 
 -- --------------------------------------------------------
@@ -128,12 +128,12 @@ CREATE TABLE `daftar_pasien` (
 CREATE TABLE `daftar_pasien_revisi` (
 `no_reg` int(11)
 ,`tgl_daftar` timestamp
-,`Nama_Pasien` varchar(100)
+,`Nama_Pasien` varchar(50)
 ,`umur` bigint(21)
 ,`Tanggal_Lahir` date
 ,`Jenis_Kelamin` enum('Laki-laki','Perempuan')
-,`Pekerjaan` varchar(100)
-,`Alamat` varchar(250)
+,`Pekerjaan` varchar(50)
+,`Alamat` varchar(50)
 );
 
 -- --------------------------------------------------------
@@ -163,11 +163,11 @@ CREATE TABLE `laporan_anc` (
 ,`no_pasien` int(11)
 ,`anak_ke` int(11)
 ,`tensi` varchar(9)
-,`nm_pasien` varchar(100)
+,`nm_pasien` varchar(50)
 ,`Id_Periksa` varchar(50)
-,`Nama_Suami` varchar(100)
+,`Nama_Suami` varchar(50)
 ,`umur` bigint(21)
-,`alamat` varchar(250)
+,`alamat` varchar(50)
 ,`Tinggi_Badan` varchar(37)
 ,`Berat_Badan` varchar(37)
 ,`diagnosa_anc` varchar(31)
@@ -187,8 +187,8 @@ CREATE TABLE `laporan_bayi_lahir` (
 `Id_Kelahiran` varchar(50)
 ,`Tanggal_Kelahiran` datetime
 ,`No_Pasien` int(11)
-,`Nama_Pasien` varchar(100)
-,`Nama_Bayi` varchar(100)
+,`Nama_Pasien` varchar(50)
+,`Nama_Bayi` varchar(50)
 ,`Waktu_Lahir` datetime
 ,`Anak_Ke` int(11)
 ,`Berat_Lahir` varchar(42)
@@ -208,8 +208,8 @@ CREATE TABLE `laporan_bayi_lahir` (
 --
 CREATE TABLE `laporan_berobat_umum` (
 `Id_Periksa` varchar(50)
-,`Nama_Pasien` varchar(100)
-,`Alamat` varchar(250)
+,`Nama_Pasien` varchar(50)
+,`Alamat` varchar(50)
 ,`Tanggal_Periksa` timestamp
 ,`No_Pasien` int(11)
 ,`umur` bigint(21)
@@ -255,12 +255,12 @@ CREATE TABLE `laporan_harian` (
 --
 CREATE TABLE `laporan_kb` (
 `Id_Periksa` varchar(50)
-,`Nama_Pasien` varchar(100)
-,`nm_suami` varchar(100)
+,`Nama_Pasien` varchar(50)
+,`nm_suami` varchar(50)
 ,`Tanggal_Periksa` timestamp
 ,`No_Pasien` int(11)
 ,`Tinggi_Badan` varchar(37)
-,`Alamat` varchar(250)
+,`Alamat` varchar(50)
 ,`umur` bigint(21)
 ,`Berat_Badan` varchar(42)
 ,`Keluhan` text
@@ -310,8 +310,8 @@ CREATE TABLE `laporan_pemasukan_anc` (
 --
 CREATE TABLE `laporan_rekap_pasien` (
 `Id_Periksa` varchar(50)
-,`Nama_Pasien` varchar(100)
-,`Alamat` varchar(250)
+,`Nama_Pasien` varchar(50)
+,`Alamat` varchar(50)
 ,`Tanggal_Periksa` timestamp
 ,`No_Pasien` int(11)
 ,`umur` bigint(21)
@@ -406,7 +406,7 @@ CREATE TABLE `pemasukan_kelahiran` (
 CREATE TABLE `tbl_anc` (
   `id_periksa` varchar(50) NOT NULL,
   `id_anc` int(11) NOT NULL,
-  `nm_suami` varchar(100) NOT NULL,
+  `nm_suami` varchar(50) NOT NULL,
   `tinggi_bdn` smallint(6) NOT NULL,
   `id_sat_tinggi` int(11) NOT NULL DEFAULT '12',
   `berat_bdn` smallint(6) NOT NULL,
@@ -418,17 +418,20 @@ CREATE TABLE `tbl_anc` (
   `kb_terakhir` date NOT NULL,
   `anak_ke` int(11) NOT NULL DEFAULT '1',
   `haid_terakhir` date NOT NULL,
-  `biaya_periksa` int(11) NOT NULL
+  `biaya_periksa` int(11) NOT NULL,
+  `nama_bidan` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `tbl_anc`
 --
 
-INSERT INTO `tbl_anc` (`id_periksa`, `id_anc`, `nm_suami`, `tinggi_bdn`, `id_sat_tinggi`, `berat_bdn`, `id_sat_berat`, `hpht`, `htp`, `umur_khmln`, `id_sat_umur`, `kb_terakhir`, `anak_ke`, `haid_terakhir`, `biaya_periksa`) VALUES
-('0212180408514738', 1, 'riki', 157, 12, 52, 1, '2018-03-18', '2018-12-25', 9, 19, '2018-12-02', 1, '0000-00-00', 0),
-('2312180237309645', 2, 'afdal', 150, 12, 50, 1, '2018-12-25', '2019-10-01', 12, 18, '2018-12-23', 1, '2018-12-01', 0),
-('2312180248505043', 3, 'david', 150, 12, 50, 1, '2018-12-27', '2019-10-03', 12, 18, '2018-12-23', 1, '2018-12-18', 20000);
+INSERT INTO `tbl_anc` (`id_periksa`, `id_anc`, `nm_suami`, `tinggi_bdn`, `id_sat_tinggi`, `berat_bdn`, `id_sat_berat`, `hpht`, `htp`, `umur_khmln`, `id_sat_umur`, `kb_terakhir`, `anak_ke`, `haid_terakhir`, `biaya_periksa`, `nama_bidan`) VALUES
+('0212180408514738', 1, 'riki', 157, 12, 52, 1, '2018-03-18', '2018-12-25', 9, 19, '2018-12-02', 1, '0000-00-00', 0, ''),
+('2312180237309645', 2, 'afdal', 150, 12, 50, 1, '2018-12-25', '2019-10-01', 12, 18, '2018-12-23', 1, '2018-12-01', 0, ''),
+('2312180248505043', 3, 'david', 150, 12, 50, 1, '2018-12-27', '2019-10-03', 12, 18, '2018-12-23', 1, '2018-12-18', 20000, ''),
+('2512180957082975', 4, 'udin', 156, 12, 56, 1, '2018-12-12', '2019-09-19', 9, 18, '2018-12-25', 1, '2018-12-01', 20000, ''),
+('2512180211454442', 5, 'afdal', 160, 12, 56, 1, '2018-12-04', '2019-09-11', 10, 18, '2018-12-25', 1, '2018-12-01', 20000, '');
 
 -- --------------------------------------------------------
 
@@ -460,7 +463,7 @@ INSERT INTO `tbl_asuhan_bayi` (`id_asuhan`, `nm_asuhan`) VALUES
 CREATE TABLE `tbl_bayi_lahir` (
   `id_bayi` int(11) NOT NULL,
   `id_kelahiran` varchar(50) NOT NULL,
-  `nm_bayi` varchar(100) NOT NULL,
+  `nm_bayi` varchar(50) NOT NULL,
   `waktu_lahir` datetime DEFAULT NULL,
   `anak_ke` int(11) NOT NULL,
   `berat_lahir` int(11) NOT NULL,
@@ -481,7 +484,9 @@ CREATE TABLE `tbl_bayi_lahir` (
 
 INSERT INTO `tbl_bayi_lahir` (`id_bayi`, `id_kelahiran`, `nm_bayi`, `waktu_lahir`, `anak_ke`, `berat_lahir`, `id_sat_berat`, `panjang_badan`, `id_sat_panjang`, `lingkar_kepala`, `id_sat_lingkar`, `jk`, `asuhan_bayi_saat_lahir`, `keterangan`, `kondisi_bayi`) VALUES
 (1, 'K636793640819359454', 'sintia dewi', '2018-11-26 04:14:43', 4, 500, 4, 49, 12, 34, 12, 'Perempuan', 'Inisasi Menyusu Dini (IMD) dalam 1 jam pertama \r\nSuntikan Vitamin K1 \r\nSalep mata antibiotika profilaksis \r\nImunisasi HBO \r\n', '', 'Segera menangis \r\nSeluruh tubuh kemerahan \r\n'),
-(2, 'K636793807693117541', 'arif permana', '2018-12-02 08:52:50', 1, 500, 4, 57, 12, 24, 12, 'Laki-laki', 'Inisasi Menyusu Dini (IMD) dalam 1 jam pertama \r\nSuntikan Vitamin K1 \r\nSalep mata antibiotika profilaksis \r\nImunisasi HBO \r\n', '', 'Segera menangis \r\nSeluruh tubuh kemerahan \r\n');
+(2, 'K636793807693117541', 'arif permana', '2018-12-02 08:52:50', 1, 500, 4, 57, 12, 24, 12, 'Laki-laki', 'Inisasi Menyusu Dini (IMD) dalam 1 jam pertama \r\nSuntikan Vitamin K1 \r\nSalep mata antibiotika profilaksis \r\nImunisasi HBO \r\n', '', 'Segera menangis \r\nSeluruh tubuh kemerahan \r\n'),
+(3, 'K636813462385756964', 'aliudin', '2018-12-25 02:50:39', 1, 3500, 4, 45, 12, 39, 12, 'Laki-laki', 'Inisasi Menyusu Dini (IMD) dalam 1 jam pertama \r\nSuntikan Vitamin K1 \r\nSalep mata antibiotika profilaksis \r\nImunisasi HBO \r\n', '', 'Segera menangis \r\nMenangis beberapa saat \r\nTidak menangis \r\nSeluruh tubuh kemerahan \r\n'),
+(4, 'K636813462385756964', 'zainudin', '2018-12-25 02:57:11', 2, 3000, 4, 45, 12, 35, 12, 'Laki-laki', 'Inisasi Menyusu Dini (IMD) dalam 1 jam pertama \r\nSuntikan Vitamin K1 \r\nSalep mata antibiotika profilaksis \r\nImunisasi HBO \r\n', '', 'Segera menangis \r\nMenangis beberapa saat \r\nTidak menangis \r\nSeluruh tubuh kemerahan \r\n');
 
 -- --------------------------------------------------------
 
@@ -539,7 +544,7 @@ CREATE TABLE `tbl_kelahiran` (
   `no_pasien` int(11) NOT NULL,
   `id_kelahiran` varchar(50) NOT NULL,
   `tgl_kelahiran` datetime NOT NULL,
-  `nm_suami` varchar(100) NOT NULL,
+  `nm_suami` varchar(50) NOT NULL,
   `penolongan_persalinan` text NOT NULL,
   `cara_persalinan` text NOT NULL,
   `keadaan_ibu` text NOT NULL,
@@ -563,7 +568,10 @@ CREATE TABLE `tbl_kelahiran` (
 
 INSERT INTO `tbl_kelahiran` (`no_pasien`, `id_kelahiran`, `tgl_kelahiran`, `nm_suami`, `penolongan_persalinan`, `cara_persalinan`, `keadaan_ibu`, `umur_kehamilan`, `id_sat_umur`, `bulan`, `tensi`, `biaya_persalinan`, `biaya_perawatan_kelas`, `biaya_perawatan_bayi`, `biaya_obat_obatan`, `biaya_cucian`, `biaya_akte_kelahiran`, `biaya_transportasi`, `biaya_lain`) VALUES
 (3, 'K636793640819359454', '2018-11-26 04:14:00', 'adit', 'bidan', 'normal', 'baik', 10, 19, 0, '110/70', 600000, 200000, 150000, 250000, 90000, 15000, 40000, 50000),
-(5, 'K636793807693117541', '2018-12-02 08:52:00', 'david', 'bidan', 'normal', 'baik', 10, 19, 0, '110/20', 600000, 240000, 150000, 85000, 90000, 15000, 75000, 40000);
+(5, 'K636793807693117541', '2018-12-02 08:52:00', 'david', 'bidan', 'normal', 'baik', 10, 19, 0, '110/20', 600000, 240000, 150000, 85000, 90000, 15000, 75000, 40000),
+(1, 'K636813457542329935', '2018-12-25 02:42:00', 'afdal', 'bidan', 'normal', 'sehat', 12, 18, 0, '120/10', 1000000, 350000, 200000, 80000, 100000, 20000, 340000, 5000),
+(5, 'K636813462385756964', '2018-12-25 02:50:00', 'gilang', 'bidan', 'normal', 'sehat', 12, 18, 0, '120/10', 1000000, 340000, 200000, 100000, 75000, 20000, 250000, 5000),
+(1, 'K636813467604265445', '2018-12-25 02:50:00', 'david', 'bidan', 'normal', 'sehat', 11, 18, 12, '120/10', 1000000, 340000, 200000, 100000, 75000, 20000, 250000, 5000);
 
 -- --------------------------------------------------------
 
@@ -611,13 +619,13 @@ CREATE TABLE `tbl_obat` (
 --
 
 INSERT INTO `tbl_obat` (`id_obat`, `nm_obat`, `stok`, `status`, `id_jobat`, `hrg_obat`, `id_sat_obat`) VALUES
-(2, 'caviplex', 6, 'Aktif', 4, 10000, 25),
+(2, 'caviplex', 4, 'Aktif', 4, 10000, 25),
 (3, 'vitonal-f', 7, 'Aktif', 8, 10000, 25),
 (4, 'etabion', 9, 'Aktif', 4, 10000, 25),
 (5, 'andalan pil KB', 5, 'Aktif', 1, 15000, 25),
 (6, 'cylofem (suntik)', 9, 'Aktif', 1, 20000, 23),
 (7, 'zetamol(pcl)', 49, 'Aktif', 9, 10000, 22),
-(8, 'paracetamol', 20, 'Aktif', 9, 15000, 25),
+(8, 'paracetamol', 18, 'Aktif', 9, 15000, 25),
 (9, 'vitamin C', 8, 'Aktif', 4, 2000, 22),
 (10, 'dapyrin(pcl)', 10, 'Aktif', 11, 15000, 27),
 (11, 'roverton', 10, 'Aktif', 11, 15000, 27),
@@ -631,11 +639,11 @@ INSERT INTO `tbl_obat` (`id_obat`, `nm_obat`, `stok`, `status`, `id_jobat`, `hrg
 
 CREATE TABLE `tbl_pasien` (
   `no_pasien` int(11) NOT NULL,
-  `nm_pasien` varchar(100) NOT NULL,
+  `nm_pasien` varchar(50) NOT NULL,
   `tgl_lahir` date NOT NULL,
   `jk` enum('Laki-laki','Perempuan') NOT NULL,
-  `pekerjaan` varchar(100) NOT NULL,
-  `alamat` varchar(250) NOT NULL,
+  `pekerjaan` varchar(50) NOT NULL,
+  `alamat` varchar(50) NOT NULL,
   `tgl_daftar` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -664,20 +672,23 @@ CREATE TABLE `tbl_periksa` (
   `no_pasien` int(11) NOT NULL,
   `keluhan` text,
   `tensi` varchar(9) NOT NULL,
-  `id_sat_tensi` int(11) NOT NULL DEFAULT '26'
+  `id_sat_tensi` int(11) NOT NULL DEFAULT '26',
+  `nama_bidan` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `tbl_periksa`
 --
 
-INSERT INTO `tbl_periksa` (`id_periksa`, `tgl_periksa`, `no_pasien`, `keluhan`, `tensi`, `id_sat_tensi`) VALUES
-('0212180408514738', '2018-12-02 09:13:34', 1, 'ibu G:2P:0A:1', '100/60', 26),
-('0212180851300262', '2018-12-02 13:52:37', 4, 'batuk, demam, sakit kepala', '100/10', 26),
-('021220180850155389', '2018-12-02 13:51:14', 3, 'Pemeriksaan/Pemasangan KB', '110/20', 26),
-('2312180233586143', '2018-12-23 07:34:37', 1, '', '120/10', 26),
-('2312180237309645', '2018-12-23 07:38:29', 1, '', '120/10', 26),
-('2312180248505043', '2018-12-23 07:50:04', 1, '', '120/20', 26);
+INSERT INTO `tbl_periksa` (`id_periksa`, `tgl_periksa`, `no_pasien`, `keluhan`, `tensi`, `id_sat_tensi`, `nama_bidan`) VALUES
+('0212180408514738', '2018-12-02 09:13:34', 1, 'ibu G:2P:0A:1', '100/60', 26, ''),
+('0212180851300262', '2018-12-02 13:52:37', 4, 'batuk, demam, sakit kepala', '100/10', 26, ''),
+('021220180850155389', '2018-12-02 13:51:14', 3, 'Pemeriksaan/Pemasangan KB', '110/20', 26, ''),
+('2312180233586143', '2018-12-23 07:34:37', 1, '', '120/10', 26, ''),
+('2312180237309645', '2018-12-23 07:38:29', 1, '', '120/10', 26, ''),
+('2312180248505043', '2018-12-23 07:50:04', 1, '', '120/20', 26, ''),
+('2512180211454442', '2018-12-25 07:21:33', 1, 'mual-mual\r\nG:2 P:0 A:1', '130/10', 26, ''),
+('2512180957082975', '2018-12-25 03:00:23', 3, 'mual-mual\r\n', '120/20', 26, '');
 
 -- --------------------------------------------------------
 
@@ -688,19 +699,20 @@ INSERT INTO `tbl_periksa` (`id_periksa`, `tgl_periksa`, `no_pasien`, `keluhan`, 
 CREATE TABLE `tbl_periksa_kb` (
   `id_periksa_kb` int(11) NOT NULL,
   `id_periksa` varchar(50) NOT NULL,
-  `nm_suami` varchar(100) NOT NULL,
+  `nm_suami` varchar(50) NOT NULL,
   `anak_ke` int(11) NOT NULL,
   `haid_terakhir` date NOT NULL,
   `berat_badan` int(11) NOT NULL,
-  `id_sat_berat` int(11) NOT NULL DEFAULT '1'
+  `id_sat_berat` int(11) NOT NULL DEFAULT '1',
+  `nama_bidan` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `tbl_periksa_kb`
 --
 
-INSERT INTO `tbl_periksa_kb` (`id_periksa_kb`, `id_periksa`, `nm_suami`, `anak_ke`, `haid_terakhir`, `berat_badan`, `id_sat_berat`) VALUES
-(1, '021220180850155389', 'ari', 2, '2018-11-19', 54, 1);
+INSERT INTO `tbl_periksa_kb` (`id_periksa_kb`, `id_periksa`, `nm_suami`, `anak_ke`, `haid_terakhir`, `berat_badan`, `id_sat_berat`, `nama_bidan`) VALUES
+(1, '021220180850155389', 'ari', 2, '2018-11-19', 54, 1, '');
 
 -- --------------------------------------------------------
 
@@ -776,7 +788,9 @@ INSERT INTO `tbl_terapi` (`id_terapi`, `id_obat`, `jumlah`, `id_periksa`) VALUES
 (6, 2, 1, '0212180851300262'),
 (7, 2, 2, '2312180233586143'),
 (8, 3, 2, '2312180237309645'),
-(9, 4, 1, '2312180248505043');
+(9, 4, 1, '2312180248505043'),
+(10, 8, 2, '2512180957082975'),
+(12, 2, 2, '2512180211454442');
 
 --
 -- Trigger `tbl_terapi`
@@ -1117,7 +1131,7 @@ ALTER TABLE `tbl_user`
 -- AUTO_INCREMENT untuk tabel `tbl_anc`
 --
 ALTER TABLE `tbl_anc`
-  MODIFY `id_anc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_anc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_asuhan_bayi`
@@ -1129,7 +1143,7 @@ ALTER TABLE `tbl_asuhan_bayi`
 -- AUTO_INCREMENT untuk tabel `tbl_bayi_lahir`
 --
 ALTER TABLE `tbl_bayi_lahir`
-  MODIFY `id_bayi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_bayi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_jenis_obat`
@@ -1177,7 +1191,7 @@ ALTER TABLE `tbl_satuan`
 -- AUTO_INCREMENT untuk tabel `tbl_terapi`
 --
 ALTER TABLE `tbl_terapi`
-  MODIFY `id_terapi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_terapi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_user`

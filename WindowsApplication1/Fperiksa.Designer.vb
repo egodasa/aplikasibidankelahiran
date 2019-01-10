@@ -97,6 +97,8 @@ Partial Class Fperiksa
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Tdibayarkan = New System.Windows.Forms.NumericUpDown()
         Me.Label26 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Group_anc.SuspendLayout()
         CType(Me.Tumr_kehamilan, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Tbrt_badan, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -477,6 +479,8 @@ Partial Class Fperiksa
         'GroupBox2
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.MintCream
+        Me.GroupBox2.Controls.Add(Me.TextBox1)
+        Me.GroupBox2.Controls.Add(Me.Label12)
         Me.GroupBox2.Controls.Add(Me.Csat_tkn)
         Me.GroupBox2.Controls.Add(Me.Label27)
         Me.GroupBox2.Controls.Add(Me.Ttkn_darah1)
@@ -509,7 +513,7 @@ Partial Class Fperiksa
         '
         Me.Csat_tkn.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Csat_tkn.FormattingEnabled = True
-        Me.Csat_tkn.Location = New System.Drawing.Point(205, 207)
+        Me.Csat_tkn.Location = New System.Drawing.Point(201, 243)
         Me.Csat_tkn.Name = "Csat_tkn"
         Me.Csat_tkn.Size = New System.Drawing.Size(66, 23)
         Me.Csat_tkn.TabIndex = 36
@@ -519,7 +523,7 @@ Partial Class Fperiksa
         '
         Me.Label27.AutoSize = True
         Me.Label27.Font = New System.Drawing.Font("Arial Black", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label27.Location = New System.Drawing.Point(133, 203)
+        Me.Label27.Location = New System.Drawing.Point(129, 239)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(17, 27)
         Me.Label27.TabIndex = 35
@@ -528,7 +532,7 @@ Partial Class Fperiksa
         'Ttkn_darah1
         '
         Me.Ttkn_darah1.Increment = New Decimal(New Integer() {40, 0, 0, 0})
-        Me.Ttkn_darah1.Location = New System.Drawing.Point(151, 207)
+        Me.Ttkn_darah1.Location = New System.Drawing.Point(147, 243)
         Me.Ttkn_darah1.Maximum = New Decimal(New Integer() {1000000, 0, 0, 0})
         Me.Ttkn_darah1.Name = "Ttkn_darah1"
         Me.Ttkn_darah1.Size = New System.Drawing.Size(48, 23)
@@ -537,7 +541,7 @@ Partial Class Fperiksa
         'Ttkn_darah
         '
         Me.Ttkn_darah.Increment = New Decimal(New Integer() {30, 0, 0, 0})
-        Me.Ttkn_darah.Location = New System.Drawing.Point(88, 207)
+        Me.Ttkn_darah.Location = New System.Drawing.Point(84, 243)
         Me.Ttkn_darah.Maximum = New Decimal(New Integer() {100000, 0, 0, 0})
         Me.Ttkn_darah.Name = "Ttkn_darah"
         Me.Ttkn_darah.Size = New System.Drawing.Size(46, 23)
@@ -557,7 +561,7 @@ Partial Class Fperiksa
         'is_anc
         '
         Me.is_anc.AutoSize = True
-        Me.is_anc.Location = New System.Drawing.Point(158, 237)
+        Me.is_anc.Location = New System.Drawing.Point(158, 271)
         Me.is_anc.Name = "is_anc"
         Me.is_anc.Size = New System.Drawing.Size(120, 19)
         Me.is_anc.TabIndex = 8
@@ -568,7 +572,7 @@ Partial Class Fperiksa
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(5, 208)
+        Me.Label2.Location = New System.Drawing.Point(1, 244)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(85, 15)
         Me.Label2.TabIndex = 26
@@ -577,17 +581,17 @@ Partial Class Fperiksa
         'Tkeluhan
         '
         Me.Tkeluhan.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tkeluhan.Location = New System.Drawing.Point(6, 262)
+        Me.Tkeluhan.Location = New System.Drawing.Point(6, 305)
         Me.Tkeluhan.Multiline = True
         Me.Tkeluhan.Name = "Tkeluhan"
-        Me.Tkeluhan.Size = New System.Drawing.Size(272, 148)
+        Me.Tkeluhan.Size = New System.Drawing.Size(272, 105)
         Me.Tkeluhan.TabIndex = 25
         '
         'Label9
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(5, 238)
+        Me.Label9.Location = New System.Drawing.Point(3, 275)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(129, 15)
         Me.Label9.TabIndex = 24
@@ -903,6 +907,22 @@ Partial Class Fperiksa
         Me.Label26.TabIndex = 16
         Me.Label26.Text = "Dibayar"
         '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(6, 211)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(72, 15)
+        Me.Label12.TabIndex = 37
+        Me.Label12.Text = "Nama Bidan"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(88, 206)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(183, 23)
+        Me.TextBox1.TabIndex = 38
+        '
         'Fperiksa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1020,4 +1040,6 @@ Partial Class Fperiksa
     Friend WithEvents biaya As System.Windows.Forms.TextBox
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents Label12 As System.Windows.Forms.Label
 End Class
