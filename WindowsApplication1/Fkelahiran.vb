@@ -133,7 +133,7 @@
     End Sub
 
     Private Sub Bsimpan_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bsimpan.Click
-        runQuery("insert into tbl_kelahiran (no_pasien, id_kelahiran, tgl_kelahiran, nm_suami,bulan,tensi,penolongan_persalinan, cara_persalinan, umur_kehamilan, keadaan_ibu, biaya_persalinan, biaya_perawatan_kelas, biaya_perawatan_bayi, biaya_obat_obatan, biaya_cucian, biaya_akte_kelahiran, biaya_transportasi, biaya_lain, id_sat_umur ) values (" & Tno_pasien.Text &
+        runQuery("insert into tbl_kelahiran (no_pasien, id_kelahiran, tgl_kelahiran, nm_suami,bulan,tensi,penolongan_persalinan, cara_persalinan, umur_kehamilan, keadaan_ibu, biaya_persalinan, biaya_perawatan_kelas, biaya_perawatan_bayi, biaya_obat_obatan, biaya_cucian, biaya_akte_kelahiran, biaya_transportasi, biaya_lain, id_sat_umur, nm_bidan ) values (" & Tno_pasien.Text &
                 ", '" & id_kelahiran &
                 "', '" & Ttgl_persalinan.Value.ToString("yyyy-MM-dd hh:mm:00") &
                 "', '" & Tnm_suami.Text &
@@ -151,7 +151,8 @@
                 ", " & Takte.Value &
                 ", " & Ttransportasi.Value &
                 ", " & Tlain.Value &
-                ", " & Csat_umur.SelectedValue & ")")
+                ", " & Csat_umur.SelectedValue &
+                ", '" & Tnm_bidan.Text & "')")
         For Each x As DataGridViewRow In DGbayi.Rows
             If Not x.IsNewRow Then
                 runQuery("insert into tbl_bayi_lahir (id_kelahiran,nm_bayi,anak_ke,berat_lahir,panjang_badan,lingkar_kepala,jk,asuhan_bayi_saat_lahir,keterangan,kondisi_bayi, id_sat_berat,id_sat_panjang,id_sat_lingkar, waktu_lahir) values('" & id_kelahiran &

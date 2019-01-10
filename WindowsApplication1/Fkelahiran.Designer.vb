@@ -122,6 +122,8 @@ Partial Class Fkelahiran
         Me.KelahiranToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.Tnm_bidan = New System.Windows.Forms.TextBox()
+        Me.Label19 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.Tumur, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -835,8 +837,13 @@ Partial Class Fkelahiran
         'GroupBox6
         '
         Me.GroupBox6.BackColor = System.Drawing.Color.MintCream
+        Me.GroupBox6.Controls.Add(Me.Tnm_bidan)
+        Me.GroupBox6.Controls.Add(Me.Label19)
+        Me.GroupBox6.Controls.Add(Me.Button2)
         Me.GroupBox6.Controls.Add(Me.Tlain)
+        Me.GroupBox6.Controls.Add(Me.Button1)
         Me.GroupBox6.Controls.Add(Me.Ttransportasi)
+        Me.GroupBox6.Controls.Add(Me.Bsimpan)
         Me.GroupBox6.Controls.Add(Me.Tobat)
         Me.GroupBox6.Controls.Add(Me.Takte)
         Me.GroupBox6.Controls.Add(Me.Tcucian)
@@ -857,7 +864,7 @@ Partial Class Fkelahiran
         Me.GroupBox6.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox6.Location = New System.Drawing.Point(298, 418)
         Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(983, 109)
+        Me.GroupBox6.Size = New System.Drawing.Size(983, 157)
         Me.GroupBox6.TabIndex = 17
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "RINCIAN BIAYA PERSALINAN"
@@ -1048,7 +1055,7 @@ Partial Class Fkelahiran
         Me.Bsimpan.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Bsimpan.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bsimpan.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Bsimpan.Location = New System.Drawing.Point(800, 548)
+        Me.Bsimpan.Location = New System.Drawing.Point(420, 111)
         Me.Bsimpan.Name = "Bsimpan"
         Me.Bsimpan.Size = New System.Drawing.Size(161, 27)
         Me.Bsimpan.TabIndex = 27
@@ -1087,7 +1094,7 @@ Partial Class Fkelahiran
         'KeluarToolStripMenuItem
         '
         Me.KeluarToolStripMenuItem.Name = "KeluarToolStripMenuItem"
-        Me.KeluarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.KeluarToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
         Me.KeluarToolStripMenuItem.Text = "Keluar"
         '
         'DataToolStripMenuItem
@@ -1100,7 +1107,7 @@ Partial Class Fkelahiran
         'KelahiranToolStripMenuItem
         '
         Me.KelahiranToolStripMenuItem.Name = "KelahiranToolStripMenuItem"
-        Me.KelahiranToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.KelahiranToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
         Me.KelahiranToolStripMenuItem.Text = "Kelahiran"
         '
         'Button1
@@ -1110,7 +1117,7 @@ Partial Class Fkelahiran
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button1.Location = New System.Drawing.Point(999, 548)
+        Me.Button1.Location = New System.Drawing.Point(651, 111)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(123, 27)
         Me.Button1.TabIndex = 29
@@ -1124,12 +1131,30 @@ Partial Class Fkelahiran
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button2.Location = New System.Drawing.Point(1158, 548)
+        Me.Button2.Location = New System.Drawing.Point(848, 111)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(123, 27)
         Me.Button2.TabIndex = 30
         Me.Button2.Text = "KELUAR"
         Me.Button2.UseVisualStyleBackColor = False
+        '
+        'Tnm_bidan
+        '
+        Me.Tnm_bidan.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tnm_bidan.Location = New System.Drawing.Point(137, 107)
+        Me.Tnm_bidan.Name = "Tnm_bidan"
+        Me.Tnm_bidan.Size = New System.Drawing.Size(183, 23)
+        Me.Tnm_bidan.TabIndex = 48
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.Location = New System.Drawing.Point(8, 110)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(72, 15)
+        Me.Label19.TabIndex = 47
+        Me.Label19.Text = "Nama Bidan"
         '
         'Fkelahiran
         '
@@ -1137,9 +1162,6 @@ Partial Class Fkelahiran
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.InactiveBorder
         Me.ClientSize = New System.Drawing.Size(1290, 598)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.Bsimpan)
         Me.Controls.Add(Me.GroupBox6)
         Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.GroupBox3)
@@ -1279,4 +1301,6 @@ Partial Class Fkelahiran
     Friend WithEvents Label15 As System.Windows.Forms.Label
     Friend WithEvents Ttensi As System.Windows.Forms.TextBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents Tnm_bidan As System.Windows.Forms.TextBox
+    Friend WithEvents Label19 As System.Windows.Forms.Label
 End Class
