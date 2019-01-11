@@ -58,6 +58,8 @@ Partial Class Fperiksa
         Me.Ttotal_harga = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Tnm_bidan = New System.Windows.Forms.TextBox()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.Csat_tkn = New System.Windows.Forms.ComboBox()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.Ttkn_darah1 = New System.Windows.Forms.NumericUpDown()
@@ -97,8 +99,6 @@ Partial Class Fperiksa
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Tdibayarkan = New System.Windows.Forms.NumericUpDown()
         Me.Label26 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Group_anc.SuspendLayout()
         CType(Me.Tumr_kehamilan, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Tbrt_badan, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -479,7 +479,7 @@ Partial Class Fperiksa
         'GroupBox2
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.MintCream
-        Me.GroupBox2.Controls.Add(Me.TextBox1)
+        Me.GroupBox2.Controls.Add(Me.Tnm_bidan)
         Me.GroupBox2.Controls.Add(Me.Label12)
         Me.GroupBox2.Controls.Add(Me.Csat_tkn)
         Me.GroupBox2.Controls.Add(Me.Label27)
@@ -508,6 +508,22 @@ Partial Class Fperiksa
         Me.GroupBox2.TabIndex = 5
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "PASIEN"
+        '
+        'Tnm_bidan
+        '
+        Me.Tnm_bidan.Location = New System.Drawing.Point(88, 206)
+        Me.Tnm_bidan.Name = "Tnm_bidan"
+        Me.Tnm_bidan.Size = New System.Drawing.Size(183, 23)
+        Me.Tnm_bidan.TabIndex = 38
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(6, 211)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(72, 15)
+        Me.Label12.TabIndex = 37
+        Me.Label12.Text = "Nama Bidan"
         '
         'Csat_tkn
         '
@@ -907,22 +923,6 @@ Partial Class Fperiksa
         Me.Label26.TabIndex = 16
         Me.Label26.Text = "Dibayar"
         '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(6, 211)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(72, 15)
-        Me.Label12.TabIndex = 37
-        Me.Label12.Text = "Nama Bidan"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(88, 206)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(183, 23)
-        Me.TextBox1.TabIndex = 38
-        '
         'Fperiksa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1040,6 +1040,6 @@ Partial Class Fperiksa
     Friend WithEvents biaya As System.Windows.Forms.TextBox
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents Tnm_bidan As System.Windows.Forms.TextBox
     Friend WithEvents Label12 As System.Windows.Forms.Label
 End Class
