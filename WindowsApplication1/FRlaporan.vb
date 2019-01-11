@@ -24,6 +24,8 @@ Public Class FRlaporan
             CR.Load(_DIR & "bayi.rpt")
         ElseIf tipe = "pasien" Then
             CR.Load(_DIR & "pasien.rpt")
+        ElseIf tipe = "obat" Then
+            CR.Load(_DIR & "laporan_stok_obat.rpt")
         End If
         CRlaporan.ReportSource = CR
         Me.Show()
@@ -84,6 +86,10 @@ Public Class FRlaporan
         Me.Show()
     End Sub
     Private Sub FRlaporan_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub CRlaporan_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CRlaporan.Load
 
     End Sub
 End Class

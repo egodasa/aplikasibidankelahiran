@@ -71,7 +71,7 @@
     End Sub
 
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
-        runQuery("insert into tbl_periksa (id_periksa, no_pasien,keluhan, tensi, id_sat_tensi) values ('" & id_kb & "'," & Tno_pasien.Text & ",'Pemeriksaan/Pemasangan KB','" & Ttkn_darah.Text & "/" & Ttkn_darah1.Text & "'," & Csat_tkn.SelectedValue & ")")
+        runQuery("insert into tbl_periksa (id_periksa, no_pasien,keluhan, tensi, id_sat_tensi, nm_bidan) values ('" & id_kb & "'," & Tno_pasien.Text & ",'Pemeriksaan/Pemasangan KB','" & Ttkn_darah.Text & "/" & Ttkn_darah1.Text & "'," & Csat_tkn.SelectedValue & ", '" & Tnm_bidan.Text & "')")
         runQuery("insert into tbl_periksa_kb (id_periksa, nm_suami,anak_ke,haid_terakhir, berat_badan,id_sat_berat) values ('" & id_kb & "', '" & Tnm_suami.Text & "', " & Tanak.Text & ", '" & Thaid.Value.ToString("yyyy-MM-dd") & "', " & Tbrt_badan.Text & "," & Csat_berat.SelectedValue & ")")
         runQuery("insert into tbl_terapi (id_periksa, id_obat, jumlah) values ('" & id_kb & "', " & Ckb.SelectedValue & ", " & Tjumlah.Text & ")")
         Call successMessage()

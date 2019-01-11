@@ -27,7 +27,8 @@
     End Sub
 
     Private Sub Bsave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bsave.Click
-        runQuery("insert into tbl_obat (nm_obat, stok, id_jobat, hrg_obat, id_sat_obat) values ('" & Tnm_obat.Text & "', " & Tstok.Text & ", " & Cjns_obat.SelectedValue & ", " & Thrg_obat.Text & "," & Csatuan.SelectedValue & ")")
+        Dim tgl_masuk As String = DateTime.Now.ToString("yyyy-MM-dd")
+        runQuery("insert into tbl_obat (nm_obat, stok, id_jobat, hrg_obat, id_sat_obat, tgl_masuk) values ('" & Tnm_obat.Text & "', " & Tstok.Text & ", " & Cjns_obat.SelectedValue & ", " & Thrg_obat.Text & "," & Csatuan.SelectedValue & ", '" & tgl_masuk & "')")
         Call successMessage()
         DGobat.DataSource = fetchData(getData)
         Call resetForm()
@@ -62,12 +63,14 @@
     End Sub
 
     Private Sub Bedit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bedit.Click
+        Dim tgl_masuk As String = DateTime.Now.ToString("yyyy-MM-dd")
         runQuery("update tbl_obat set nm_obat = '" & Tnm_obat.Text &
                  "', id_jobat = " & Cjns_obat.SelectedValue &
                  ", hrg_obat = " & Thrg_obat.Text &
                  ", stok = " & Tstok.Text &
                  ", id_sat_obat = " & Csatuan.SelectedValue &
-                 " where id_obat = " & DGobat.CurrentRow.Cells("Id_Obat").Value)
+                 ", tgl_masuk = '" & tgl_masuk &
+                 "' where id_obat = " & DGobat.CurrentRow.Cells("Id_Obat").Value)
         Call editMessage()
         Bcancel.PerformClick()
         DGobat.DataSource = fetchData(getData)
@@ -83,5 +86,9 @@
 
     Private Sub Csatuan_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Csatuan.SelectedIndexChanged
 
+    End Sub
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        FRlaporan.laporan("obat")
     End Sub
 End Class

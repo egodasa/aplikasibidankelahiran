@@ -18,7 +18,7 @@ Imports System
 Imports System.ComponentModel
 
 
-Public Class lap_bulanan
+Public Class laporan_stok_obat
     Inherits ReportClass
     
     Public Sub New()
@@ -27,7 +27,7 @@ Public Class lap_bulanan
     
     Public Overrides Property ResourceName() As String
         Get
-            Return "lap_bulanan.rpt"
+            Return "laporan_stok_obat.rpt"
         End Get
         Set
             'Do nothing
@@ -45,7 +45,7 @@ Public Class lap_bulanan
     
     Public Overrides Property FullResourceName() As String
         Get
-            Return "WindowsApplication1.lap_bulanan.rpt"
+            Return "WindowsApplication1.laporan_stok_obat.rpt"
         End Get
         Set
             'Do nothing
@@ -91,10 +91,18 @@ Public Class lap_bulanan
             Return Me.ReportDefinition.Sections(4)
         End Get
     End Property
+    
+    <Browsable(false),  _
+     DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)>  _
+    Public ReadOnly Property Parameter_judul() As CrystalDecisions.[Shared].IParameterField
+        Get
+            Return Me.DataDefinition.ParameterFields(0)
+        End Get
+    End Property
 End Class
 
 <System.Drawing.ToolboxBitmapAttribute(GetType(CrystalDecisions.[Shared].ExportOptions), "report.bmp")>  _
-Public Class Cachedlap_bulanan
+Public Class Cachedlaporan_stok_obat
     Inherits Component
     Implements ICachedReport
     
@@ -136,7 +144,7 @@ Public Class Cachedlap_bulanan
     End Property
     
     Public Overridable Function CreateReport() As CrystalDecisions.CrystalReports.Engine.ReportDocument Implements CrystalDecisions.ReportSource.ICachedReport.CreateReport
-        Dim rpt As lap_bulanan = New lap_bulanan()
+        Dim rpt As laporan_stok_obat = New laporan_stok_obat()
         rpt.Site = Me.Site
         Return rpt
     End Function
