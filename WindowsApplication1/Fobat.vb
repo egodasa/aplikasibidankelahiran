@@ -84,10 +84,6 @@
         End If
     End Sub
 
-    Private Sub Csatuan_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Csatuan.SelectedIndexChanged
-
-    End Sub
-
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         FRlaporan.laporan("obat")
     End Sub
