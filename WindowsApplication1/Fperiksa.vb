@@ -253,7 +253,7 @@
 
     Private Sub Tcari_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tcari.TextChanged
         If Tcari.Text.Length <> 0 Then
-            DGrekap.DataSource = fetchData("select * from laporan_rekap_pasien where `No_Pasien` = " & data_pasien.Rows(0).Item("No_Pasien") & " AND `Tanggal_Periksa` like '%" & Tcari.Text & "%' OR `Keluhan/Diagnosa` like '%" & Tcari.Text & "%'")
+            DGrekap.DataSource = fetchData("select * from laporan_rekap_pasien where `No_Pasien` = " & data_pasien.Rows(0).Item("No_Pasien") & " AND `Tanggal_Periksa` like '%" & Tcari.Text & "%' OR `Diagnosa ANC` like '%" & Tcari.Text & "%'")
         Else
             DGrekap.DataSource = fetchData("select * from laporan_rekap_pasien where `No_Pasien` = " & data_pasien.Rows(0).Item("No_Pasien"))
         End If
